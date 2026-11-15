@@ -3,6 +3,7 @@
 // Output: tight jump-cut clip + <output>.cuts.json (kept segments, used to place punch-ins).
 import { spawnSync } from "node:child_process";
 import fs from "node:fs";
+import { renderSegments } from "./render-segments.mjs";
 
 const [input, output, ...flags] = process.argv.slice(2);
 if (!input || !output) {
@@ -43,23 +44,12 @@ if (keep.length === 0) {
   process.exit(1);
 }
 
-const parts = keep
-  .map(([a, b], i) => `[0:v]trim=${a}:${b},setpts=PTS-STARTPTS[v${i}];[0:a]atrim=${a}:${b},asetpts=PTS-STARTPTS[a${i}];`)
-  .join("");
-const concat = keep.map((_, i) => `[v${i}][a${i}]`).join("") + `concat=n=${keep.length}:v=1:a=1[v][a]`;
-
-run("ffmpeg", [
-  "-hide_banner", "-y", "-i", input,
-  "-filter_complex", parts + concat,
-  "-map", "[v]", "-map", "[a]",
-  "-c:v", "libx264", "-preset", "veryfast", "-crf", "18",
-  "-c:a", "aac", "-b:a", "192k",
-  output,
-]);
+// Segment-by-segment render (low memory, frame-snapped). See render-segments.mjs.
+const rendered = renderSegments(input, keep, output, { crf: 18 });
 
 // Output timeline positions of every jump cut (useful for punch-ins).
 let t = 0;
-const cuts = keep.map(([a, b]) => {
+const cuts = rendered.map(([a, b]) => {
   const seg = { sourceStart: a, sourceEnd: b, outStartMs: Math.round(t * 1000) };
   t += b - a;
   return seg;

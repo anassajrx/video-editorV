@@ -62,6 +62,18 @@ For each page of ≤5 words:
 - Everything else → `default`
 - Max one of hero/signal/ember/mono/error per page. Break pages at commas and natural phrase ends.
 
+## Darija captions (Moroccan Arabic videos)
+- Transcribe with `npm run transcribe -- <in.mp4> <words.json> --lang=ar` (defaults to the multilingual `large-v3` model; `--model=medium` if too slow).
+- Write what is actually said in **Darija, in Arabic letters**. Never translate into Modern Standard Arabic, never "correct" Darija into formal Arabic.
+- Whisper is weak at Darija: read the whole transcript for context and fix misheard words. Use common Darija spellings: كنقول، بزاف، دابا، واش، علاش، ديال، غادي، حيت، شي، هادشي.
+- French/English words are written in Arabic letters too (كود، فيديو، بروجي), **except brand / tool names, which stay in Latin** (GitHub, React, Claude).
+- Word-by-word reveal, **max 4 words per page** (enforced in KineticCaptions for Arabic pages), page breaks at natural phrase ends.
+- Roles: most words `default`; small filler words (و، ف، ل، اللي، هو، ديال، راه، غير) `soft`; ONE key word per page as `hero`, or `signal` for tech words, `ember` for money/numbers, `error` for problems.
+- No punctuation at the end of caption pages.
+- Rendering: Arabic words use Cairo (`fonts.arabic`, bundled in public/fonts) and Arabic pages are laid out `direction: rtl`. No letter-spacing on Arabic (it breaks letter joining); `serif` maps to Cairo 700 (Arabic has no italic).
+- Check a contact sheet for disconnected/reversed letters and word order before rendering.
+- Deliver an Arabic `.srt` with the video (one cue per caption page).
+
 ## Graphic picking
 | Script says… | Use |
 |---|---|

@@ -27,6 +27,11 @@ const FONT_FILES: { family: string; file: string; weight: string; style: string 
   { family: "Instrument Serif", file: "instrument-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
   { family: "JetBrains Mono", file: "jetbrains-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
   { family: "JetBrains Mono", file: "jetbrains-mono-latin-600-normal.woff2", weight: "600", style: "normal" },
+  // Arabic (Darija captions). Arabic subset only: Latin words keep Inter Tight / JetBrains Mono.
+  { family: "Cairo", file: "cairo-arabic-500-normal.woff2", weight: "500", style: "normal" },
+  { family: "Cairo", file: "cairo-arabic-700-normal.woff2", weight: "700", style: "normal" },
+  { family: "Cairo", file: "cairo-arabic-800-normal.woff2", weight: "800", style: "normal" },
+  { family: "Cairo", file: "cairo-arabic-900-normal.woff2", weight: "900", style: "normal" },
 ];
 for (const f of FONT_FILES) {
   loadFont({ family: f.family, url: staticFile(`fonts/${f.file}`), weight: f.weight, style: f.style });
@@ -36,6 +41,7 @@ export const fonts = {
   display: "'Inter Tight', sans-serif",
   serif: "'Instrument Serif', serif",
   mono: "'JetBrains Mono', monospace",
+  arabic: "'Cairo', sans-serif",
 };
 
 export const glow = (hex: string, strength = 1) =>

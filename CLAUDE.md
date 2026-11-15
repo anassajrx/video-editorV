@@ -12,7 +12,8 @@ Then read `DESIGN.md` (look and motion) and `brand/BRAND.md` (brand). Do not inv
 - `src/videos/<slug>/edit.json` — **one folder per video**; register it in `src/Root.tsx`
 - `public/videos/<slug>/` — that video's footage, music, sfx, screenshots
 - `scripts/cut-silences.mjs` — rough cut (removes pauses)
-- `scripts/transcribe.mjs` — word-level captions with Whisper
+- `scripts/render-segments.mjs` — renders kept segments (low memory); used for retake re-cuts
+- `scripts/transcribe.mjs` — word-level captions with Whisper (`--lang=ar` for Darija)
 - `scripts/face_zone.py` — measures where the face is (writes `faceZone`)
 - `scripts/check_face.py` — fails if anything is drawn over/above the face
 

@@ -10,6 +10,33 @@ import { colors, fonts, glow } from "../brand/theme";
 import type { StyledWord, WordRole } from "../brand/types";
 
 const MAX_WORDS_PER_PAGE = 5;
+const MAX_ARABIC_WORDS_PER_PAGE = 4;
+
+const ARABIC_RE = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
+export const isArabic = (text: string) => ARABIC_RE.test(text);
+
+// Arabic look per role (Cairo). No letter-spacing (it breaks letter joining) and no italic.
+const arabicRoleStyle = (role: WordRole, scale: number): React.CSSProperties => {
+  const s = (px: number) => px * scale;
+  const base = { fontFamily: fonts.arabic, letterSpacing: 0 };
+  switch (role) {
+    case "soft":
+      return { ...base, fontWeight: 500, fontSize: s(48), color: colors.muted };
+    case "hero":
+      return { ...base, fontWeight: 900, fontSize: s(120), color: colors.text };
+    case "serif":
+      return { ...base, fontWeight: 700, fontSize: s(88), color: colors.text };
+    case "signal":
+    case "mono":
+      return { ...base, fontWeight: 800, fontSize: s(100), color: colors.signal, textShadow: glow(colors.signal) };
+    case "ember":
+      return { ...base, fontWeight: 800, fontSize: s(108), color: colors.ember, textShadow: glow(colors.ember, 0.8) };
+    case "error":
+      return { ...base, fontWeight: 800, fontSize: s(100), color: colors.error, textShadow: glow(colors.error, 0.8) };
+    default:
+      return { ...base, fontWeight: 700, fontSize: s(78), color: colors.text };
+  }
+};
 
 const roleStyle = (role: WordRole, scale: number): React.CSSProperties => {
   const s = (px: number) => px * scale;
@@ -38,7 +65,8 @@ const toPages = (words: StyledWord[]) => {
   let cur: StyledWord[] = [];
   for (const w of words) {
     cur.push(w);
-    if (w.pageBreakAfter || cur.length >= MAX_WORDS_PER_PAGE) {
+    const max = cur.some((x) => isArabic(x.text)) ? MAX_ARABIC_WORDS_PER_PAGE : MAX_WORDS_PER_PAGE;
+    if (w.pageBreakAfter || cur.length >= max) {
       pages.push(cur);
       cur = [];
     }
@@ -53,12 +81,14 @@ const Word: React.FC<{ w: StyledWord; scale: number; pageStartMs: number }> = ({
   const startFrame = (w.startMs / 1000) * fps;
   const p = spring({ frame: frame - startFrame, fps, config: { damping: 18, stiffness: 220, mass: 0.6 } });
   const visible = frame >= startFrame - 1;
+  const arabic = isArabic(w.text);
   return (
     <span
+      dir={arabic ? "rtl" : "ltr"}
       style={{
-        ...roleStyle(w.role ?? "default", scale),
+        ...(arabic ? arabicRoleStyle(w.role ?? "default", scale) : roleStyle(w.role ?? "default", scale)),
         display: "inline-block",
-        lineHeight: 0.95,
+        lineHeight: arabic ? 1.3 : 0.95,
         margin: `0 ${10 * scale}px`,
         opacity: visible ? interpolate(p, [0, 1], [0, 1]) : 0,
         scale: String(interpolate(p, [0, 1], [0.7, 1])),
@@ -87,6 +117,7 @@ export const KineticCaptions: React.FC<{ words: StyledWord[]; top: number }> = (
   if (pageIndex === -1) return null;
   const page = pages[pageIndex];
   const pageEnd = page[page.length - 1].endMs + 250;
+  const rtl = page.some((w) => isArabic(w.text));
   const exit = interpolate(nowMs, [pageEnd - 120, pageEnd], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" });
 
   return (
@@ -104,6 +135,7 @@ export const KineticCaptions: React.FC<{ words: StyledWord[]; top: number }> = (
           alignContent: "flex-start",
           rowGap: 4 * scale,
           textAlign: "center",
+          direction: rtl ? "rtl" : "ltr",
           opacity: exit,
           textShadow: "0 6px 30px rgba(0,0,0,0.55)",
         }}

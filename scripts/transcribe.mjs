@@ -1,5 +1,5 @@
 // Word-level transcription with Whisper (runs in the cloud session, no API key).
-// Usage: npm run transcribe -- <input.mp4> <output.json> [--model=base.en]
+// Usage: npm run transcribe -- <input.mp4> <output.json> [--lang=ar] [--model=large-v3]
 // Output: Caption[] JSON (text, startMs, endMs) — Claude then adds a `role` to each word.
 import path from "node:path";
 import fs from "node:fs";
@@ -13,12 +13,15 @@ import {
 
 const [input, output, ...flags] = process.argv.slice(2);
 if (!input || !output) {
-  console.error("Usage: npm run transcribe -- <input> <output.json> [--model=base.en]");
+  console.error("Usage: npm run transcribe -- <input> <output.json> [--lang=ar] [--model=large-v3]");
   process.exit(1);
 }
 const opt = Object.fromEntries(flags.map((f) => f.replace(/^--/, "").split("=")));
-// Use "medium" (not .en) if you speak Arabic/French/Darija in the video.
-const model = opt.model ?? "base.en";
+// --lang: spoken language passed to Whisper ("en", "ar", "fr"...). Darija videos use --lang=ar.
+const lang = opt.lang ?? "en";
+// Non-English needs a multilingual model: large-v3 by default (use --model=medium if it is too slow/big).
+const model = opt.model ?? (lang === "en" ? "base.en" : "large-v3");
+console.log(`Transcribing with model=${model} language=${lang}`);
 
 const whisperDir = path.join(process.cwd(), ".whisper");
 await installWhisperCpp({ to: whisperDir, version: "1.5.5" });
@@ -34,6 +37,7 @@ const whisperCppOutput = await transcribe({
   whisperCppVersion: "1.5.5",
   inputPath: wav,
   tokenLevelTimestamps: true,
+  language: lang,
 });
 const { captions } = toCaptions({ whisperCppOutput });
 // Merge sub-word tokens and punctuation (no leading space) into the previous word.
