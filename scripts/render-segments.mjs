@@ -39,6 +39,8 @@ export const renderSegments = (input, segments, output, { crf = 16 } = {}) => {
       "-map", "0:v:0", "-map", "0:a:0",
       "-vf", `fps=${FPS},format=yuv420p`, "-frames:v", String(Math.round((b - a) * FPS)),
       "-c:v", "libx264", "-preset", "veryfast", "-crf", String(crf), "-threads", "4",
+      // 8 ms fades so tight cuts (retakes inside a sentence) never click
+      "-af", `afade=t=in:d=0.008,afade=t=out:st=${Math.max(0, b - a - 0.008).toFixed(4)}:d=0.008`,
       "-c:a", "pcm_s16le", "-ar", "48000", "-ac", "2",
       part,
     ]);

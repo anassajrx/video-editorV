@@ -1,118 +1,106 @@
 {
   "orientation": "vertical",
-  "durationMs": 115367,
+  "durationMs": 101067,
   "footage": {
     "src": "videos/ai-agent/raw/edit.mp4",
     "kind": "video"
   },
   "punchIns": [
     {
-      "atMs": 2733,
+      "atMs": 2400,
       "scale": 1.06
     },
     {
-      "atMs": 5133,
+      "atMs": 5700,
       "scale": 1.0
     },
     {
-      "atMs": 8633,
+      "atMs": 9367,
       "scale": 1.06
     },
     {
-      "atMs": 12600,
+      "atMs": 14700,
       "scale": 1.0
     },
     {
-      "atMs": 16267,
+      "atMs": 16300,
       "scale": 1.06
     },
     {
-      "atMs": 21600,
+      "atMs": 19133,
       "scale": 1.0
     },
     {
-      "atMs": 23200,
+      "atMs": 21333,
       "scale": 1.06
     },
     {
-      "atMs": 26233,
+      "atMs": 24267,
       "scale": 1.0
     },
     {
-      "atMs": 28633,
+      "atMs": 30500,
       "scale": 1.06
     },
     {
-      "atMs": 31567,
+      "atMs": 34000,
       "scale": 1.0
     },
     {
-      "atMs": 38000,
+      "atMs": 37933,
       "scale": 1.06
     },
     {
-      "atMs": 41500,
+      "atMs": 40533,
       "scale": 1.0
     },
     {
-      "atMs": 45433,
+      "atMs": 42367,
       "scale": 1.06
     },
     {
-      "atMs": 48033,
+      "atMs": 47200,
       "scale": 1.0
     },
     {
-      "atMs": 49867,
+      "atMs": 50833,
       "scale": 1.06
     },
     {
-      "atMs": 54933,
+      "atMs": 57800,
       "scale": 1.0
     },
     {
-      "atMs": 58567,
+      "atMs": 61433,
       "scale": 1.06
     },
     {
-      "atMs": 60133,
+      "atMs": 63167,
       "scale": 1.0
     },
     {
-      "atMs": 66033,
+      "atMs": 69500,
       "scale": 1.06
     },
     {
-      "atMs": 70767,
+      "atMs": 74600,
       "scale": 1.0
     },
     {
-      "atMs": 72500,
+      "atMs": 77333,
       "scale": 1.06
     },
     {
-      "atMs": 78833,
+      "atMs": 81733,
       "scale": 1.0
     },
     {
-      "atMs": 83933,
+      "atMs": 89300,
       "scale": 1.06
     },
     {
-      "atMs": 86667,
+      "atMs": 93167,
       "scale": 1.0
-    },
-    {
-      "atMs": 91067,
-      "scale": 1.06
-    },
-    {
-      "atMs": 98633,
-      "scale": 1.0
-    },
-    {
-      "atMs": 103900,
-      "scale": 1.06
     }
   ],
   "monoRanges": [],
@@ -120,1617 +108,1585 @@
     {
       "text": "\u0648\u0627\u0634",
       "startMs": 0,
-      "endMs": 192,
+      "endMs": 160,
       "role": "soft"
     },
     {
       "text": "\u0639\u0627\u0631\u0641",
-      "startMs": 192,
-      "endMs": 448,
+      "startMs": 160,
+      "endMs": 380,
       "role": "hero"
     },
     {
       "text": "\u0628\u0644\u064a",
-      "startMs": 448,
-      "endMs": 640,
+      "startMs": 380,
+      "endMs": 580,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 660,
-      "endMs": 907,
+      "startMs": 580,
+      "endMs": 694,
       "role": "soft"
     },
     {
       "text": "AI",
-      "startMs": 907,
-      "endMs": 1071,
+      "startMs": 694,
+      "endMs": 807,
       "role": "signal"
     },
     {
       "text": "\u062f\u0627\u0628\u0627",
-      "startMs": 1071,
-      "endMs": 1400,
+      "startMs": 807,
+      "endMs": 920,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u0627\u0628\u0642\u0627\u0634",
-      "startMs": 1420,
-      "endMs": 1862,
+      "startMs": 920,
+      "endMs": 1220,
       "role": "default"
     },
     {
       "text": "\u063a\u064a\u0631",
-      "startMs": 1862,
-      "endMs": 2084,
+      "startMs": 1220,
+      "endMs": 1380,
       "role": "soft"
     },
     {
       "text": "\u0643\u064a\u062c\u0627\u0648\u0628\u0643",
-      "startMs": 2084,
-      "endMs": 2600,
+      "startMs": 1380,
+      "endMs": 1680,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 2620,
-      "endMs": 3454,
+      "startMs": 1680,
+      "endMs": 1760,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0623\u0633\u0626\u0644\u0629",
-      "startMs": 3454,
-      "endMs": 5400,
+      "startMs": 1680,
+      "endMs": 2260,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0631\u0627\u0647",
-      "startMs": 5420,
-      "endMs": 5664,
+      "startMs": 2400,
+      "endMs": 2900,
       "role": "soft"
     },
     {
       "text": "\u0648\u0644\u0649",
-      "startMs": 5664,
-      "endMs": 5908,
+      "startMs": 2900,
+      "endMs": 3040,
       "role": "default"
     },
     {
       "text": "\u064a\u0642\u062f\u0631",
-      "startMs": 5908,
-      "endMs": 6233,
+      "startMs": 3040,
+      "endMs": 3300,
       "role": "default"
     },
     {
       "text": "\u064a\u0633\u062a\u0639\u0645\u0644",
-      "startMs": 6233,
-      "endMs": 6720,
+      "startMs": 3440,
+      "endMs": 3840,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0628\u064a\u0633\u064a",
-      "startMs": 6740,
-      "endMs": 7285,
+      "startMs": 3840,
+      "endMs": 4320,
       "role": "default"
     },
     {
       "text": "\u062f\u064a\u0627\u0644\u0643",
-      "startMs": 7285,
-      "endMs": 7740,
+      "startMs": 4320,
+      "endMs": 4720,
       "role": "soft"
     },
     {
       "text": "\u0648\u064a\u062e\u062f\u0645",
-      "startMs": 7740,
-      "endMs": 8195,
+      "startMs": 4720,
+      "endMs": 5175,
       "role": "default"
     },
     {
       "text": "\u0628\u0644\u0627\u0635\u062a\u0643",
-      "startMs": 8195,
-      "endMs": 8740,
+      "startMs": 5175,
+      "endMs": 5615,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u064a\u0639\u0646\u064a",
-      "startMs": 9060,
-      "endMs": 9540,
+      "startMs": 5700,
+      "endMs": 6040,
       "role": "soft"
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 9540,
-      "endMs": 10020,
+      "startMs": 6040,
+      "endMs": 6400,
       "role": "hero"
     },
     {
       "text": "\u062a\u0642\u0648\u0644",
-      "startMs": 10020,
-      "endMs": 10500,
+      "startMs": 6400,
+      "endMs": 6620,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0647",
-      "startMs": 10500,
-      "endMs": 10860,
+      "startMs": 6620,
+      "endMs": 6820,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0642\u0644\u0628",
-      "startMs": 10880,
-      "endMs": 11130,
+      "startMs": 6820,
+      "endMs": 7140,
       "role": "hero"
     },
     {
       "text": "\u0644\u064a\u0627",
-      "startMs": 11130,
-      "endMs": 11380,
+      "startMs": 7140,
+      "endMs": 7380,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 11400,
-      "endMs": 11655,
+      "startMs": 7380,
+      "endMs": 7500,
       "role": "soft"
     },
     {
       "text": "\u0623\u062d\u0633\u0646",
-      "startMs": 11655,
-      "endMs": 11995,
+      "startMs": 7500,
+      "endMs": 7900,
       "role": "hero"
     },
     {
       "text": "\u0641\u0644\u0627\u064a\u062a",
-      "startMs": 11995,
-      "endMs": 12420,
+      "startMs": 7900,
+      "endMs": 8280,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u062f\u064a\u0631",
-      "startMs": 12440,
-      "endMs": 13448,
+      "startMs": 8440,
+      "endMs": 8800,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0627",
-      "startMs": 13448,
-      "endMs": 14204,
+      "startMs": 8800,
+      "endMs": 8880,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0628\u0648\u0643\u064a\u0646\u063a",
-      "startMs": 14204,
-      "endMs": 16220,
+      "startMs": 8880,
+      "endMs": 9300,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0647\u0648",
-      "startMs": 16240,
-      "endMs": 16425,
+      "startMs": 9300,
+      "endMs": 9380,
       "role": "soft"
     },
     {
       "text": "\u0628\u0648\u062d\u062f\u0648",
-      "startMs": 16425,
-      "endMs": 16732,
+      "startMs": 9367,
+      "endMs": 9967,
       "role": "hero"
     },
     {
       "text": "\u0643\u064a\u0628\u062f\u0627",
-      "startMs": 16732,
-      "endMs": 17040,
+      "startMs": 9967,
+      "endMs": 10167,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u064a\u062d\u0644",
-      "startMs": 17060,
-      "endMs": 17375,
+      "startMs": 10167,
+      "endMs": 10487,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0648\u064a\u0628\u0633\u0627\u064a\u062a",
-      "startMs": 17375,
-      "endMs": 18320,
+      "startMs": 11347,
+      "endMs": 11747,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u062f\u064a\u0631",
-      "startMs": 18340,
-      "endMs": 18865,
+      "startMs": 11747,
+      "endMs": 12187,
       "role": "default"
     },
     {
       "text": "\u0643\u0644\u064a\u0643",
-      "startMs": 18865,
-      "endMs": 19285,
+      "startMs": 12187,
+      "endMs": 12507,
       "role": "signal"
     },
     {
       "text": "\u0628\u0627\u064a",
-      "startMs": 19285,
-      "endMs": 19600,
+      "startMs": 12507,
+      "endMs": 12767,
       "role": "soft"
     },
     {
       "text": "\u0643\u0644\u064a\u0643",
-      "startMs": 19600,
-      "endMs": 20020,
+      "startMs": 12767,
+      "endMs": 13187,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u0642\u0644\u0628",
-      "startMs": 20040,
-      "endMs": 20446,
+      "startMs": 13187,
+      "endMs": 13767,
       "role": "default"
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 20446,
-      "endMs": 20689,
+      "startMs": 13767,
+      "endMs": 13847,
       "role": "soft"
     },
     {
       "text": "\u0623\u0631\u062e\u0635",
-      "startMs": 20689,
-      "endMs": 21014,
+      "startMs": 13767,
+      "endMs": 14167,
       "role": "ember"
     },
     {
       "text": "\u0641\u0644\u0627\u064a\u062a",
-      "startMs": 21014,
-      "endMs": 21420,
+      "startMs": 14167,
+      "endMs": 14567,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u062f\u064a\u0631",
-      "startMs": 21440,
-      "endMs": 21846,
+      "startMs": 14900,
+      "endMs": 15220,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0628\u0648\u0643\u064a\u0646\u063a",
-      "startMs": 21846,
-      "endMs": 22494,
+      "startMs": 15220,
+      "endMs": 15620,
       "role": "hero"
     },
     {
       "text": "\u062d\u062a\u0649",
-      "startMs": 22494,
-      "endMs": 22738,
+      "startMs": 15620,
+      "endMs": 15860,
       "role": "soft"
     },
     {
       "text": "\u0647\u0648",
-      "startMs": 22738,
-      "endMs": 22900,
+      "startMs": 15860,
+      "endMs": 16000,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u0643\u0645\u0644",
-      "startMs": 22920,
-      "endMs": 23476,
+      "startMs": 16540,
+      "endMs": 16860,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u062a\u0627\u0633\u0643",
-      "startMs": 23476,
-      "endMs": 24144,
+      "startMs": 16860,
+      "endMs": 17440,
       "role": "hero"
     },
     {
       "text": "\u062f\u064a\u0627\u0644\u0648",
-      "startMs": 24144,
-      "endMs": 24700,
+      "startMs": 17440,
+      "endMs": 17795,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 24720,
-      "endMs": 25146,
+      "startMs": 17795,
+      "endMs": 18395,
       "role": "soft"
     },
     {
       "text": "\u0623\u0643\u0645\u0644",
-      "startMs": 25146,
-      "endMs": 25714,
+      "startMs": 18395,
+      "endMs": 18935,
       "role": "hero"
     },
     {
       "text": "\u0648\u062c\u0647",
-      "startMs": 25714,
-      "endMs": 26140,
+      "startMs": 18935,
+      "endMs": 19133,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u0627\u062f",
-      "startMs": 26160,
-      "endMs": 26380,
+      "startMs": 19133,
+      "endMs": 19473,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0646\u0648\u0639",
-      "startMs": 26380,
-      "endMs": 26747,
+      "startMs": 19473,
+      "endMs": 19633,
       "role": "hero"
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 26747,
-      "endMs": 27040,
+      "startMs": 19633,
+      "endMs": 19713,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 27060,
-      "endMs": 27228,
+      "startMs": 19713,
+      "endMs": 19893,
       "role": "soft"
     },
     {
       "text": "AI",
-      "startMs": 27228,
-      "endMs": 27340,
+      "startMs": 19893,
+      "endMs": 20033,
       "role": "signal"
     },
     {
       "text": "\u0633\u0645\u064a\u062a\u0648",
-      "startMs": 27340,
-      "endMs": 27620,
+      "startMs": 20033,
+      "endMs": 20373,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 27640,
-      "endMs": 27869,
+      "startMs": 20373,
+      "endMs": 20533,
       "role": "soft"
     },
     {
       "text": "AI Agent",
-      "startMs": 27869,
-      "endMs": 28480,
+      "startMs": 20733,
+      "endMs": 21233,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0627\u0644\u0641\u0631\u0642",
-      "startMs": 28500,
-      "endMs": 28937,
+      "startMs": 21493,
+      "endMs": 21753,
       "role": "hero"
     },
     {
       "text": "\u0628\u064a\u0646\u0648",
-      "startMs": 28937,
-      "endMs": 29229,
+      "startMs": 21753,
+      "endMs": 22073,
       "role": "soft"
     },
     {
       "text": "\u0648\u0628\u064a\u0646",
-      "startMs": 29229,
-      "endMs": 29520,
+      "startMs": 22073,
+      "endMs": 22353,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 29540,
-      "endMs": 29825,
+      "startMs": 22353,
+      "endMs": 22433,
       "role": "soft"
     },
     {
       "text": "AI",
-      "startMs": 29825,
-      "endMs": 30015,
+      "startMs": 22353,
+      "endMs": 22913,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0622\u062e\u0631\u064a\u0646",
-      "startMs": 30015,
-      "endMs": 30680,
+      "startMs": 22913,
+      "endMs": 23353,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 30700,
-      "endMs": 30990,
+      "startMs": 23528,
+      "endMs": 23748,
       "role": "soft"
     },
     {
       "text": "LLMs",
-      "startMs": 30990,
-      "endMs": 31377,
+      "startMs": 23748,
+      "endMs": 24267,
       "role": "signal"
     },
     {
       "text": "\u0628\u062d\u0627\u0644",
-      "startMs": 31377,
-      "endMs": 31763,
+      "startMs": 24267,
+      "endMs": 24907,
       "role": "soft"
     },
     {
       "text": "ChatGPT",
-      "startMs": 31763,
-      "endMs": 32440,
+      "startMs": 24907,
+      "endMs": 25347,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u0648",
-      "startMs": 32460,
-      "endMs": 32722,
+      "startMs": 25433,
+      "endMs": 25653,
       "role": "soft"
     },
     {
       "text": "\u0623\u0646",
-      "startMs": 32722,
-      "endMs": 32984,
+      "startMs": 25653,
+      "endMs": 25853,
       "role": "soft"
     },
     {
       "text": "ChatGPT",
-      "startMs": 32984,
-      "endMs": 33900,
+      "startMs": 26233,
+      "endMs": 26453,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 33920,
-      "endMs": 34235,
+      "startMs": 26453,
+      "endMs": 26833,
       "role": "default"
     },
     {
       "text": "\u062a\u0643\u062a\u0628",
-      "startMs": 34235,
-      "endMs": 34551,
+      "startMs": 26993,
+      "endMs": 27333,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0647",
-      "startMs": 34551,
-      "endMs": 34787,
+      "startMs": 27333,
+      "endMs": 27413,
       "role": "soft"
     },
     {
       "text": "\u0628\u0631\u0648\u0645\u0628\u062a",
-      "startMs": 34787,
-      "endMs": 35260,
+      "startMs": 27393,
+      "endMs": 27853,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u0639\u0637\u064a\u0643",
-      "startMs": 35280,
-      "endMs": 35750,
+      "startMs": 27853,
+      "endMs": 28078,
       "role": "default"
     },
     {
       "text": "\u0647\u0648",
-      "startMs": 35750,
-      "endMs": 35907,
+      "startMs": 28078,
+      "endMs": 28303,
       "role": "soft"
     },
     {
       "text": "\u0645\u062b\u0644\u0627",
-      "startMs": 35907,
-      "endMs": 36220,
+      "startMs": 28303,
+      "endMs": 28843,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0627\u062d\u062f",
-      "startMs": 36240,
-      "endMs": 36529,
+      "startMs": 28843,
+      "endMs": 29043,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0625\u0646\u0633\u062a\u0631\u0627\u0643\u0634\u0646\u0632",
-      "startMs": 36529,
-      "endMs": 37395,
+      "startMs": 29043,
+      "endMs": 29858,
       "role": "signal"
     },
     {
       "text": "\u0627\u0644\u0623\u0648\u0627\u0645\u0631",
-      "startMs": 37395,
-      "endMs": 37900,
+      "startMs": 29858,
+      "endMs": 30378,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 37950,
-      "endMs": 38232,
+      "startMs": 30378,
+      "endMs": 30514,
       "role": "soft"
     },
     {
       "text": "Agent",
-      "startMs": 38232,
-      "endMs": 38703,
+      "startMs": 30514,
+      "endMs": 31174,
       "role": "signal"
     },
     {
       "text": "\u0643\u064a\u0646\u0641\u0630",
-      "startMs": 38703,
-      "endMs": 39173,
+      "startMs": 31174,
+      "endMs": 31734,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u062f\u0648\u0643",
-      "startMs": 39193,
-      "endMs": 39433,
+      "startMs": 31734,
+      "endMs": 32014,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0625\u0646\u0633\u062a\u0631\u0627\u0643\u0634\u0646\u0632",
-      "startMs": 39433,
-      "endMs": 40153,
+      "startMs": 32014,
+      "endMs": 32734,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u0627\u0634\u064a",
-      "startMs": 40173,
-      "endMs": 40460,
+      "startMs": 32734,
+      "endMs": 33159,
       "role": "default"
     },
     {
       "text": "\u063a\u064a\u0631",
-      "startMs": 40460,
-      "endMs": 40675,
+      "startMs": 33159,
+      "endMs": 33584,
       "role": "soft"
     },
     {
       "text": "\u0643\u064a\u0643\u062a\u0628\u0647\u0645",
-      "startMs": 40675,
-      "endMs": 41178,
+      "startMs": 33584,
+      "endMs": 33764,
       "role": "hero"
     },
     {
       "text": "\u0644\u064a\u0643",
-      "startMs": 41178,
-      "endMs": 41393,
+      "startMs": 33764,
+      "endMs": 34000,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u064a\u0639\u0646\u064a",
-      "startMs": 41413,
-      "endMs": 41783,
+      "startMs": 34000,
+      "endMs": 34620,
       "role": "soft"
     },
     {
       "text": "\u0643\u062a\u0628\u062f\u0644",
-      "startMs": 41783,
-      "endMs": 42245,
+      "startMs": 34620,
+      "endMs": 35260,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0645\u0627\u064a\u0646\u062f\u0633\u064a\u062a",
-      "startMs": 42245,
-      "endMs": 43170,
+      "startMs": 35260,
+      "endMs": 35760,
       "role": "signal"
     },
     {
       "text": "\u062f\u064a\u0627\u0644\u0643",
-      "startMs": 43170,
-      "endMs": 43633,
+      "startMs": 35760,
+      "endMs": 36220,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u0646",
-      "startMs": 43653,
-      "endMs": 43893,
+      "startMs": 36220,
+      "endMs": 36560,
       "role": "soft"
     },
     {
       "text": "\u0634\u064a",
-      "startMs": 43893,
-      "endMs": 44133,
+      "startMs": 36560,
+      "endMs": 37120,
       "role": "soft"
     },
     {
       "text": "\u062d\u0627\u062c\u0629",
-      "startMs": 44133,
-      "endMs": 44613,
+      "startMs": 37120,
+      "endMs": 37400,
       "role": "default"
     },
     {
       "text": "\u0633\u0645\u064a\u062a\u0647\u0627",
-      "startMs": 44613,
-      "endMs": 45333,
+      "startMs": 37400,
+      "endMs": 37840,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0633\u0648\u0644\u0648",
-      "startMs": 45400,
-      "endMs": 45842,
+      "startMs": 37840,
+      "endMs": 37933,
       "role": "default"
     },
     {
       "text": "\u0643\u064a\u0641\u0627\u0634",
-      "startMs": 45842,
-      "endMs": 46285,
+      "startMs": 37933,
+      "endMs": 38668,
       "role": "hero"
     },
     {
       "text": "\u0646\u0642\u062f\u0631",
-      "startMs": 46285,
-      "endMs": 46639,
+      "startMs": 38668,
+      "endMs": 39248,
       "role": "soft"
     },
     {
       "text": "\u0646\u062f\u064a\u0631",
-      "startMs": 46639,
-      "endMs": 46993,
+      "startMs": 39248,
+      "endMs": 39668,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u0627\u062f",
-      "startMs": 47013,
-      "endMs": 47273,
+      "startMs": 39668,
+      "endMs": 40108,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0644\u0639\u0628\u0629",
-      "startMs": 47273,
-      "endMs": 47793,
+      "startMs": 40108,
+      "endMs": 40348,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0644\u0640",
-      "startMs": 47813,
-      "endMs": 48138,
+      "startMs": 40533,
+      "endMs": 40913,
       "role": "soft"
     },
     {
       "text": "\u062f\u064a\u0631",
-      "startMs": 48138,
-      "endMs": 48626,
+      "startMs": 40913,
+      "endMs": 41593,
       "role": "hero"
     },
     {
       "text": "\u0644\u064a\u0627",
-      "startMs": 48626,
-      "endMs": 49113,
+      "startMs": 41593,
+      "endMs": 41873,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u0627\u062f",
-      "startMs": 49133,
-      "endMs": 49360,
+      "startMs": 41873,
+      "endMs": 41953,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0644\u0639\u0628\u0629",
-      "startMs": 49360,
-      "endMs": 49813,
+      "startMs": 41873,
+      "endMs": 42233,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u062b\u0644\u0627",
-      "startMs": 49833,
-      "endMs": 50302,
+      "startMs": 42367,
+      "endMs": 43107,
       "role": "soft"
     },
     {
       "text": "\u0639\u0646\u062f\u0643",
-      "startMs": 50302,
-      "endMs": 50770,
+      "startMs": 43107,
+      "endMs": 43427,
       "role": "default"
     },
     {
       "text": "\u0634\u064a",
-      "startMs": 50770,
-      "endMs": 51004,
+      "startMs": 43427,
+      "endMs": 43507,
       "role": "soft"
     },
     {
       "text": "\u062e\u062f\u0645\u0629",
-      "startMs": 51004,
-      "endMs": 51473,
+      "startMs": 43507,
+      "endMs": 43867,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0641\u0640",
-      "startMs": 51493,
-      "endMs": 51659,
+      "startMs": 43867,
+      "endMs": 43947,
       "role": "soft"
     },
     {
       "text": "Excel",
-      "startMs": 51659,
-      "endMs": 52073,
+      "startMs": 43927,
+      "endMs": 44407,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 53053,
-      "endMs": 53458,
+      "startMs": 44407,
+      "endMs": 44647,
       "role": "default"
     },
     {
       "text": "\u062a\u062f\u064a\u0631",
-      "startMs": 53458,
-      "endMs": 53862,
+      "startMs": 44647,
+      "endMs": 46187,
       "role": "default"
     },
     {
       "text": "\u0643\u0648\u0628\u064a \u0628\u064a\u0633\u062a",
-      "startMs": 53862,
-      "endMs": 54773,
+      "startMs": 46187,
+      "endMs": 46587,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 54793,
-      "endMs": 55376,
+      "startMs": 46587,
+      "endMs": 47382,
       "role": "default"
     },
     {
       "text": "\u062a\u062f\u064a\u0631",
-      "startMs": 55376,
-      "endMs": 55959,
+      "startMs": 47382,
+      "endMs": 48410,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
-      "startMs": 55959,
-      "endMs": 56833,
+      "startMs": 48410,
+      "endMs": 49210,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 56853,
-      "endMs": 57036,
+      "startMs": 49210,
+      "endMs": 49290,
       "role": "soft"
     },
     {
       "text": "Excel",
-      "startMs": 57036,
-      "endMs": 57264,
+      "startMs": 49250,
+      "endMs": 49530,
       "role": "default"
     },
     {
       "text": "\u0643\u0627\u0645\u0644\u0629",
-      "startMs": 57264,
-      "endMs": 57493,
+      "startMs": 49530,
+      "endMs": 49890,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 57513,
-      "endMs": 57694,
+      "startMs": 49890,
+      "endMs": 49970,
       "role": "default"
     },
     {
       "text": "\u062a\u062f\u064a\u0631\u0647\u0627",
-      "startMs": 57694,
-      "endMs": 57966,
+      "startMs": 49890,
+      "endMs": 50190,
       "role": "default"
     },
     {
       "text": "\u064a\u062f\u0648\u064a\u0627",
-      "startMs": 57966,
-      "endMs": 58193,
+      "startMs": 50190,
+      "endMs": 50730,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 58213,
-      "endMs": 58629,
+      "startMs": 50833,
+      "endMs": 51193,
       "role": "soft"
     },
     {
       "text": "Agent",
-      "startMs": 58629,
-      "endMs": 59324,
+      "startMs": 51193,
+      "endMs": 51373,
       "role": "signal"
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 59324,
-      "endMs": 59879,
+      "startMs": 51373,
+      "endMs": 51633,
       "role": "default"
     },
     {
       "text": "\u062a\u0639\u0644\u0645\u0648",
-      "startMs": 59879,
-      "endMs": 60573,
+      "startMs": 51900,
+      "endMs": 52420,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u062f\u0627\u0643\u0634\u064a",
-      "startMs": 60640,
-      "endMs": 61040,
+      "startMs": 52820,
+      "endMs": 52980,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0644\u064a",
-      "startMs": 61040,
-      "endMs": 61360,
+      "startMs": 52980,
+      "endMs": 53180,
       "role": "soft"
     },
     {
       "text": "\u0643\u062a\u062f\u064a\u0631",
-      "startMs": 61360,
-      "endMs": 61760,
+      "startMs": 53180,
+      "endMs": 53580,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0648\u0648\u0631\u0643\u0641\u0644\u0648",
-      "startMs": 61833,
-      "endMs": 62433,
+      "startMs": 54085,
+      "endMs": 54305,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0628\u0631\u0648\u0633\u064a\u0633",
-      "startMs": 62453,
-      "endMs": 63205,
+      "startMs": 55125,
+      "endMs": 55585,
       "role": "hero"
     },
     {
       "text": "\u0627\u0644\u0644\u064a",
-      "startMs": 63205,
-      "endMs": 63581,
+      "startMs": 55585,
+      "endMs": 55705,
       "role": "soft"
     },
     {
       "text": "\u0643\u062a\u062e\u062f\u0645",
-      "startMs": 63581,
-      "endMs": 64051,
+      "startMs": 55705,
+      "endMs": 55965,
       "role": "default"
     },
     {
       "text": "\u0628\u064a\u0647",
-      "startMs": 64051,
-      "endMs": 64333,
+      "startMs": 55965,
+      "endMs": 56165,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u062f\u064a\u0631",
-      "startMs": 64353,
-      "endMs": 64665,
+      "startMs": 56165,
+      "endMs": 56655,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0643",
-      "startMs": 64665,
-      "endMs": 64852,
+      "startMs": 56655,
+      "endMs": 56815,
       "role": "soft"
     },
     {
       "text": "\u062f\u064a\u0643",
-      "startMs": 64852,
-      "endMs": 65039,
+      "startMs": 56815,
+      "endMs": 56935,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
-      "startMs": 65039,
-      "endMs": 65413,
+      "startMs": 56935,
+      "endMs": 57275,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0628\u0631\u0627\u0633\u0648",
-      "startMs": 65433,
-      "endMs": 65913,
+      "startMs": 57495,
+      "endMs": 57775,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0628\u0643\u0644\u064a\u0643",
-      "startMs": 67073,
-      "endMs": 67662,
+      "startMs": 57800,
+      "endMs": 58480,
       "role": "signal"
     },
     {
       "text": "\u0648\u062d\u062f\u0629",
-      "startMs": 67662,
-      "endMs": 68133,
+      "startMs": 58480,
+      "endMs": 58880,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0644\u0627",
-      "startMs": 68153,
-      "endMs": 68518,
+      "startMs": 58880,
+      "endMs": 59380,
       "role": "soft"
     },
     {
       "text": "\u063a\u064a\u0631",
-      "startMs": 68518,
-      "endMs": 68882,
+      "startMs": 59380,
+      "endMs": 59620,
       "role": "soft"
     },
     {
       "text": "\u0645\u0646",
-      "startMs": 68882,
-      "endMs": 69125,
+      "startMs": 59620,
+      "endMs": 59820,
       "role": "soft"
     },
     {
       "text": "\u0645\u064a\u0633\u0627\u062c",
-      "startMs": 69125,
-      "endMs": 69733,
+      "startMs": 59820,
+      "endMs": 60480,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0644\u0627",
-      "startMs": 69753,
-      "endMs": 70011,
+      "startMs": 60480,
+      "endMs": 60680,
       "role": "soft"
     },
     {
       "text": "\u063a\u064a\u0631",
-      "startMs": 70011,
-      "endMs": 70269,
+      "startMs": 60680,
+      "endMs": 60940,
       "role": "soft"
     },
     {
       "text": "\u0645\u0646",
-      "startMs": 70269,
-      "endMs": 70441,
+      "startMs": 61433,
+      "endMs": 61633,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u062a\u064a\u0644\u064a\u0641\u0648\u0646",
-      "startMs": 70441,
-      "endMs": 71214,
+      "startMs": 61633,
+      "endMs": 62053,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0643\u064a\u062e\u062f\u0645",
-      "startMs": 71594,
-      "endMs": 71945,
+      "startMs": 62193,
+      "endMs": 62533,
       "role": "default"
     },
     {
       "text": "\u0641\u0627\u0644\u0628\u064a\u0633\u064a",
-      "startMs": 71945,
-      "endMs": 72354,
+      "startMs": 62753,
+      "endMs": 63153,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u064a\u0642\u062f\u0631",
-      "startMs": 72553,
-      "endMs": 73122,
+      "startMs": 63175,
+      "endMs": 63655,
       "role": "default"
     },
     {
       "text": "\u062d\u062a\u0649",
-      "startMs": 73122,
-      "endMs": 73463,
+      "startMs": 63655,
+      "endMs": 64535,
       "role": "soft"
     },
     {
       "text": "\u064a\u0635\u064a\u0641\u0637",
-      "startMs": 73463,
-      "endMs": 74032,
+      "startMs": 64535,
+      "endMs": 64775,
       "role": "hero"
     },
     {
       "text": "\u0644\u064a\u0643",
-      "startMs": 74032,
-      "endMs": 74373,
+      "startMs": 64775,
+      "endMs": 65015,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0631\u064a\u0632\u0648\u0644\u0637\u0627\u062a",
-      "startMs": 74393,
-      "endMs": 75035,
+      "startMs": 65280,
+      "endMs": 65896,
       "role": "ember"
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 75035,
-      "endMs": 75292,
+      "startMs": 65896,
+      "endMs": 66142,
       "role": "soft"
     },
     {
       "text": "\u062f\u0627\u0643\u0634\u064a",
-      "startMs": 75292,
-      "endMs": 75613,
+      "startMs": 66142,
+      "endMs": 66450,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0644\u064a",
-      "startMs": 75633,
-      "endMs": 75827,
+      "startMs": 66450,
+      "endMs": 66604,
       "role": "soft"
     },
     {
       "text": "\u062f\u0627\u0631",
-      "startMs": 75827,
-      "endMs": 75973,
+      "startMs": 66604,
+      "endMs": 66720,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u064a\u0639\u0646\u064a",
-      "startMs": 75993,
-      "endMs": 76309,
+      "startMs": 66722,
+      "endMs": 67022,
       "role": "soft"
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 76309,
-      "endMs": 76624,
+      "startMs": 67022,
+      "endMs": 67402,
       "role": "default"
     },
     {
       "text": "\u062a\u0628\u0642\u0649",
-      "startMs": 76624,
-      "endMs": 76940,
+      "startMs": 67402,
+      "endMs": 67742,
       "role": "default"
     },
     {
       "text": "\u0643\u062a\u0634\u0627\u0637\u064a",
-      "startMs": 76940,
-      "endMs": 77413,
+      "startMs": 67742,
+      "endMs": 68182,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u0639\u0627\u0647",
-      "startMs": 77433,
-      "endMs": 77748,
+      "startMs": 68182,
+      "endMs": 68382,
       "role": "soft"
     },
     {
       "text": "\u0645\u0646",
-      "startMs": 77748,
-      "endMs": 77905,
+      "startMs": 68382,
+      "endMs": 68482,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u062a\u064a\u0644\u064a\u0641\u0648\u0646",
-      "startMs": 77905,
-      "endMs": 78613,
+      "startMs": 68827,
+      "endMs": 69327,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0647\u0648",
-      "startMs": 78633,
-      "endMs": 78866,
+      "startMs": 69503,
+      "endMs": 69743,
       "role": "soft"
     },
     {
       "text": "\u0643\u064a\u062e\u062f\u0645",
-      "startMs": 78866,
-      "endMs": 79253,
+      "startMs": 69743,
+      "endMs": 70143,
       "role": "hero"
     },
     {
       "text": "\u0641\u0627\u0644\u0628\u0631\u0627\u0645\u062c",
-      "startMs": 79253,
-      "endMs": 79873,
+      "startMs": 70143,
+      "endMs": 70783,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 79893,
-      "endMs": 80154,
+      "startMs": 70783,
+      "endMs": 70930,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0628\u064a\u0633\u064a",
-      "startMs": 80154,
-      "endMs": 80546,
+      "startMs": 70930,
+      "endMs": 71150,
       "role": "signal"
     },
     {
       "text": "\u062f\u064a\u0627\u0644\u0643",
-      "startMs": 80546,
-      "endMs": 80873,
+      "startMs": 71150,
+      "endMs": 71333,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0644\u0627",
-      "startMs": 80893,
-      "endMs": 81100,
+      "startMs": 71333,
+      "endMs": 71524,
       "role": "soft"
     },
     {
       "text": "\u0641\u0627\u0644\u0643\u0644\u0627\u0648\u062f",
-      "startMs": 81100,
-      "endMs": 81653,
+      "startMs": 71524,
+      "endMs": 72033,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0644\u0627",
-      "startMs": 81673,
-      "endMs": 81823,
+      "startMs": 72033,
+      "endMs": 72250,
       "role": "soft"
     },
     {
       "text": "\u062d\u062a\u0649",
-      "startMs": 81823,
-      "endMs": 81973,
+      "startMs": 72250,
+      "endMs": 72467,
       "role": "soft"
     },
     {
       "text": "\u0641\u0627\u0644\u0628\u064a\u0633\u064a",
-      "startMs": 81973,
-      "endMs": 82323,
+      "startMs": 72467,
+      "endMs": 72972,
       "role": "hero"
     },
     {
       "text": "\u062f\u064a\u0627\u0644\u0643",
-      "startMs": 82323,
-      "endMs": 82573,
+      "startMs": 72972,
+      "endMs": 73333,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0625\u0644\u0627",
-      "startMs": 82593,
-      "endMs": 82857,
+      "startMs": 73333,
+      "endMs": 73693,
       "role": "soft"
     },
     {
       "text": "\u0643\u0627\u0646",
-      "startMs": 82857,
-      "endMs": 83121,
+      "startMs": 73693,
+      "endMs": 74053,
       "role": "soft"
     },
     {
       "text": "\u0623\u0648\u0628\u0646",
-      "startMs": 83121,
-      "endMs": 83473,
+      "startMs": 74053,
+      "endMs": 74533,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0643\u064a\u062e\u062f\u0645",
-      "startMs": 83493,
-      "endMs": 84243,
+      "startMs": 74600,
+      "endMs": 75170,
       "role": "default"
     },
     {
       "text": "\u0628\u0648\u062d\u062f\u0648",
-      "startMs": 84243,
-      "endMs": 84993,
+      "startMs": 75170,
+      "endMs": 75740,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0643\u064a\u0635\u064a\u0641\u0637",
-      "startMs": 85013,
-      "endMs": 85580,
+      "startMs": 75740,
+      "endMs": 76322,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0643",
-      "startMs": 85580,
-      "endMs": 85824,
+      "startMs": 76322,
+      "endMs": 76572,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0631\u064a\u0632\u0648\u0644\u0637\u0627",
-      "startMs": 85824,
-      "endMs": 86553,
+      "startMs": 76572,
+      "endMs": 77320,
       "role": "ember",
       "pageBreakAfter": true
     },
     {
       "text": "\u0623\u064a",
-      "startMs": 86670,
-      "endMs": 86808,
+      "startMs": 77353,
+      "endMs": 77524,
       "role": "soft"
     },
     {
       "text": "\u062d\u0627\u062c\u0629",
-      "startMs": 86808,
-      "endMs": 87085,
+      "startMs": 77524,
+      "endMs": 77865,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u0644\u064a",
-      "startMs": 87085,
-      "endMs": 87361,
+      "startMs": 77865,
+      "endMs": 78207,
       "role": "soft"
     },
     {
       "text": "\u0628\u063a\u064a\u062a\u064a",
-      "startMs": 87361,
-      "endMs": 87707,
+      "startMs": 78207,
+      "endMs": 78633,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0642\u062f\u0631",
-      "startMs": 87727,
-      "endMs": 88136,
+      "startMs": 78633,
+      "endMs": 78939,
       "role": "default"
     },
     {
       "text": "\u062a\u0632\u064a\u062f",
-      "startMs": 88136,
-      "endMs": 88546,
+      "startMs": 78939,
+      "endMs": 79245,
       "role": "default"
     },
     {
       "text": "\u062a\u0634\u0627\u0637\u064a",
-      "startMs": 88546,
-      "endMs": 89058,
+      "startMs": 79245,
+      "endMs": 79627,
       "role": "hero"
     },
     {
       "text": "\u0645\u0639\u0627\u0647",
-      "startMs": 89058,
-      "endMs": 89467,
+      "startMs": 79627,
+      "endMs": 79933,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0632\u064a\u062f\u0648",
-      "startMs": 89487,
-      "endMs": 89762,
+      "startMs": 79933,
+      "endMs": 80246,
       "role": "default"
     },
     {
       "text": "\u062d\u062a\u0649",
-      "startMs": 89762,
-      "endMs": 89927,
+      "startMs": 80246,
+      "endMs": 80433,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0648\u0635\u0648\u0644",
-      "startMs": 89947,
-      "endMs": 90267,
+      "startMs": 80433,
+      "endMs": 80850,
       "role": "default"
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 90267,
-      "endMs": 90480,
+      "startMs": 80850,
+      "endMs": 81128,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0634\u0627\u062a\u0628\u0648\u062a",
-      "startMs": 90480,
-      "endMs": 90907,
+      "startMs": 81128,
+      "endMs": 81683,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u062a\u0634\u0627\u0637\u064a",
-      "startMs": 90927,
-      "endMs": 91367,
+      "startMs": 81733,
+      "endMs": 82353,
       "role": "hero"
     },
     {
       "text": "\u0645\u0639\u0627\u0647",
-      "startMs": 91367,
-      "endMs": 91660,
+      "startMs": 82353,
+      "endMs": 82533,
       "role": "soft"
     },
     {
       "text": "\u0648\u062a\u0642\u0648\u0644",
-      "startMs": 91660,
-      "endMs": 92027,
+      "startMs": 82533,
+      "endMs": 82973,
       "role": "default"
     },
     {
       "text": "\u0644\u064a\u0647",
-      "startMs": 92027,
-      "endMs": 92247,
+      "startMs": 82973,
+      "endMs": 83053,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0645\u062b\u0644\u0627",
-      "startMs": 92267,
-      "endMs": 92685,
+      "startMs": 82973,
+      "endMs": 83433,
       "role": "soft"
     },
     {
       "text": "\u0647\u0627\u062a",
-      "startMs": 92685,
-      "endMs": 92999,
+      "startMs": 83433,
+      "endMs": 84173,
       "role": "default"
     },
     {
       "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
-      "startMs": 92999,
-      "endMs": 93627,
+      "startMs": 84173,
+      "endMs": 84373,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0627\u0644\u0644\u064a",
-      "startMs": 93647,
-      "endMs": 93917,
+      "startMs": 84373,
+      "endMs": 84513,
       "role": "soft"
     },
     {
       "text": "\u062f\u0631\u062a\u064a",
-      "startMs": 93917,
-      "endMs": 94187,
+      "startMs": 84513,
+      "endMs": 84993,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0631\u064a\u0646\u064a",
-      "startMs": 94207,
-      "endMs": 94716,
+      "startMs": 85248,
+      "endMs": 85648,
       "role": "default"
     },
     {
       "text": "\u0628\u0627\u0644\u0636\u0628\u0637",
-      "startMs": 94716,
-      "endMs": 95327,
+      "startMs": 85648,
+      "endMs": 86208,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0643\u064a\u0641\u0627\u0634",
-      "startMs": 95347,
-      "endMs": 95701,
+      "startMs": 86208,
+      "endMs": 86468,
       "role": "hero"
     },
     {
       "text": "\u062f\u0631\u062a\u064a",
-      "startMs": 95701,
-      "endMs": 95984,
+      "startMs": 86468,
+      "endMs": 86628,
       "role": "default"
     },
     {
       "text": "\u0647\u0627\u062f\u064a",
-      "startMs": 95984,
-      "endMs": 96267,
+      "startMs": 86708,
+      "endMs": 87048,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0648\u0643\u064a\u0641\u0627\u0634",
-      "startMs": 96290,
-      "endMs": 96599,
+      "startMs": 87148,
+      "endMs": 87228,
       "role": "hero"
     },
     {
       "text": "\u062f\u0631\u062a\u064a",
-      "startMs": 96599,
-      "endMs": 96804,
+      "startMs": 87228,
+      "endMs": 87408,
       "role": "default"
     },
     {
       "text": "\u0647\u0627\u062f\u064a",
-      "startMs": 96804,
-      "endMs": 97010,
+      "startMs": 87488,
+      "endMs": 87768,
       "role": "soft",
       "pageBreakAfter": true
     },
     {
       "text": "\u0647\u0627\u062f",
-      "startMs": 97650,
-      "endMs": 97850,
+      "startMs": 88388,
+      "endMs": 88568,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
-      "startMs": 97850,
-      "endMs": 98250,
+      "startMs": 88568,
+      "endMs": 88948,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0625\u0644\u0627",
-      "startMs": 99296,
-      "endMs": 100061,
+      "startMs": 88948,
+      "endMs": 89148,
       "role": "soft"
     },
     {
       "text": "\u0628\u063a\u064a\u062a\u064a",
-      "startMs": 100061,
-      "endMs": 101336,
+      "startMs": 90120,
+      "endMs": 90600,
       "role": "default",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0639\u0631\u0641",
-      "startMs": 101356,
-      "endMs": 101785,
+      "startMs": 90850,
+      "endMs": 91550,
       "role": "default"
     },
     {
       "text": "\u062f\u064a\u0645\u0627",
-      "startMs": 101785,
-      "endMs": 102213,
+      "startMs": 91550,
+      "endMs": 91950,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u062c\u062f\u064a\u062f",
-      "startMs": 102213,
-      "endMs": 102856,
+      "startMs": 91950,
+      "endMs": 92210,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 102876,
-      "endMs": 103040,
+      "startMs": 92210,
+      "endMs": 92550,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0640",
-      "startMs": 103040,
-      "endMs": 103204,
+      "startMs": 92550,
+      "endMs": 92630,
       "role": "soft"
     },
     {
       "text": "AI Agents",
-      "startMs": 103204,
-      "endMs": 103696,
+      "startMs": 92590,
+      "endMs": 93050,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u062a\u0628\u0639\u0646\u064a",
-      "startMs": 103716,
-      "endMs": 104337,
+      "startMs": 93170,
+      "endMs": 93830,
       "role": "hero",
-      "pageBreakAfter": true
-    },
-    {
-      "text": "\u0648\u063a\u0627\u062f\u064a",
-      "startMs": 104357,
-      "endMs": 105104,
-      "role": "soft"
-    },
-    {
-      "text": "\u064a\u0643\u0648\u0646\u0648",
-      "startMs": 105104,
-      "endMs": 105850,
-      "role": "default"
-    },
-    {
-      "text": "\u0645\u0642\u0627\u0637\u0639",
-      "startMs": 105850,
-      "endMs": 106597,
-      "role": "hero",
-      "pageBreakAfter": true
-    },
-    {
-      "text": "\u0639\u0644\u0649",
-      "startMs": 106617,
-      "endMs": 106885,
-      "role": "soft"
-    },
-    {
-      "text": "\u0627\u0644\u0640",
-      "startMs": 106885,
-      "endMs": 107153,
-      "role": "soft"
-    },
-    {
-      "text": "AI Agents",
-      "startMs": 107153,
-      "endMs": 107957,
-      "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u063a\u0627\u062f\u064a",
-      "startMs": 107977,
-      "endMs": 108512,
+      "startMs": 93850,
+      "endMs": 94221,
       "role": "soft"
     },
     {
       "text": "\u062a\u0643\u0648\u0646",
-      "startMs": 108512,
-      "endMs": 109048,
+      "startMs": 94221,
+      "endMs": 94592,
       "role": "default"
     },
     {
-      "text": "\u0633\u0644\u0633\u0644\u0629",
-      "startMs": 109048,
-      "endMs": 109717,
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 94592,
+      "endMs": 94963,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0633\u064a\u0631\u064a",
+      "startMs": 94963,
+      "endMs": 95520,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 109737,
-      "endMs": 110040,
+      "startMs": 95520,
+      "endMs": 95846,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0641\u064a\u062f\u064a\u0648\u0647\u0627\u062a",
-      "startMs": 110040,
-      "endMs": 110797,
+      "startMs": 95846,
+      "endMs": 96660,
       "role": "hero",
       "pageBreakAfter": true
     },
     {
       "text": "\u0639\u0644\u0649",
-      "startMs": 110817,
-      "endMs": 111023,
+      "startMs": 96660,
+      "endMs": 97007,
       "role": "soft"
     },
     {
       "text": "\u0627\u0644\u0623\u062f\u0648\u0627\u062a",
-      "startMs": 111023,
-      "endMs": 111503,
-      "role": "hero"
+      "startMs": 97007,
+      "endMs": 97816,
+      "role": "default"
     },
     {
-      "text": "\u062f\u064a\u0627\u0644",
-      "startMs": 111503,
-      "endMs": 111777,
-      "role": "soft",
+      "text": "\u0627\u0644\u0623\u0642\u0648\u0649",
+      "startMs": 97816,
+      "endMs": 98510,
+      "role": "hero",
       "pageBreakAfter": true
     },
     {
-      "text": "\u0627\u0644\u0640",
-      "startMs": 111797,
-      "endMs": 112537,
+      "text": "\u0641\u0627\u0644\u0640",
+      "startMs": 99190,
+      "endMs": 99602,
       "role": "soft"
     },
     {
       "text": "AI Agents",
-      "startMs": 112537,
-      "endMs": 114757,
+      "startMs": 99602,
+      "endMs": 100530,
       "role": "signal",
       "pageBreakAfter": true
     },
     {
       "text": "\u0628\u0627\u064a",
-      "startMs": 114777,
-      "endMs": 115137,
+      "startMs": 100670,
+      "endMs": 101067,
       "role": "hero",
       "pageBreakAfter": true
     }
   ],
   "overlays": [],
   "faceZone": {
-    "top": 0.111,
-    "bottom": 0.655
+    "top": 0.121,
+    "bottom": 0.642
   }
 }

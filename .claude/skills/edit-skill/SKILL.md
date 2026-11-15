@@ -101,3 +101,4 @@ For each page of ≤5 words:
 ## Learned rules
 <!-- Add the user's taste rules here as they come up, one line each, with the date. -->
 - 2026-11-14: NEVER put captions or anything else over or above my face. Everything goes below the chin. (Enforced in code + check_face.py.)
+- 2026-11-15: ALL retakes must be removed. Whole-file Whisper merges repeated sentences into one, so never look for retakes in a whole-file transcript: transcribe every silence-cut segment (and every phrase between micro-pauses) on its own, list each line, keep only the last complete take, then re-transcribe the final cut to confirm every line appears once. Also cut the short no-word segments (breaths, mouth noise, "euh"; Whisper hallucinates "اشتركوا في القناة"/"شكرا" on them). Time captions from per-phrase word timestamps, not whole-file ones.
