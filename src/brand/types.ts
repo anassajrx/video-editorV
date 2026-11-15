@@ -1,4 +1,5 @@
 import type { Accent } from "./theme";
+import type { IconName } from "../components/Icons";
 
 /**
  * Caption word roles — this is what gives the "mixed typography" look.
@@ -71,6 +72,14 @@ export type Overlay =
       y?: number;
     })
   | (Timed & {
+      type: "icon";
+      icon: IconName; // see src/components/Icons.tsx
+      label?: string; // short mono label under the icon (Latin)
+      accent?: Accent;
+      x?: number; // 0..1 centre
+      y?: number;
+    })
+  | (Timed & {
       type: "image";
       src: string; // screenshot / tweet / b-roll still in public/
       y?: number;
@@ -92,6 +101,6 @@ export type EditSpec = {
   /** Protected face area (0..1 of frame height). Written by scripts/face_zone.py. NOTHING may be drawn inside or above it. */
   faceZone?: { top: number; bottom: number };
   overlays: Overlay[];
-  music?: { src: string; volume: number };
+  music?: { src: string; volume: number; fadeInMs?: number; fadeOutMs?: number };
   sfx?: { src: string; atMs: number; volume?: number }[];
 };

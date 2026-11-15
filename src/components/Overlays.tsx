@@ -11,6 +11,7 @@ import {
 import { colors, fonts, glow, type Accent } from "../brand/theme";
 import type { Overlay } from "../brand/types";
 import { clampTop } from "../brand/layout";
+import { LineIcon } from "./Icons";
 
 // All overlays are rendered inside a <Sequence>, so frame 0 = overlay start.
 
@@ -206,6 +207,76 @@ const ImageCard: React.FC<Extract<Overlay, { type: "image" }> & { dur: number }>
   );
 };
 
+// Small pop-up: glass circle + glowing line icon + optional mono label. Springs in with a tilt, floats gently.
+const IconPop: React.FC<Extract<Overlay, { type: "icon" }> & { dur: number }> = (o) => {
+  const { p, inP, frame } = usePop(o.dur);
+  const hex = accentHex(o.accent);
+  const float = Math.sin(frame / 14) * 5;
+  const ring = interpolate(frame, [0, 18], [0, 1], { extrapolateRight: "clamp" });
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: `${(o.x ?? 0.5) * 100}%`,
+        top: `${o.y! * 100}%`,
+        translate: `-50% ${float}px`,
+        opacity: p,
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        gap: 14,
+      }}
+    >
+      <div style={{ position: "relative", scale: String(interpolate(inP, [0, 1], [0.4, 1])), rotate: `${interpolate(inP, [0, 1], [-14, 0])}deg` }}>
+        {/* expanding ring on entry */}
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            borderRadius: "50%",
+            border: `2px solid ${hex}`,
+            scale: String(1 + ring * 0.5),
+            opacity: 1 - ring,
+          }}
+        />
+        <div
+          style={{
+            width: 150,
+            height: 150,
+            borderRadius: "50%",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            background: `radial-gradient(circle at 35% 30%, ${colors.ink2}f5, ${colors.ink}f5)`,
+            border: `2px solid ${hex}`,
+            boxShadow: `0 0 26px ${hex}77, 0 0 70px ${hex}2e, inset 0 0 30px ${hex}22`,
+          }}
+        >
+          <LineIcon name={o.icon} size={78} color={hex} glowCss={`drop-shadow(0 0 8px ${hex}aa)`} />
+        </div>
+      </div>
+      {o.label ? (
+        <div
+          style={{
+            fontFamily: fonts.mono,
+            fontWeight: 600,
+            fontSize: 30,
+            color: colors.text,
+            letterSpacing: 1,
+            padding: "6px 18px",
+            borderRadius: 999,
+            background: `${colors.ink}cc`,
+            border: `1px solid ${colors.line}`,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {o.label}
+        </div>
+      ) : null}
+    </div>
+  );
+};
+
 export const OverlayLayer: React.FC<{ overlay: Overlay; durationInFrames: number; minTop: number }> = ({ overlay: raw, durationInFrames, minTop }) => {
   const dur = durationInFrames;
   // y is the TOP edge; it can never go above minTop (below the face + caption band).
@@ -218,6 +289,7 @@ export const OverlayLayer: React.FC<{ overlay: Overlay; durationInFrames: number
       {overlay.type === "terminal" && <Terminal {...overlay} dur={dur} />}
       {overlay.type === "stat" && <Stat {...overlay} dur={dur} />}
       {overlay.type === "image" && <ImageCard {...overlay} dur={dur} />}
+      {overlay.type === "icon" && <IconPop {...overlay} dur={dur} />}
     </AbsoluteFill>
   );
 };
