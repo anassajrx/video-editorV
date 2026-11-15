@@ -9,7 +9,11 @@
   },
   "private": true,
   "dependencies": {
+    "@remotion/captions": "4.0.543",
     "@remotion/cli": "4.0.543",
+    "@remotion/fonts": "4.0.543",
+    "@remotion/install-whisper-cpp": "4.0.543",
+    "@remotion/media": "4.0.543",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.543"
@@ -23,9 +27,12 @@
     "typescript": "5.9.3"
   },
   "scripts": {
-    "dev": "remotion studio",
-    "build": "remotion bundle",
-    "upgrade": "remotion upgrade",
+    "studio": "remotion studio",
+    "still": "remotion still",
+    "draft": "remotion render --scale=0.45 --crf=28 --concurrency=75%",
+    "final": "remotion render --crf=18 --concurrency=75% --audio-codec=aac",
+    "transcribe": "node scripts/transcribe.mjs",
+    "cut": "node scripts/cut-silences.mjs",
     "lint": "eslint src && tsc"
   },
   "allowScripts": {

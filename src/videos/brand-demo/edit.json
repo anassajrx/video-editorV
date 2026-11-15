@@ -1,0 +1,224 @@
+{
+  "orientation": "vertical",
+  "durationMs": 12600,
+  "footage": {
+    "src": "brand/face-reference.png",
+    "kind": "image"
+  },
+  "punchIns": [
+    {
+      "atMs": 2400,
+      "scale": 1.08
+    },
+    {
+      "atMs": 4800,
+      "scale": 1.0
+    },
+    {
+      "atMs": 8200,
+      "scale": 1.1
+    },
+    {
+      "atMs": 10900,
+      "scale": 1.0
+    }
+  ],
+  "monoRanges": [
+    {
+      "startMs": 2400,
+      "endMs": 4600
+    }
+  ],
+  "captions": [
+    {
+      "text": "I",
+      "startMs": 200,
+      "endMs": 400,
+      "role": "soft"
+    },
+    {
+      "text": "was",
+      "startMs": 400,
+      "endMs": 600,
+      "role": "soft"
+    },
+    {
+      "text": "stuck",
+      "startMs": 600,
+      "endMs": 1000,
+      "role": "hero"
+    },
+    {
+      "text": "debugging",
+      "startMs": 1000,
+      "endMs": 1600,
+      "role": "signal"
+    },
+    {
+      "text": "for",
+      "startMs": 1600,
+      "endMs": 1800,
+      "role": "soft"
+    },
+    {
+      "text": "weeks",
+      "startMs": 1800,
+      "endMs": 2300,
+      "role": "serif",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "I",
+      "startMs": 2400,
+      "endMs": 2600,
+      "role": "soft"
+    },
+    {
+      "text": "didn't",
+      "startMs": 2600,
+      "endMs": 2900
+    },
+    {
+      "text": "think",
+      "startMs": 2900,
+      "endMs": 3200,
+      "role": "serif"
+    },
+    {
+      "text": "I was",
+      "startMs": 3200,
+      "endMs": 3600,
+      "role": "soft"
+    },
+    {
+      "text": "good enough",
+      "startMs": 3600,
+      "endMs": 4500,
+      "role": "error",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "so",
+      "startMs": 4800,
+      "endMs": 5000,
+      "role": "soft"
+    },
+    {
+      "text": "I",
+      "startMs": 5000,
+      "endMs": 5200,
+      "role": "soft"
+    },
+    {
+      "text": "shipped",
+      "startMs": 5200,
+      "endMs": 5700,
+      "role": "signal"
+    },
+    {
+      "text": "it anyway",
+      "startMs": 5700,
+      "endMs": 7800,
+      "role": "serif",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "now",
+      "startMs": 8200,
+      "endMs": 8400,
+      "role": "soft"
+    },
+    {
+      "text": "it",
+      "startMs": 8400,
+      "endMs": 8600,
+      "role": "soft"
+    },
+    {
+      "text": "makes",
+      "startMs": 8600,
+      "endMs": 8900
+    },
+    {
+      "text": "$2,000",
+      "startMs": 8900,
+      "endMs": 9500,
+      "role": "ember"
+    },
+    {
+      "text": "a month",
+      "startMs": 9500,
+      "endMs": 10600,
+      "role": "serif",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "here's",
+      "startMs": 10900,
+      "endMs": 11300
+    },
+    {
+      "text": "how",
+      "startMs": 11300,
+      "endMs": 11700,
+      "role": "serif"
+    },
+    {
+      "text": "npm run ship",
+      "startMs": 11700,
+      "endMs": 12500,
+      "role": "mono"
+    }
+  ],
+  "overlays": [
+    {
+      "type": "profile",
+      "startMs": 300,
+      "endMs": 2300,
+      "name": "You",
+      "avatar": "brand/avatar.png",
+      "lines": [
+        "Software engineer",
+        "Builds in public"
+      ]
+    },
+    {
+      "type": "terminal",
+      "startMs": 4800,
+      "endMs": 8000,
+      "title": "~/side-project",
+      "lines": [
+        "$ git push origin main",
+        "\u2713 build passed in 41s",
+        "\u2713 deployed to production"
+      ]
+    },
+    {
+      "type": "card",
+      "startMs": 8200,
+      "endMs": 10700,
+      "tag": "// shipped",
+      "title": "SaaS v1.0",
+      "subtitle": "live & paying",
+      "accent": "ember"
+    },
+    {
+      "type": "timeline",
+      "startMs": 10900,
+      "endMs": 12600,
+      "steps": [
+        "stuck",
+        "shipping",
+        "$2k/mo"
+      ],
+      "fromIndex": 0,
+      "toIndex": 2,
+      "moveAtMs": 11200,
+      "avatar": "brand/avatar.png"
+    }
+  ],
+  "faceZone": {
+    "top": 0.065,
+    "bottom": 0.644
+  }
+}

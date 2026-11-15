@@ -1,0 +1,30 @@
+{
+  "name": "YOUR NAME",
+  "handle": "@yourhandle",
+  "role": "Software Engineer",
+  "tagline": "Shipping code. Explaining it simply.",
+  "voice": ["clear", "confident", "builder energy", "no hype, show the proof"],
+  "colors": {
+    "ink":        { "hex": "#07090F", "use": "Deepest background, letterbox, card base" },
+    "ink2":       { "hex": "#0E1422", "use": "Raised surfaces, card fill" },
+    "line":       { "hex": "#22304A", "use": "Hairlines, timeline track, borders at rest" },
+    "text":       { "hex": "#F2F5FA", "use": "Primary caption text" },
+    "muted":      { "hex": "#8A96AB", "use": "Secondary words, labels" },
+    "signal":     { "hex": "#38E1FF", "use": "HERO ACCENT. Glows, key words, cursor, active states" },
+    "signalDeep": { "hex": "#0A7FA8", "use": "Glow falloff, gradients behind signal" },
+    "ember":      { "hex": "#FFB547", "use": "SECOND ACCENT. Money, results, numbers, 'premium' cards" },
+    "error":      { "hex": "#FF5C7A", "use": "Doubt / failure / bug moments only" },
+    "success":    { "hex": "#3DF5A6", "use": "Passed / shipped / it works moments only" }
+  },
+  "ratios": "70% ink/footage, 20% text white, 8% signal cyan, 2% ember. Never use ember and signal on the same word.",
+  "fonts": {
+    "display": { "family": "Inter Tight", "weights": [500, 700, 800], "use": "Hero caption words, card titles" },
+    "serif":   { "family": "Instrument Serif", "style": "italic", "use": "Emotional / storytelling words — the human side" },
+    "mono":    { "family": "JetBrains Mono", "weights": [400, 600], "use": "Labels, tags, numbers in UI, terminal cards — the engineer side" }
+  },
+  "logo": {
+    "mark": "brand/logo/mark.svg",
+    "wordmark": "brand/logo/wordmark.svg",
+    "concept": "A terminal prompt chevron with a blinking cursor: the moment before you ship."
+  }
+}
