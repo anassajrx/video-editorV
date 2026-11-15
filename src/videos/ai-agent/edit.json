@@ -1,0 +1,1736 @@
+{
+  "orientation": "vertical",
+  "durationMs": 115367,
+  "footage": {
+    "src": "videos/ai-agent/raw/edit.mp4",
+    "kind": "video"
+  },
+  "punchIns": [
+    {
+      "atMs": 2733,
+      "scale": 1.06
+    },
+    {
+      "atMs": 5133,
+      "scale": 1.0
+    },
+    {
+      "atMs": 8633,
+      "scale": 1.06
+    },
+    {
+      "atMs": 12600,
+      "scale": 1.0
+    },
+    {
+      "atMs": 16267,
+      "scale": 1.06
+    },
+    {
+      "atMs": 21600,
+      "scale": 1.0
+    },
+    {
+      "atMs": 23200,
+      "scale": 1.06
+    },
+    {
+      "atMs": 26233,
+      "scale": 1.0
+    },
+    {
+      "atMs": 28633,
+      "scale": 1.06
+    },
+    {
+      "atMs": 31567,
+      "scale": 1.0
+    },
+    {
+      "atMs": 38000,
+      "scale": 1.06
+    },
+    {
+      "atMs": 41500,
+      "scale": 1.0
+    },
+    {
+      "atMs": 45433,
+      "scale": 1.06
+    },
+    {
+      "atMs": 48033,
+      "scale": 1.0
+    },
+    {
+      "atMs": 49867,
+      "scale": 1.06
+    },
+    {
+      "atMs": 54933,
+      "scale": 1.0
+    },
+    {
+      "atMs": 58567,
+      "scale": 1.06
+    },
+    {
+      "atMs": 60133,
+      "scale": 1.0
+    },
+    {
+      "atMs": 66033,
+      "scale": 1.06
+    },
+    {
+      "atMs": 70767,
+      "scale": 1.0
+    },
+    {
+      "atMs": 72500,
+      "scale": 1.06
+    },
+    {
+      "atMs": 78833,
+      "scale": 1.0
+    },
+    {
+      "atMs": 83933,
+      "scale": 1.06
+    },
+    {
+      "atMs": 86667,
+      "scale": 1.0
+    },
+    {
+      "atMs": 91067,
+      "scale": 1.06
+    },
+    {
+      "atMs": 98633,
+      "scale": 1.0
+    },
+    {
+      "atMs": 103900,
+      "scale": 1.06
+    }
+  ],
+  "monoRanges": [],
+  "captions": [
+    {
+      "text": "\u0648\u0627\u0634",
+      "startMs": 0,
+      "endMs": 192,
+      "role": "soft"
+    },
+    {
+      "text": "\u0639\u0627\u0631\u0641",
+      "startMs": 192,
+      "endMs": 448,
+      "role": "hero"
+    },
+    {
+      "text": "\u0628\u0644\u064a",
+      "startMs": 448,
+      "endMs": 640,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 660,
+      "endMs": 907,
+      "role": "soft"
+    },
+    {
+      "text": "AI",
+      "startMs": 907,
+      "endMs": 1071,
+      "role": "signal"
+    },
+    {
+      "text": "\u062f\u0627\u0628\u0627",
+      "startMs": 1071,
+      "endMs": 1400,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0627\u0628\u0642\u0627\u0634",
+      "startMs": 1420,
+      "endMs": 1862,
+      "role": "default"
+    },
+    {
+      "text": "\u063a\u064a\u0631",
+      "startMs": 1862,
+      "endMs": 2084,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u064a\u062c\u0627\u0648\u0628\u0643",
+      "startMs": 2084,
+      "endMs": 2600,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 2620,
+      "endMs": 3454,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0623\u0633\u0626\u0644\u0629",
+      "startMs": 3454,
+      "endMs": 5400,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0631\u0627\u0647",
+      "startMs": 5420,
+      "endMs": 5664,
+      "role": "soft"
+    },
+    {
+      "text": "\u0648\u0644\u0649",
+      "startMs": 5664,
+      "endMs": 5908,
+      "role": "default"
+    },
+    {
+      "text": "\u064a\u0642\u062f\u0631",
+      "startMs": 5908,
+      "endMs": 6233,
+      "role": "default"
+    },
+    {
+      "text": "\u064a\u0633\u062a\u0639\u0645\u0644",
+      "startMs": 6233,
+      "endMs": 6720,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0628\u064a\u0633\u064a",
+      "startMs": 6740,
+      "endMs": 7285,
+      "role": "default"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644\u0643",
+      "startMs": 7285,
+      "endMs": 7740,
+      "role": "soft"
+    },
+    {
+      "text": "\u0648\u064a\u062e\u062f\u0645",
+      "startMs": 7740,
+      "endMs": 8195,
+      "role": "default"
+    },
+    {
+      "text": "\u0628\u0644\u0627\u0635\u062a\u0643",
+      "startMs": 8195,
+      "endMs": 8740,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 9060,
+      "endMs": 9540,
+      "role": "soft"
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 9540,
+      "endMs": 10020,
+      "role": "hero"
+    },
+    {
+      "text": "\u062a\u0642\u0648\u0644",
+      "startMs": 10020,
+      "endMs": 10500,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0647",
+      "startMs": 10500,
+      "endMs": 10860,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0642\u0644\u0628",
+      "startMs": 10880,
+      "endMs": 11130,
+      "role": "hero"
+    },
+    {
+      "text": "\u0644\u064a\u0627",
+      "startMs": 11130,
+      "endMs": 11380,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 11400,
+      "endMs": 11655,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u062d\u0633\u0646",
+      "startMs": 11655,
+      "endMs": 11995,
+      "role": "hero"
+    },
+    {
+      "text": "\u0641\u0644\u0627\u064a\u062a",
+      "startMs": 11995,
+      "endMs": 12420,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u062f\u064a\u0631",
+      "startMs": 12440,
+      "endMs": 13448,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0627",
+      "startMs": 13448,
+      "endMs": 14204,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0628\u0648\u0643\u064a\u0646\u063a",
+      "startMs": 14204,
+      "endMs": 16220,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0647\u0648",
+      "startMs": 16240,
+      "endMs": 16425,
+      "role": "soft"
+    },
+    {
+      "text": "\u0628\u0648\u062d\u062f\u0648",
+      "startMs": 16425,
+      "endMs": 16732,
+      "role": "hero"
+    },
+    {
+      "text": "\u0643\u064a\u0628\u062f\u0627",
+      "startMs": 16732,
+      "endMs": 17040,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u062d\u0644",
+      "startMs": 17060,
+      "endMs": 17375,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0648\u064a\u0628\u0633\u0627\u064a\u062a",
+      "startMs": 17375,
+      "endMs": 18320,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u062f\u064a\u0631",
+      "startMs": 18340,
+      "endMs": 18865,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u0644\u064a\u0643",
+      "startMs": 18865,
+      "endMs": 19285,
+      "role": "signal"
+    },
+    {
+      "text": "\u0628\u0627\u064a",
+      "startMs": 19285,
+      "endMs": 19600,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u0644\u064a\u0643",
+      "startMs": 19600,
+      "endMs": 20020,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u0642\u0644\u0628",
+      "startMs": 20040,
+      "endMs": 20446,
+      "role": "default"
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 20446,
+      "endMs": 20689,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u0631\u062e\u0635",
+      "startMs": 20689,
+      "endMs": 21014,
+      "role": "ember"
+    },
+    {
+      "text": "\u0641\u0644\u0627\u064a\u062a",
+      "startMs": 21014,
+      "endMs": 21420,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u062f\u064a\u0631",
+      "startMs": 21440,
+      "endMs": 21846,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0628\u0648\u0643\u064a\u0646\u063a",
+      "startMs": 21846,
+      "endMs": 22494,
+      "role": "hero"
+    },
+    {
+      "text": "\u062d\u062a\u0649",
+      "startMs": 22494,
+      "endMs": 22738,
+      "role": "soft"
+    },
+    {
+      "text": "\u0647\u0648",
+      "startMs": 22738,
+      "endMs": 22900,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u0643\u0645\u0644",
+      "startMs": 22920,
+      "endMs": 23476,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u062a\u0627\u0633\u0643",
+      "startMs": 23476,
+      "endMs": 24144,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644\u0648",
+      "startMs": 24144,
+      "endMs": 24700,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 24720,
+      "endMs": 25146,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u0643\u0645\u0644",
+      "startMs": 25146,
+      "endMs": 25714,
+      "role": "hero"
+    },
+    {
+      "text": "\u0648\u062c\u0647",
+      "startMs": 25714,
+      "endMs": 26140,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0627\u062f",
+      "startMs": 26160,
+      "endMs": 26380,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0646\u0648\u0639",
+      "startMs": 26380,
+      "endMs": 26747,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 26747,
+      "endMs": 27040,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 27060,
+      "endMs": 27228,
+      "role": "soft"
+    },
+    {
+      "text": "AI",
+      "startMs": 27228,
+      "endMs": 27340,
+      "role": "signal"
+    },
+    {
+      "text": "\u0633\u0645\u064a\u062a\u0648",
+      "startMs": 27340,
+      "endMs": 27620,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 27640,
+      "endMs": 27869,
+      "role": "soft"
+    },
+    {
+      "text": "AI Agent",
+      "startMs": 27869,
+      "endMs": 28480,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0627\u0644\u0641\u0631\u0642",
+      "startMs": 28500,
+      "endMs": 28937,
+      "role": "hero"
+    },
+    {
+      "text": "\u0628\u064a\u0646\u0648",
+      "startMs": 28937,
+      "endMs": 29229,
+      "role": "soft"
+    },
+    {
+      "text": "\u0648\u0628\u064a\u0646",
+      "startMs": 29229,
+      "endMs": 29520,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 29540,
+      "endMs": 29825,
+      "role": "soft"
+    },
+    {
+      "text": "AI",
+      "startMs": 29825,
+      "endMs": 30015,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0622\u062e\u0631\u064a\u0646",
+      "startMs": 30015,
+      "endMs": 30680,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 30700,
+      "endMs": 30990,
+      "role": "soft"
+    },
+    {
+      "text": "LLMs",
+      "startMs": 30990,
+      "endMs": 31377,
+      "role": "signal"
+    },
+    {
+      "text": "\u0628\u062d\u0627\u0644",
+      "startMs": 31377,
+      "endMs": 31763,
+      "role": "soft"
+    },
+    {
+      "text": "ChatGPT",
+      "startMs": 31763,
+      "endMs": 32440,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0648",
+      "startMs": 32460,
+      "endMs": 32722,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u0646",
+      "startMs": 32722,
+      "endMs": 32984,
+      "role": "soft"
+    },
+    {
+      "text": "ChatGPT",
+      "startMs": 32984,
+      "endMs": 33900,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 33920,
+      "endMs": 34235,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0643\u062a\u0628",
+      "startMs": 34235,
+      "endMs": 34551,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0647",
+      "startMs": 34551,
+      "endMs": 34787,
+      "role": "soft"
+    },
+    {
+      "text": "\u0628\u0631\u0648\u0645\u0628\u062a",
+      "startMs": 34787,
+      "endMs": 35260,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u0639\u0637\u064a\u0643",
+      "startMs": 35280,
+      "endMs": 35750,
+      "role": "default"
+    },
+    {
+      "text": "\u0647\u0648",
+      "startMs": 35750,
+      "endMs": 35907,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u062b\u0644\u0627",
+      "startMs": 35907,
+      "endMs": 36220,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 36240,
+      "endMs": 36529,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0625\u0646\u0633\u062a\u0631\u0627\u0643\u0634\u0646\u0632",
+      "startMs": 36529,
+      "endMs": 37395,
+      "role": "signal"
+    },
+    {
+      "text": "\u0627\u0644\u0623\u0648\u0627\u0645\u0631",
+      "startMs": 37395,
+      "endMs": 37900,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 37950,
+      "endMs": 38232,
+      "role": "soft"
+    },
+    {
+      "text": "Agent",
+      "startMs": 38232,
+      "endMs": 38703,
+      "role": "signal"
+    },
+    {
+      "text": "\u0643\u064a\u0646\u0641\u0630",
+      "startMs": 38703,
+      "endMs": 39173,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u062f\u0648\u0643",
+      "startMs": 39193,
+      "endMs": 39433,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0625\u0646\u0633\u062a\u0631\u0627\u0643\u0634\u0646\u0632",
+      "startMs": 39433,
+      "endMs": 40153,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0627\u0634\u064a",
+      "startMs": 40173,
+      "endMs": 40460,
+      "role": "default"
+    },
+    {
+      "text": "\u063a\u064a\u0631",
+      "startMs": 40460,
+      "endMs": 40675,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u064a\u0643\u062a\u0628\u0647\u0645",
+      "startMs": 40675,
+      "endMs": 41178,
+      "role": "hero"
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 41178,
+      "endMs": 41393,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 41413,
+      "endMs": 41783,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u0628\u062f\u0644",
+      "startMs": 41783,
+      "endMs": 42245,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0645\u0627\u064a\u0646\u062f\u0633\u064a\u062a",
+      "startMs": 42245,
+      "endMs": 43170,
+      "role": "signal"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644\u0643",
+      "startMs": 43170,
+      "endMs": 43633,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0646",
+      "startMs": 43653,
+      "endMs": 43893,
+      "role": "soft"
+    },
+    {
+      "text": "\u0634\u064a",
+      "startMs": 43893,
+      "endMs": 44133,
+      "role": "soft"
+    },
+    {
+      "text": "\u062d\u0627\u062c\u0629",
+      "startMs": 44133,
+      "endMs": 44613,
+      "role": "default"
+    },
+    {
+      "text": "\u0633\u0645\u064a\u062a\u0647\u0627",
+      "startMs": 44613,
+      "endMs": 45333,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0633\u0648\u0644\u0648",
+      "startMs": 45400,
+      "endMs": 45842,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u064a\u0641\u0627\u0634",
+      "startMs": 45842,
+      "endMs": 46285,
+      "role": "hero"
+    },
+    {
+      "text": "\u0646\u0642\u062f\u0631",
+      "startMs": 46285,
+      "endMs": 46639,
+      "role": "soft"
+    },
+    {
+      "text": "\u0646\u062f\u064a\u0631",
+      "startMs": 46639,
+      "endMs": 46993,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0627\u062f",
+      "startMs": 47013,
+      "endMs": 47273,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u0639\u0628\u0629",
+      "startMs": 47273,
+      "endMs": 47793,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0644\u0640",
+      "startMs": 47813,
+      "endMs": 48138,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u064a\u0631",
+      "startMs": 48138,
+      "endMs": 48626,
+      "role": "hero"
+    },
+    {
+      "text": "\u0644\u064a\u0627",
+      "startMs": 48626,
+      "endMs": 49113,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0627\u062f",
+      "startMs": 49133,
+      "endMs": 49360,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u0639\u0628\u0629",
+      "startMs": 49360,
+      "endMs": 49813,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u062b\u0644\u0627",
+      "startMs": 49833,
+      "endMs": 50302,
+      "role": "soft"
+    },
+    {
+      "text": "\u0639\u0646\u062f\u0643",
+      "startMs": 50302,
+      "endMs": 50770,
+      "role": "default"
+    },
+    {
+      "text": "\u0634\u064a",
+      "startMs": 50770,
+      "endMs": 51004,
+      "role": "soft"
+    },
+    {
+      "text": "\u062e\u062f\u0645\u0629",
+      "startMs": 51004,
+      "endMs": 51473,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0641\u0640",
+      "startMs": 51493,
+      "endMs": 51659,
+      "role": "soft"
+    },
+    {
+      "text": "Excel",
+      "startMs": 51659,
+      "endMs": 52073,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 53053,
+      "endMs": 53458,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u062f\u064a\u0631",
+      "startMs": 53458,
+      "endMs": 53862,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u0648\u0628\u064a \u0628\u064a\u0633\u062a",
+      "startMs": 53862,
+      "endMs": 54773,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 54793,
+      "endMs": 55376,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u062f\u064a\u0631",
+      "startMs": 55376,
+      "endMs": 55959,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
+      "startMs": 55959,
+      "endMs": 56833,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 56853,
+      "endMs": 57036,
+      "role": "soft"
+    },
+    {
+      "text": "Excel",
+      "startMs": 57036,
+      "endMs": 57264,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u0627\u0645\u0644\u0629",
+      "startMs": 57264,
+      "endMs": 57493,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 57513,
+      "endMs": 57694,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u062f\u064a\u0631\u0647\u0627",
+      "startMs": 57694,
+      "endMs": 57966,
+      "role": "default"
+    },
+    {
+      "text": "\u064a\u062f\u0648\u064a\u0627",
+      "startMs": 57966,
+      "endMs": 58193,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 58213,
+      "endMs": 58629,
+      "role": "soft"
+    },
+    {
+      "text": "Agent",
+      "startMs": 58629,
+      "endMs": 59324,
+      "role": "signal"
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 59324,
+      "endMs": 59879,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0639\u0644\u0645\u0648",
+      "startMs": 59879,
+      "endMs": 60573,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062f\u0627\u0643\u0634\u064a",
+      "startMs": 60640,
+      "endMs": 61040,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 61040,
+      "endMs": 61360,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062f\u064a\u0631",
+      "startMs": 61360,
+      "endMs": 61760,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0648\u0648\u0631\u0643\u0641\u0644\u0648",
+      "startMs": 61833,
+      "endMs": 62433,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0628\u0631\u0648\u0633\u064a\u0633",
+      "startMs": 62453,
+      "endMs": 63205,
+      "role": "hero"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 63205,
+      "endMs": 63581,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062e\u062f\u0645",
+      "startMs": 63581,
+      "endMs": 64051,
+      "role": "default"
+    },
+    {
+      "text": "\u0628\u064a\u0647",
+      "startMs": 64051,
+      "endMs": 64333,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u062f\u064a\u0631",
+      "startMs": 64353,
+      "endMs": 64665,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 64665,
+      "endMs": 64852,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u064a\u0643",
+      "startMs": 64852,
+      "endMs": 65039,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
+      "startMs": 65039,
+      "endMs": 65413,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0628\u0631\u0627\u0633\u0648",
+      "startMs": 65433,
+      "endMs": 65913,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0628\u0643\u0644\u064a\u0643",
+      "startMs": 67073,
+      "endMs": 67662,
+      "role": "signal"
+    },
+    {
+      "text": "\u0648\u062d\u062f\u0629",
+      "startMs": 67662,
+      "endMs": 68133,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0627",
+      "startMs": 68153,
+      "endMs": 68518,
+      "role": "soft"
+    },
+    {
+      "text": "\u063a\u064a\u0631",
+      "startMs": 68518,
+      "endMs": 68882,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u0646",
+      "startMs": 68882,
+      "endMs": 69125,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u064a\u0633\u0627\u062c",
+      "startMs": 69125,
+      "endMs": 69733,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0627",
+      "startMs": 69753,
+      "endMs": 70011,
+      "role": "soft"
+    },
+    {
+      "text": "\u063a\u064a\u0631",
+      "startMs": 70011,
+      "endMs": 70269,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u0646",
+      "startMs": 70269,
+      "endMs": 70441,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u062a\u064a\u0644\u064a\u0641\u0648\u0646",
+      "startMs": 70441,
+      "endMs": 71214,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0643\u064a\u062e\u062f\u0645",
+      "startMs": 71594,
+      "endMs": 71945,
+      "role": "default"
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0628\u064a\u0633\u064a",
+      "startMs": 71945,
+      "endMs": 72354,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u064a\u0642\u062f\u0631",
+      "startMs": 72553,
+      "endMs": 73122,
+      "role": "default"
+    },
+    {
+      "text": "\u062d\u062a\u0649",
+      "startMs": 73122,
+      "endMs": 73463,
+      "role": "soft"
+    },
+    {
+      "text": "\u064a\u0635\u064a\u0641\u0637",
+      "startMs": 73463,
+      "endMs": 74032,
+      "role": "hero"
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 74032,
+      "endMs": 74373,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0631\u064a\u0632\u0648\u0644\u0637\u0627\u062a",
+      "startMs": 74393,
+      "endMs": 75035,
+      "role": "ember"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 75035,
+      "endMs": 75292,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u0627\u0643\u0634\u064a",
+      "startMs": 75292,
+      "endMs": 75613,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 75633,
+      "endMs": 75827,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u0627\u0631",
+      "startMs": 75827,
+      "endMs": 75973,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 75993,
+      "endMs": 76309,
+      "role": "soft"
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 76309,
+      "endMs": 76624,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0628\u0642\u0649",
+      "startMs": 76624,
+      "endMs": 76940,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u062a\u0634\u0627\u0637\u064a",
+      "startMs": 76940,
+      "endMs": 77413,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0639\u0627\u0647",
+      "startMs": 77433,
+      "endMs": 77748,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u0646",
+      "startMs": 77748,
+      "endMs": 77905,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u062a\u064a\u0644\u064a\u0641\u0648\u0646",
+      "startMs": 77905,
+      "endMs": 78613,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0647\u0648",
+      "startMs": 78633,
+      "endMs": 78866,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u064a\u062e\u062f\u0645",
+      "startMs": 78866,
+      "endMs": 79253,
+      "role": "hero"
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0628\u0631\u0627\u0645\u062c",
+      "startMs": 79253,
+      "endMs": 79873,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 79893,
+      "endMs": 80154,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0628\u064a\u0633\u064a",
+      "startMs": 80154,
+      "endMs": 80546,
+      "role": "signal"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644\u0643",
+      "startMs": 80546,
+      "endMs": 80873,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0627",
+      "startMs": 80893,
+      "endMs": 81100,
+      "role": "soft"
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0643\u0644\u0627\u0648\u062f",
+      "startMs": 81100,
+      "endMs": 81653,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0627",
+      "startMs": 81673,
+      "endMs": 81823,
+      "role": "soft"
+    },
+    {
+      "text": "\u062d\u062a\u0649",
+      "startMs": 81823,
+      "endMs": 81973,
+      "role": "soft"
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0628\u064a\u0633\u064a",
+      "startMs": 81973,
+      "endMs": 82323,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644\u0643",
+      "startMs": 82323,
+      "endMs": 82573,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0625\u0644\u0627",
+      "startMs": 82593,
+      "endMs": 82857,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u0627\u0646",
+      "startMs": 82857,
+      "endMs": 83121,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u0648\u0628\u0646",
+      "startMs": 83121,
+      "endMs": 83473,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0643\u064a\u062e\u062f\u0645",
+      "startMs": 83493,
+      "endMs": 84243,
+      "role": "default"
+    },
+    {
+      "text": "\u0628\u0648\u062d\u062f\u0648",
+      "startMs": 84243,
+      "endMs": 84993,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0643\u064a\u0635\u064a\u0641\u0637",
+      "startMs": 85013,
+      "endMs": 85580,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 85580,
+      "endMs": 85824,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0631\u064a\u0632\u0648\u0644\u0637\u0627",
+      "startMs": 85824,
+      "endMs": 86553,
+      "role": "ember",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0623\u064a",
+      "startMs": 86670,
+      "endMs": 86808,
+      "role": "soft"
+    },
+    {
+      "text": "\u062d\u0627\u062c\u0629",
+      "startMs": 86808,
+      "endMs": 87085,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 87085,
+      "endMs": 87361,
+      "role": "soft"
+    },
+    {
+      "text": "\u0628\u063a\u064a\u062a\u064a",
+      "startMs": 87361,
+      "endMs": 87707,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0642\u062f\u0631",
+      "startMs": 87727,
+      "endMs": 88136,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0632\u064a\u062f",
+      "startMs": 88136,
+      "endMs": 88546,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0634\u0627\u0637\u064a",
+      "startMs": 88546,
+      "endMs": 89058,
+      "role": "hero"
+    },
+    {
+      "text": "\u0645\u0639\u0627\u0647",
+      "startMs": 89058,
+      "endMs": 89467,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0632\u064a\u062f\u0648",
+      "startMs": 89487,
+      "endMs": 89762,
+      "role": "default"
+    },
+    {
+      "text": "\u062d\u062a\u0649",
+      "startMs": 89762,
+      "endMs": 89927,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0648\u0635\u0648\u0644",
+      "startMs": 89947,
+      "endMs": 90267,
+      "role": "default"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 90267,
+      "endMs": 90480,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0634\u0627\u062a\u0628\u0648\u062a",
+      "startMs": 90480,
+      "endMs": 90907,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u062a\u0634\u0627\u0637\u064a",
+      "startMs": 90927,
+      "endMs": 91367,
+      "role": "hero"
+    },
+    {
+      "text": "\u0645\u0639\u0627\u0647",
+      "startMs": 91367,
+      "endMs": 91660,
+      "role": "soft"
+    },
+    {
+      "text": "\u0648\u062a\u0642\u0648\u0644",
+      "startMs": 91660,
+      "endMs": 92027,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u064a\u0647",
+      "startMs": 92027,
+      "endMs": 92247,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u062b\u0644\u0627",
+      "startMs": 92267,
+      "endMs": 92685,
+      "role": "soft"
+    },
+    {
+      "text": "\u0647\u0627\u062a",
+      "startMs": 92685,
+      "endMs": 92999,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
+      "startMs": 92999,
+      "endMs": 93627,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 93647,
+      "endMs": 93917,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u0631\u062a\u064a",
+      "startMs": 93917,
+      "endMs": 94187,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0631\u064a\u0646\u064a",
+      "startMs": 94207,
+      "endMs": 94716,
+      "role": "default"
+    },
+    {
+      "text": "\u0628\u0627\u0644\u0636\u0628\u0637",
+      "startMs": 94716,
+      "endMs": 95327,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0643\u064a\u0641\u0627\u0634",
+      "startMs": 95347,
+      "endMs": 95701,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u0631\u062a\u064a",
+      "startMs": 95701,
+      "endMs": 95984,
+      "role": "default"
+    },
+    {
+      "text": "\u0647\u0627\u062f\u064a",
+      "startMs": 95984,
+      "endMs": 96267,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0643\u064a\u0641\u0627\u0634",
+      "startMs": 96290,
+      "endMs": 96599,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u0631\u062a\u064a",
+      "startMs": 96599,
+      "endMs": 96804,
+      "role": "default"
+    },
+    {
+      "text": "\u0647\u0627\u062f\u064a",
+      "startMs": 96804,
+      "endMs": 97010,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0627\u062f",
+      "startMs": 97650,
+      "endMs": 97850,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u062e\u062f\u0645\u0629",
+      "startMs": 97850,
+      "endMs": 98250,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0625\u0644\u0627",
+      "startMs": 99296,
+      "endMs": 100061,
+      "role": "soft"
+    },
+    {
+      "text": "\u0628\u063a\u064a\u062a\u064a",
+      "startMs": 100061,
+      "endMs": 101336,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0639\u0631\u0641",
+      "startMs": 101356,
+      "endMs": 101785,
+      "role": "default"
+    },
+    {
+      "text": "\u062f\u064a\u0645\u0627",
+      "startMs": 101785,
+      "endMs": 102213,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u062c\u062f\u064a\u062f",
+      "startMs": 102213,
+      "endMs": 102856,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 102876,
+      "endMs": 103040,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 103040,
+      "endMs": 103204,
+      "role": "soft"
+    },
+    {
+      "text": "AI Agents",
+      "startMs": 103204,
+      "endMs": 103696,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0628\u0639\u0646\u064a",
+      "startMs": 103716,
+      "endMs": 104337,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u063a\u0627\u062f\u064a",
+      "startMs": 104357,
+      "endMs": 105104,
+      "role": "soft"
+    },
+    {
+      "text": "\u064a\u0643\u0648\u0646\u0648",
+      "startMs": 105104,
+      "endMs": 105850,
+      "role": "default"
+    },
+    {
+      "text": "\u0645\u0642\u0627\u0637\u0639",
+      "startMs": 105850,
+      "endMs": 106597,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 106617,
+      "endMs": 106885,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 106885,
+      "endMs": 107153,
+      "role": "soft"
+    },
+    {
+      "text": "AI Agents",
+      "startMs": 107153,
+      "endMs": 107957,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 107977,
+      "endMs": 108512,
+      "role": "soft"
+    },
+    {
+      "text": "\u062a\u0643\u0648\u0646",
+      "startMs": 108512,
+      "endMs": 109048,
+      "role": "default"
+    },
+    {
+      "text": "\u0633\u0644\u0633\u0644\u0629",
+      "startMs": 109048,
+      "endMs": 109717,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 109737,
+      "endMs": 110040,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0641\u064a\u062f\u064a\u0648\u0647\u0627\u062a",
+      "startMs": 110040,
+      "endMs": 110797,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 110817,
+      "endMs": 111023,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0623\u062f\u0648\u0627\u062a",
+      "startMs": 111023,
+      "endMs": 111503,
+      "role": "hero"
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 111503,
+      "endMs": 111777,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 111797,
+      "endMs": 112537,
+      "role": "soft"
+    },
+    {
+      "text": "AI Agents",
+      "startMs": 112537,
+      "endMs": 114757,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0628\u0627\u064a",
+      "startMs": 114777,
+      "endMs": 115137,
+      "role": "hero",
+      "pageBreakAfter": true
+    }
+  ],
+  "overlays": [],
+  "faceZone": {
+    "top": 0.111,
+    "bottom": 0.655
+  }
+}

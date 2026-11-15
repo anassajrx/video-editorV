@@ -1,0 +1,27 @@
+[
+ {
+  "cutStart": 38.015,
+  "cutEnd": 41.55,
+  "reason": "retake: first 'الـ Agent كينفذ هدوك الـ instructions'"
+ },
+ {
+  "cutStart": 49.015,
+  "cutEnd": 49.695,
+  "reason": "false start: 'تقول ليه' (replaced by 'تسولو')"
+ },
+ {
+  "cutStart": 76.775,
+  "cutEnd": 77.775,
+  "reason": "breath / dead air"
+ },
+ {
+  "cutStart": 91.94,
+  "cutEnd": 93.5,
+  "reason": "false start: 'ابخي كت…' abandoned"
+ },
+ {
+  "cutStart": 122.185,
+  "cutEnd": 122.4106875,
+  "reason": "dead air after 'باي'"
+ }
+]
