@@ -63,12 +63,13 @@ For each page of ≤5 words:
 - Max one of hero/signal/ember/mono/error per page. Break pages at commas and natural phrase ends.
 
 ## Darija captions (Moroccan Arabic videos)
+- **Full step-by-step runbook, scripts and every known pitfall: `.claude/skills/darija-video-edit/SKILL.md`. Follow it for any Darija video.**
 - Transcribe with `npm run transcribe -- <in.mp4> <words.json> --lang=ar` (defaults to the multilingual `large-v3` model; `--model=medium` if too slow).
 - Write what is actually said in **Darija, in Arabic letters**. Never translate into Modern Standard Arabic, never "correct" Darija into formal Arabic.
 - If whisper.cpp loops (same sentence repeated to the end) or drifts into MSA, use `python3 scripts/transcribe_fw.py <in.mp4> <words.json> --lang=ar --model=large-v2 --prompt="<a Darija sentence from the video>"` (faster-whisper, VAD, no previous-text conditioning). Re-transcribe any wordless stretch on its own before cutting it: it may hold words Whisper skipped.
 - Before every retake/mistake cut, check the energy around the cut point and move it into a real valley; if the speech is continuous (no valley), keep the retake rather than cut mid-word.
 - Whisper is weak at Darija: read the whole transcript for context and fix misheard words. Use common Darija spellings: كنقول، بزاف، دابا، واش، علاش، ديال، غادي، حيت، شي، هادشي.
-- French/English words are written in Arabic letters too (كود، فيديو، بروجي), **except brand / tool names, which stay in Latin** (GitHub, React, Claude).
+- **Foreign words stay in their original language (rule of 2026-11-15):** English/French words spoken inside the Darija are written in that language, in Latin letters, as said (`flight`, `booking`, `website`, `workflow`, `les résultats`, `manuellement`). Never write them in Arabic letters. Brand/tool names stay Latin too (GitHub, React, Claude, ChatGPT). Darija articles/prefixes are a separate small word before them: `الـ website`, `فالـ cloud`.
 - Word-by-word reveal, **max 4 words per page** (enforced in KineticCaptions for Arabic pages), page breaks at natural phrase ends.
 - Roles: most words `default`; small filler words (و، ف، ل، اللي، هو، ديال، راه، غير) `soft`; ONE key word per page as `hero`, or `signal` for tech words, `ember` for money/numbers, `error` for problems.
 - No punctuation at the end of caption pages.
@@ -101,4 +102,5 @@ For each page of ≤5 words:
 ## Learned rules
 <!-- Add the user's taste rules here as they come up, one line each, with the date. -->
 - 2026-11-14: NEVER put captions or anything else over or above my face. Everything goes below the chin. (Enforced in code + check_face.py.)
+- 2026-11-15: In Darija captions, English/French words stay in their ORIGINAL language and Latin letters (never transliterated into Arabic letters).
 - 2026-11-15: ALL retakes must be removed. Whole-file Whisper merges repeated sentences into one, so never look for retakes in a whole-file transcript: transcribe every silence-cut segment (and every phrase between micro-pauses) on its own, list each line, keep only the last complete take, then re-transcribe the final cut to confirm every line appears once. Also cut the short no-word segments (breaths, mouth noise, "euh"; Whisper hallucinates "اشتركوا في القناة"/"شكرا" on them). Time captions from per-phrase word timestamps, not whole-file ones.

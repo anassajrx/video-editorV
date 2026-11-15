@@ -3,6 +3,7 @@
 This repo is a reusable video editing system. Remotion does the rendering. Every video follows the same brand, design system and workflow.
 
 **Always use the `edit-skill` skill (`.claude/skills/edit-skill/SKILL.md`) before starting any edit in this repo.**
+**For Moroccan Darija videos, also follow `darija-video-edit` (`.claude/skills/darija-video-edit/SKILL.md`): the full runbook with every known pitfall.**
 Then read `DESIGN.md` (look and motion) and `brand/BRAND.md` (brand). Do not invent new colors, fonts or component styles. Use the tokens in `src/brand/theme.ts`.
 
 ## Repo map
@@ -15,6 +16,8 @@ Then read `DESIGN.md` (look and motion) and `brand/BRAND.md` (brand). Do not inv
 - `scripts/render-segments.mjs` — renders kept segments (low memory); used for retake re-cuts
 - `scripts/transcribe.mjs` — word-level captions with Whisper (`--lang=ar` for Darija)
 - `scripts/transcribe_fw.py` — faster-whisper fallback for Darija (no loops, stays in dialect)
+- `scripts/darija/` — transcribe_phrases (find retakes), cut_points (never cut mid-word), build_cut, align_captions (+ .srt)
+- `scripts/make_sfx.py` — original UI sound effects (whoosh, pop, click, chime, type)
 - `scripts/face_zone.py` — measures where the face is (writes `faceZone`)
 - `scripts/check_face.py` — fails if anything is drawn over/above the face
 
