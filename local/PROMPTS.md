@@ -10,13 +10,12 @@ Open Claude Code inside your `video editor` folder first (`cd "$HOME\Documents\v
 Set up this computer to edit my videos. Read .claude/skills/darija-video-edit-local/SKILL.md first and follow
 section 1 (one-time setup) exactly. This is a Windows PC.
 
-1. Check which tools are already installed: Git, Node.js (20.19+ or 22 LTS), Python 3.12, FFmpeg + ffprobe,
-   GitHub CLI. Install only the missing ones with winget, one at a time. Tell me before each install that Windows
+1. Check which tools are already installed: Git, Node.js (20.19+ or 22 LTS), Python 3.12, FFmpeg + ffprobe. Install only the missing ones with winget, one at a time. Tell me before each install that Windows
    may ask me for permission.
 2. If the PATH needs a new terminal after installing, tell me exactly when to close and reopen Claude Code, and
    continue from where you stopped when I say "continue the setup".
-3. Log me in to GitHub with `gh auth login` (I'll do the browser part), then clone the private repo
-   anassajrx/video-editorv into a folder named "engine" inside this folder.
+3. Clone the public repo https://github.com/anassajrx/video-editorV.git into a folder named "engine" inside this
+   folder (no GitHub login needed).
 4. In engine/: npm ci, create the Python 3.12 venv (.venv), pip install -r requirements.txt, npx tsc --noEmit.
 5. Warm up the speech models once (faster-whisper large-v2 and whisper.cpp large-v3) so the first edit is fast.
    Tell me the download size before starting and give me a progress line every few minutes.

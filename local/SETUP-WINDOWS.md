@@ -79,10 +79,8 @@ Type `/` and check that **darija-video-edit-local** appears in the list. If not,
 
 Open `PROMPTS.md`, copy **PROMPT 1**, paste it into Claude Code, press Enter.
 
-- Claude installs Node, Python, FFmpeg and the GitHub CLI, downloads the editing engine and its packages.
+- Claude installs Git, Node, Python and FFmpeg, downloads the editing engine (public repo, no login) and its packages.
 - Windows will show permission pop-ups: click **Yes**.
-- When it asks you to **log in to GitHub** (`gh auth login`), choose: GitHub.com → HTTPS → Login with a web browser,
-  then paste the code it shows in the browser.
 - When it says "close and reopen the terminal": type `/exit`, close PowerShell, open a new one, and run
   `cd "$HOME\Documents\video editor"` then `claude` again, then type: **continue the setup**.
 

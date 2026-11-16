@@ -51,15 +51,13 @@ Check each tool, install only what is missing (`winget` may open a Windows permi
 | Node.js 22 LTS | `node -v` (needs 20.19+ / 22.13+) | `winget install --id OpenJS.NodeJS.LTS -e` |
 | Python 3.12 | `py -3.12 --version` | `winget install --id Python.Python.3.12 -e` |
 | FFmpeg (+ ffprobe) | `ffmpeg -version` | `winget install --id Gyan.FFmpeg -e` |
-| GitHub CLI (for the private engine repo) | `gh --version` | `winget install --id GitHub.cli -e` |
 
 After installing, the PATH only updates in NEW terminals: ask the user to close and reopen the terminal and restart
 `claude` in the `video editor` folder, then continue. Use `python` from the venv (never the Microsoft Store `python`).
 
 ### 1.2 Engine
 ```bash
-gh auth login                                            # once: GitHub.com, HTTPS, login with a web browser
-gh repo clone anassajrx/video-editorv engine
+git clone https://github.com/anassajrx/video-editorV.git engine   # public repo: no GitHub login needed
 cd engine
 npm ci
 py -3.12 -m venv .venv && source .venv/Scripts/activate  # activate again in every new shell: source .venv/Scripts/activate
