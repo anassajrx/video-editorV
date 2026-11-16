@@ -1,0 +1,1041 @@
+{
+  "orientation": "vertical",
+  "durationMs": 55267,
+  "footage": {
+    "src": "videos/code-vs-nocode/raw/edit.mp4",
+    "kind": "video"
+  },
+  "punchIns": [
+    {
+      "atMs": 9633,
+      "scale": 1.06
+    },
+    {
+      "atMs": 13800,
+      "scale": 1.0
+    },
+    {
+      "atMs": 22867,
+      "scale": 1.06
+    },
+    {
+      "atMs": 32367,
+      "scale": 1.0
+    },
+    {
+      "atMs": 42900,
+      "scale": 1.06
+    },
+    {
+      "atMs": 47000,
+      "scale": 1.0
+    },
+    {
+      "atMs": 52567,
+      "scale": 1.06
+    }
+  ],
+  "monoRanges": [],
+  "captions": [
+    {
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 307,
+      "endMs": 567,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0633\u0624\u0627\u0644",
+      "startMs": 567,
+      "endMs": 947,
+      "role": "hero"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 947,
+      "endMs": 1067,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0643\u064a\u062a\u0639\u0627\u0648\u062f",
+      "startMs": 947,
+      "endMs": 1345,
+      "role": "default"
+    },
+    {
+      "text": "\u0628\u0632\u0627\u0641",
+      "startMs": 1345,
+      "endMs": 1847,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0648",
+      "startMs": 1847,
+      "endMs": 2447,
+      "role": "soft"
+    },
+    {
+      "text": "\u0639\u0644\u0627\u0634",
+      "startMs": 2447,
+      "endMs": 2527,
+      "role": "hero"
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 2447,
+      "endMs": 2947,
+      "role": "soft"
+    },
+    {
+      "text": "\u0646\u062a\u0639\u0644\u0645",
+      "startMs": 2947,
+      "endMs": 3967,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0643\u0648\u062f",
+      "startMs": 3967,
+      "endMs": 4407,
+      "role": "signal"
+    },
+    {
+      "text": "\u0648",
+      "startMs": 4407,
+      "endMs": 4487,
+      "role": "soft"
+    },
+    {
+      "text": "la programmation",
+      "startMs": 4439,
+      "endMs": 4519,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648",
+      "startMs": 4472,
+      "endMs": 4552,
+      "role": "soft"
+    },
+    {
+      "text": "\u0623\u0646\u0627",
+      "startMs": 4504,
+      "endMs": 4584,
+      "role": "soft"
+    },
+    {
+      "text": "\u0646\u0642\u062f\u0631",
+      "startMs": 4537,
+      "endMs": 6237,
+      "role": "default"
+    },
+    {
+      "text": "\u0646\u0642\u0627\u062f",
+      "startMs": 6237,
+      "endMs": 6857,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "des",
+      "startMs": 6237,
+      "endMs": 6297,
+      "role": "soft"
+    },
+    {
+      "text": "applications",
+      "startMs": 6237,
+      "endMs": 7857,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0640",
+      "startMs": 7857,
+      "endMs": 8099,
+      "role": "soft"
+    },
+    {
+      "text": "plateformes",
+      "startMs": 8099,
+      "endMs": 8767,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "no code",
+      "startMs": 8767,
+      "endMs": 9129,
+      "role": "signal"
+    },
+    {
+      "text": "\u0648",
+      "startMs": 9129,
+      "endMs": 9233,
+      "role": "soft"
+    },
+    {
+      "text": "low code",
+      "startMs": 9233,
+      "endMs": 9633,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0634\u0648\u0641",
+      "startMs": 9633,
+      "endMs": 9889,
+      "role": "default"
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 9889,
+      "endMs": 10230,
+      "role": "soft"
+    },
+    {
+      "text": "\u0646\u0639\u0637\u064a\u0643",
+      "startMs": 10230,
+      "endMs": 10657,
+      "role": "default"
+    },
+    {
+      "text": "\u0623\u062c\u0648\u0628\u0629",
+      "startMs": 10657,
+      "endMs": 11083,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0646\u062c\u0627\u0648\u0628\u0643",
+      "startMs": 11083,
+      "endMs": 11608,
+      "role": "default"
+    },
+    {
+      "text": "\u0639\u0644\u064a\u0647\u0645",
+      "startMs": 11608,
+      "endMs": 11983,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0623\u0648\u0644\u0627",
+      "startMs": 11983,
+      "endMs": 12643,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0644\u064a",
+      "startMs": 12643,
+      "endMs": 12850,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062e\u062f\u0645",
+      "startMs": 12850,
+      "endMs": 13194,
+      "role": "default"
+    },
+    {
+      "text": "freelance",
+      "startMs": 13194,
+      "endMs": 13800,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0640",
+      "startMs": 13800,
+      "endMs": 14349,
+      "role": "soft"
+    },
+    {
+      "text": "applications",
+      "startMs": 14349,
+      "endMs": 16037,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 16037,
+      "endMs": 16296,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062e\u062f\u0645\u0647\u0627",
+      "startMs": 16296,
+      "endMs": 16749,
+      "role": "default"
+    },
+    {
+      "text": "low code",
+      "startMs": 16749,
+      "endMs": 17267,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648",
+      "startMs": 17267,
+      "endMs": 17427,
+      "role": "soft"
+    },
+    {
+      "text": "no code",
+      "startMs": 17427,
+      "endMs": 17987,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0643\u062a\u0627\u062e\u062f",
+      "startMs": 17987,
+      "endMs": 18831,
+      "role": "default"
+    },
+    {
+      "text": "\u0641\u064a\u0647\u0645",
+      "startMs": 18831,
+      "endMs": 19507,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "3000",
+      "startMs": 19507,
+      "endMs": 19887,
+      "role": "ember"
+    },
+    {
+      "text": "\u062f\u0631\u0647\u0645",
+      "startMs": 19887,
+      "endMs": 20267,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "4000",
+      "startMs": 20267,
+      "endMs": 20617,
+      "role": "ember"
+    },
+    {
+      "text": "\u062f\u0631\u0647\u0645",
+      "startMs": 20617,
+      "endMs": 20967,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0625\u0644\u0627",
+      "startMs": 20967,
+      "endMs": 21267,
+      "role": "soft"
+    },
+    {
+      "text": "\u0637\u0627\u0631\u062a",
+      "startMs": 21267,
+      "endMs": 21667,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "7000",
+      "startMs": 21667,
+      "endMs": 22267,
+      "role": "ember"
+    },
+    {
+      "text": "\u062f\u0631\u0647\u0645",
+      "startMs": 22267,
+      "endMs": 22867,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0643\u0646",
+      "startMs": 22867,
+      "endMs": 23195,
+      "role": "soft"
+    },
+    {
+      "text": "\u0645\u0644\u064a",
+      "startMs": 23195,
+      "endMs": 23451,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062f\u064a\u0631",
+      "startMs": 23451,
+      "endMs": 23877,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 23877,
+      "endMs": 24133,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "applications",
+      "startMs": 24133,
+      "endMs": 24883,
+      "role": "signal"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 24883,
+      "endMs": 25133,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0643\u064a\u062a\u0642\u0627\u0633",
+      "startMs": 25133,
+      "endMs": 25573,
+      "role": "default"
+    },
+    {
+      "text": "\u0641\u064a\u0647\u0645",
+      "startMs": 25573,
+      "endMs": 25867,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0643\u0648\u062f",
+      "startMs": 25867,
+      "endMs": 26233,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 26233,
+      "endMs": 26445,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u062a\u062e\u062f\u0645",
+      "startMs": 26445,
+      "endMs": 26710,
+      "role": "default"
+    },
+    {
+      "text": "\u0641\u064a\u0647\u0645",
+      "startMs": 26710,
+      "endMs": 26922,
+      "role": "soft"
+    },
+    {
+      "text": "\u0634\u0648\u064a\u0629",
+      "startMs": 26922,
+      "endMs": 27133,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 27133,
+      "endMs": 27328,
+      "role": "soft"
+    },
+    {
+      "text": "hard code",
+      "startMs": 27328,
+      "endMs": 27913,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0645\u0645\u0643\u0646",
+      "startMs": 27913,
+      "endMs": 28373,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0648\u0635\u0644",
+      "startMs": 28373,
+      "endMs": 28833,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "10000",
+      "startMs": 28833,
+      "endMs": 29398,
+      "role": "ember"
+    },
+    {
+      "text": "\u062f\u0631\u0647\u0645",
+      "startMs": 29398,
+      "endMs": 29849,
+      "role": "default"
+    },
+    {
+      "text": "\u0648\u0644\u0641\u0648\u0642",
+      "startMs": 29849,
+      "endMs": 30413,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0646\u0627",
+      "startMs": 30413,
+      "endMs": 30690,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u0627\u064a\u0646\u0629",
+      "startMs": 30690,
+      "endMs": 31152,
+      "role": "soft"
+    },
+    {
+      "text": "la diff\u00e9rence",
+      "startMs": 31152,
+      "endMs": 32353,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0627\u0644\u0646\u0642\u0637\u0629",
+      "startMs": 32367,
+      "endMs": 32867,
+      "role": "default"
+    },
+    {
+      "text": "\u0627\u0644\u0623\u062e\u0631\u0649",
+      "startMs": 32867,
+      "endMs": 33367,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "la personnalisation",
+      "startMs": 33367,
+      "endMs": 34567,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062f\u064a\u0627\u0644",
+      "startMs": 34567,
+      "endMs": 34878,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 34878,
+      "endMs": 35112,
+      "role": "soft"
+    },
+    {
+      "text": "syst\u00e8me",
+      "startMs": 35112,
+      "endMs": 35657,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0625\u0644\u0627",
+      "startMs": 35657,
+      "endMs": 35960,
+      "role": "soft"
+    },
+    {
+      "text": "\u0643\u0627\u0646",
+      "startMs": 35960,
+      "endMs": 36263,
+      "role": "soft"
+    },
+    {
+      "text": "\u0639\u0646\u062f\u0643",
+      "startMs": 36263,
+      "endMs": 36667,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 36667,
+      "endMs": 37162,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 37162,
+      "endMs": 37534,
+      "role": "soft"
+    },
+    {
+      "text": "besoin",
+      "startMs": 37534,
+      "endMs": 38278,
+      "role": "default"
+    },
+    {
+      "text": "sp\u00e9cifique",
+      "startMs": 38278,
+      "endMs": 39517,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0628\u0627\u0634",
+      "startMs": 39517,
+      "endMs": 39742,
+      "role": "soft"
+    },
+    {
+      "text": "\u062a\u0640",
+      "startMs": 39742,
+      "endMs": 39892,
+      "role": "soft"
+    },
+    {
+      "text": "personnaliser",
+      "startMs": 39892,
+      "endMs": 40867,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0627",
+      "startMs": 40867,
+      "endMs": 41304,
+      "role": "soft"
+    },
+    {
+      "text": "\u0634\u064a",
+      "startMs": 41304,
+      "endMs": 41595,
+      "role": "soft"
+    },
+    {
+      "text": "\u062d\u0627\u062c\u0629",
+      "startMs": 41595,
+      "endMs": 42178,
+      "role": "default"
+    },
+    {
+      "text": "\u062c\u062f\u064a\u062f\u0629",
+      "startMs": 42178,
+      "endMs": 42900,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0635\u0639\u064a\u0628",
+      "startMs": 42900,
+      "endMs": 43229,
+      "role": "error"
+    },
+    {
+      "text": "\u062a\u0644\u0642\u0627\u0647\u0627",
+      "startMs": 43229,
+      "endMs": 43733,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0640",
+      "startMs": 43733,
+      "endMs": 44021,
+      "role": "soft"
+    },
+    {
+      "text": "low code",
+      "startMs": 44021,
+      "endMs": 44596,
+      "role": "signal"
+    },
+    {
+      "text": "\u0648",
+      "startMs": 44596,
+      "endMs": 44740,
+      "role": "soft"
+    },
+    {
+      "text": "no code",
+      "startMs": 44740,
+      "endMs": 45243,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0646\u0642\u062f\u0631",
+      "startMs": 45243,
+      "endMs": 45458,
+      "role": "default"
+    },
+    {
+      "text": "\u0646\u0642\u0648\u0644",
+      "startMs": 45458,
+      "endMs": 45672,
+      "role": "soft"
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 45672,
+      "endMs": 45833,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "impossible",
+      "startMs": 45833,
+      "endMs": 47000,
+      "role": "error",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0644\u0643\u0646",
+      "startMs": 47000,
+      "endMs": 47480,
+      "role": "soft"
+    },
+    {
+      "text": "\u062e\u0627\u0635\u0643",
+      "startMs": 47480,
+      "endMs": 47973,
+      "role": "default"
+    },
+    {
+      "text": "\u062a\u0631\u062c\u0639",
+      "startMs": 47973,
+      "endMs": 48467,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u062a\u0640",
+      "startMs": 48467,
+      "endMs": 48632,
+      "role": "soft"
+    },
+    {
+      "text": "impl\u00e9menter",
+      "startMs": 48632,
+      "endMs": 49541,
+      "role": "signal"
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 49541,
+      "endMs": 49788,
+      "role": "soft"
+    },
+    {
+      "text": "logique",
+      "startMs": 49788,
+      "endMs": 50367,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0628\u0627\u0634",
+      "startMs": 50367,
+      "endMs": 50667,
+      "role": "soft"
+    },
+    {
+      "text": "\u062f\u064a\u0631",
+      "startMs": 50667,
+      "endMs": 50967,
+      "role": "default"
+    },
+    {
+      "text": "\u0643\u0644\u0634\u064a",
+      "startMs": 50967,
+      "endMs": 51367,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 51367,
+      "endMs": 51649,
+      "role": "soft"
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 51649,
+      "endMs": 51931,
+      "role": "soft"
+    },
+    {
+      "text": "\u062a\u0631\u062c\u0639",
+      "startMs": 51931,
+      "endMs": 52214,
+      "role": "default"
+    },
+    {
+      "text": "\u0644\u0644\u0643\u0648\u062f",
+      "startMs": 52214,
+      "endMs": 52567,
+      "role": "signal",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0646\u062a\u0645\u0646\u0649",
+      "startMs": 52573,
+      "endMs": 53027,
+      "role": "default"
+    },
+    {
+      "text": "\u0646\u0643\u0648\u0646",
+      "startMs": 53027,
+      "endMs": 53389,
+      "role": "soft"
+    },
+    {
+      "text": "\u062c\u0627\u0648\u0628\u062a\u0643",
+      "startMs": 53389,
+      "endMs": 53933,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0639\u0644\u0649",
+      "startMs": 53933,
+      "endMs": 54268,
+      "role": "soft"
+    },
+    {
+      "text": "\u0647\u0627\u062f",
+      "startMs": 54268,
+      "endMs": 54603,
+      "role": "soft"
+    },
+    {
+      "text": "\u0627\u0644\u0633\u0624\u0627\u0644",
+      "startMs": 54603,
+      "endMs": 55267,
+      "role": "default",
+      "pageBreakAfter": true
+    }
+  ],
+  "overlays": [
+    {
+      "type": "icon",
+      "icon": "chat",
+      "label": "FAQ",
+      "accent": "signal",
+      "x": 0.5,
+      "startMs": 350,
+      "endMs": 2200
+    },
+    {
+      "type": "icon",
+      "icon": "code",
+      "label": "code",
+      "accent": "signal",
+      "x": 0.32,
+      "startMs": 3967,
+      "endMs": 5900
+    },
+    {
+      "type": "card",
+      "title": "No Code / Low Code",
+      "tag": "// PLATFORMS",
+      "accent": "signal",
+      "startMs": 7857,
+      "endMs": 10400
+    },
+    {
+      "type": "icon",
+      "icon": "laptop",
+      "label": "freelance",
+      "accent": "signal",
+      "x": 0.68,
+      "startMs": 12643,
+      "endMs": 14500
+    },
+    {
+      "type": "icon",
+      "icon": "coins",
+      "label": "no code",
+      "accent": "ember",
+      "x": 0.32,
+      "startMs": 16037,
+      "endMs": 18200
+    },
+    {
+      "type": "card",
+      "title": "3k \u2013 7k DH",
+      "tag": "// NO CODE / LOW CODE",
+      "accent": "ember",
+      "startMs": 19507,
+      "endMs": 22850
+    },
+    {
+      "type": "icon",
+      "icon": "code",
+      "label": "hard code",
+      "accent": "signal",
+      "x": 0.5,
+      "startMs": 25133,
+      "endMs": 27300
+    },
+    {
+      "type": "card",
+      "title": "10k DH +",
+      "tag": "// REAL CODE",
+      "accent": "ember",
+      "startMs": 28833,
+      "endMs": 32300
+    },
+    {
+      "type": "icon",
+      "icon": "sliders",
+      "label": "custom",
+      "accent": "signal",
+      "x": 0.32,
+      "startMs": 33367,
+      "endMs": 35500
+    },
+    {
+      "type": "icon",
+      "icon": "sparkles",
+      "label": "sp\u00e9cifique",
+      "accent": "signal",
+      "x": 0.68,
+      "startMs": 36667,
+      "endMs": 39400
+    },
+    {
+      "type": "icon",
+      "icon": "eye",
+      "label": "hard to find",
+      "accent": "signal",
+      "x": 0.5,
+      "startMs": 42900,
+      "endMs": 45000
+    },
+    {
+      "type": "terminal",
+      "title": "~/nocode",
+      "lines": [
+        "$ build --custom-logic",
+        "\u2717 impossible"
+      ],
+      "startMs": 45243,
+      "endMs": 47900
+    },
+    {
+      "type": "icon",
+      "icon": "workflow",
+      "label": "logique",
+      "accent": "signal",
+      "x": 0.68,
+      "startMs": 48467,
+      "endMs": 50300
+    },
+    {
+      "type": "card",
+      "title": "Learn to code",
+      "tag": "// CODE > NO CODE",
+      "accent": "signal",
+      "startMs": 51367,
+      "endMs": 55200
+    }
+  ],
+  "faceZone": {
+    "top": 0.06,
+    "bottom": 0.652
+  },
+  "sfx": [
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 350,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 3967,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/whoosh.wav",
+      "atMs": 7857,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 12643,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 16037,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/whoosh.wav",
+      "atMs": 19507,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 25133,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/whoosh.wav",
+      "atMs": 28833,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/chime.wav",
+      "atMs": 29400,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 33367,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 36667,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 42900,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/type.wav",
+      "atMs": 45243,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/pop.wav",
+      "atMs": 48467,
+      "volume": 0.35
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/whoosh.wav",
+      "atMs": 51367,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/code-vs-nocode/sfx/chime.wav",
+      "atMs": 52000,
+      "volume": 0.3
+    }
+  ],
+  "music": {
+    "src": "videos/code-vs-nocode/music/bed.m4a",
+    "volume": 0.22,
+    "fadeInMs": 800,
+    "fadeOutMs": 1500
+  }
+}

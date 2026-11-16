@@ -6,11 +6,13 @@ import { FPS, HORIZONTAL, VERTICAL } from "./brand/theme";
 import type { EditSpec } from "./brand/types";
 import brandDemo from "./videos/brand-demo/edit.json";
 import aiAgent from "./videos/ai-agent/edit.json";
+import codeVsNocode from "./videos/code-vs-nocode/edit.json";
 
 // Register every video here: one line per video folder in src/videos/<slug>/edit.json
 const videos: { id: string; spec: EditSpec }[] = [
   { id: "brand-demo", spec: brandDemo as EditSpec },
   { id: "ai-agent", spec: aiAgent as EditSpec },
+  { id: "code-vs-nocode", spec: codeVsNocode as EditSpec },
 ];
 
 export const RemotionRoot: React.FC = () => {

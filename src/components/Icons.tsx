@@ -2,6 +2,16 @@ import React from "react";
 
 // Line icons (24x24, stroke). Paths adapted from Lucide (ISC license, https://lucide.dev).
 export const ICONS = {
+  code: <path d="m16 18 6-6-6-6M8 6l-6 6 6 6" />,
+  coins: (
+    <>
+      <circle cx="8" cy="8" r="6" />
+      <path d="M18.09 10.37A6 6 0 1 1 10.34 18M7 6h1v4M16.71 13.88l.7.71-2.82 2.82" />
+    </>
+  ),
+  sliders: (
+    <path d="M21 4h-7M10 4H3M21 12h-9M8 12H3M21 20h-5M12 20H3M14 2v4M8 10v4M16 18v4" />
+  ),
   bot: (
     <>
       <path d="M12 8V4H8" />
