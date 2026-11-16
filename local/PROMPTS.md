@@ -45,7 +45,7 @@ In engine/, build the Purple Room style once:
    face is not on screen.
 4. Make a demo composition "purple-demo" that shows each component for 3 seconds on a sample clip, render one still
    per component, put them in one contact sheet in results/purple-demo/, look at it yourself, then show it to me.
-5. npx tsc --noEmit, run check_face.py on the demo (must PASS), commit "purple-room: components" and push.
+5. npx tsc --noEmit, run check_face.py on the demo (must PASS), commit "purple-room: components" locally (no push).
 
 Keep it calm and minimal like the storyboard. Ask me only if something in the storyboard is unclear.
 ```
