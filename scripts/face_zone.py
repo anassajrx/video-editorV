@@ -9,7 +9,7 @@ How it works
   zoom the edit uses: slow push 1.05 x biggest punch-in).
 - faceZone.top    = highest point of the face (minus hair margin)
 - faceZone.bottom = lowest point of the chin (plus a beard/neck margin)
-Captions and graphics are then only allowed BELOW faceZone.bottom (see DESIGN.md).
+Captions and graphics are then only allowed BELOW faceZone.bottom (see the darija-video-edit-local skill).
 """
 import json
 import os

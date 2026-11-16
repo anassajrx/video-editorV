@@ -33,7 +33,7 @@ I still need to do.
 
 ```
 Read .claude/skills/darija-video-edit-local/SKILL.md, section 6 (Purple Room style) and section 1.3, and look at
-references/purple-room-storyboard-v4.png and references/grade-compare.jpg (the approved grade is the MIDDLE image,
+references/purple-room-storyboard.png and references/grade-compare.jpg (the approved grade is the MIDDLE image,
 "SOFT", not the strong one).
 
 In engine/, build the Purple Room style once:

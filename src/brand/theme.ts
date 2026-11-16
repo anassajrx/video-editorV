@@ -2,7 +2,7 @@ import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
 
 // Single source of truth for the brand inside videos.
-// Mirrors brand/brand.json — change both together.
+// Brand tokens. The Purple Room style tokens live in the darija-video-edit-local skill (section 6.1).
 
 export const colors = {
   ink: "#07090F",

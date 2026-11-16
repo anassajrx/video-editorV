@@ -10,7 +10,7 @@ video-editor-kit/
 ├── PROMPTS.md                                <- the 3 prompts you paste into Claude Code
 ├── darija-video-edit-local/SKILL.md          <- the skill (all the rules, steps and fixes)
 └── references/
-    ├── purple-room-storyboard-v4.png         <- the approved style (storyboard)
+    ├── purple-room-storyboard.png         <- the approved style (storyboard)
     └── grade-compare.jpg                     <- the approved grade = the MIDDLE image ("SOFT")
 ```
 

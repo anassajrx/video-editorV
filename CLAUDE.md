@@ -1,39 +1,32 @@
-# CLAUDE.md — Video editing desk
+# CLAUDE.md — Video editing engine
 
-This repo is a reusable video editing system. Remotion does the rendering. Every video follows the same brand, design system and workflow.
+This repo is the engine behind the user's video edits (Moroccan Darija talking-head videos, vertical 1080x1920).
+Remotion renders; Python/ffmpeg scripts cut, transcribe and check. It is normally cloned as `engine/` inside the
+user's local `video editor` folder (Windows).
 
-**Always use the `edit-skill` skill (`.claude/skills/edit-skill/SKILL.md`) before starting any edit in this repo.**
-**For Moroccan Darija videos, also follow `darija-video-edit` (`.claude/skills/darija-video-edit/SKILL.md`): the full runbook with every known pitfall.**
-Then read `DESIGN.md` (look and motion) and `brand/BRAND.md` (brand). Do not invent new colors, fonts or component styles. Use the tokens in `src/brand/theme.ts`.
+**Before any edit, follow the skill `darija-video-edit-local` (`.claude/skills/darija-video-edit-local/SKILL.md`).**
+It is the single source of truth: setup, pipeline, the "Purple Room" style, rules and every known pitfall.
+Style reference: `local/style/purple-room-storyboard.png` (soft grade: `local/style/grade-compare.jpg`, middle image).
 
 ## Repo map
-- `src/brand/` — theme tokens + `EditSpec` types (the edit format)
-- `src/components/` — KineticCaptions, Footage (punch-ins, B&W, grade), Overlays (card, profile, timeline, terminal, stat, image)
-- `src/EditTemplate.tsx` — renders any `EditSpec`
-- `src/videos/<slug>/edit.json` — **one folder per video**; register it in `src/Root.tsx`
-- `public/videos/<slug>/` — that video's footage, music, sfx, screenshots
-- `scripts/cut-silences.mjs` — rough cut (removes pauses)
-- `scripts/render-segments.mjs` — renders kept segments (low memory); used for retake re-cuts
-- `scripts/transcribe.mjs` — word-level captions with Whisper (`--lang=ar` for Darija)
-- `scripts/transcribe_fw.py` — faster-whisper fallback for Darija (no loops, stays in dialect)
-- `scripts/darija/` — transcribe_phrases (find retakes), second_opinion (French + whisper.cpp views for captions), cut_points (never cut mid-word), build_cut, align_captions (+ .srt)
-- `scripts/make_sfx.py` — original UI sound effects (whoosh, pop, click, chime, type)
-- `scripts/face_zone.py` — measures where the face is (writes `faceZone`)
-- `scripts/check_face.py` — fails if anything is drawn over/above the face
-
-## Commands
-- `npm run cut -- in.mp4 out.mp4` — remove silences
-- `npm run transcribe -- in.mp4 words.json` — word timings (`--model=medium` for non-English)
-- `npm run still -- <slug> out/x.png --frame=N --scale=0.4` — still for approval
-- `npm run draft -- <slug> out/<slug>-draft.mp4` — quick low-res draft
-- `npm run final -- <slug> out/<slug>-final.mp4` — full quality
-- Long finals: push to GitHub and run the **Render video** GitHub Action (`.github/workflows/render.yml`)
+- `.claude/skills/darija-video-edit-local/` — the skill (master copy; the local folder keeps a copy)
+- `local/` — Windows starter kit: `SETUP-WINDOWS.md`, `PROMPTS.md`, `style/` reference images
+- `src/brand/` — theme tokens, layout, `EditSpec` types (the edit format)
+- `src/components/` — KineticCaptions, Footage (push-ins, B&W), Overlays, Icons (+ `purple/` once built)
+- `src/EditTemplate.tsx` — renders any `EditSpec`; `src/Root.tsx` registers one composition per video
+- `src/videos/<slug>/edit.json` — one folder per video; `brand-demo` is the setup test composition
+- `public/fonts/` — bundled fonts · `public/music/lofi-bed.m4a` — licensed music bed · `public/videos/<slug>/` — per-video media (raw/ is git-ignored)
+- `scripts/cut-silences.mjs`, `scripts/render-segments.mjs` — silence cut, low-memory segment render
+- `scripts/transcribe.mjs` — whisper.cpp (installs `.whisper/`)
+- `scripts/darija/` — transcribe_phrases (retakes), second_opinion (captions), cut_points, build_cut, align_captions, `pages.example.txt`
+- `scripts/face_zone.py`, `scripts/check_face.py` (+ `scripts/models/`) — the face rule
+- `scripts/make_sfx.py` — original sound effects
 
 ## Rules
-- **#1: Nothing is ever drawn over my face or above it, including captions.** Run `python3 scripts/face_zone.py src/videos/<slug>/edit.json` before layout and `python3 scripts/check_face.py <slug>` (must PASS) before sending any still, draft or final.
-- I review a **plan** before anything is animated, and **stills** before the full render. Never skip these gates.
-- Edits change `edit.json` first. Only touch components when the design system itself needs to change.
-- When I give a note that should apply to every future video, add it to the edit skill's "Learned rules".
-- Raw footage is not committed to git (too big). I give a Google Drive/Dropbox link; download it into `public/videos/<slug>/raw/` (git-ignored).
-- Keep music low: my voice always sits on top.
-- Commit after every approved round, with a message like `<slug>: round 2 notes`.
+- **#1: Nothing is ever drawn over the user's face or above it, including captions.** `check_face.py <slug>` must PASS
+  before any still, draft or final is sent.
+- All retakes removed; captions in Darija with foreign words kept in their original language; Purple Room style.
+- Edits change `edit.json` first; only touch components when the style itself changes.
+- Raw footage and renders are never committed (`public/videos/*/raw/`, `out/`).
+- A note that should apply to every future video goes into the skill's "Learned rules".
+- Commit after every delivered round: `<slug>: final edit` / `<slug>: round N notes`.

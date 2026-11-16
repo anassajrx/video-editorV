@@ -73,6 +73,10 @@ npx tsc --noEmit
   (or the first real video does it).
 - Remotion downloads its own headless Chrome on the first render (~150 MB).
 - Update the engine at the start of every session: `git -C engine pull --ff-only`.
+- The master copy of THIS skill and the style references live in the engine. After every pull, refresh them:
+  `cp engine/.claude/skills/darija-video-edit-local/SKILL.md .claude/skills/darija-video-edit-local/SKILL.md`
+  and `cp engine/local/style/* references/`. If the user edits this skill locally, copy it back into the engine,
+  commit and push, so the two never diverge.
 - Keep the `video editor` folder OUT of OneDrive-synced folders if possible (sync locks files during renders).
 
 ### 1.3 Purple Room components (only if missing)
@@ -153,7 +157,7 @@ Reference: `references/grade-compare.jpg` (middle = this grade). Keep the real r
 
 ## 6. The "Purple Room" style
 
-Reference storyboard: `references/purple-room-storyboard-v4.png` (approved 2026-11-16). Read it before planning.
+Reference storyboard: `references/purple-room-storyboard.png` (approved 2026-11-16). Read it before planning.
 
 ### 6.1 Tokens
 - Plum `#120A1F` (full-screen backgrounds, radial to `#2A1A4A` in the centre) · Violet `#8B5CF6` (highlight pill, bars,
@@ -218,7 +222,7 @@ with Playwright (`npx playwright screenshot` or a 10-line script) at deviceScale
 2. Rebuild what was really said. Whisper drifts into MSA ("يستطيع", "سيكون") and mishears Darija ("فحل شات جيب بيتي" =
    "بحال ChatGPT", "بانويالمو" = "manuellement", "هاد دي في غونسيال" = "la différence"). Darija spellings: كنقول، بزاف،
    دابا، واش، علاش، ديال، غادي، حيت، شي، هادشي.
-3. Write `src/videos/<slug>/pages.txt` (format in `scripts/darija/align_captions.py`; max 4 words/page, ONE accent per
+3. Write `src/videos/<slug>/pages.txt` (format in `scripts/darija/align_captions.py`, full example: `scripts/darija/pages.example.txt`; max 4 words/page, ONE accent per
    page — the pill word — foreign words Latin, `@start-end` source-second overrides where Whisper is off), then:
    ```bash
    python3 -I scripts/darija/align_captions.py src/videos/<slug>/pages.txt $R/phrases.json $R/segments.json \
@@ -234,7 +238,7 @@ with Playwright (`npx playwright screenshot` or a 10-line script) at deviceScale
 - **Music**: low lo-fi bed, volume 0.2–0.25 (≈ 12 dB under the voice), fade in 0.8 s / out 1.5 s, cut to silence for the
   B&W beat. Sources in order: Epidemic Sound connector (check download rights first: previews are NEVER allowed),
   vidIQ `vidiq_generate_music` (if connected), or a royalty-free file the user puts in `references/music/`.
-  Reusable bed: `public/videos/ai-agent/music/bed.m4a`. Never unlicensed music.
+  Reusable bed (vidIQ-generated, licensed): `public/music/lofi-bed.m4a` → set `music.src` to `music/lofi-bed.m4a`. Never unlicensed music.
 - **SFX**: `python3 scripts/make_sfx.py public/videos/<slug>/sfx`; soft tick on cards (0.3), type under code (0.3),
   chime on the result (0.3). Never two within 0.4 s.
 
