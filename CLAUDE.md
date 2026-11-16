@@ -16,7 +16,7 @@ Then read `DESIGN.md` (look and motion) and `brand/BRAND.md` (brand). Do not inv
 - `scripts/render-segments.mjs` — renders kept segments (low memory); used for retake re-cuts
 - `scripts/transcribe.mjs` — word-level captions with Whisper (`--lang=ar` for Darija)
 - `scripts/transcribe_fw.py` — faster-whisper fallback for Darija (no loops, stays in dialect)
-- `scripts/darija/` — transcribe_phrases (find retakes), cut_points (never cut mid-word), build_cut, align_captions (+ .srt)
+- `scripts/darija/` — transcribe_phrases (find retakes), second_opinion (French + whisper.cpp views for captions), cut_points (never cut mid-word), build_cut, align_captions (+ .srt)
 - `scripts/make_sfx.py` — original UI sound effects (whoosh, pop, click, chime, type)
 - `scripts/face_zone.py` — measures where the face is (writes `faceZone`)
 - `scripts/check_face.py` — fails if anything is drawn over/above the face

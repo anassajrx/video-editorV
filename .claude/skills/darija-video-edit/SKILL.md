@@ -86,6 +86,13 @@ python3 -I scripts/darija/transcribe_phrases.py public/videos/<slug>/raw/in.mp4 
   public/videos/<slug>/raw/cut.mp4.cuts.json public/videos/<slug>/raw/phrases.json
 ```
 ~6–8 min for 2–3 min of speech. It prints every segment and every phrase on its own line.
+
+> **Transcription budget (rule added after video 2, which lost ~16 min to improvised whisper.cpp runs):**
+> exactly TWO commands, nothing else: `transcribe_phrases.py` (this step) and `second_opinion.py` (§6.1).
+> Total ≈ 15 min per minute of speech. Do not write ad-hoc transcription loops, never run whisper.cpp on short
+> clips (it reloads the 3 GB model every call), never pass `-to` after an input `-ss` in ffmpeg (it becomes an
+> absolute time and the clip runs to the end). If the text is still unclear after both, write your best guess,
+> flag it in the report, and move on. **If the user sent a script, skip `second_opinion.py` entirely.**
 **Why:** a whole-file Whisper transcript merges a repeated sentence into one copy, so retakes are invisible.
 On the first video the hook, the flight sentence and the outro were each said twice, and none showed in the
 whole-file transcript.
@@ -137,6 +144,14 @@ If I lands outside -14 ± 0.3, nudge the loudnorm `I` (±0.4) and run it again.
 
 ## 6. Captions (Darija + original-language foreign words)
 
+0. Get the second opinion, ONE command (skip it if the user gave a script):
+   ```bash
+   python3 -I scripts/darija/second_opinion.py public/videos/<slug>/raw/in.mp4 \
+     public/videos/<slug>/raw/phrases.json public/videos/<slug>/raw/second.json
+   ```
+   It prints, per phrase, the Arabic pass next to a French pass (recovers application, plateforme, personnalisation,
+   impossible…), then one whisper.cpp large-v3 run over the whole clip (best for sentence meaning and numbers).
+   Those three views are all you get: write the captions from them.
 1. Read the phrase list (§4.1) for the kept takes. Whisper is weak at Darija: large-v2 output is often MSA-flavoured
    ("يستطيع", "سيكون هناك") or misheard ("فحل شات جيب بيتي" = "بحال ChatGPT", "بانويالمو" = "manuellement",
    "الهزولتة" = "les résultats", "سيري" = "série"). Rebuild what was really said from context.
@@ -237,6 +252,7 @@ Verify the final: 1080x1920, 30 fps, duration, -14 LUFS ± 0.3, true peak ≤ -1
 | 18 | (video 2) `npm run cut` kept everything: room noise peaks stopped `silencedetect` from finding any pause, even at -30 dB | Measure 20 ms RMS in Python, take runs < -32 dB that last ≥ 0.3 s, pad 0.08 s, write `cut.mp4.cuts.json` yourself |
 | 19 | (video 2) The final render peaked at 0.0 dBTP once music + SFX were mixed over the voice | After the render, run `alimiter=limit=0.82` (oversampled, `-c:v copy`) on the final and check ebur128 again |
 | 20 | (video 2) Footage uploaded straight into the chat (no Drive link), and the saved Google token had expired | Use the upload path (`/root/.claude/uploads/...`) directly; tokens last ~1 h, so request a fresh one only when Drive is needed |
+| 21 | (video 2) ~16 min lost on a THIRD, improvised transcription: whisper.cpp per short clip (model reload each call, 180 s timeouts), `-ss … -to` made clips run to the end, float times broke the shell loop, wrong binary name (`.whisper/main`, not `whisper-cli`) | Fixed budget: `transcribe_phrases.py` + `second_opinion.py` only (§4.1, §6.0); best guesses get flagged, not re-transcribed |
 
 ## 11. Timing reference (4 vCPU cloud session, 2:47 raw clip)
 Download 320 MB ~1 min · transcode ~2.5 min · silence cut ~2 min · phrase transcription ~7 min · segment render ~2 min ·
