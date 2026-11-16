@@ -47,7 +47,8 @@ for p in phrases:
     rows.append({"s": s, "e": e, "ar": ar, "fr": words})
 
 cpp = []
-binary = os.path.join(".whisper", "main")  # built by @remotion/install-whisper-cpp (npm run transcribe once)
+binary = next((b for b in (os.path.join(".whisper", "main.exe"), os.path.join(".whisper", "main")) if os.path.exists(b)),
+              os.path.join(".whisper", "main"))  # installed by `npm run transcribe` once (main.exe on Windows)
 mdl = os.path.join(".whisper", "ggml-large-v3.bin")
 if "--no-cpp" not in sys.argv and os.path.exists(binary) and os.path.exists(mdl):
     with tempfile.TemporaryDirectory() as d:
