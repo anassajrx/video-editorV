@@ -70,17 +70,17 @@ npx tsc --noEmit
   `npm run transcribe -- public/videos/brand-demo/<any short clip or 10 s test file> /tmp/t.json --lang=ar`
   (or the first real video does it).
 - Remotion downloads its own headless Chrome on the first render (~150 MB).
-- Update the engine at the start of every session: `git -C engine pull --ff-only`.
+- Update the engine at the start of every session: `git -C engine pull --no-edit` (merges updates with your local commits; if it reports a conflict, keep the local version of `src/videos/` and the remote version of everything else).
 - The master copy of THIS skill and the style references live in the engine. After every pull, refresh them:
   `cp engine/.claude/skills/darija-video-edit-local/SKILL.md .claude/skills/darija-video-edit-local/SKILL.md`
-  and `cp engine/local/style/* references/`. If the user edits this skill locally, copy it back into the engine,
-  commit and push, so the two never diverge.
+  and `cp engine/local/style/* references/`. If the user edits this skill locally, copy it back into the engine and
+  commit it locally, so a pull never overwrites it silently.
 - Keep the `video editor` folder OUT of OneDrive-synced folders if possible (sync locks files during renders).
 
 ### 1.3 Purple Room components (only if missing)
 Check `engine/src/components/purple/`. If it does not exist, the engine predates this style: build the pieces in
 section 6.3 first, register them in `src/brand/types.ts` + `EditTemplate.tsx`, run `npx tsc --noEmit`, render one still of
-each, commit `purple-room: components`, push. This is a one-time job (~45 min).
+each, commit `purple-room: components` locally (do NOT push: this PC is not logged in to GitHub). This is a one-time job (~45 min).
 
 ---
 
@@ -257,7 +257,7 @@ cp src/videos/<slug>/<slug>.srt "../results/<slug>/"
 Verify: 1080x1920, 30 fps, -14 LUFS ± 0.3, peak ≤ -1. Then write `results/<slug>/report.md`:
 original → final length, the removal table (from build_cut.py: timestamps in the ORIGINAL clip + reason), best-guess
 caption lines, anything skipped. Tell the user the paths. Commit the edit (never raw/ or out/) in `engine/`:
-`git add src/videos/<slug> src/Root.tsx && git commit -m "<slug>: final edit" && git push`.
+`git add src/videos/<slug> src/Root.tsx && git commit -m "<slug>: final edit"` (local commit only, never push).
 
 ---
 
