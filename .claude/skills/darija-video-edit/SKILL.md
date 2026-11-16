@@ -234,6 +234,9 @@ Verify the final: 1080x1920, 30 fps, duration, -14 LUFS ± 0.3, true peak ≤ -1
 | 15 | Epidemic Sound downloads FORBIDDEN | Tell the user; vidIQ music; self-made SFX; never previews (§8) |
 | 16 | Stop hook: "no remote branch" although pushed | Shallow clone has no refspec for the branch: add it and set the upstream (§1) |
 | 17 | The user kept asking "where are we" during long steps | Send a one-line status with an ETA whenever a step runs more than a minute |
+| 18 | (video 2) `npm run cut` kept everything: room noise peaks stopped `silencedetect` from finding any pause, even at -30 dB | Measure 20 ms RMS in Python, take runs < -32 dB that last ≥ 0.3 s, pad 0.08 s, write `cut.mp4.cuts.json` yourself |
+| 19 | (video 2) The final render peaked at 0.0 dBTP once music + SFX were mixed over the voice | After the render, run `alimiter=limit=0.82` (oversampled, `-c:v copy`) on the final and check ebur128 again |
+| 20 | (video 2) Footage uploaded straight into the chat (no Drive link), and the saved Google token had expired | Use the upload path (`/root/.claude/uploads/...`) directly; tokens last ~1 h, so request a fresh one only when Drive is needed |
 
 ## 11. Timing reference (4 vCPU cloud session, 2:47 raw clip)
 Download 320 MB ~1 min · transcode ~2.5 min · silence cut ~2 min · phrase transcription ~7 min · segment render ~2 min ·
