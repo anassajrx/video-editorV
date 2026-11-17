@@ -35,6 +35,7 @@ p.add_argument("--mic", default="", help="separate mic recording in 'raw footage
                "(file name, or 'auto' = newest audio file there); synced automatically (offset + clock drift)")
 p.add_argument("--source", default="", help="original video file name (for the report)")
 p.add_argument("--mic-file", default="", help="mic file used in the first run (for the report)")
+p.add_argument("--enfr-only", action="store_true", help="read the Darija phrases.json from Drive, run ONLY English+French, save second.json, stop")
 p.add_argument("--batch", type=int, default=16, help="EN/FR phrases per GPU call (text only, no word timings)")
 p.add_argument("--keep-in", action="store_true", default=True, help="copy in.mp4 to Drive (needed for re-cuts)")
 args = p.parse_args()
@@ -81,22 +82,36 @@ os.makedirs(W, exist_ok=True)
 SR = 16000
 FPS = 30
 
-# ---------- resume: load the state Part A left in /content/work ----------
+# ---------- resume: load the state Part A left (Colab disk), or only the Drive files with --enfr-only ----------
 IN = os.path.join(W, "in.mp4")
-for f in ("in.mp4", "cut.mp4.cuts.json", "phrases.json"):
-    if not os.path.exists(os.path.join(W, f)):
-        sys.exit(f"Missing {os.path.join(W, f)}: this Colab runtime does not have Part A's work (was it restarted?). Run Part A again.")
-for f in ("phrases.json", "cut.mp4.cuts.json"):
-    shutil.copy(os.path.join(W, f), os.path.join(OUT, f))
-log(f"backup: phrases.json + cut.mp4.cuts.json saved to {OUT}")
-src = args.source or "in.mp4"
-info = json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "stream=width,height:format=duration", "-of", "json", IN]).stdout)
-DUR = float(info["format"]["duration"])
-wh = [(s.get("width"), s.get("height")) for s in info["streams"] if s.get("width")][0]
-ORIENT = "vertical" if wh[1] >= wh[0] else "horizontal"
-MIC = {"file": args.mic_file} if args.mic_file else None
-pcm = sh(["ffmpeg", "-v", "error", "-i", IN, "-f", "f32le", "-ar", str(SR), "-ac", "1", "-"], text=False).stdout
-A = np.frombuffer(pcm, dtype=np.float32)
+if args.enfr_only:
+    ph_path = os.path.join(OUT, "phrases.json") if os.path.exists(os.path.join(OUT, "phrases.json")) else os.path.join(W, "phrases.json")
+    if not os.path.exists(ph_path):
+        sys.exit(f"No phrases.json in {OUT} (or {W}).")
+    audio_src = IN if os.path.exists(IN) else os.path.join(RAW, args.source)
+    if not os.path.exists(audio_src):
+        sys.exit(f"Need the audio: neither {IN} nor {audio_src} exists (pass --source with the video file name).")
+    log(f"EN/FR only: Darija phrases from {ph_path} (read only), audio from {audio_src}")
+    pcm = sh(["ffmpeg", "-v", "error", "-i", audio_src, "-vn", "-f", "f32le", "-ar", str(SR), "-ac", "1", "-"], text=False).stdout
+    A = np.frombuffer(pcm, dtype=np.float32)
+    _p = json.load(open(ph_path, encoding="utf8"))
+    segments, phrases = _p["segments"], _p["phrases"]
+else:
+    for f in ("in.mp4", "cut.mp4.cuts.json", "phrases.json"):
+        if not os.path.exists(os.path.join(W, f)):
+            sys.exit(f"Missing {os.path.join(W, f)}: this Colab runtime does not have Part A's work (was it restarted?). "
+                     "Use --enfr-only, or run Part A again.")
+    for f in ("phrases.json", "cut.mp4.cuts.json"):
+        shutil.copy(os.path.join(W, f), os.path.join(OUT, f))
+    log(f"backup: phrases.json + cut.mp4.cuts.json saved to {OUT}")
+    src = args.source or "in.mp4"
+    info = json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "stream=width,height:format=duration", "-of", "json", IN]).stdout)
+    DUR = float(info["format"]["duration"])
+    wh = [(s.get("width"), s.get("height")) for s in info["streams"] if s.get("width")][0]
+    ORIENT = "vertical" if wh[1] >= wh[0] else "horizontal"
+    MIC = {"file": args.mic_file} if args.mic_file else None
+    pcm = sh(["ffmpeg", "-v", "error", "-i", IN, "-f", "f32le", "-ar", str(SR), "-ac", "1", "-"], text=False).stdout
+    A = np.frombuffer(pcm, dtype=np.float32)
 
 
 def db(s, e):
@@ -104,11 +119,12 @@ def db(s, e):
     return 20 * np.log10(np.sqrt((x ** 2).mean()) + 1e-9) if len(x) else -99.0
 
 
-_c = json.load(open(os.path.join(W, "cut.mp4.cuts.json")))
-cuts, floor, thr = _c["cuts"], _c.get("noiseFloorDb", 0.0), _c.get("thresholdDb", 0.0)
-_p = json.load(open(os.path.join(W, "phrases.json"), encoding="utf8"))
-segments, phrases = _p["segments"], _p["phrases"]
-log(f"resumed: {wh[0]}x{wh[1]} {ORIENT}, {DUR:.0f}s, {len(cuts)} segments, {len(phrases)} Darija phrases")
+if not args.enfr_only:
+    _c = json.load(open(os.path.join(W, "cut.mp4.cuts.json")))
+    cuts, floor, thr = _c["cuts"], _c.get("noiseFloorDb", 0.0), _c.get("thresholdDb", 0.0)
+    _p = json.load(open(os.path.join(W, "phrases.json"), encoding="utf8"))
+    segments, phrases = _p["segments"], _p["phrases"]
+    log(f"resumed: {wh[0]}x{wh[1]} {ORIENT}, {DUR:.0f}s, {len(cuts)} segments, {len(phrases)} Darija phrases")
 
 # ---------- models ----------
 from transformers import GenerationConfig, WhisperForConditionalGeneration, WhisperProcessor  # noqa: E402
@@ -202,6 +218,15 @@ for i in range(n0, len(phrases), B):
     json.dump(second, open(ck, "w"), ensure_ascii=False)
 json.dump(second, open(os.path.join(W, "second.json"), "w"), ensure_ascii=False, indent=1)
 log("EN/FR pass done")
+if args.enfr_only:
+    json.dump(second, open(os.path.join(OUT, "second.json"), "w"), ensure_ascii=False, indent=1)
+    if os.path.exists(IN) and not os.path.exists(os.path.join(OUT, "in.mp4")):
+        log("copying in.mp4 (converted video with the mic audio) to Drive for Claude...")
+        shutil.copy(IN, os.path.join(OUT, "in.mp4"))
+    if os.path.exists(ck):
+        os.remove(ck)
+    log(f"DONE (EN/FR only) -> {OUT}/second.json. Give Claude Code the folder link.")
+    sys.exit(0)
 del base
 gc.collect()
 if dev == "cuda":
