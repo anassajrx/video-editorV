@@ -11,8 +11,8 @@ export const FrostedCard: React.FC<{
   children: React.ReactNode;
   style?: React.CSSProperties;
 }> = ({ top, durationInFrames, width = 0.74, children, style }) => {
-  const { width: W } = useVideoConfig();
-  const s = W / 1080;
+  const { width: W, height: H } = useVideoConfig();
+  const s = Math.min(W, H) / 1080;
   const { opacity, translateY } = useEnterExit(durationInFrames);
   return (
     <AbsoluteFill style={{ pointerEvents: "none" }}>

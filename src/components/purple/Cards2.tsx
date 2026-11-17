@@ -5,7 +5,7 @@ import { FrostedCard } from "./FrostedCard";
 import { EASE, useProgress } from "./motion";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const useS = () => useVideoConfig().width / 1080;
+const useS = () => { const { width, height } = useVideoConfig(); return Math.min(width, height) / 1080; };
 type Base = { top: number; durationInFrames: number };
 
 /** Mono lines stacking one by one (e.g. video_final_v9_final_wallah_final.mp4); older lines fade up. */

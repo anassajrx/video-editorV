@@ -9,7 +9,7 @@ const isAr = (t: string) => ARABIC_RE.test(t);
 const textFont = (t: string): React.CSSProperties =>
   isAr(t) ? { fontFamily: fonts.arabic, fontWeight: 600, direction: "rtl" } : { fontFamily: fonts.display, fontWeight: 500 };
 
-const useS = () => useVideoConfig().width / 1080;
+const useS = () => { const { width, height } = useVideoConfig(); return Math.min(width, height) / 1080; };
 
 type Base = { top: number; durationInFrames: number };
 

@@ -26,20 +26,16 @@ No laptop needed. Your phone or any browser is enough.
 
 ## Every video
 
-### A. Colab (~5–10 min for a 5-min clip)
-1. Upload the clip to `My Drive/video-editor/raw footage/` (from your phone's Drive app is fine).
-2. Open **colab.research.google.com** → New notebook → **Runtime → Change runtime type → T4 GPU** → Save.
-3. Paste this in the cell, change `my-video` to a short name, press ▶:
-   ```python
-   from google.colab import drive; drive.mount('/content/drive')
-   !wget -q -O colab_prep.py https://raw.githubusercontent.com/anassajrx/video-editorV/claude/hopeful-clarke-qhnr9z/local/colab/colab_prep.py
-   !python colab_prep.py --slug my-video
-   ```
-   (Allow Drive access when asked. Options: `--video "IMG_1234.MOV"` for a specific clip, `--no-retakes` to only
-   detect retakes without cutting them.)
-4. When it prints **DONE**, open `My Drive/video-editor/results/my-video/`. You can already watch
-   `preview-720p.mp4` (cut + graded + loudness) on your phone.
-5. Copy the link of that `my-video` folder (Share → Copy link).
+### A. Colab (the notebook)
+1. Upload the clip to `My Drive/video-editor/raw footage/` (from your phone's Drive app is fine). Vertical (9:16) or
+   horizontal (16:9) both work: the orientation is detected automatically.
+2. Open the notebook directly from GitHub:
+   **https://colab.research.google.com/github/anassajrx/video-editorV/blob/claude/hopeful-clarke-qhnr9z/local/colab/video_prep_and_background.ipynb**
+   → File → *Save a copy in Drive* (once) → Runtime → Change runtime type → **T4 GPU** → Save.
+3. **Step 0**: set `SLUG` (short name), tick/untick `CHANGE_BACKGROUND`. Run Step 0, then **Part A**.
+4. Background swap only: give `results/<slug>/frame_for_image_ai.png` to your image AI, save its result as
+   `results/<slug>/background.png`, then run **Part B** (B1 → B6, top to bottom).
+5. Watch `preview-720p.mp4` (and `compare-background.mp4`) on your phone. Copy the link of the `results/<slug>` folder.
 
 ### B. Claude Code cloud session
 Start a session on the repo `anassajrx/video-editorV` and send:
@@ -54,7 +50,9 @@ Add your **script** if you have it (better captions, faster), or **"one shot"** 
 
 | File | What |
 |---|---|
-| `edit.mp4` | your video: silences + retakes + breaths removed, soft grade, -14 LUFS |
+| `meta.json` | size, **orientation** (vertical/horizontal), durations, loudness, whether the background was swapped |
+| `edit.mp4` | your video: silences + retakes + breaths removed, (new background,) soft grade, -14 LUFS |
+| `edit_original_background.mp4`, `compare-background.mp4`, `background_files/` | only with the background swap |
 | `preview-720p.mp4` | small version for the phone |
 | `transcript.txt` | every phrase: Arabic / English / French side by side, REMOVED marked |
 | `removals.json` | what was cut and why (editable) |

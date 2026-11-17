@@ -13,8 +13,8 @@ export const ChapterBlur: React.FC<{ top: number; durationInFrames: number; numb
   label,
 }) => {
   const frame = useCurrentFrame();
-  const { fps, width } = useVideoConfig();
-  const s = width / 1080;
+  const { fps, width, height } = useVideoConfig();
+  const s = Math.min(width, height) / 1080;
   const blur = interpolate(frame, [0, 0.45 * fps, 0.9 * fps], [0, 6, 0], { ...clamp, easing: EASE });
   const dim = interpolate(frame, [0, 0.45 * fps, 0.9 * fps], [0, 0.25, 0], clamp);
   const { opacity, translateY } = useEnterExit(durationInFrames, 0.6, 0.4, 20);
@@ -63,8 +63,8 @@ export const BWStrike: React.FC<{ top: number; durationInFrames: number; word: s
   strikeAt = 0.5,
 }) => {
   const frame = useCurrentFrame();
-  const { fps, width } = useVideoConfig();
-  const s = width / 1080;
+  const { fps, width, height } = useVideoConfig();
+  const s = Math.min(width, height) / 1080;
   const mono = interpolate(frame, [0, 0.4 * fps, durationInFrames - 0.4 * fps, durationInFrames], [0, 1, 1, 0], {
     ...clamp,
     easing: EASE,

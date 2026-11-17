@@ -75,8 +75,8 @@ export const PurpleCaptions: React.FC<{
   momentRanges?: { startMs: number; endMs: number }[];
 }> = ({ words, top, momentRanges = [] }) => {
   const frame = useCurrentFrame();
-  const { fps, width } = useVideoConfig();
-  const s = width / 1080;
+  const { fps, width, height } = useVideoConfig();
+  const s = Math.min(width, height) / 1080;
   const pages = useMemo(() => toPages(words), [words]);
   const nowMs = (frame / fps) * 1000;
 

@@ -94,6 +94,11 @@ to `My Drive/video-editor/results/<slug>/`. In the cloud session:
 2. Read `transcript.txt` (AR / EN / FR per phrase, REMOVED marked) and **review `removals.json`**: Colab only finds
    near-identical repeats; add missed retakes/false starts, delete wrong ones. If you change anything, rebuild with
    `build_cut.py` + `render-segments.mjs` from `in.mp4`, then §5.1 + §5.2. Otherwise use Colab's `edit.mp4` as is.
+   Colab now runs the notebook `local/colab/video_prep_and_background.ipynb` (Part A = `colab_prep.py`, Part B =
+   optional background swap with MatAnyone 2, graded after the swap). Read `meta.json` first: `orientation`
+   (vertical 1080x1920 or horizontal 1920x1080) sets `edit.json` `orientation`; `backgroundSwapped` tells whether
+   `edit.mp4` already has the new room. If you re-cut from `in.mp4` after a swap, the swap is lost: tell the user to
+   re-run Part B instead.
 3. Skip §2–§5 and the transcription in §7.1: go straight to captions (§7.2–7.3, pin Latin-only pages with `@start-end`
    from `second.json`), graphics, QA, render (§8–§9). Deliver the MP4 + a 720p preview (≤ 30 MB, for the phone).
 
@@ -301,6 +306,9 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 ## 11. Learned rules (add new ones here, with the date)
 - 2026-11-17: Never a caption word mixing Latin and Arabic letters (`editيتو`, `نpostي`): the browser scrambles it.
   Write the Darija spelling (`مونطيتو`, `نبوسطي`) or split into separate words. `align_captions.py` refuses them.
+- 2026-11-17: Every step must work for BOTH vertical (9:16) and horizontal (16:9, YouTube) videos. Purple components
+  scale by the SHORT side (`min(width, height) / 1080`). Horizontal layout of the under-chin cards/moments still needs
+  a pass (captions and cards collide in 16:9): check stills before any horizontal render.
 - 2026-11-17: Heavy AI work (transcription) on Google Colab GPU; editing/rendering in the Claude Code cloud session
   (§1.4). Always also deliver a 720p preview ≤ 30 MB for the phone.
 - 2026-11-14: Nothing over or above the face, ever.

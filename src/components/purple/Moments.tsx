@@ -4,7 +4,7 @@ import { fonts, plumBackground, purple } from "../../brand/theme";
 import { EASE, useEnterExit, useProgress } from "./motion";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
-const useS = () => useVideoConfig().width / 1080;
+const useS = () => { const { width, height } = useVideoConfig(); return Math.min(width, height) / 1080; };
 
 /** Full-screen plum stage. Captions move to the TOP during moments (PurpleCaptions handles it). */
 const Stage: React.FC<{ durationInFrames: number; tag?: string; children: React.ReactNode }> = ({

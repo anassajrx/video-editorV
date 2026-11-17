@@ -106,7 +106,8 @@ sh(["ffmpeg", "-v", "error", "-y", "-i", local_src, "-map", "0:v:0", "-map", "0:
 info = json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "stream=width,height:format=duration", "-of", "json", IN]).stdout)
 DUR = float(info["format"]["duration"])
 wh = [(s.get("width"), s.get("height")) for s in info["streams"] if s.get("width")][0]
-log(f"converted: {wh[0]}x{wh[1]}, {DUR:.1f}s")
+ORIENT = "vertical" if wh[1] >= wh[0] else "horizontal"
+log(f"converted: {wh[0]}x{wh[1]} ({ORIENT}), {DUR:.1f}s")
 
 pcm = sh(["ffmpeg", "-v", "error", "-i", IN, "-f", "f32le", "-ar", str(SR), "-ac", "1", "-"], text=False).stdout
 A = np.frombuffer(pcm, dtype=np.float32)
@@ -380,7 +381,8 @@ for _ in range(3):
 log(f"loudness: {I:.1f} LUFS, true peak {PK:.1f} dBTP")
 
 PREV = os.path.join(W, "preview-720p.mp4")
-sh(["ffmpeg", "-v", "error", "-y", "-i", EDIT, "-vf", "scale=720:-2", "-c:v", "libx264", "-preset", "veryfast", "-b:v", "1100k",
+SHORT720 = "scale='if(gt(iw,ih),-2,720)':'if(gt(iw,ih),720,-2)'"  # 720p for vertical AND horizontal
+sh(["ffmpeg", "-v", "error", "-y", "-i", EDIT, "-vf", SHORT720, "-c:v", "libx264", "-preset", "veryfast", "-b:v", "1100k",
     "-maxrate", "1300k", "-bufsize", "2600k", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", PREV])
 
 # ---------- 7. readable transcript + report, copy to Drive ----------
@@ -393,7 +395,7 @@ for n, ph in enumerate(phrases):
     lines.append(f"[{n:3d}] {mmss(ph['s'])}-{mmss(ph['e'])} {flag}\n   AR: {ph['text']}\n   EN: {sc['en']}\n   FR: {sc['fr']}")
 open(os.path.join(W, "transcript.txt"), "w", encoding="utf8").write("\n".join(lines) + "\n")
 rep = [f"# {args.slug} — Colab prep report", "",
-       f"- Source: `{os.path.basename(src)}` · {wh[0]}x{wh[1]} · {mmss(DUR)}",
+       f"- Source: `{os.path.basename(src)}` · {wh[0]}x{wh[1]} ({ORIENT}) · {mmss(DUR)}",
        f"- Silence cut: floor {floor:.1f} dB, threshold {thr:.1f} dB → {len(cuts)} segments",
        f"- Junk segments removed: {sum(s['junk'] for s in segments)}",
        f"- Retakes / false starts: {len(removals)} ({'NOT applied' if args.no_retakes else 'applied'}) — REVIEW in removals.json",
@@ -403,7 +405,12 @@ rep = [f"# {args.slug} — Colab prep report", "",
 rep += [f"- {mmss(r['s'])} – {mmss(r['e'])}: {r['reason']}" for r in removals] or ["- none"]
 open(os.path.join(W, "report.md"), "w", encoding="utf8").write("\n".join(rep) + "\n")
 
-files = ["edit.mp4", "preview-720p.mp4", "cut.mp4.cuts.json", "phrases.json", "second.json", "removals.json", "segments.json",
+json.dump({"slug": args.slug, "source": os.path.basename(src), "width": wh[0], "height": wh[1], "orientation": ORIENT,
+           "fps": FPS, "sourceDurationS": round(DUR, 3), "finalDurationS": round(FINAL_DUR, 3), "lufs": I, "truePeakDb": PK,
+           "graded": not args.no_grade, "backgroundSwapped": False, "retakesApplied": not args.no_retakes,
+           "darijaModel": args.darija_model, "enfrModel": args.base_model},
+          open(os.path.join(W, "meta.json"), "w"), indent=1)
+files = ["meta.json", "edit.mp4", "preview-720p.mp4", "cut.mp4.cuts.json", "phrases.json", "second.json", "removals.json", "segments.json",
          "transcript.txt", "report.md"] + (["in.mp4"] if args.keep_in else [])
 for f in files:
     shutil.copy(os.path.join(W, f), os.path.join(OUT, f))
