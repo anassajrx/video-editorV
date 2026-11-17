@@ -102,6 +102,29 @@ to `My Drive/video-editor/results/<slug>/`. In the cloud session:
 3. Skip §2–§5 and the transcription in §7.1: go straight to captions (§7.2–7.3, pin Latin-only pages with `@start-end`
    from `second.json`), graphics, QA, render (§8–§9). Deliver the MP4 + a 720p preview (≤ 30 MB, for the phone).
 
+## 1.5 Workflow v2: Claude picks the retakes (notebook `local/colab/video_prep_v2.ipynb`, the default)
+Colab never cuts retakes any more: choosing the best take needs understanding. `meta.json` says which options the user
+ticked (`omniFlash`, `backgroundSwapRequested`) and the `stage`.
+- **"retakes for <slug>" + folder link** (stage `waiting-for-claude-retakes`):
+  1. `python3 -I scripts/fetch_colab.py "<link>" <slug>` (Part A output: in.mp4, phrases.json, second.json, removals.json =
+     Colab's candidates only, cut.mp4.cuts.json, transcript.txt).
+  2. Read `transcript.txt` (AR/EN/FR per phrase) like §4.2: keep the last COMPLETE take of each sentence, drop false starts,
+     restarts, "3awd/mn jdid", rephrases; check cut points with `cut_points.py` (§4.3). Write `removals.json`, run
+     `build_cut.py ... --phrases=` → `segments.json`.
+  3. **If `omniFlash` or `backgroundSwapRequested`**: upload `segments.json` as **`final_cut.json`** into the SAME Drive
+     folder with the Google Drive connector (`create_file`, `parentId` = the folder id from the link, `textContent` = the
+     JSON, `contentMimeType` "application/json", `disableConversionToGoogleType` true). If the connector can't write there,
+     send the file to the user to drop in. Tell the user: run Part B (and Omni, then Part C), then say "finish <slug>".
+     Show the removal table (ORIGINAL clip times + reason) and flag best-guess decisions.
+  4. **Neither option**: do the cut here (`render-segments.mjs` from in.mp4 → §5.1 loudness → §5.2 soft grade → edit.mp4)
+     and continue straight to captions/graphics/render (no more Colab).
+- **"finish <slug>" + folder link** (stage `ready-for-claude`): fetch again (now `edit.mp4` = final length, Omni + new
+  background if chosen, graded, -14 LUFS; `segments.json` = the final cut). Do NOT re-cut: retake changes now mean
+  re-running Colab Part B/C. Then captions (§7, timed with phrases.json + segments.json), graphics, `fetch_sfx.py` +
+  `auto_sfx.py`, face check, render, final limiter, 720p preview, `.srt`.
+- Omni clips are split at existing cuts (≤15 s); `colab_finish.py join` conforms them to exact frames and puts the
+  original voice back; it refuses to save if the frame count changes (captions would drift).
+
 ## 2. Intake (per video)
 
 1. Find the clip in `"raw footage/"` (newest file unless the user names one). Pick a short kebab-case **slug** from the

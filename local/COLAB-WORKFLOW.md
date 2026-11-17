@@ -1,4 +1,16 @@
-# Workflow: Google Colab (GPU prep) → Claude Code cloud session (edit + render)
+# Workflow: Google Colab (GPU prep) ⇄ Claude Code cloud session (edit + render)
+
+> **v2 (recommended): `local/colab/video_prep_v2.ipynb`** — Claude picks the retakes; optional Omni Flash (≤15 s clips,
+> split at existing cuts) and background swap. Open it:
+> https://colab.research.google.com/github/anassajrx/video-editorV/blob/claude/hopeful-clarke-qhnr9z/local/colab/video_prep_v2.ipynb
+>
+> | Options | Trips |
+> |---|---|
+> | none | Colab Part A → Claude ("retakes for <slug>", Claude then finishes everything) |
+> | background only | Part A → Claude (retakes) → Part B + C → Claude ("finish <slug>") |
+> | Omni (± background) | Part A → Claude (retakes) → Part B → Omni Flash → Part C → Claude ("finish <slug>") |
+>
+> The section below describes v1 (`video_prep_and_background.ipynb`, Colab cuts retakes automatically), kept as is.
 
 No laptop needed. Your phone or any browser is enough.
 
