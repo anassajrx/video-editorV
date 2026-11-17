@@ -42,12 +42,13 @@ Models: Darija `anaszil/whisper-large-v3-turbo-darija` · EN/FR `openai/whisper-
 settings = code("settings", """
 #@title Step 0 · Settings (run this first, every time you open the notebook)
 SLUG = "my-video"  #@param {type:"string"}
-#@markdown Clip in `video-editor/raw footage/` (empty = newest).
+#@markdown **Exact file names** in `video-editor/raw footage/` (copy them from Drive, extension included).
+#@markdown Video (e.g. `IMG_1234.MOV`). Empty = the newest video there.
 VIDEO_NAME = ""  #@param {type:"string"}
 ROOT = "/content/drive/MyDrive/video-editor"  #@param {type:"string"}
-#@markdown **Separate mic recording** (e.g. Windows Sound Recorder .m4a) in `raw footage/` to use INSTEAD of the phone audio:
-#@markdown `auto` = the newest audio file there · a file name · empty = keep the phone audio. Synced automatically.
-MIC_AUDIO = "auto"  #@param {type:"string"}
+#@markdown Mic recording to use INSTEAD of the phone audio (e.g. `Recording (12).m4a`). Synced automatically
+#@markdown (offset + clock drift). Empty = keep the phone audio · `auto` = find the matching recording by itself.
+MIC_AUDIO = ""  #@param {type:"string"}
 
 #@markdown ---
 #@markdown **Options**
