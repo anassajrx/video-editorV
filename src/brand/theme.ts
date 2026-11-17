@@ -27,11 +27,10 @@ const FONT_FILES: { family: string; file: string; weight: string; style: string 
   { family: "Instrument Serif", file: "instrument-serif-latin-400-italic.woff2", weight: "400", style: "italic" },
   { family: "JetBrains Mono", file: "jetbrains-mono-latin-400-normal.woff2", weight: "400", style: "normal" },
   { family: "JetBrains Mono", file: "jetbrains-mono-latin-600-normal.woff2", weight: "600", style: "normal" },
-  // Arabic (Darija captions). Arabic subset only: Latin words keep Inter Tight / JetBrains Mono.
-  { family: "Cairo", file: "cairo-arabic-500-normal.woff2", weight: "500", style: "normal" },
-  { family: "Cairo", file: "cairo-arabic-700-normal.woff2", weight: "700", style: "normal" },
-  { family: "Cairo", file: "cairo-arabic-800-normal.woff2", weight: "800", style: "normal" },
-  { family: "Cairo", file: "cairo-arabic-900-normal.woff2", weight: "900", style: "normal" },
+  // Arabic (Darija captions): Alexandria (Purple Room), arabic subset only. Latin words keep Inter Tight / JetBrains Mono.
+  // Cairo files stay in public/fonts for old edits but are no longer used.
+  { family: "Alexandria", file: "alexandria-arabic-600-normal.woff2", weight: "600", style: "normal" },
+  { family: "Alexandria", file: "alexandria-arabic-800-normal.woff2", weight: "800", style: "normal" },
 ];
 for (const f of FONT_FILES) {
   loadFont({ family: f.family, url: staticFile(`fonts/${f.file}`), weight: f.weight, style: f.style });
@@ -41,8 +40,28 @@ export const fonts = {
   display: "'Inter Tight', sans-serif",
   serif: "'Instrument Serif', serif",
   mono: "'JetBrains Mono', monospace",
-  arabic: "'Cairo', sans-serif",
+  arabic: "'Alexandria', sans-serif",
 };
+
+// "Purple Room" style tokens (darija-video-edit-local skill, section 6.1). No orange, no blue, no glow.
+export const purple = {
+  plum: "#120A1F",
+  plumCentre: "#2A1A4A",
+  violet: "#8B5CF6",
+  lilac: "#C4B5FD",
+  white: "#F5F3FF",
+  muted: "#9A8FB5",
+  dim: "#3B2A63",
+  dim2: "#4A3A6B",
+  card: "rgba(29,18,51,.82)",
+  cardBorder: "rgba(196,181,253,.25)",
+  cardRadius: 12,
+  pillRadius: 7,
+  captionShadow: "0 2px 18px rgba(10,5,20,.55), 0 1px 3px rgba(10,5,20,.6)",
+} as const;
+
+/** Full-screen plum background (radial to plumCentre in the middle). */
+export const plumBackground = `radial-gradient(ellipse 75% 60% at 50% 50%, ${purple.plumCentre} 0%, ${purple.plum} 100%)`;
 
 export const glow = (hex: string, strength = 1) =>
   `0 0 ${12 * strength}px ${hex}aa, 0 0 ${36 * strength}px ${hex}55`;

@@ -1,0 +1,128 @@
+# comeback: Darija in Arabic letters, foreign words in their original language (Latin). /h = the violet pill (one per page).
+# Built from the Colab Darija model + EN/FR pass + the post caption. Best guesses are marked "# ?".
+Hey/d long_time/d no_see/h @13.57-15.07
+إيه/s باقي/d حي/h @15.21-16.17
+غبرت/h بزاف/s ديال/s الشهور
+ماشي/d حيت/s عييت/s من/s
+الـ/s content/h @35.00-35.50
+like/s كنبغي/d ديما/s نصور/h
+نشارك/h like/s new_stuff/d
+داكشي/s اللي/s كنتعلم/h
+داكشي/s اللي/s كنخدم/h بيه/s
+mais/s after/d any_video/d
+كيجي/d واحد/s الوحش/h
+and/s as_I'm/d not/d expert/h @91.32-93.40
+in_editing/d @93.40-94.30
+دقيقة/h ديال/s الفيديو/d
+# ? "سوايع" (the models hear ساعة / many hours)
+كتاخد/d ليا/s سوايع/h
+ديال/s الـ/s editing/d
+كبيرة/d بزاف/h
+and/s like/s مؤخرا/d
+فاش/s خرج/d Opus_5.5/h
+جربت/h زعما/s
+الفكرة/h ديال/s قبل/s
+# ? "هاد الـ boom ديال Claude" (heard: البومب ديال الكلود)
+ما/s يكون/s هاد/s الـ/s
+boom/d ديال/s Claude/h
+يقدر/d يمونطي/h الفيديو/d
+واش/s نقدر/d ناخد/s
+الـ/s décision/h
+ديال/s نرجع/h
+نبوسطي/d content/h @130.60-132.45
+الفكرة/h كانت/s هي/s
+عطيت/d الفيديو/s raw/h
+وعطيتو/d لـ/s Claude/h
+قلت/s ليه/s edit/h ليا/s
+وعطيتو/d واحد/s الفيديو/d آخر/s
+as_a/s style/h @140.19-141.03
+and/s vraiment/d صدمني/h
+زعما/s the_outcome/h
+جربت/d تفهمو/s
+prompt/h واحد/s
+one_shot/h @150.60-151.56
+and/s رجع/d ليا/s
+واحد/s الغزالة/h
+اللي/s أصلا/s أنا/s
+ما/s كنتش/d كنمونطي/h
+ديجا/s hired/h
+some_people/d
+to/s edit/d my_video/h
+فهمو/s كانت/s تاخد/d time/h
+because/s it's_not/d my_work/h
+# ? twist line (heard: داشا هاد الفيديو كامل مأيديتي بكلود كود)
+حتى/s هاد/s الفيديو/d كامل/h
+مونطيتو/d بـ/s Claude_Code/h @171.00-172.48
+and/s as_I'm/s a/s software_engineer @190.58-192.25
+Claude_Code/h @192.54-193.20
+كنخدم/d بيه/s ديما/h
+فاش/s جربت/d هاد/s اللعبة/h
+عرفت/d كيفاش/s نكتب/s prompt/h
+عرفت/d كيفاش/s نكونيكطي/h
+مع/s الـ/s tools/d
+عرفت/d كيفاش/s automations/h
+سهلت/h على/s راسي/s بزاف/s
+وليت/d كنصور/h فيديو/d
+بحال/s هاكا/s like/s
+one_minute/d @210.22-210.88
+two_minutes/d @210.88-211.50
+three_minutes/d at_max/h @211.50-212.77
+من/s بعد/s كنشد/d الفيديو/s
+كامل/s من/s التيليفون/h
+كنأبلوديه/h @215.90-216.93
+and/s he_do/d all_the_work/h @217.06-218.60
+بلا/s ما/s نسطابي/d PC/h @218.60-221.60
+بلا/s ما/s نحتاج/d PC @221.62-222.90
+locally/h @222.90-223.50
+I_just/s work/d @223.66-224.60
+فالـ/s cloud_sessions/h @224.60-225.71
+and/s كيعطيني/d واحد/s الغزالة/h
+زوينة/d بزاف/h
+so/s كنصيفط/h الفيديو/d
+هو/s كيخدم/h
+حتى/s نقضي/d شي/s حاجة/h
+وكيصيفط/d ليا/s notification/h
+بلي/s راه/s الفيديو/d واجد/h
+ومن/s بعد/s كنشيكي/h
+the_outcome/d @244.86-245.62
+as_always/d @245.62-246.58
+wonderful/h @246.95-247.73
+and/s أنا/s دابا/d
+غادي/s نبوسطيه/h
+so/s it_will/s help_me/d
+to/s create/d a_lot/h
+إلا/s بغيتي/d دير/s
+بحال/s هكا/h
+just/s comment/d @258.18-259.56
+EDIT/h @259.56-260.40
+غادي/s نصيفط/d ليك/s
+واحد/s الـ/s Notion/h
+فيه/s كاع/s الـ/s steps
+# ? unclear (heard: لي الخدمة ... هاد لا فيديو)
+اللي/s درت/d فهاد/s الفيديو/h
+من/s هنا/s القدام/h
+ما/s يبقاش/d الـ/s editing
+عقبة/h
+كتلقى/d راسك/s
+كتصور/h داكشي/s
+و/s partage/h with_people @279.95-281.41
+mais/s كيجي/d كيوقفك/s
+الـ/s editing/h
+كياخد/d ليك/s سوايع/h
+داكشي/s كيحمق/h
+mais/s Anthropic/h @295.05-296.57
+did_it/h @296.57-297.93
+# ? unclear (heard: حداثة ... there is only many content)
+دابا/s كاين/d many_content/h @298.74-304.25
+so/s follow_me/h @313.58-314.46
+شوية/s تبقاو/d close/h
+للـ/s videos/d
+خصوصا/s فالـ/s IT/h
+فالـ/s informatique/d en_général/s
+les/s ERP/h @318.50-319.88
+and/s الـ/s coding/h @320.18-322.13
+and/s everything/d @322.13-323.14
+related/s to/s the_domain/h @325.81-327.71
+هاد/s المرة/s رجعت/h
+وما/s غاديش/d نغبر/h
+bye/h @335.46-335.91

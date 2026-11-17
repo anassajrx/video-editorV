@@ -1,0 +1,299 @@
+{
+  "style": "purple",
+  "orientation": "vertical",
+  "durationMs": 33000,
+  "footage": {
+    "src": "brand/face-reference.png",
+    "kind": "image"
+  },
+  "punchIns": [
+    {
+      "atMs": 0,
+      "scale": 1.08
+    },
+    {
+      "atMs": 9000,
+      "scale": 1.0
+    }
+  ],
+  "captions": [
+    {
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 300,
+      "endMs": 740
+    },
+    {
+      "text": "\u0627\u0644\u0633\u0624\u0627\u0644",
+      "startMs": 740,
+      "endMs": 1180,
+      "role": "pill"
+    },
+    {
+      "text": "\u0627\u0644\u0644\u064a",
+      "startMs": 1180,
+      "endMs": 1620
+    },
+    {
+      "text": "\u0643\u064a\u062a\u0639\u0627\u0648\u062f",
+      "startMs": 1620,
+      "endMs": 2060
+    },
+    {
+      "text": "\u0628\u0632\u0627\u0641",
+      "startMs": 2060,
+      "endMs": 2500,
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0634\u0648\u0641",
+      "startMs": 3300,
+      "endMs": 3850
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 3850,
+      "endMs": 4400
+    },
+    {
+      "text": "\u0646\u0639\u0637\u064a\u0643",
+      "startMs": 4400,
+      "endMs": 4950
+    },
+    {
+      "text": "\u0623\u062c\u0648\u0628\u0629",
+      "startMs": 4950,
+      "endMs": 5500,
+      "role": "pill",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0647\u0646\u0627",
+      "startMs": 6300,
+      "endMs": 7033
+    },
+    {
+      "text": "\u0643\u0627\u064a\u0646\u0629",
+      "startMs": 7033,
+      "endMs": 7766
+    },
+    {
+      "text": "la diff\u00e9rence",
+      "startMs": 7766,
+      "endMs": 8499,
+      "role": "pill",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0646\u062a\u0645\u0646\u0649",
+      "startMs": 9300,
+      "endMs": 10033
+    },
+    {
+      "text": "\u0646\u0643\u0648\u0646",
+      "startMs": 10033,
+      "endMs": 10766
+    },
+    {
+      "text": "\u062c\u0627\u0648\u0628\u062a\u0643",
+      "startMs": 10766,
+      "endMs": 11499,
+      "role": "pill",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0646\u0642\u062f\u0631",
+      "startMs": 15300,
+      "endMs": 16033
+    },
+    {
+      "text": "\u0646\u0642\u0648\u0644",
+      "startMs": 16033,
+      "endMs": 16766
+    },
+    {
+      "text": "\u0644\u064a\u0643",
+      "startMs": 16766,
+      "endMs": 17499,
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0641\u0627\u0644\u0640",
+      "startMs": 18300,
+      "endMs": 18850
+    },
+    {
+      "text": "no code",
+      "startMs": 18850,
+      "endMs": 19400,
+      "role": "pill"
+    },
+    {
+      "text": "\u0648",
+      "startMs": 19400,
+      "endMs": 19950
+    },
+    {
+      "text": "low code",
+      "startMs": 19950,
+      "endMs": 20500,
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0625\u0644\u0627",
+      "startMs": 21300,
+      "endMs": 21850
+    },
+    {
+      "text": "\u0637\u0627\u0631\u062a",
+      "startMs": 21850,
+      "endMs": 22400
+    },
+    {
+      "text": "7000",
+      "startMs": 22400,
+      "endMs": 22950
+    },
+    {
+      "text": "\u062f\u0631\u0647\u0645",
+      "startMs": 22950,
+      "endMs": 23500,
+      "role": "pill",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u0648\u0627\u062d\u062f",
+      "startMs": 24300,
+      "endMs": 25033
+    },
+    {
+      "text": "\u0627\u0644\u0640",
+      "startMs": 25033,
+      "endMs": 25766
+    },
+    {
+      "text": "besoin sp\u00e9cifique",
+      "startMs": 25766,
+      "endMs": 26499,
+      "role": "pill",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "\u064a\u0639\u0646\u064a",
+      "startMs": 27300,
+      "endMs": 27850
+    },
+    {
+      "text": "\u063a\u0627\u062f\u064a",
+      "startMs": 27850,
+      "endMs": 28400
+    },
+    {
+      "text": "\u062a\u0631\u062c\u0639",
+      "startMs": 28400,
+      "endMs": 28950
+    },
+    {
+      "text": "\u0644\u0644\u0643\u0648\u062f",
+      "startMs": 28950,
+      "endMs": 29500,
+      "role": "pill",
+      "pageBreakAfter": true
+    }
+  ],
+  "overlays": [
+    {
+      "type": "comment",
+      "startMs": 0,
+      "endMs": 3000,
+      "text": "3lach nt3allam code?",
+      "likes": 27,
+      "likesFrom": 19
+    },
+    {
+      "type": "chapterChip",
+      "startMs": 3000,
+      "endMs": 6000,
+      "number": "01",
+      "label": "\u0627\u0644\u062b\u0645\u0646"
+    },
+    {
+      "type": "gapBars",
+      "startMs": 6000,
+      "endMs": 9000,
+      "a": {
+        "label": "no code",
+        "value": 7000,
+        "display": "7k"
+      },
+      "b": {
+        "label": "code",
+        "value": 10000,
+        "display": "10k+"
+      }
+    },
+    {
+      "type": "pinnedReply",
+      "startMs": 9000,
+      "endMs": 12000,
+      "comment": "3lach nt3allam code?",
+      "reply": "\u062c\u0627\u0648\u0628\u062a\u0643"
+    },
+    {
+      "type": "chapterBlur",
+      "startMs": 12000,
+      "endMs": 15000,
+      "number": "02",
+      "label": "\u0627\u0644\u0646\u0642\u0637\u0629 \u0627\u0644\u0623\u062e\u0631\u0649"
+    },
+    {
+      "type": "bwStrike",
+      "startMs": 15000,
+      "endMs": 18000,
+      "word": "impossible",
+      "strikeAtMs": 15700
+    },
+    {
+      "type": "momentBlocks",
+      "startMs": 18000,
+      "endMs": 21000
+    },
+    {
+      "type": "momentCounter",
+      "startMs": 21000,
+      "endMs": 24000,
+      "steps": [
+        3000,
+        4000,
+        5000
+      ],
+      "value": "7k",
+      "unit": "dirhams",
+      "kicker": "FREELANCE \u00b7 NO CODE"
+    },
+    {
+      "type": "momentSlider",
+      "startMs": 24000,
+      "endMs": 27000,
+      "label": "besoin sp\u00e9cifique",
+      "percent": 68
+    },
+    {
+      "type": "momentCode",
+      "startMs": 27000,
+      "endMs": 30000,
+      "code": "return code;",
+      "sub": "back to the code."
+    },
+    {
+      "type": "endCard",
+      "startMs": 30000,
+      "endMs": 33000,
+      "line": "back to the code.",
+      "handle": "@anassajrx"
+    }
+  ],
+  "faceZone": {
+    "top": 0.073,
+    "bottom": 0.642
+  }
+}

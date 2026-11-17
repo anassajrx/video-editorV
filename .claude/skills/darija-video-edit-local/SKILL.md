@@ -308,3 +308,8 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 - 2026-11-15: ALL retakes removed; per-phrase transcription; junk segments cut.
 - 2026-11-16: Style = Purple Room; Alexandria; soft grade; calm, minimal, creative; the user on screen most of the time
   with a few full-screen animation moments; never cut the background out.
+- 2026-11-16 (Windows setup): Smart App Control blocks Git's `libcurl-4.dll` (no clone/pull/push over HTTPS) and the
+  venv's `pip.exe`. The engine came from a ZIP and has a LOCAL git repo only: skip `git pull`/push, use
+  `python -m pip`. Python reads JSON as cp1252 on Windows: always run scripts with `python -I -X utf8 ...`
+  (`-I` ignores PYTHONUTF8). Purple components are built: `src/components/purple/`, `style: "purple"` in edit.json.
+  check_face.py skips full-screen moments (momentBlocks/Counter/Slider/Code, endCard).

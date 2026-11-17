@@ -38,8 +38,12 @@ model = WhisperModel(opt.get("model", "large-v2"), device="cpu", compute_type="i
 HALLU = ("اشتركوا", "شكرا", "ترجمة", "نانسي", "subscribe")
 
 
+FAST = "fast" in opt or "--fast" in sys.argv  # --fast: one pass per phrase (segment text = joined phrases), beam 2. ~3x faster.
+BEAM = 2 if FAST else 5
+
+
 def tr(s, e, words=False):
-    seg, _ = model.transcribe(a[int(s * SR):int(e * SR)], language="ar", beam_size=5, word_timestamps=words,
+    seg, _ = model.transcribe(a[int(s * SR):int(e * SR)], language="ar", beam_size=BEAM, word_timestamps=words,
                               vad_filter=False, condition_on_previous_text=False)
     seg = list(seg)
     text = " ".join(x.text.strip() for x in seg).strip()
@@ -56,12 +60,15 @@ def db(s, e):
 segments, phrases = [], []
 for i, c in enumerate(cuts):
     s, e = c["sourceStart"], c["sourceEnd"]
-    text, _ = tr(s, e)
-    junk = (e - s < 0.5 and (not text or any(h in text for h in HALLU))) or not text
-    segments.append({"i": i, "s": round(s, 3), "e": round(e, 3), "text": text, "junk": junk})
-    print(f"SEG {i:3d} {s:8.2f}-{e:8.2f} {'JUNK ' if junk else ''}| {text}", flush=True)
-    if junk:
-        continue
+    if FAST and e - s >= 0.5:
+        text = None  # filled from the phrases below
+    else:
+        text, _ = tr(s, e)
+        junk = (e - s < 0.5 and (not text or any(h in text for h in HALLU))) or not text
+        segments.append({"i": i, "s": round(s, 3), "e": round(e, 3), "text": text, "junk": junk})
+        print(f"SEG {i:3d} {s:8.2f}-{e:8.2f} {'JUNK ' if junk else ''}| {text}", flush=True)
+        if junk:
+            continue
     # split at micro-pauses (>= 80 ms, 12 dB under the segment median), pieces >= 0.6 s
     hop = 0.01
     d = np.array([db(s + k * hop, s + (k + 1) * hop) for k in range(int((e - s) / hop))])
@@ -84,10 +91,20 @@ for i, c in enumerate(cuts):
     if e - b[-1] < 0.6 and len(b) > 1:
         b.pop()
     b.append(e)
+    mine = []
     for x, y in zip(b, b[1:]):
         t, ws = tr(x, y, words=True)
-        phrases.append({"s": round(x, 3), "e": round(y, 3), "text": t, "words": ws})
-        print(f"    {x:8.2f}-{y:8.2f} | {t}", flush=True)
+        mine.append({"s": round(x, 3), "e": round(y, 3), "text": t, "words": ws})
+    if text is None:
+        text = " ".join(p["text"] for p in mine).strip()
+        junk = not text or (len(text) < 12 and any(h in text for h in HALLU))
+        segments.append({"i": i, "s": round(s, 3), "e": round(e, 3), "text": text, "junk": junk})
+        print(f"SEG {i:3d} {s:8.2f}-{e:8.2f} {'JUNK ' if junk else ''}| {text}", flush=True)
+        if junk:
+            continue
+    for p in mine:
+        phrases.append(p)
+        print(f"    {p['s']:8.2f}-{p['e']:8.2f} | {p['text']}", flush=True)
 
-json.dump({"segments": segments, "phrases": phrases}, open(out, "w"), ensure_ascii=False, indent=1)
+json.dump({"segments": segments, "phrases": phrases}, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 print(f"Wrote {out}: {len(segments)} segments ({sum(s['junk'] for s in segments)} junk), {len(phrases)} phrases")

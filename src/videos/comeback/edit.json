@@ -1,0 +1,2356 @@
+{
+  "style": "purple",
+  "orientation": "vertical",
+  "durationMs": 179200,
+  "footage": {
+    "src": "videos/comeback/raw/edit.mp4",
+    "kind": "video"
+  },
+  "punchIns": [
+    {
+      "atMs": 0,
+      "scale": 1.06
+    },
+    {
+      "atMs": 9300,
+      "scale": 1.1
+    },
+    {
+      "atMs": 25500,
+      "scale": 1.06
+    },
+    {
+      "atMs": 40000,
+      "scale": 1.1
+    },
+    {
+      "atMs": 56600,
+      "scale": 1.06
+    },
+    {
+      "atMs": 70500,
+      "scale": 1.1
+    },
+    {
+      "atMs": 77800,
+      "scale": 1.06
+    },
+    {
+      "atMs": 98200,
+      "scale": 1.1
+    },
+    {
+      "atMs": 103000,
+      "scale": 1.06
+    },
+    {
+      "atMs": 120400,
+      "scale": 1.1
+    },
+    {
+      "atMs": 129000,
+      "scale": 1.06
+    },
+    {
+      "atMs": 141400,
+      "scale": 1.1
+    },
+    {
+      "atMs": 153700,
+      "scale": 1.06
+    },
+    {
+      "atMs": 160000,
+      "scale": 1.1
+    },
+    {
+      "atMs": 173400,
+      "scale": 1.06
+    }
+  ],
+  "captions": [
+    {
+      "text": "Hey",
+      "startMs": 3,
+      "endMs": 253,
+      "role": "default"
+    },
+    {
+      "text": "long time",
+      "startMs": 253,
+      "endMs": 1003,
+      "role": "default"
+    },
+    {
+      "text": "no see",
+      "startMs": 1003,
+      "endMs": 1500,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "إيه",
+      "startMs": 1510,
+      "endMs": 1830,
+      "role": "soft"
+    },
+    {
+      "text": "باقي",
+      "startMs": 1830,
+      "endMs": 2257,
+      "role": "default"
+    },
+    {
+      "text": "حي",
+      "startMs": 2257,
+      "endMs": 2467,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "غبرت",
+      "startMs": 2467,
+      "endMs": 2870,
+      "role": "hero"
+    },
+    {
+      "text": "بزاف",
+      "startMs": 2870,
+      "endMs": 3130,
+      "role": "soft"
+    },
+    {
+      "text": "ديال",
+      "startMs": 3130,
+      "endMs": 3210,
+      "role": "soft"
+    },
+    {
+      "text": "الشهور",
+      "startMs": 3130,
+      "endMs": 3530,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ماشي",
+      "startMs": 3672,
+      "endMs": 3952,
+      "role": "default"
+    },
+    {
+      "text": "حيت",
+      "startMs": 3952,
+      "endMs": 4152,
+      "role": "soft"
+    },
+    {
+      "text": "عييت",
+      "startMs": 5100,
+      "endMs": 5415,
+      "role": "soft"
+    },
+    {
+      "text": "من",
+      "startMs": 5415,
+      "endMs": 5495,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 5415,
+      "endMs": 5475,
+      "role": "soft"
+    },
+    {
+      "text": "content",
+      "startMs": 5415,
+      "endMs": 5475,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "like",
+      "startMs": 5415,
+      "endMs": 5475,
+      "role": "soft"
+    },
+    {
+      "text": "كنبغي",
+      "startMs": 5415,
+      "endMs": 5755,
+      "role": "default"
+    },
+    {
+      "text": "ديما",
+      "startMs": 5755,
+      "endMs": 6015,
+      "role": "soft"
+    },
+    {
+      "text": "نصور",
+      "startMs": 6015,
+      "endMs": 6715,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "نشارك",
+      "startMs": 7290,
+      "endMs": 8310,
+      "role": "hero"
+    },
+    {
+      "text": "like",
+      "startMs": 8310,
+      "endMs": 8802,
+      "role": "soft"
+    },
+    {
+      "text": "new stuff",
+      "startMs": 8802,
+      "endMs": 9295,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "داكشي",
+      "startMs": 9295,
+      "endMs": 9675,
+      "role": "soft"
+    },
+    {
+      "text": "اللي",
+      "startMs": 9675,
+      "endMs": 9775,
+      "role": "soft"
+    },
+    {
+      "text": "كنتعلم",
+      "startMs": 9775,
+      "endMs": 10295,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "داكشي",
+      "startMs": 10295,
+      "endMs": 10575,
+      "role": "soft"
+    },
+    {
+      "text": "اللي",
+      "startMs": 10575,
+      "endMs": 10675,
+      "role": "soft"
+    },
+    {
+      "text": "كنخدم",
+      "startMs": 10675,
+      "endMs": 10975,
+      "role": "hero"
+    },
+    {
+      "text": "بيه",
+      "startMs": 10975,
+      "endMs": 11215,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "mais",
+      "startMs": 12915,
+      "endMs": 13295,
+      "role": "soft"
+    },
+    {
+      "text": "after",
+      "startMs": 13295,
+      "endMs": 13722,
+      "role": "default"
+    },
+    {
+      "text": "any video",
+      "startMs": 13722,
+      "endMs": 13982,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيجي",
+      "startMs": 13982,
+      "endMs": 14322,
+      "role": "default"
+    },
+    {
+      "text": "واحد",
+      "startMs": 14322,
+      "endMs": 14522,
+      "role": "soft"
+    },
+    {
+      "text": "الوحش",
+      "startMs": 14522,
+      "endMs": 14902,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 16300,
+      "endMs": 16633,
+      "role": "soft"
+    },
+    {
+      "text": "as I'm",
+      "startMs": 16633,
+      "endMs": 17327,
+      "role": "default"
+    },
+    {
+      "text": "not",
+      "startMs": 17327,
+      "endMs": 17673,
+      "role": "default"
+    },
+    {
+      "text": "expert",
+      "startMs": 17673,
+      "endMs": 18367,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "in editing",
+      "startMs": 18367,
+      "endMs": 19267,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "دقيقة",
+      "startMs": 19535,
+      "endMs": 19935,
+      "role": "hero"
+    },
+    {
+      "text": "ديال",
+      "startMs": 19935,
+      "endMs": 20175,
+      "role": "soft"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 20735,
+      "endMs": 21115,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كتاخد",
+      "startMs": 21245,
+      "endMs": 21625,
+      "role": "default"
+    },
+    {
+      "text": "ليا",
+      "startMs": 21625,
+      "endMs": 21725,
+      "role": "soft"
+    },
+    {
+      "text": "سوايع",
+      "startMs": 21725,
+      "endMs": 22005,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 22005,
+      "endMs": 22525,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 22700,
+      "endMs": 23107,
+      "role": "soft"
+    },
+    {
+      "text": "editing",
+      "startMs": 23107,
+      "endMs": 24806,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كبيرة",
+      "startMs": 24806,
+      "endMs": 25146,
+      "role": "default"
+    },
+    {
+      "text": "بزاف",
+      "startMs": 25146,
+      "endMs": 25506,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 25506,
+      "endMs": 25586,
+      "role": "soft"
+    },
+    {
+      "text": "like",
+      "startMs": 25533,
+      "endMs": 26184,
+      "role": "soft"
+    },
+    {
+      "text": "مؤخرا",
+      "startMs": 26184,
+      "endMs": 26644,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فاش",
+      "startMs": 26984,
+      "endMs": 27124,
+      "role": "soft"
+    },
+    {
+      "text": "خرج",
+      "startMs": 27124,
+      "endMs": 27344,
+      "role": "default"
+    },
+    {
+      "text": "Opus 5.5",
+      "startMs": 27344,
+      "endMs": 28947,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "جربت",
+      "startMs": 28947,
+      "endMs": 29507,
+      "role": "hero"
+    },
+    {
+      "text": "زعما",
+      "startMs": 29507,
+      "endMs": 29927,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الفكرة",
+      "startMs": 30533,
+      "endMs": 31023,
+      "role": "hero"
+    },
+    {
+      "text": "ديال",
+      "startMs": 31023,
+      "endMs": 31243,
+      "role": "soft"
+    },
+    {
+      "text": "قبل",
+      "startMs": 31243,
+      "endMs": 31523,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ما",
+      "startMs": 31523,
+      "endMs": 31623,
+      "role": "soft"
+    },
+    {
+      "text": "يكون",
+      "startMs": 31623,
+      "endMs": 31843,
+      "role": "soft"
+    },
+    {
+      "text": "هاد",
+      "startMs": 31843,
+      "endMs": 32063,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 32063,
+      "endMs": 32343,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "boom",
+      "startMs": 32343,
+      "endMs": 32623,
+      "role": "default"
+    },
+    {
+      "text": "ديال",
+      "startMs": 32623,
+      "endMs": 32863,
+      "role": "soft"
+    },
+    {
+      "text": "Claude",
+      "startMs": 32863,
+      "endMs": 33723,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "يقدر",
+      "startMs": 33723,
+      "endMs": 33983,
+      "role": "default"
+    },
+    {
+      "text": "يمونطي",
+      "startMs": 33983,
+      "endMs": 34283,
+      "role": "hero"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 34283,
+      "endMs": 34703,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "واش",
+      "startMs": 34703,
+      "endMs": 34803,
+      "role": "soft"
+    },
+    {
+      "text": "نقدر",
+      "startMs": 34803,
+      "endMs": 35303,
+      "role": "default"
+    },
+    {
+      "text": "ناخد",
+      "startMs": 35303,
+      "endMs": 35403,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 36398,
+      "endMs": 36478,
+      "role": "soft"
+    },
+    {
+      "text": "décision",
+      "startMs": 36478,
+      "endMs": 36838,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 36838,
+      "endMs": 37438,
+      "role": "soft"
+    },
+    {
+      "text": "نرجع",
+      "startMs": 37573,
+      "endMs": 38133,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "نبوسطي",
+      "startMs": 38133,
+      "endMs": 38987,
+      "role": "default"
+    },
+    {
+      "text": "content",
+      "startMs": 38987,
+      "endMs": 39983,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الفكرة",
+      "startMs": 40052,
+      "endMs": 40512,
+      "role": "hero"
+    },
+    {
+      "text": "كانت",
+      "startMs": 40512,
+      "endMs": 40852,
+      "role": "soft"
+    },
+    {
+      "text": "هي",
+      "startMs": 40852,
+      "endMs": 41072,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عطيت",
+      "startMs": 41672,
+      "endMs": 41952,
+      "role": "default"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 41952,
+      "endMs": 42712,
+      "role": "soft"
+    },
+    {
+      "text": "raw",
+      "startMs": 42712,
+      "endMs": 42832,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وعطيتو",
+      "startMs": 42832,
+      "endMs": 43352,
+      "role": "default"
+    },
+    {
+      "text": "لـ",
+      "startMs": 43352,
+      "endMs": 43852,
+      "role": "soft"
+    },
+    {
+      "text": "Claude",
+      "startMs": 43852,
+      "endMs": 44029,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "قلت",
+      "startMs": 44029,
+      "endMs": 44207,
+      "role": "soft"
+    },
+    {
+      "text": "ليه",
+      "startMs": 44207,
+      "endMs": 44347,
+      "role": "soft"
+    },
+    {
+      "text": "edit",
+      "startMs": 44347,
+      "endMs": 44587,
+      "role": "hero"
+    },
+    {
+      "text": "ليا",
+      "startMs": 44587,
+      "endMs": 45047,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وعطيتو",
+      "startMs": 45217,
+      "endMs": 45577,
+      "role": "default"
+    },
+    {
+      "text": "واحد",
+      "startMs": 45577,
+      "endMs": 45777,
+      "role": "soft"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 45777,
+      "endMs": 45997,
+      "role": "default"
+    },
+    {
+      "text": "آخر",
+      "startMs": 45997,
+      "endMs": 46297,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "as a",
+      "startMs": 46467,
+      "endMs": 46830,
+      "role": "soft"
+    },
+    {
+      "text": "style",
+      "startMs": 46830,
+      "endMs": 47297,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 47297,
+      "endMs": 48301,
+      "role": "soft"
+    },
+    {
+      "text": "vraiment",
+      "startMs": 48301,
+      "endMs": 49572,
+      "role": "default"
+    },
+    {
+      "text": "صدمني",
+      "startMs": 49572,
+      "endMs": 50032,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "زعما",
+      "startMs": 50032,
+      "endMs": 50352,
+      "role": "soft"
+    },
+    {
+      "text": "the outcome",
+      "startMs": 50352,
+      "endMs": 52276,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "جربت",
+      "startMs": 52276,
+      "endMs": 52596,
+      "role": "default"
+    },
+    {
+      "text": "تفهمو",
+      "startMs": 52596,
+      "endMs": 52896,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "prompt",
+      "startMs": 52896,
+      "endMs": 53216,
+      "role": "hero"
+    },
+    {
+      "text": "واحد",
+      "startMs": 53216,
+      "endMs": 53556,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "one shot",
+      "startMs": 53300,
+      "endMs": 54260,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 54260,
+      "endMs": 55138,
+      "role": "soft"
+    },
+    {
+      "text": "رجع",
+      "startMs": 55138,
+      "endMs": 55518,
+      "role": "default"
+    },
+    {
+      "text": "ليا",
+      "startMs": 55518,
+      "endMs": 55678,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "واحد",
+      "startMs": 56633,
+      "endMs": 56943,
+      "role": "soft"
+    },
+    {
+      "text": "الغزالة",
+      "startMs": 56943,
+      "endMs": 57403,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "اللي",
+      "startMs": 57403,
+      "endMs": 57643,
+      "role": "soft"
+    },
+    {
+      "text": "أصلا",
+      "startMs": 57643,
+      "endMs": 58083,
+      "role": "soft"
+    },
+    {
+      "text": "أنا",
+      "startMs": 58083,
+      "endMs": 58283,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ما",
+      "startMs": 58283,
+      "endMs": 58363,
+      "role": "soft"
+    },
+    {
+      "text": "كنتش",
+      "startMs": 58283,
+      "endMs": 58623,
+      "role": "default"
+    },
+    {
+      "text": "كنمونطي",
+      "startMs": 58623,
+      "endMs": 58743,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديجا",
+      "startMs": 59023,
+      "endMs": 59323,
+      "role": "soft"
+    },
+    {
+      "text": "hired",
+      "startMs": 59323,
+      "endMs": 60618,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "some people",
+      "startMs": 60618,
+      "endMs": 60838,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "to",
+      "startMs": 60838,
+      "endMs": 60998,
+      "role": "soft"
+    },
+    {
+      "text": "edit",
+      "startMs": 60998,
+      "endMs": 61158,
+      "role": "default"
+    },
+    {
+      "text": "my video",
+      "startMs": 61338,
+      "endMs": 61858,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فهمو",
+      "startMs": 61958,
+      "endMs": 62138,
+      "role": "soft"
+    },
+    {
+      "text": "كانت",
+      "startMs": 62315,
+      "endMs": 62595,
+      "role": "soft"
+    },
+    {
+      "text": "تاخد",
+      "startMs": 62855,
+      "endMs": 63155,
+      "role": "default"
+    },
+    {
+      "text": "time",
+      "startMs": 63155,
+      "endMs": 63440,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "because",
+      "startMs": 63440,
+      "endMs": 63900,
+      "role": "soft"
+    },
+    {
+      "text": "it's not",
+      "startMs": 63900,
+      "endMs": 64120,
+      "role": "default"
+    },
+    {
+      "text": "my work",
+      "startMs": 64360,
+      "endMs": 64740,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "حتى",
+      "startMs": 64740,
+      "endMs": 65122,
+      "role": "soft"
+    },
+    {
+      "text": "هاد",
+      "startMs": 65122,
+      "endMs": 65262,
+      "role": "soft"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 65262,
+      "endMs": 65462,
+      "role": "default"
+    },
+    {
+      "text": "كامل",
+      "startMs": 65462,
+      "endMs": 65782,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مونطيتو",
+      "startMs": 65967,
+      "endMs": 66485,
+      "role": "default"
+    },
+    {
+      "text": "بـ",
+      "startMs": 66485,
+      "endMs": 66633,
+      "role": "soft"
+    },
+    {
+      "text": "Claude Code",
+      "startMs": 66633,
+      "endMs": 67433,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 67447,
+      "endMs": 67626,
+      "role": "soft"
+    },
+    {
+      "text": "as I'm",
+      "startMs": 67626,
+      "endMs": 67983,
+      "role": "soft"
+    },
+    {
+      "text": "a",
+      "startMs": 67983,
+      "endMs": 68103,
+      "role": "soft"
+    },
+    {
+      "text": "software engineer",
+      "startMs": 68103,
+      "endMs": 69117,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "Claude Code",
+      "startMs": 69140,
+      "endMs": 69800,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كنخدم",
+      "startMs": 69564,
+      "endMs": 69744,
+      "role": "default"
+    },
+    {
+      "text": "بيه",
+      "startMs": 69744,
+      "endMs": 70044,
+      "role": "soft"
+    },
+    {
+      "text": "ديما",
+      "startMs": 70044,
+      "endMs": 70264,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فاش",
+      "startMs": 70500,
+      "endMs": 70666,
+      "role": "soft"
+    },
+    {
+      "text": "جربت",
+      "startMs": 70666,
+      "endMs": 70986,
+      "role": "default"
+    },
+    {
+      "text": "هاد",
+      "startMs": 70986,
+      "endMs": 71066,
+      "role": "soft"
+    },
+    {
+      "text": "اللعبة",
+      "startMs": 71066,
+      "endMs": 71346,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عرفت",
+      "startMs": 71766,
+      "endMs": 72086,
+      "role": "default"
+    },
+    {
+      "text": "كيفاش",
+      "startMs": 72086,
+      "endMs": 72306,
+      "role": "soft"
+    },
+    {
+      "text": "نكتب",
+      "startMs": 72306,
+      "endMs": 72746,
+      "role": "soft"
+    },
+    {
+      "text": "prompt",
+      "startMs": 72746,
+      "endMs": 72826,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عرفت",
+      "startMs": 72746,
+      "endMs": 73066,
+      "role": "default"
+    },
+    {
+      "text": "كيفاش",
+      "startMs": 73066,
+      "endMs": 73346,
+      "role": "soft"
+    },
+    {
+      "text": "نكونيكطي",
+      "startMs": 73346,
+      "endMs": 73826,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مع",
+      "startMs": 73986,
+      "endMs": 74106,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 74106,
+      "endMs": 74306,
+      "role": "soft"
+    },
+    {
+      "text": "tools",
+      "startMs": 74306,
+      "endMs": 74506,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عرفت",
+      "startMs": 74506,
+      "endMs": 74726,
+      "role": "default"
+    },
+    {
+      "text": "كيفاش",
+      "startMs": 74751,
+      "endMs": 74971,
+      "role": "soft"
+    },
+    {
+      "text": "automations",
+      "startMs": 74971,
+      "endMs": 76391,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "سهلت",
+      "startMs": 76391,
+      "endMs": 76911,
+      "role": "hero"
+    },
+    {
+      "text": "على",
+      "startMs": 76911,
+      "endMs": 76991,
+      "role": "soft"
+    },
+    {
+      "text": "راسي",
+      "startMs": 76911,
+      "endMs": 77191,
+      "role": "soft"
+    },
+    {
+      "text": "بزاف",
+      "startMs": 77331,
+      "endMs": 77691,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وليت",
+      "startMs": 77813,
+      "endMs": 78973,
+      "role": "default"
+    },
+    {
+      "text": "كنصور",
+      "startMs": 78973,
+      "endMs": 79953,
+      "role": "hero"
+    },
+    {
+      "text": "فيديو",
+      "startMs": 79953,
+      "endMs": 80313,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بحال",
+      "startMs": 80313,
+      "endMs": 80553,
+      "role": "soft"
+    },
+    {
+      "text": "هاكا",
+      "startMs": 80553,
+      "endMs": 80833,
+      "role": "soft"
+    },
+    {
+      "text": "like",
+      "startMs": 80833,
+      "endMs": 83387,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "one minute",
+      "startMs": 83387,
+      "endMs": 84047,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "two minutes",
+      "startMs": 84047,
+      "endMs": 84667,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "three minutes",
+      "startMs": 84667,
+      "endMs": 85536,
+      "role": "default"
+    },
+    {
+      "text": "at max",
+      "startMs": 85536,
+      "endMs": 85933,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 85536,
+      "endMs": 85596,
+      "role": "soft"
+    },
+    {
+      "text": "بعد",
+      "startMs": 85536,
+      "endMs": 86491,
+      "role": "soft"
+    },
+    {
+      "text": "كنشد",
+      "startMs": 86491,
+      "endMs": 86871,
+      "role": "default"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 86991,
+      "endMs": 87471,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كامل",
+      "startMs": 87471,
+      "endMs": 88031,
+      "role": "soft"
+    },
+    {
+      "text": "من",
+      "startMs": 88231,
+      "endMs": 88411,
+      "role": "soft"
+    },
+    {
+      "text": "التيليفون",
+      "startMs": 88411,
+      "endMs": 88831,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كنأبلوديه",
+      "startMs": 88867,
+      "endMs": 89897,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 89900,
+      "endMs": 90124,
+      "role": "soft"
+    },
+    {
+      "text": "he do",
+      "startMs": 90124,
+      "endMs": 90509,
+      "role": "default"
+    },
+    {
+      "text": "all the work",
+      "startMs": 90509,
+      "endMs": 91433,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بلا",
+      "startMs": 91433,
+      "endMs": 92126,
+      "role": "soft"
+    },
+    {
+      "text": "ما",
+      "startMs": 92126,
+      "endMs": 92587,
+      "role": "soft"
+    },
+    {
+      "text": "نسطابي",
+      "startMs": 92587,
+      "endMs": 93805,
+      "role": "default"
+    },
+    {
+      "text": "PC",
+      "startMs": 93805,
+      "endMs": 94267,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بلا",
+      "startMs": 94287,
+      "endMs": 94607,
+      "role": "soft"
+    },
+    {
+      "text": "ما",
+      "startMs": 94607,
+      "endMs": 94820,
+      "role": "soft"
+    },
+    {
+      "text": "نحتاج",
+      "startMs": 94820,
+      "endMs": 95353,
+      "role": "default"
+    },
+    {
+      "text": "PC",
+      "startMs": 95353,
+      "endMs": 95567,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "locally",
+      "startMs": 95567,
+      "endMs": 96167,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "I just",
+      "startMs": 96167,
+      "endMs": 96724,
+      "role": "soft"
+    },
+    {
+      "text": "work",
+      "startMs": 96724,
+      "endMs": 97100,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فالـ",
+      "startMs": 97100,
+      "endMs": 97347,
+      "role": "soft"
+    },
+    {
+      "text": "cloud sessions",
+      "startMs": 97347,
+      "endMs": 98200,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 98200,
+      "endMs": 98624,
+      "role": "soft"
+    },
+    {
+      "text": "كيعطيني",
+      "startMs": 98624,
+      "endMs": 101404,
+      "role": "default"
+    },
+    {
+      "text": "واحد",
+      "startMs": 101404,
+      "endMs": 101584,
+      "role": "soft"
+    },
+    {
+      "text": "الغزالة",
+      "startMs": 101584,
+      "endMs": 102084,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "زوينة",
+      "startMs": 102544,
+      "endMs": 102864,
+      "role": "default"
+    },
+    {
+      "text": "بزاف",
+      "startMs": 102864,
+      "endMs": 103164,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "so",
+      "startMs": 103164,
+      "endMs": 103652,
+      "role": "soft"
+    },
+    {
+      "text": "كنصيفط",
+      "startMs": 103652,
+      "endMs": 104092,
+      "role": "hero"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 104092,
+      "endMs": 104352,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هو",
+      "startMs": 104767,
+      "endMs": 105025,
+      "role": "soft"
+    },
+    {
+      "text": "كيخدم",
+      "startMs": 105025,
+      "endMs": 105325,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "حتى",
+      "startMs": 105604,
+      "endMs": 105724,
+      "role": "soft"
+    },
+    {
+      "text": "نقضي",
+      "startMs": 105724,
+      "endMs": 106064,
+      "role": "default"
+    },
+    {
+      "text": "شي",
+      "startMs": 106064,
+      "endMs": 106164,
+      "role": "soft"
+    },
+    {
+      "text": "حاجة",
+      "startMs": 106164,
+      "endMs": 106344,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وكيصيفط",
+      "startMs": 106973,
+      "endMs": 107353,
+      "role": "default"
+    },
+    {
+      "text": "ليا",
+      "startMs": 107613,
+      "endMs": 107813,
+      "role": "soft"
+    },
+    {
+      "text": "notification",
+      "startMs": 107813,
+      "endMs": 108253,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بلي",
+      "startMs": 108253,
+      "endMs": 108513,
+      "role": "soft"
+    },
+    {
+      "text": "راه",
+      "startMs": 108513,
+      "endMs": 108633,
+      "role": "soft"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 108633,
+      "endMs": 109053,
+      "role": "default"
+    },
+    {
+      "text": "واجد",
+      "startMs": 109053,
+      "endMs": 109373,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ومن",
+      "startMs": 109373,
+      "endMs": 109600,
+      "role": "soft"
+    },
+    {
+      "text": "بعد",
+      "startMs": 109600,
+      "endMs": 110072,
+      "role": "soft"
+    },
+    {
+      "text": "كنشيكي",
+      "startMs": 110072,
+      "endMs": 110892,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "the outcome",
+      "startMs": 111493,
+      "endMs": 112253,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "as always",
+      "startMs": 112253,
+      "endMs": 113200,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "wonderful",
+      "startMs": 113217,
+      "endMs": 113997,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 113997,
+      "endMs": 115033,
+      "role": "soft"
+    },
+    {
+      "text": "أنا",
+      "startMs": 115033,
+      "endMs": 115330,
+      "role": "soft"
+    },
+    {
+      "text": "دابا",
+      "startMs": 115330,
+      "endMs": 115470,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "غادي",
+      "startMs": 115470,
+      "endMs": 115650,
+      "role": "soft"
+    },
+    {
+      "text": "نبوسطيه",
+      "startMs": 115650,
+      "endMs": 116150,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "so",
+      "startMs": 116260,
+      "endMs": 116560,
+      "role": "soft"
+    },
+    {
+      "text": "it will",
+      "startMs": 116940,
+      "endMs": 117060,
+      "role": "soft"
+    },
+    {
+      "text": "help me",
+      "startMs": 117060,
+      "endMs": 117320,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "to",
+      "startMs": 117480,
+      "endMs": 117680,
+      "role": "soft"
+    },
+    {
+      "text": "create",
+      "startMs": 117990,
+      "endMs": 118210,
+      "role": "default"
+    },
+    {
+      "text": "a lot",
+      "startMs": 118390,
+      "endMs": 118530,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "إلا",
+      "startMs": 120405,
+      "endMs": 120705,
+      "role": "soft"
+    },
+    {
+      "text": "بغيتي",
+      "startMs": 120705,
+      "endMs": 120885,
+      "role": "default"
+    },
+    {
+      "text": "دير",
+      "startMs": 120885,
+      "endMs": 121065,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بحال",
+      "startMs": 121065,
+      "endMs": 121285,
+      "role": "soft"
+    },
+    {
+      "text": "هكا",
+      "startMs": 121285,
+      "endMs": 121525,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "just",
+      "startMs": 121680,
+      "endMs": 122182,
+      "role": "soft"
+    },
+    {
+      "text": "comment",
+      "startMs": 122182,
+      "endMs": 123060,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "EDIT",
+      "startMs": 123060,
+      "endMs": 123900,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "غادي",
+      "startMs": 124695,
+      "endMs": 124855,
+      "role": "soft"
+    },
+    {
+      "text": "نصيفط",
+      "startMs": 124855,
+      "endMs": 125135,
+      "role": "default"
+    },
+    {
+      "text": "ليك",
+      "startMs": 125135,
+      "endMs": 125315,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "واحد",
+      "startMs": 125703,
+      "endMs": 125943,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 126403,
+      "endMs": 126903,
+      "role": "soft"
+    },
+    {
+      "text": "Notion",
+      "startMs": 126903,
+      "endMs": 126983,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فيه",
+      "startMs": 126903,
+      "endMs": 127123,
+      "role": "soft"
+    },
+    {
+      "text": "كاع",
+      "startMs": 127363,
+      "endMs": 127623,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 127623,
+      "endMs": 128042,
+      "role": "soft"
+    },
+    {
+      "text": "steps",
+      "startMs": 128042,
+      "endMs": 128167,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "اللي",
+      "startMs": 128167,
+      "endMs": 128460,
+      "role": "soft"
+    },
+    {
+      "text": "درت",
+      "startMs": 129320,
+      "endMs": 129480,
+      "role": "default"
+    },
+    {
+      "text": "فهاد",
+      "startMs": 129480,
+      "endMs": 129620,
+      "role": "soft"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 129700,
+      "endMs": 129960,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 132398,
+      "endMs": 132538,
+      "role": "soft"
+    },
+    {
+      "text": "هنا",
+      "startMs": 132538,
+      "endMs": 132728,
+      "role": "soft"
+    },
+    {
+      "text": "القدام",
+      "startMs": 132728,
+      "endMs": 132918,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ما",
+      "startMs": 132918,
+      "endMs": 133038,
+      "role": "soft"
+    },
+    {
+      "text": "يبقاش",
+      "startMs": 133038,
+      "endMs": 133278,
+      "role": "default"
+    },
+    {
+      "text": "الـ",
+      "startMs": 133278,
+      "endMs": 133378,
+      "role": "soft"
+    },
+    {
+      "text": "editing",
+      "startMs": 133378,
+      "endMs": 133458,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عقبة",
+      "startMs": 133378,
+      "endMs": 133678,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كتلقى",
+      "startMs": 135644,
+      "endMs": 136364,
+      "role": "default"
+    },
+    {
+      "text": "راسك",
+      "startMs": 136784,
+      "endMs": 137224,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كتصور",
+      "startMs": 137224,
+      "endMs": 137664,
+      "role": "hero"
+    },
+    {
+      "text": "داكشي",
+      "startMs": 137664,
+      "endMs": 138144,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "و",
+      "startMs": 140983,
+      "endMs": 141129,
+      "role": "soft"
+    },
+    {
+      "text": "partage",
+      "startMs": 141129,
+      "endMs": 141640,
+      "role": "hero"
+    },
+    {
+      "text": "with people",
+      "startMs": 141640,
+      "endMs": 142433,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "mais",
+      "startMs": 141640,
+      "endMs": 141700,
+      "role": "soft"
+    },
+    {
+      "text": "كيجي",
+      "startMs": 142826,
+      "endMs": 143386,
+      "role": "default"
+    },
+    {
+      "text": "كيوقفك",
+      "startMs": 143386,
+      "endMs": 143786,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 143786,
+      "endMs": 143976,
+      "role": "soft"
+    },
+    {
+      "text": "editing",
+      "startMs": 143976,
+      "endMs": 144166,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كياخد",
+      "startMs": 144166,
+      "endMs": 144526,
+      "role": "default"
+    },
+    {
+      "text": "ليك",
+      "startMs": 144526,
+      "endMs": 144686,
+      "role": "soft"
+    },
+    {
+      "text": "سوايع",
+      "startMs": 145146,
+      "endMs": 145486,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "داكشي",
+      "startMs": 150661,
+      "endMs": 151161,
+      "role": "soft"
+    },
+    {
+      "text": "كيحمق",
+      "startMs": 151161,
+      "endMs": 151681,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "mais",
+      "startMs": 151833,
+      "endMs": 152284,
+      "role": "soft"
+    },
+    {
+      "text": "Anthropic",
+      "startMs": 152284,
+      "endMs": 153337,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "did it",
+      "startMs": 153337,
+      "endMs": 154697,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "دابا",
+      "startMs": 154940,
+      "endMs": 156042,
+      "role": "soft"
+    },
+    {
+      "text": "كاين",
+      "startMs": 156042,
+      "endMs": 157144,
+      "role": "default"
+    },
+    {
+      "text": "many content",
+      "startMs": 157144,
+      "endMs": 160050,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "so",
+      "startMs": 160080,
+      "endMs": 160240,
+      "role": "soft"
+    },
+    {
+      "text": "follow me",
+      "startMs": 160240,
+      "endMs": 160960,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "شوية",
+      "startMs": 160740,
+      "endMs": 160940,
+      "role": "soft"
+    },
+    {
+      "text": "تبقاو",
+      "startMs": 160960,
+      "endMs": 161200,
+      "role": "default"
+    },
+    {
+      "text": "close",
+      "startMs": 161200,
+      "endMs": 161360,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "للـ",
+      "startMs": 161360,
+      "endMs": 161440,
+      "role": "soft"
+    },
+    {
+      "text": "videos",
+      "startMs": 161440,
+      "endMs": 162283,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "خصوصا",
+      "startMs": 162283,
+      "endMs": 163427,
+      "role": "soft"
+    },
+    {
+      "text": "فالـ",
+      "startMs": 163427,
+      "endMs": 163607,
+      "role": "soft"
+    },
+    {
+      "text": "IT",
+      "startMs": 163607,
+      "endMs": 164667,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فالـ",
+      "startMs": 164667,
+      "endMs": 165167,
+      "role": "soft"
+    },
+    {
+      "text": "informatique",
+      "startMs": 165167,
+      "endMs": 165247,
+      "role": "default"
+    },
+    {
+      "text": "en général",
+      "startMs": 165167,
+      "endMs": 165227,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "les",
+      "startMs": 165167,
+      "endMs": 165390,
+      "role": "soft"
+    },
+    {
+      "text": "ERP",
+      "startMs": 165390,
+      "endMs": 166067,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 166080,
+      "endMs": 166567,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 166567,
+      "endMs": 167055,
+      "role": "soft"
+    },
+    {
+      "text": "coding",
+      "startMs": 167055,
+      "endMs": 168030,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "and",
+      "startMs": 168030,
+      "endMs": 168263,
+      "role": "soft"
+    },
+    {
+      "text": "everything",
+      "startMs": 168263,
+      "endMs": 169033,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "related",
+      "startMs": 171177,
+      "endMs": 171877,
+      "role": "soft"
+    },
+    {
+      "text": "to",
+      "startMs": 171877,
+      "endMs": 172077,
+      "role": "soft"
+    },
+    {
+      "text": "the domain",
+      "startMs": 172077,
+      "endMs": 173067,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هاد",
+      "startMs": 173471,
+      "endMs": 173731,
+      "role": "soft"
+    },
+    {
+      "text": "المرة",
+      "startMs": 173731,
+      "endMs": 174011,
+      "role": "soft"
+    },
+    {
+      "text": "رجعت",
+      "startMs": 174011,
+      "endMs": 174371,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وما",
+      "startMs": 174386,
+      "endMs": 174686,
+      "role": "soft"
+    },
+    {
+      "text": "غاديش",
+      "startMs": 174686,
+      "endMs": 174926,
+      "role": "default"
+    },
+    {
+      "text": "نغبر",
+      "startMs": 174926,
+      "endMs": 175326,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "bye",
+      "startMs": 175767,
+      "endMs": 176200,
+      "role": "hero",
+      "pageBreakAfter": true
+    }
+  ],
+  "overlays": [
+    {
+      "type": "chapterChip",
+      "startMs": 2500,
+      "endMs": 5400,
+      "number": "01",
+      "label": "علاش غبرت"
+    },
+    {
+      "type": "bwStrike",
+      "startMs": 14800,
+      "endMs": 17200,
+      "word": "the editing",
+      "strikeAtMs": 15500
+    },
+    {
+      "type": "momentCounter",
+      "startMs": 19400,
+      "endMs": 22400,
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "value": "many",
+      "unit": "hours of editing",
+      "kicker": "1 MIN VIDEO"
+    },
+    {
+      "type": "progressCard",
+      "startMs": 22600,
+      "endMs": 25300,
+      "label": "03:00 AM · timeline",
+      "from": 21,
+      "to": 23
+    },
+    {
+      "type": "chapterBlur",
+      "startMs": 40000,
+      "endMs": 41500,
+      "number": "02"
+    },
+    {
+      "type": "momentFlow",
+      "startMs": 52200,
+      "endMs": 55200,
+      "words": [
+        "footage",
+        "prompt",
+        "video."
+      ]
+    },
+    {
+      "type": "fileStack",
+      "startMs": 59000,
+      "endMs": 64600,
+      "lines": [
+        "video_final_v7.mp4",
+        "video_final_v9_final.mp4",
+        "video_final_v9_final_wallah_final.mp4"
+      ],
+      "every": 0.7
+    },
+    {
+      "type": "clip",
+      "startMs": 64700,
+      "endMs": 66700,
+      "src": "videos/comeback/raw/rewind.mp4"
+    },
+    {
+      "type": "creditRows",
+      "startMs": 64900,
+      "endMs": 67300,
+      "rows": [
+        "cut",
+        "captions",
+        "music"
+      ],
+      "who": "Claude",
+      "every": 0.4
+    },
+    {
+      "type": "momentCode",
+      "startMs": 67400,
+      "endMs": 70400,
+      "code": "claude.edit(video);",
+      "sub": "every single day.",
+      "file": "engineer.ts"
+    },
+    {
+      "type": "pinnedReply",
+      "startMs": 123400,
+      "endMs": 128200,
+      "comment": "EDIT",
+      "reply": "Notion · step by step"
+    },
+    {
+      "type": "ctaEndCard",
+      "startMs": 176200,
+      "endMs": 179200,
+      "kicker": "Comment",
+      "word": "EDIT",
+      "sub": "One skill. One prompt."
+    }
+  ],
+  "monoRanges": [
+    {
+      "startMs": 14800,
+      "endMs": 25400
+    }
+  ],
+  "music": {
+    "src": "music/lofi-bed.m4a",
+    "volume": 0.22,
+    "fadeInMs": 800,
+    "fadeOutMs": 1500
+  },
+  "sfx": [
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 2600,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 19500,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 22700,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/type.wav",
+      "atMs": 52300,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 59700,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 60400,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 61100,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 61800,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/whoosh.wav",
+      "atMs": 64700,
+      "volume": 0.25
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 65200,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 65600,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/click.wav",
+      "atMs": 66000,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/type.wav",
+      "atMs": 67700,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/chime.wav",
+      "atMs": 123500,
+      "volume": 0.3
+    },
+    {
+      "src": "videos/comeback/sfx/type.wav",
+      "atMs": 176900,
+      "volume": 0.3
+    }
+  ],
+  "faceZone": {
+    "top": 0.0,
+    "bottom": 0.725
+  }
+}
