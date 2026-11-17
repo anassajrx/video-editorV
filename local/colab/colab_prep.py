@@ -103,8 +103,35 @@ log(f"input: {src} ({os.path.getsize(src) / 1e6:.0f} MB) -> results/{args.slug}"
 local_src = os.path.join(W, "src" + os.path.splitext(src)[1])
 shutil.copy(src, local_src)  # reading big files straight from Drive is slow and flaky
 IN = os.path.join(W, "in.mp4")
-sh(["ffmpeg", "-v", "error", "-y", "-i", local_src, "-map", "0:v:0", "-map", "0:a:0", "-vf", "fps=30,format=yuv420p",
-    "-c:v", "libx264", "-preset", "veryfast", "-crf", "16", "-c:a", "aac", "-b:a", "192k", "-ar", "48000", IN])
+# 4K / 60 fps / HDR iPhone clips -> 1080p (short side), 30 fps, SDR. GPU (NVENC) when available, else CPU.
+_pr = json.loads(sh(["ffprobe", "-v", "error", "-select_streams", "v:0", "-show_entries", "stream=width,height,color_transfer",
+                     "-of", "json", local_src]).stdout)["streams"][0]
+HDR = _pr.get("color_transfer", "") in ("arib-std-b67", "smpte2084")
+SCALE = "scale='if(gt(iw,ih),-2,min(1080,iw))':'if(gt(iw,ih),min(1080,ih),-2)':flags=lanczos"
+TONEMAP = "zscale=t=linear:npl=100,format=gbrpf32le,zscale=p=bt709,tonemap=hable:desat=0,zscale=t=bt709:m=bt709:r=tv,"
+log(f"source video: {_pr.get('width')}x{_pr.get('height')}{' HDR (will tone-map to SDR)' if HDR else ''}, "
+    f"{os.path.getsize(local_src) / 1e9:.1f} GB -> 1080p 30 fps")
+
+
+def convert(gpu, tonemap):
+    vf = (TONEMAP if tonemap else "") + f"fps=30,{SCALE},format=yuv420p"
+    enc = ["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", "18", "-b:v", "0"] if gpu else \
+          ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16"]
+    sh(["ffmpeg", "-v", "error", "-y", *(["-hwaccel", "cuda"] if gpu else []), "-i", local_src, "-map", "0:v:0", "-map", "0:a:0",
+        "-vf", vf, *enc, "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", IN])
+
+
+_t = time.time()
+for gpu, tm in ((True, HDR), (False, HDR), (False, False)):
+    try:
+        convert(gpu, tm)
+        log(f"converted with {'GPU' if gpu else 'CPU'}{' + HDR tone-map' if tm else ''} in {(time.time() - _t) / 60:.1f} min")
+        break
+    except RuntimeError as e:
+        log(f"   ({'GPU' if gpu else 'CPU'}{' + tone-map' if tm else ''} conversion not available here: {str(e).splitlines()[-1][:120]})")
+else:
+    sys.exit("Video conversion failed (see above).")
 info = json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "stream=width,height:format=duration", "-of", "json", IN]).stdout)
 DUR = float(info["format"]["duration"])
 wh = [(s.get("width"), s.get("height")) for s in info["streams"] if s.get("width")][0]
