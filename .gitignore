@@ -5,3 +5,4 @@ out/
 public/videos/**/raw/
 .venv/
 public/sfx/lib/
+__pycache__/
