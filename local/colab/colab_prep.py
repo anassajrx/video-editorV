@@ -45,6 +45,8 @@ p.add_argument("--darija-model", default="anaszil/whisper-large-v3-turbo-darija"
 p.add_argument("--base-model", default="openai/whisper-large-v3-turbo")
 p.add_argument("--no-retakes", action="store_true", help="detect retakes but do not cut them")
 p.add_argument("--no-grade", action="store_true")
+p.add_argument("--mic", default="", help="separate mic recording in 'raw footage' to use INSTEAD of the phone audio "
+               "(file name, or 'auto' = newest audio file there); synced automatically (offset + clock drift)")
 p.add_argument("--keep-in", action="store_true", default=True, help="copy in.mp4 to Drive (needed for re-cuts)")
 args = p.parse_args()
 
@@ -106,6 +108,34 @@ sh(["ffmpeg", "-v", "error", "-y", "-i", local_src, "-map", "0:v:0", "-map", "0:
 info = json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "stream=width,height:format=duration", "-of", "json", IN]).stdout)
 DUR = float(info["format"]["duration"])
 wh = [(s.get("width"), s.get("height")) for s in info["streams"] if s.get("width")][0]
+MIC = None
+if args.mic:
+    auds = [f for f in glob.glob(os.path.join(RAW, "*")) if os.path.splitext(f)[1].lower() in (".wav", ".m4a", ".mp3", ".aac", ".flac", ".ogg", ".opus", ".aif", ".aiff")]
+    if args.mic != "auto":
+        auds = [f for f in auds if os.path.basename(f) == args.mic]
+        if not auds:
+            sys.exit(f"Mic file {args.mic!r} not found in {RAW!r}.")
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    from mic_sync import sync_mic  # noqa: E402
+    # newest first; in 'auto' mode an audio file that doesn't match THIS video (e.g. an older recording) is skipped
+    for mic_src in sorted(auds, key=os.path.getmtime, reverse=True):
+        mic_local = os.path.join(W, "mic" + os.path.splitext(mic_src)[1])
+        shutil.copy(mic_src, mic_local)
+        synced = os.path.join(W, "in_mic.mp4")
+        try:
+            log(f"mic audio: trying {os.path.basename(mic_src)}")
+            MIC = sync_mic(IN, mic_local, synced)
+        except RuntimeError as e:
+            log(f"   {os.path.basename(mic_src)}: {e}")
+            if args.mic != "auto":
+                sys.exit("The mic file could not be synced with this video (see above).")
+            continue
+        MIC["file"] = os.path.basename(mic_src)
+        os.replace(synced, IN)
+        log(f"mic synced: {MIC['file']}, offset {MIC['offsetS']:+.3f}s, drift {MIC['driftPpm']:+.0f} ppm, worst check error {MIC['worstErrorMs']} ms")
+        break
+    if MIC is None:
+        log("!! no mic recording matching this video was found in 'raw footage': keeping the PHONE audio")
 ORIENT = "vertical" if wh[1] >= wh[0] else "horizontal"
 log(f"converted: {wh[0]}x{wh[1]} ({ORIENT}), {DUR:.1f}s")
 
@@ -394,8 +424,11 @@ for n, ph in enumerate(phrases):
     flag = "REMOVED " if removed(ph["s"], ph["e"]) else ""
     lines.append(f"[{n:3d}] {mmss(ph['s'])}-{mmss(ph['e'])} {flag}\n   AR: {ph['text']}\n   EN: {sc['en']}\n   FR: {sc['fr']}")
 open(os.path.join(W, "transcript.txt"), "w", encoding="utf8").write("\n".join(lines) + "\n")
+AUDIO_LINE = (f"mic {MIC['file']} (offset {MIC['offsetS']:+.3f}s, drift {MIC['driftPpm']:+.0f} ppm, "
+              f"worst sync error {MIC['worstErrorMs']} ms)") if MIC else "phone"
 rep = [f"# {args.slug} — Colab prep report", "",
        f"- Source: `{os.path.basename(src)}` · {wh[0]}x{wh[1]} ({ORIENT}) · {mmss(DUR)}",
+       f"- Audio: {AUDIO_LINE}",
        f"- Silence cut: floor {floor:.1f} dB, threshold {thr:.1f} dB → {len(cuts)} segments",
        f"- Junk segments removed: {sum(s['junk'] for s in segments)}",
        f"- Retakes / false starts: {len(removals)} ({'NOT applied' if args.no_retakes else 'applied'}) — REVIEW in removals.json",
@@ -407,7 +440,7 @@ open(os.path.join(W, "report.md"), "w", encoding="utf8").write("\n".join(rep) + 
 
 json.dump({"slug": args.slug, "source": os.path.basename(src), "width": wh[0], "height": wh[1], "orientation": ORIENT,
            "fps": FPS, "sourceDurationS": round(DUR, 3), "finalDurationS": round(FINAL_DUR, 3), "lufs": I, "truePeakDb": PK,
-           "graded": not args.no_grade, "backgroundSwapped": False, "retakesApplied": not args.no_retakes,
+           "graded": not args.no_grade, "micAudio": MIC, "backgroundSwapped": False, "retakesApplied": not args.no_retakes,
            "darijaModel": args.darija_model, "enfrModel": args.base_model},
           open(os.path.join(W, "meta.json"), "w"), indent=1)
 files = ["meta.json", "edit.mp4", "preview-720p.mp4", "cut.mp4.cuts.json", "phrases.json", "second.json", "removals.json", "segments.json",

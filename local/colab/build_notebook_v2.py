@@ -27,7 +27,7 @@ Drive: put the clip in `My Drive/video-editor/raw footage/`; share `My Drive/vid
 
 | # | Who | What |
 |---|---|---|
-| 1 | You | upload the clip, set **Step 0**, run **Part A** (silences + breaths removed, transcription, list of possible retakes — nothing cut yet) |
+| 1 | You | upload the phone clip (+ the mic .m4a if you used one), set **Step 0**, run **Part A** (silences + breaths removed, transcription, list of possible retakes — nothing cut yet) |
 | 2 | **Claude Code** | send it the `results/<slug>` link: *"retakes for <slug>"* → Claude picks the best takes and writes `final_cut.json` into that folder |
 | 3 | You | run **Part B** (final cut; with `OMNI_FLASH`: ≤15 s clips in `omni/to_omni/`) |
 | 4 | You (only with Omni) | edit each clip in Omni Flash, save them in `omni/from_omni/` with the SAME names (`clip_01.mp4` …) |
@@ -45,6 +45,9 @@ SLUG = "my-video"  #@param {type:"string"}
 #@markdown Clip in `video-editor/raw footage/` (empty = newest).
 VIDEO_NAME = ""  #@param {type:"string"}
 ROOT = "/content/drive/MyDrive/video-editor"  #@param {type:"string"}
+#@markdown **Separate mic recording** (e.g. Windows Sound Recorder .m4a) in `raw footage/` to use INSTEAD of the phone audio:
+#@markdown `auto` = the newest audio file there · a file name · empty = keep the phone audio. Synced automatically.
+MIC_AUDIO = "auto"  #@param {type:"string"}
 
 #@markdown ---
 #@markdown **Options**
@@ -80,8 +83,10 @@ if not subprocess.run(["nvidia-smi", "-L"], capture_output=True, text=True).stdo
 from google.colab import drive
 drive.mount("/content/drive")
 !wget -q -O /content/colab_prep.py {RAW}/colab_prep.py
+!wget -q -O /content/mic_sync.py {RAW}/mic_sync.py
 flags = f'--slug "{{SLUG}}" --root "{{ROOT}}" --no-retakes --no-grade'
 if VIDEO_NAME: flags += f' --video "{{VIDEO_NAME}}"'
+if MIC_AUDIO.strip(): flags += f' --mic "{{MIC_AUDIO.strip()}}"'
 !cd /content && python colab_prep.py {{flags}}
 assert os.path.exists(f"{{RES}}/phrases.json"), "Part A did not finish: read the error above (or send it to Claude)."
 meta = json.load(open(f"{{RES}}/meta.json")); meta.update({{"omniFlash": OMNI_FLASH, "backgroundSwapRequested": CHANGE_BACKGROUND, "stage": "waiting-for-claude-retakes"}})

@@ -122,6 +122,10 @@ ticked (`omniFlash`, `backgroundSwapRequested`) and the `stage`.
   background if chosen, graded, -14 LUFS; `segments.json` = the final cut). Do NOT re-cut: retake changes now mean
   re-running Colab Part B/C. Then captions (§7, timed with phrases.json + segments.json), graphics, `fetch_sfx.py` +
   `auto_sfx.py`, face check, render, final limiter, 720p preview, `.srt`.
+- **Separate mic audio** (user records with a PC mic, Windows Sound Recorder .m4a, next to the phone video):
+  Colab Part A (`MIC_AUDIO = "auto"` or a file name) syncs it automatically (`local/colab/mic_sync.py`: offset by
+  cross-correlation + clock drift fit, verified ≤15 ms everywhere, wrong/older recordings rejected) and REPLACES the phone
+  audio before anything else, so transcription, cuts and loudness all use the mic. `meta.json` → `micAudio` reports it.
 - Omni clips are split at existing cuts (≤15 s); `colab_finish.py join` conforms them to exact frames and puts the
   original voice back; it refuses to save if the frame count changes (captions would drift).
 
