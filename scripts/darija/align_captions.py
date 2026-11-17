@@ -42,6 +42,9 @@ for line in open(pages_path, encoding="utf8"):
         text, _, r = tok.partition("/")
         ws.append({"text": text.replace("_", " "), "role": ROLE.get(r or "d", r or "default")})
     assert 1 <= len(ws) <= 4, f"page must have 1-4 words: {line}"
+    for w in ws:  # a word mixing Latin and Arabic letters renders scrambled (e.g. "editيتو"): split it or use Darija spelling
+        assert not (re.search(r"[A-Za-z]", w["text"]) and re.search(r"[\u0600-\u06FF]", w["text"])), \
+            f"mixed Latin+Arabic word '{w['text']}': write it in Darija letters or as separate words: {line}"
     assert sum(w["role"] in ("hero", "signal", "ember", "error", "mono") for w in ws) <= 1, f"max one accent per page: {line}"
     pages.append({"words": ws, "force": force})
 

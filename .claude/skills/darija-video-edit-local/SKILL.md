@@ -84,6 +84,19 @@ each, commit `purple-room: components` locally (do NOT push: this PC is not logg
 
 ---
 
+## 1.4 Cloud + Colab workflow (the default since 2026-11-17)
+The user works from a **Claude Code cloud session** + **Google Colab (T4 GPU)**, no laptop. Full guide:
+`local/COLAB-WORKFLOW.md`. Colab runs `local/colab/colab_prep.py` (convert, silence cut, Darija transcription with
+`anaszil/whisper-large-v3-turbo-darija`, EN/FR pass, automatic retakes, soft grade, loudness, 720p preview) and writes
+to `My Drive/video-editor/results/<slug>/`. In the cloud session:
+1. `pip install gdown` if missing, then `python3 -I scripts/fetch_colab.py "<Drive folder link>" <slug>`
+   (files land in `public/videos/<slug>/raw/`; `in.mp4` + `cut.mp4.cuts.json` = Colab's, keep them).
+2. Read `transcript.txt` (AR / EN / FR per phrase, REMOVED marked) and **review `removals.json`**: Colab only finds
+   near-identical repeats; add missed retakes/false starts, delete wrong ones. If you change anything, rebuild with
+   `build_cut.py` + `render-segments.mjs` from `in.mp4`, then §5.1 + §5.2. Otherwise use Colab's `edit.mp4` as is.
+3. Skip §2–§5 and the transcription in §7.1: go straight to captions (§7.2–7.3, pin Latin-only pages with `@start-end`
+   from `second.json`), graphics, QA, render (§8–§9). Deliver the MP4 + a 720p preview (≤ 30 MB, for the phone).
+
 ## 2. Intake (per video)
 
 1. Find the clip in `"raw footage/"` (newest file unless the user names one). Pick a short kebab-case **slug** from the
@@ -286,6 +299,10 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 | 18 | Paths with spaces ("raw footage", "video editor") broke shell commands | always quote paths |
 
 ## 11. Learned rules (add new ones here, with the date)
+- 2026-11-17: Never a caption word mixing Latin and Arabic letters (`editيتو`, `نpostي`): the browser scrambles it.
+  Write the Darija spelling (`مونطيتو`, `نبوسطي`) or split into separate words. `align_captions.py` refuses them.
+- 2026-11-17: Heavy AI work (transcription) on Google Colab GPU; editing/rendering in the Claude Code cloud session
+  (§1.4). Always also deliver a 720p preview ≤ 30 MB for the phone.
 - 2026-11-14: Nothing over or above the face, ever.
 - 2026-11-15: Foreign words stay in their original language (Latin letters) in Darija captions.
 - 2026-11-15: ALL retakes removed; per-phrase transcription; junk segments cut.
