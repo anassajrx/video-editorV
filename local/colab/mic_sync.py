@@ -42,22 +42,48 @@ def _xcorr_lag(a, b, max_lag=None):
     return int(lags[i]), float(c[i] / (np.median(c) + 1e-9))
 
 
-def _local_offsets(v, m, a0, b, win=20.0, step=None):
-    """Offset (s) of mic vs video at windows along the video, searching +-0.5 s around offset(t) = a0 + b*t."""
+def _valid_lag(seg, ref):
+    """Best position of `seg` fully inside `ref` (lags 0..len(ref)-len(seg) only); returns (lag, strength)."""
+    n = 1 << int(np.ceil(np.log2(len(seg) + len(ref))))
+    c = np.abs(np.fft.irfft(np.fft.rfft(ref, n) * np.conj(np.fft.rfft(seg, n)), n)[:len(ref) - len(seg) + 1])
+    i = int(np.argmax(c))
+    return i, float(c[i] / (np.median(c) + 1e-9))
+
+
+def _speech(x, hop=0.5):
+    """Per-0.5 s 'speech present' mask, relative to this track's own voice level (so hiss/room noise is not speech)."""
+    n = int(hop * SR)
+    r = np.sqrt(np.array([(x[i:i + n] ** 2).mean() for i in range(0, len(x) - n, n)]) + 1e-12)
+    return r > 0.25 * np.percentile(r, 90)
+
+
+def _active(mask, s, e, hop=0.5):
+    w = mask[int(s / hop):int(e / hop)]
+    return len(w) > 0 and w.mean() >= 0.5
+
+
+def _local_offsets(v, m, a0, b, win=20.0, step=None, search=0.5, with_misses=False):
+    """Offset (s) of mic vs video at windows along the video, searching +-`search` s around offset(t) = a0 + b*t.
+    Only windows where BOTH tracks have speech are used (pauses can 'match' anywhere). With `with_misses`, a speech
+    window that finds no match is returned with offset None (that is what a gap in the mic recording looks like)."""
     step = step or win
+    sv, sm = _speech(v), _speech(m)
     pts = []
     t = 5.0
     while t + win < len(v) / SR - 1:
-        seg = v[int(t * SR):int((t + win) * SR)]
         guess = t + a0 + b * t
-        lo = int((guess - 0.5) * SR)
-        if lo < 0 or lo + len(seg) + SR > len(m):
+        lo = int((guess - search) * SR)
+        seg = v[int(t * SR):int((t + win) * SR)]
+        if lo < 0 or lo + len(seg) + int(2 * search * SR) > len(m) or not _active(sv, t, t + win) \
+                or not _active(sm, guess, guess + win):
             t += step
             continue
-        ref = m[lo:lo + len(seg) + SR]
-        lag, strength = _xcorr_lag(seg, ref, max_lag=len(ref))
-        if strength > 6:
+        ref = m[lo:lo + len(seg) + int(2 * search * SR)]
+        lag, strength = _valid_lag(seg, ref)
+        if strength > 8:
             pts.append((t, (lo + lag) / SR - t, strength))
+        elif with_misses:
+            pts.append((t, None, strength))
         t += step
     return pts
 
@@ -96,12 +122,29 @@ def sync_mic(video, mic, out, verbose=True):
         raise RuntimeError("mic mux failed: " + r.stderr[-1500:])
     # verify on the result: the new track must line up with the phone's own sound everywhere
     new = _pcm(out)
-    chk = _local_offsets(v, new, 0.0, 0.0, win=10.0, step=15.0)
-    errs = [abs(p[1]) * 1000 for p in chk]
-    worst = max(errs) if errs else None
-    log(f"mic sync check: {len(chk)} points, worst error {worst:.1f} ms" if errs else "mic sync check: no check points (clip too short?)")
-    if errs and worst > 15:
-        raise RuntimeError(f"Sync check failed (worst error {worst:.0f} ms). Keeping the phone audio.")
+    chk = _local_offsets(v, new, 0.0, 0.0, win=10.0, step=15.0, with_misses=True)
+    errs = np.array([abs(p[1]) * 1000 if p[1] is not None else 1e6 for p in chk])
+    worst = float(errs.max()) if len(errs) else None
+    if len(errs):
+        bad = errs > 15
+        log(f"mic sync check: {len(errs)} speech points, median error {np.median(errs[errs < 1e6]) if (errs < 1e6).any() else 0:.1f} ms, "
+            f"{int(bad.sum())} point(s) above 15 ms")
+        # a real sync problem shows on many points; one or two odd windows (music, noise, overlapping voices) don't count
+        if bad.mean() > 0.1 or np.median(errs) > 8:
+            where = ", ".join(f"{int(chk[i][0] // 60)}:{chk[i][0] % 60:04.1f} "
+                              f"({'no match' if chk[i][1] is None else f'{chk[i][1] * 1000:+.0f} ms'})"
+                              for i in np.flatnonzero(bad)[:8])
+            hint = ""
+            ib = np.flatnonzero(bad)
+            ig = np.flatnonzero(~bad)
+            if len(ib) >= 2 and len(ig) >= 2 and (ib.max() < ig.min() or ib.min() > ig.max()):
+                edge = chk[ig.min()][0] if ib.max() < ig.min() else chk[ib.min()][0]
+                hint = (f" The video is in sync on one side of ~{int(edge // 60)}:{edge % 60:02.0f} and not on the other: the mic "
+                        f"recording most likely has a GAP there (recorder paused/stopped?). Re-record, or use the phone audio.")
+            raise RuntimeError(f"Sync check failed at {where}.{hint}")
+        worst = float(np.percentile(errs[errs < 1e6], 95))
+    else:
+        log("mic sync check: no speech check points (clip too short?)")
     return {"offsetS": round(float(a0), 4), "driftPpm": round(float(b * 1e6), 1), "matchStrength": round(strength, 1),
             "checkPoints": len(chk), "worstErrorMs": None if worst is None else round(worst, 1)}
 
