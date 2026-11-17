@@ -35,6 +35,7 @@ p.add_argument("--mic", default="", help="separate mic recording in 'raw footage
                "(file name, or 'auto' = newest audio file there); synced automatically (offset + clock drift)")
 p.add_argument("--source", default="", help="original video file name (for the report)")
 p.add_argument("--mic-file", default="", help="mic file used in the first run (for the report)")
+p.add_argument("--batch", type=int, default=16, help="EN/FR phrases per GPU call (text only, no word timings)")
 p.add_argument("--keep-in", action="store_true", default=True, help="copy in.mp4 to Drive (needed for re-cuts)")
 args = p.parse_args()
 
@@ -162,24 +163,43 @@ def transcribe(model, s, e, lang, words=True):
     return text, ws
 
 
-# ---------- 4. EN / FR pass WITH PROGRESS (checkpoint to Drive every 25 phrases) ----------
+# ---------- 4. EN / FR pass, FAST: batched on the GPU, text only (checkpoint to Drive) ----------
+# English/French are only needed to read the foreign words in Latin letters; their timing comes from the phrase
+# boundaries (and the Darija word timings), so word timestamps are skipped here: that is what made it slow.
 ck = os.path.join(OUT, "second.partial.json")
 second = json.load(open(ck, encoding="utf8")) if os.path.exists(ck) else []
 if second:
     log(f"EN/FR: continuing from phrase {len(second)}/{len(phrases)} (saved progress)")
 base = load_base().to(dev).eval()
-t_enfr, n0 = time.time(), len(second)
-for n in range(len(second), len(phrases)):
-    ph = phrases[n]
-    en, enw = transcribe(base, ph["s"], ph["e"], "en")
-    fr, frw = transcribe(base, ph["s"], ph["e"], "fr")
-    second.append({"seg": n, "s": ph["s"], "e": ph["e"], "en": en, "fr": fr, "en_words": enw, "fr_words": frw})
-    done = n + 1
-    if done % 10 == 0 or done == len(phrases):
-        per = (time.time() - t_enfr) / (done - n0)
-        log(f"EN/FR: phrase {done}/{len(phrases)}  (~{(len(phrases) - done) * per / 60:.0f} min left)")
-    if done % 25 == 0:
-        json.dump(second, open(ck, "w"), ensure_ascii=False)
+
+
+def transcribe_batch(model, spans, lang):
+    xs = [A[int(s * SR):int(e * SR)] for s, e in spans]
+    ok = [i for i, x in enumerate(xs) if len(x) >= SR * 0.15]
+    res = [""] * len(xs)
+    if not ok:
+        return res
+    enc = proc([xs[i] for i in ok], sampling_rate=SR, return_tensors="pt", return_attention_mask=True)
+    with torch.no_grad():
+        out = model.generate(enc.input_features.to(dev, dt), attention_mask=enc.attention_mask.to(dev), language=lang,
+                             task="transcribe", num_beams=1, max_new_tokens=160)
+    seqs = out.get("sequences") if isinstance(out, dict) else getattr(out, "sequences", out)
+    for i, sq in zip(ok, seqs):
+        res[i] = proc.decode(sq, skip_special_tokens=True).strip()
+    return res
+
+
+t_enfr, n0, B = time.time(), len(second), max(1, args.batch)
+for i in range(n0, len(phrases), B):
+    chunk = phrases[i:i + B]
+    spans = [(ph["s"], ph["e"]) for ph in chunk]
+    ens, frs = transcribe_batch(base, spans, "en"), transcribe_batch(base, spans, "fr")
+    for k, ph in enumerate(chunk):
+        second.append({"seg": i + k, "s": ph["s"], "e": ph["e"], "en": ens[k], "fr": frs[k], "en_words": [], "fr_words": []})
+    done = len(second)
+    per = (time.time() - t_enfr) / (done - n0)
+    log(f"EN/FR: phrase {done}/{len(phrases)}  (~{(len(phrases) - done) * per / 60:.1f} min left)")
+    json.dump(second, open(ck, "w"), ensure_ascii=False)
 json.dump(second, open(os.path.join(W, "second.json"), "w"), ensure_ascii=False, indent=1)
 log("EN/FR pass done")
 del base
