@@ -26,8 +26,8 @@ const toPages = (words: StyledWord[]) => {
   return pages;
 };
 
-const toLines = (page: StyledWord[]) => {
-  if (page.length <= 2) return [page];
+const toLines = (page: StyledWord[], horizontal = false) => {
+  if (page.length <= 2 || horizontal) return [page]; // 16:9 has the width for one line
   const first = Math.min(MAX_PER_LINE, Math.ceil(page.length / 2));
   return [page.slice(0, first), page.slice(first)];
 };
@@ -104,7 +104,7 @@ export const PurpleCaptions: React.FC<{
           position: "absolute",
           left: "6%",
           right: "6%",
-          top: `${(inMoment ? MOMENT_CAPTION_TOP : top) * 100}%`,
+          top: `${(inMoment ? (width > height ? 0.06 : MOMENT_CAPTION_TOP) : top) * 100}%`,
           direction: rtl ? "rtl" : "ltr",
           textAlign: "center",
           opacity: enter * exit,
@@ -112,7 +112,7 @@ export const PurpleCaptions: React.FC<{
           textShadow: purple.captionShadow,
         }}
       >
-        {toLines(page).map((line, li) => (
+        {toLines(page, width > height).map((line, li) => (
           <div key={li} style={{ lineHeight: 1.45, whiteSpace: "nowrap" }}>
             {line.map((w, i) => (
               <Word key={i} w={w} s={s} nowMs={nowMs} dim={li > 0} />

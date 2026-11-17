@@ -8,8 +8,9 @@ export const BOTTOM_LIMIT = 0.94; // lowest point any element may reach
 export const zones = (spec: EditSpec) => {
   const faceBottom = spec.faceZone?.bottom ?? 0.5;
   const captionTop = Math.max(spec.captionY ?? 0, faceBottom + 0.02);
-  // Purple Room captions are 2 calm lines (~0.10 of the height)
-  const overlayTop = captionTop + (spec.style === "purple" ? 0.1 : CAPTION_BAND);
+  // Purple Room captions: 2 calm lines in 9:16 (~0.10 of the height), 1 line in 16:9 (~0.095 of the shorter height)
+  const purpleBand = spec.orientation === "horizontal" ? 0.095 : 0.1;
+  const overlayTop = captionTop + (spec.style === "purple" ? purpleBand : CAPTION_BAND);
   return { faceBottom, captionTop, overlayTop };
 };
 

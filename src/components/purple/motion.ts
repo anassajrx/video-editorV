@@ -27,3 +27,13 @@ export const useEnterExit = (durationInFrames: number, inS = 0.5, outS = 0.4, ri
 };
 
 export const lerp = (p: number, a: number, b: number) => a + (b - a) * p;
+
+/** Vertical position for full-screen moments. Vertical (9:16): `p` of the height, as designed. Horizontal (16:9):
+ * the same layout measured from the centre in px of the 1920-tall design, compressed to fit 1080 px. */
+export const useVY = () => {
+  const { width, height } = useVideoConfig();
+  const s = Math.min(width, height) / 1080;
+  if (height >= width) return (p: number) => `${p * 100}%`;
+  const K = 0.8;
+  return (p: number) => `calc(50% + ${((p - 0.5) * 1920 * s * K).toFixed(1)}px)`;
+};

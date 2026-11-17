@@ -59,7 +59,7 @@ export const PurpleOverlayLayer: React.FC<{
     case "bwStrike":
       return (
         <BWStrike
-          top={captionTop + 0.115}
+          top={minTop + 0.015 + 0 * captionTop}
           durationInFrames={d}
           word={o.word}
           strikeAt={o.strikeAtMs !== undefined ? (o.strikeAtMs - o.startMs) / 1000 : undefined}

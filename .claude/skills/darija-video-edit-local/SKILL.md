@@ -306,9 +306,16 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 ## 11. Learned rules (add new ones here, with the date)
 - 2026-11-17: Never a caption word mixing Latin and Arabic letters (`editيتو`, `نpostي`): the browser scrambles it.
   Write the Darija spelling (`مونطيتو`, `نبوسطي`) or split into separate words. `align_captions.py` refuses them.
-- 2026-11-17: Every step must work for BOTH vertical (9:16) and horizontal (16:9, YouTube) videos. Purple components
-  scale by the SHORT side (`min(width, height) / 1080`). Horizontal layout of the under-chin cards/moments still needs
-  a pass (captions and cards collide in 16:9): check stills before any horizontal render.
+- 2026-11-17: Every step must work for BOTH vertical (9:16) and horizontal (16:9, YouTube) videos. Set `orientation`
+  from Colab's `meta.json`. Purple components scale by the SHORT side; in 16:9 captions are ONE line, cards sit under
+  them (width relative to the short side), full-screen moments are laid out from the centre (`useVY`). Vertical output is
+  unchanged (pixel-identical). Still check stills + `check_face.py` for every horizontal video.
+- 2026-11-17: Sound effects = free Mixkit library + automatic placement. Every session: `python3 -I scripts/fetch_sfx.py`
+  (downloads 26 cleaned WAVs into `public/sfx/lib/`, git-ignored: the Mixkit licence forbids redistributing the files,
+  and the repo is public). After the overlays are final: `python3 -I scripts/auto_sfx.py src/videos/<slug>/edit.json`
+  (the sound comes from the object: coins on the counter, keys under code, page turn on chapters, deep hit + error tone at
+  the B&W dead end, chimes on results; volumes 0.15-0.45; hand-placed sounds are kept). Re-run it whenever overlays
+  move. Never commit `public/sfx/lib/`.
 - 2026-11-17: Heavy AI work (transcription) on Google Colab GPU; editing/rendering in the Claude Code cloud session
   (§1.4). Always also deliver a 720p preview ≤ 30 MB for the phone.
 - 2026-11-14: Nothing over or above the face, ever.

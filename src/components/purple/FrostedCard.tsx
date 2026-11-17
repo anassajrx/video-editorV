@@ -7,7 +7,7 @@ import { useEnterExit } from "./motion";
 export const FrostedCard: React.FC<{
   top: number;
   durationInFrames: number;
-  width?: number; // 0..1 of frame width
+  width?: number; // 0..1 of the SHORT side (= frame width in vertical)
   children: React.ReactNode;
   style?: React.CSSProperties;
 }> = ({ top, durationInFrames, width = 0.74, children, style }) => {
@@ -20,8 +20,8 @@ export const FrostedCard: React.FC<{
         style={{
           position: "absolute",
           top: `${top * 100}%`,
-          left: `${((1 - width) / 2) * 100}%`,
-          width: `${width * 100}%`,
+          left: (W - width * Math.min(W, H)) / 2,
+          width: width * Math.min(W, H),
           boxSizing: "border-box",
           background: purple.card,
           border: `${Math.max(1, s)}px solid ${purple.cardBorder}`,

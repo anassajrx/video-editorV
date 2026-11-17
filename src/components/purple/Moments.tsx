@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, interpolate, useCurrentFrame, useVideoConfig } from "remotion";
 import { fonts, plumBackground, purple } from "../../brand/theme";
-import { EASE, useEnterExit, useProgress } from "./motion";
+import { EASE, useEnterExit, useProgress, useVY } from "./motion";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const useS = () => { const { width, height } = useVideoConfig(); return Math.min(width, height) / 1080; };
@@ -37,8 +37,9 @@ const Stage: React.FC<{ durationInFrames: number; tag?: string; children: React.
   );
 };
 
-const Kicker: React.FC<{ text: string; top: string }> = ({ text, top }) => {
+const Kicker: React.FC<{ text: string; top: number }> = ({ text, top: topP }) => {
   const s = useS();
+  const top = useVY()(topP);
   return (
     <div
       style={{
@@ -62,6 +63,7 @@ const Kicker: React.FC<{ text: string; top: string }> = ({ text, top }) => {
 /** Blocks fall into a phone outline and stack; the last, light one drops in. */
 export const MomentBlocks: React.FC<{ durationInFrames: number; label?: string }> = ({ durationInFrames, label = "NO CODE · DRAG & DROP" }) => {
   const s = useS();
+  const vy = useVY();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const phoneW = 300 * s;
@@ -82,7 +84,7 @@ export const MomentBlocks: React.FC<{ durationInFrames: number; label?: string }
         style={{
           position: "absolute",
           left: "50%",
-          top: "52%",
+          top: vy(0.52),
           width: phoneW,
           height: phoneH,
           transform: "translate(-50%, -50%)",
@@ -114,7 +116,7 @@ export const MomentBlocks: React.FC<{ durationInFrames: number; label?: string }
           );
         })}
       </div>
-      <Kicker text={label} top="76%" />
+      <Kicker text={label} top={0.76} />
     </Stage>
   );
 };
@@ -128,6 +130,7 @@ export const MomentCounter: React.FC<{ durationInFrames: number; steps: number[]
   kicker,
 }) => {
   const s = useS();
+  const vy = useVY();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const stepsP = steps.map((_, i) =>
@@ -137,11 +140,11 @@ export const MomentCounter: React.FC<{ durationInFrames: number; steps: number[]
   const big = useProgress(landAt, 0.6);
   return (
     <Stage durationInFrames={durationInFrames}>
-      {kicker ? <Kicker text={kicker} top="30%" /> : null}
+      {kicker ? <Kicker text={kicker} top={0.3} /> : null}
       <div
         style={{
           position: "absolute",
-          top: "36%",
+          top: vy(0.36),
           left: 0,
           right: 0,
           textAlign: "center",
@@ -158,7 +161,7 @@ export const MomentCounter: React.FC<{ durationInFrames: number; steps: number[]
           </span>
         ))}
       </div>
-      <div style={{ position: "absolute", top: "42%", left: 0, right: 0, textAlign: "center", opacity: big }}>
+      <div style={{ position: "absolute", top: vy(0.42), left: 0, right: 0, textAlign: "center", opacity: big }}>
         <div
           style={{
             fontFamily: fonts.display,
@@ -188,13 +191,14 @@ export const MomentSlider: React.FC<{ durationInFrames: number; label: string; k
   percent = 68,
 }) => {
   const s = useS();
+  const vy = useVY();
   const knob = useProgress(0.3, 1.2);
   const write = useProgress(0.6, 1.2);
   const trackW = 640 * s;
   const pos = (percent / 100) * knob;
   return (
     <Stage durationInFrames={durationInFrames}>
-      <div style={{ position: "absolute", top: "44%", left: "50%", width: trackW, transform: "translateX(-50%)" }}>
+      <div style={{ position: "absolute", top: vy(0.44), left: "50%", width: trackW, transform: "translateX(-50%)" }}>
         <div style={{ height: 14 * s, borderRadius: 7 * s, background: purple.dim }} />
         <div
           style={{ position: "absolute", top: 0, height: 14 * s, borderRadius: 7 * s, width: trackW * pos, background: purple.lilac }}
@@ -216,7 +220,7 @@ export const MomentSlider: React.FC<{ durationInFrames: number; label: string; k
       <div
         style={{
           position: "absolute",
-          top: "51%",
+          top: vy(0.51),
           left: 0,
           right: 0,
           textAlign: "center",
@@ -229,7 +233,7 @@ export const MomentSlider: React.FC<{ durationInFrames: number; label: string; k
       >
         {label}
       </div>
-      <Kicker text={`${kicker} · ${Math.round(percent * knob)}%`} top="60%" />
+      <Kicker text={`${kicker} · ${Math.round(percent * knob)}%`} top={0.6} />
     </Stage>
   );
 };
@@ -242,6 +246,7 @@ export const MomentCode: React.FC<{ durationInFrames: number; code: string; sub?
   file = "besoin.ts",
 }) => {
   const s = useS();
+  const vy = useVY();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const startF = 0.3 * fps;
@@ -254,11 +259,11 @@ export const MomentCode: React.FC<{ durationInFrames: number; code: string; sub?
   const sp = typed.indexOf(" ");
   return (
     <Stage durationInFrames={durationInFrames}>
-      <Kicker text={file} top="34%" />
+      <Kicker text={file} top={0.34} />
       <div
         style={{
           position: "absolute",
-          top: "42%",
+          top: vy(0.42),
           left: 0,
           right: 0,
           textAlign: "center",
@@ -286,7 +291,7 @@ export const MomentCode: React.FC<{ durationInFrames: number; code: string; sub?
         <div
           style={{
             position: "absolute",
-            top: "51%",
+            top: vy(0.51),
             left: 0,
             right: 0,
             textAlign: "center",
@@ -308,6 +313,7 @@ export const MomentCode: React.FC<{ durationInFrames: number; code: string; sub?
 /** Optional ending: serif line + handle on plum. */
 export const PlumEndCard: React.FC<{ durationInFrames: number; line: string; handle: string }> = ({ durationInFrames, line, handle }) => {
   const s = useS();
+  const vy = useVY();
   const p = useProgress(0.3, 0.8);
   const h = useProgress(0.8, 0.7);
   return (
@@ -315,7 +321,7 @@ export const PlumEndCard: React.FC<{ durationInFrames: number; line: string; han
       <div
         style={{
           position: "absolute",
-          top: "42%",
+          top: vy(0.42),
           left: "8%",
           right: "8%",
           textAlign: "center",
@@ -333,7 +339,7 @@ export const PlumEndCard: React.FC<{ durationInFrames: number; line: string; han
       <div
         style={{
           position: "absolute",
-          top: "58%",
+          top: vy(0.58),
           left: 0,
           right: 0,
           textAlign: "center",
@@ -353,11 +359,12 @@ export const PlumEndCard: React.FC<{ durationInFrames: number; line: string; han
 /** Words flowing down into each other: footage ↓ prompt ↓ video. (the last one in serif). */
 export const MomentFlow: React.FC<{ durationInFrames: number; words: string[] }> = ({ durationInFrames, words }) => {
   const s = useS();
+  const vy = useVY();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   return (
     <Stage durationInFrames={durationInFrames}>
-      <div style={{ position: "absolute", top: "38%", left: 0, right: 0, textAlign: "center" }}>
+      <div style={{ position: "absolute", top: vy(0.38), left: 0, right: 0, textAlign: "center" }}>
         {words.map((w, i) => {
           const at = 0.3 + i * 0.6;
           const p = interpolate(frame, [at * fps, (at + 0.6) * fps], [0, 1], { ...clamp, easing: EASE });
@@ -397,6 +404,7 @@ export const CtaEndCard: React.FC<{ durationInFrames: number; kicker: string; wo
   sub,
 }) => {
   const s = useS();
+  const vy = useVY();
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
   const p = useProgress(0.2, 0.7);
@@ -405,7 +413,7 @@ export const CtaEndCard: React.FC<{ durationInFrames: number; kicker: string; wo
   const subP = useProgress(1.3, 0.6);
   return (
     <Stage durationInFrames={durationInFrames} tag="END">
-      <div style={{ position: "absolute", top: "38%", left: 0, right: 0, textAlign: "center", opacity: p }}>
+      <div style={{ position: "absolute", top: vy(0.38), left: 0, right: 0, textAlign: "center", opacity: p }}>
         <div style={{ fontFamily: fonts.serif, fontStyle: "italic", fontSize: 120 * s, color: purple.white, lineHeight: 1.1 }}>{kicker}</div>
         <div style={{ fontFamily: fonts.mono, fontSize: 120 * s, color: purple.white, marginTop: 10 * s }}>
           {word.slice(0, typed)}

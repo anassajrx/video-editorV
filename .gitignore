@@ -4,3 +4,4 @@ out/
 .DS_Store
 public/videos/**/raw/
 .venv/
+public/sfx/lib/
