@@ -6,3 +6,6 @@ public/videos/**/raw/
 .venv/
 public/sfx/lib/
 __pycache__/
+
+# per-video screenshots from the user's Drive (private product images; the repo is public)
+public/videos/*/shots/
