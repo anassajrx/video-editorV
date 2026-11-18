@@ -24,8 +24,8 @@ for (const [i, [a, b]] of chunks.entries()) {
   const f = path.join(dir, `c${String(i).padStart(3, "0")}.mp4`);
   if (fs.existsSync(f)) continue;
   await renderMedia({ composition, serveUrl, codec: "h264", crf: parseInt(crfArg, 10), muted: true, frameRange: [a, b],
-    outputLocation: f + ".part", concurrency: "100%" });
-  fs.renameSync(f + ".part", f);
+    outputLocation: f.replace(/\.mp4$/, ".part.mp4"), concurrency: "100%" });
+  fs.renameSync(f.replace(/\.mp4$/, ".part.mp4"), f);
   doneFrames += b - a + 1;
   const rate = (doneFrames - startDone) / ((Date.now() - t0) / 1000);
   console.log(`PROGRESS ${doneFrames}/${total} frames (${Math.round((100 * doneFrames) / total)}%), ~${((total - doneFrames) / rate / 60).toFixed(1)} min left`);
