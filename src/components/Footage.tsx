@@ -1,7 +1,7 @@
 import React from "react";
 import { AbsoluteFill, Easing, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { Video } from "@remotion/media";
-import { colors } from "../brand/theme";
+import { colors, plumBackground } from "../brand/theme";
 import type { EditSpec } from "../brand/types";
 
 export const Footage: React.FC<{ spec: EditSpec }> = ({ spec }) => {
@@ -38,18 +38,41 @@ export const Footage: React.FC<{ spec: EditSpec }> = ({ spec }) => {
     return Math.max(acc, v);
   }, 0);
 
+  // Split screen: the footage glides into a rounded panel on the left (the face stays fully visible, nothing over it)
+  // while a screen is shown on the right (splitShot overlay). Panel = SPLIT geometry (fractions of the frame).
+  const { width: W, height: H } = useVideoConfig();
+  const sp = (spec.split ?? []).reduce((acc, r) => {
+    const a = (r.startMs / 1000) * fps;
+    const b = (r.endMs / 1000) * fps;
+    const tr = 0.55 * fps;
+    const v = interpolate(frame, [a, a + tr, b - tr, b], [0, 1, 1, 0], {
+      extrapolateLeft: "clamp", extrapolateRight: "clamp", easing: Easing.inOut(Easing.cubic) });
+    return Math.max(acc, v);
+  }, 0);
+  const k = 1 - (1 - SPLIT.scale) * sp;
+  const panel: React.CSSProperties = {
+    position: "absolute", left: 0, top: 0, width: W, height: H, overflow: "hidden",
+    transformOrigin: "0 0",
+    transform: `translate(${SPLIT.left * W * sp}px, ${SPLIT.top * H * sp}px) scale(${k})`,
+    borderRadius: (28 * sp) / k,
+    boxShadow: sp > 0 ? `0 ${40 * sp}px ${100 * sp}px rgba(0,0,0,${0.55 * sp}), 0 0 0 ${2 / k}px rgba(196,181,253,${0.3 * sp})` : undefined,
+  };
+
   const mediaStyle: React.CSSProperties = {
     width: "100%",
     height: "100%",
     objectFit: "cover",
     scale: String(scale),
-    // Purple Room: zoom from the bottom edge, so push-ins lift the face (more room under the chin) instead of lowering it
-    transformOrigin: purple ? "50% 100%" : undefined,
+    // Purple Room: zoom from the bottom edge (vertical: more room under the chin). `pushOrigin` overrides it, e.g.
+    // "50% 0%" when the head is close to the top of the frame (push-ins then never crop the head).
+    transformOrigin: spec.pushOrigin ?? (purple ? "50% 100%" : undefined),
     filter: `grayscale(${mono}) contrast(${1.05 + mono * 0.1}) saturate(${1.08 - mono})`,
   };
 
   return (
     <AbsoluteFill style={{ backgroundColor: colors.ink, overflow: "hidden" }}>
+      {sp > 0 ? <AbsoluteFill style={{ background: plumBackground, opacity: Math.min(1, sp * 2) }} /> : null}
+      <div style={panel}>
       {spec.footage.kind === "video" ? (
         <Video
           src={staticFile(spec.footage.src)}
@@ -60,9 +83,13 @@ export const Footage: React.FC<{ spec: EditSpec }> = ({ spec }) => {
         <Img src={staticFile(spec.footage.src)} style={mediaStyle} />
       )}
       {purple ? <SoftVignette /> : <Grade mono={mono} />}
+      </div>
     </AbsoluteFill>
   );
 };
+
+/** Split-screen panel of the footage: scale and top-left corner, as fractions of the frame. */
+export const SPLIT = { scale: 0.5, left: 0.03, top: 0.08 };
 
 // Brand grade: cool shadows, warm skin stays natural, vignette, legibility gradient.
 export const Grade: React.FC<{ mono?: number }> = ({ mono = 0 }) => (

@@ -35,14 +35,17 @@ subprocess.run(
 subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", video, "-vf", "fps=10", f"{tmp}/%05d.png"], check=True)
 
 # Full-screen animation moments have no face on screen (skill rule 1): they and the captions on top of them are allowed.
-FULL = {"momentBlocks", "momentCounter", "momentSlider", "momentCode", "momentFlow", "endCard", "ctaEndCard", "momentShot"}
+FULL = {"momentBlocks", "momentCounter", "momentSlider", "momentCode", "momentFlow", "endCard", "ctaEndCard", "momentShot", "launch",
+        "splitShot"}  # splitShot: the footage itself moves into a side panel, the screen sits next to it
 free = [(o["startMs"] / 1000, o["endMs"] / 1000) for o in spec.get("overlays", []) if o.get("type") in FULL]
 
 bad = []
 for f in sorted(x for x in os.listdir(tmp) if x.endswith(".png")):
     img = cv2.imread(os.path.join(tmp, f), cv2.IMREAD_GRAYSCALE)
     h = img.shape[0]
-    band = img[: int(h * float(os.environ.get("QA_BAND", fz["bottom"]))), :]
+    w = img.shape[1]
+    # horizontal videos: the face only occupies the faceZone left..right columns; cards may sit beside it
+    band = img[: int(h * float(os.environ.get("QA_BAND", fz["bottom"]))), int(w * fz.get("left", 0)) : int(w * fz.get("right", 1))]
     # >40 luminance = real text/graphic (ignores compression noise and faint glow haze)
     t = (int(f.split(".")[0]) - 1) / 10
     if any(a - 0.05 <= t <= b + 0.35 for a, b in free):
@@ -54,4 +57,5 @@ if bad:
     print(f"FAIL: something is drawn over/above the face at {len(bad)} sampled moments:")
     print("  " + ", ".join(f"{t:.1f}s" for t in bad[:40]))
     sys.exit(1)
-print(f"PASS: nothing drawn in the face zone (0% -> {fz['bottom']*100:.1f}% of frame height).")
+print(f"PASS: nothing drawn in the face zone (0% -> {fz['bottom']*100:.1f}% of frame height"
+      f"{', columns %.0f%%-%.0f%%' % (fz['left']*100, fz['right']*100) if 'left' in fz else ''}).")

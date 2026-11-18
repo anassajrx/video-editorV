@@ -1,7 +1,7 @@
 {
   "style": "purple",
   "orientation": "horizontal",
-  "durationMs": 103567,
+  "durationMs": 105600,
   "footage": {
     "src": "videos/my-video/raw/edit.mp4",
     "kind": "video"
@@ -1981,44 +1981,44 @@
   ],
   "overlays": [
     {
-      "type": "momentShot",
-      "startMs": 0,
-      "endMs": 5350,
+      "type": "splitShot",
+      "startMs": 300,
+      "endMs": 5300,
       "src": "videos/my-video/shots/s06-communaute-flag.jpg",
       "aspect": 1.7777777777777777,
       "keys": [
         {
           "t": 0,
-          "zoom": 1.25,
+          "zoom": 1.15,
           "fx": 0.55,
           "fy": 0.4
         },
         {
-          "t": 1.1,
+          "t": 0.8,
           "zoom": 2.4,
           "fx": 0.585,
           "fy": 0.645
         },
         {
-          "t": 2.3,
+          "t": 2.0,
           "zoom": 2.4,
           "fx": 0.585,
           "fy": 0.645
         },
         {
-          "t": 3.0,
+          "t": 2.7,
           "zoom": 1.7,
           "fx": 0.5,
           "fy": 0.3
         },
         {
-          "t": 4.2,
+          "t": 3.9,
           "zoom": 1.7,
           "fx": 0.5,
           "fy": 0.3
         },
         {
-          "t": 5.35,
+          "t": 5.0,
           "zoom": 1.3,
           "fx": 0.55,
           "fy": 0.45
@@ -2026,8 +2026,8 @@
       ],
       "highlights": [
         {
-          "t0": 1.15,
-          "t1": 2.5,
+          "t0": 0.8499999999999999,
+          "t1": 2.2,
           "x": 0.5,
           "y": 0.627,
           "w": 0.17,
@@ -2036,8 +2036,8 @@
           "below": true
         },
         {
-          "t0": 2.6,
-          "t1": 4.0,
+          "t0": 2.3000000000000003,
+          "t1": 3.7,
           "x": 0.385,
           "y": 0.17,
           "w": 0.24,
@@ -2048,14 +2048,33 @@
       ],
       "chips": [
         {
-          "t": 4.2,
+          "t": 3.9000000000000004,
           "x": 0.6,
           "y": 0.62,
           "text": "0 Linux  →  first flag",
           "dur": 1.2
         }
-      ],
-      "instant": true
+      ]
+    },
+    {
+      "type": "sideChip",
+      "startMs": 5550,
+      "endMs": 7000,
+      "text": "You can too",
+      "sub": "zero → first flag",
+      "icon": "sparkles",
+      "side": "left",
+      "y": 0.42
+    },
+    {
+      "type": "sideChip",
+      "startMs": 7150,
+      "endMs": 9050,
+      "text": "cybersecurity",
+      "sub": "everyone wants in",
+      "icon": "shield",
+      "side": "right",
+      "y": 0.42
     },
     {
       "type": "momentCounter",
@@ -2069,6 +2088,16 @@
       "value": "1000",
       "unit": "videos",
       "kicker": "YOUTUBE"
+    },
+    {
+      "type": "sideChip",
+      "startMs": 12050,
+      "endMs": 13250,
+      "text": "So many questions",
+      "sub": "and no answers",
+      "icon": "chat",
+      "side": "left",
+      "y": 0.42
     },
     {
       "type": "comment",
@@ -2115,7 +2144,7 @@
       "startMs": 25400,
       "endMs": 30000,
       "src": "videos/my-video/shots/s03-carte-cyber.jpg",
-      "aspect": 0.9347826086956522,
+      "aspect": 0.8671,
       "keys": [
         {
           "t": 0,
@@ -2125,60 +2154,69 @@
         },
         {
           "t": 1.7,
-          "zoom": 1.2,
+          "zoom": 1.22,
           "fx": 0.5,
-          "fy": 0.42
+          "fy": 0.39
         },
         {
           "t": 2.9,
-          "zoom": 1.2,
+          "zoom": 1.22,
           "fx": 0.5,
-          "fy": 0.42
+          "fy": 0.39
         },
         {
-          "t": 3.8,
-          "zoom": 1.3,
+          "t": 3.6,
+          "zoom": 1.22,
           "fx": 0.5,
-          "fy": 0.78
+          "fy": 0.8
         },
         {
           "t": 4.6,
-          "zoom": 1.3,
+          "zoom": 1.22,
           "fx": 0.5,
-          "fy": 0.78
+          "fy": 0.8
         }
       ],
       "highlights": [
         {
+          "t0": 0.55,
+          "t1": 1.6,
+          "x": 0.058,
+          "y": 0.052,
+          "w": 0.245,
+          "h": 0.052
+        },
+        {
           "t0": 1.8,
           "t1": 3.0,
-          "x": 0.1,
-          "y": 0.37,
-          "w": 0.8,
-          "h": 0.12
+          "x": 0.11,
+          "y": 0.355,
+          "w": 0.78,
+          "h": 0.075
         }
       ],
       "cursor": [
         {
-          "t0": 3.5,
-          "t1": 4.2,
+          "t0": 3.3,
+          "t1": 4.1,
           "from": [
-            0.7,
-            0.6
+            0.75,
+            0.62
           ],
           "to": [
             0.5,
-            0.95
-          ]
+            0.885
+          ],
+          "clickAt": 4.15
         }
       ],
       "chips": [
         {
-          "t": 3.9,
+          "t": 4.35,
           "x": 0.5,
-          "y": 0.8,
+          "y": 0.79,
           "text": "3 months",
-          "dur": 1.0
+          "dur": 0.9
         }
       ]
     },
@@ -2202,6 +2240,16 @@
       ],
       "who": "your coaches",
       "every": 1.4
+    },
+    {
+      "type": "sideChip",
+      "startMs": 39000,
+      "endMs": 41800,
+      "text": "Learn from a pro",
+      "sub": "who does it every day",
+      "icon": "laptop",
+      "side": "right",
+      "y": 0.42
     },
     {
       "type": "momentShot",
@@ -2311,6 +2359,26 @@
       "imgAspect": 0.8158
     },
     {
+      "type": "sideChip",
+      "startMs": 49550,
+      "endMs": 51300,
+      "text": "Full mentoring",
+      "sub": "step by step",
+      "icon": "users",
+      "side": "left",
+      "y": 0.42
+    },
+    {
+      "type": "sideChip",
+      "startMs": 51500,
+      "endMs": 53050,
+      "text": "Stuck at 2 AM?",
+      "sub": "Ostadi answers",
+      "icon": "clock",
+      "side": "right",
+      "y": 0.42
+    },
+    {
       "type": "momentShot",
       "startMs": 53100,
       "endMs": 58900,
@@ -2379,6 +2447,16 @@
         }
       ],
       "imgAspect": 0.5
+    },
+    {
+      "type": "sideChip",
+      "startMs": 59000,
+      "endMs": 60150,
+      "text": "Never alone",
+      "sub": "a whole community",
+      "icon": "users",
+      "side": "left",
+      "y": 0.42
     },
     {
       "type": "momentShot",
@@ -2745,95 +2823,22 @@
       }
     },
     {
-      "type": "momentShot",
-      "startMs": 93240,
-      "endMs": 98500,
-      "src": "videos/my-video/shots/s02-plateforme.jpg",
-      "aspect": 1.7777777777777777,
-      "keys": [
-        {
-          "t": 0,
-          "zoom": 1,
-          "fx": 0.5,
-          "fy": 0.5
-        },
-        {
-          "t": 1.6,
-          "zoom": 1.9,
-          "fx": 0.31,
-          "fy": 0.38
-        },
-        {
-          "t": 3.0,
-          "zoom": 1.9,
-          "fx": 0.31,
-          "fy": 0.38
-        },
-        {
-          "t": 3.6,
-          "zoom": 2.5,
-          "fx": 0.31,
-          "fy": 0.55
-        },
-        {
-          "t": 5.26,
-          "zoom": 2.5,
-          "fx": 0.31,
-          "fy": 0.55
-        }
-      ],
-      "highlights": [
-        {
-          "t0": 2.9,
-          "t1": 3.9,
-          "x": 0.18,
-          "y": 0.125,
-          "w": 0.085,
-          "h": 0.03,
-          "label": "lesson 1 · free",
-          "below": true
-        }
-      ],
-      "cursor": [
-        {
-          "t0": 3.6,
-          "t1": 4.3,
-          "from": [
-            0.45,
-            0.45
-          ],
-          "to": [
-            0.32,
-            0.593
-          ],
-          "clickAt": 4.4
-        }
-      ]
-    },
-    {
-      "type": "momentFlow",
-      "startMs": 98150,
-      "endMs": 101900,
-      "words": [
-        "the form below",
-        "WhatsApp",
-        "answers."
-      ]
-    },
-    {
-      "type": "ctaEndCard",
-      "startMs": 101550,
-      "endMs": 104300,
-      "kicker": "start today",
-      "word": "progma.ai",
-      "sub": "fill the form below"
+      "type": "launch",
+      "startMs": 93000,
+      "endMs": 105600,
+      "platform": "videos/my-video/shots/s02-plateforme.jpg",
+      "lesson": "videos/my-video/shots/s11-lecon.jpg",
+      "logo": "videos/my-video/shots/progma-logo-white.png",
+      "brand": "Progma Academy",
+      "url": "progma.ai",
+      "cta": "Start today"
     }
   ],
   "sfx": [
     {
-      "src": "sfx/lib/hit-intro.wav",
-      "atMs": 0,
-      "volume": 0.32
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 200,
+      "volume": 0.2
     },
     {
       "src": "sfx/lib/blip-tech.wav",
@@ -2859,6 +2864,31 @@
       "src": "sfx/lib/zoom-move.wav",
       "atMs": 4200,
       "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 4850,
+      "volume": 0.14
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 5550,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 5800,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 7150,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 7400,
+      "volume": 0.22
     },
     {
       "src": "sfx/lib/whoosh-air.wav",
@@ -2889,6 +2919,11 @@
       "src": "sfx/lib/whoosh-air.wav",
       "atMs": 12017,
       "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 12300,
+      "volume": 0.22
     },
     {
       "src": "sfx/lib/pop-soft.wav",
@@ -2962,6 +2997,11 @@
     },
     {
       "src": "sfx/lib/blip-tech.wav",
+      "atMs": 25950,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
       "atMs": 27200,
       "volume": 0.18
     },
@@ -2971,14 +3011,14 @@
       "volume": 0.13
     },
     {
-      "src": "sfx/lib/pop-light.wav",
-      "atMs": 29300,
-      "volume": 0.2
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 29550,
+      "volume": 0.5
     },
     {
-      "src": "sfx/lib/mouse-click.wav",
-      "atMs": 29600,
-      "volume": 0.5
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 29750,
+      "volume": 0.2
     },
     {
       "src": "sfx/lib/pop-light.wav",
@@ -3009,6 +3049,16 @@
       "src": "sfx/lib/whoosh-air.wav",
       "atMs": 36317,
       "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 39000,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 39250,
+      "volume": 0.22
     },
     {
       "src": "sfx/lib/whoosh-sweep.wav",
@@ -3056,6 +3106,26 @@
       "volume": 0.18
     },
     {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 49550,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 49800,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 51500,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 51750,
+      "volume": 0.22
+    },
+    {
       "src": "sfx/lib/whoosh-sweep.wav",
       "atMs": 53000,
       "volume": 0.28
@@ -3079,6 +3149,16 @@
       "src": "sfx/lib/blip-tech.wav",
       "atMs": 57500,
       "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 59000,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 59250,
+      "volume": 0.22
     },
     {
       "src": "sfx/lib/whoosh-sweep.wav",
@@ -3286,49 +3366,154 @@
       "volume": 0.18
     },
     {
-      "src": "sfx/lib/whoosh-sweep.wav",
-      "atMs": 93140,
-      "volume": 0.28
+      "src": "sfx/lib/whoosh-tech.wav",
+      "atMs": 93000,
+      "volume": 0.3
     },
     {
-      "src": "sfx/lib/blip-tech.wav",
-      "atMs": 96140,
-      "volume": 0.18
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 93150,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 93600,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 94300,
+      "volume": 0.3
+    },
+    {
+      "src": "sfx/lib/zoom-in.wav",
+      "atMs": 95000,
+      "volume": 0.2
     },
     {
       "src": "sfx/lib/mouse-click.wav",
-      "atMs": 97640,
+      "atMs": 96350,
+      "volume": 0.5
+    },
+    {
+      "src": "sfx/lib/swoosh-fast.wav",
+      "atMs": 96680,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 97500,
       "volume": 0.5
     },
     {
       "src": "sfx/lib/whoosh-air.wav",
       "atMs": 98050,
+      "volume": 0.26
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 98300,
+      "volume": 0.24
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 98470,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 98600,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 98730,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 98860,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 99020,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 99170,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 99320,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 99470,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/key-single.wav",
+      "atMs": 99620,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 99750,
+      "volume": 0.5
+    },
+    {
+      "src": "sfx/lib/chime-confirm.wav",
+      "atMs": 99900,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 100200,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/swoosh-fast.wav",
+      "atMs": 100450,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/pop-bubble.wav",
+      "atMs": 100700,
       "volume": 0.3
     },
     {
-      "src": "sfx/lib/pop-light.wav",
-      "atMs": 98450,
-      "volume": 0.22
+      "src": "sfx/lib/pop-bubble.wav",
+      "atMs": 101750,
+      "volume": 0.3
     },
     {
-      "src": "sfx/lib/pop-light.wav",
-      "atMs": 99050,
-      "volume": 0.22
-    },
-    {
-      "src": "sfx/lib/pop-light.wav",
-      "atMs": 99650,
-      "volume": 0.22
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 102300,
+      "volume": 0.26
     },
     {
       "src": "sfx/lib/whoosh-tech.wav",
-      "atMs": 101550,
-      "volume": 0.3
+      "atMs": 102600,
+      "volume": 0.26
     },
     {
-      "src": "sfx/lib/chime-correct.wav",
-      "atMs": 102150,
-      "volume": 0.3
+      "src": "sfx/lib/hit-intro.wav",
+      "atMs": 102800,
+      "volume": 0.45
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 103600,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/chime-positive.wav",
+      "atMs": 103800,
+      "volume": 0.24
     }
   ],
   "music": {
@@ -3339,6 +3524,15 @@
   },
   "faceZone": {
     "top": 0.0,
-    "bottom": 0.61
-  }
+    "bottom": 0.61,
+    "left": 0.33,
+    "right": 0.7
+  },
+  "pushOrigin": "50% 0%",
+  "split": [
+    {
+      "startMs": 200,
+      "endMs": 5350
+    }
+  ]
 }

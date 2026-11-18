@@ -331,6 +331,14 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 | 18 | Paths with spaces ("raw footage", "video editor") broke shell commands | always quote paths |
 
 ## 11. Learned rules (add new ones here, with the date)
+- 2026-11-18 (round 2): The VERY FIRST frame shows the user (never open on a screen). To show a screen at the start,
+  use a split screen: `split` ranges in edit.json move the footage into a left panel (Footage SPLIT) and a `splitShot`
+  overlay fills the right. Push-ins: `pushOrigin: "50% 0%"` when the head is near the top (bottom-origin push-ins
+  crop the head). The end of a VSL (demo + form + WhatsApp + logo) is ONE continuous `launch` overlay (Launch.tsx),
+  never separate moments with footage between them: stage fades let the face flash through. Talking parts get
+  `sideChip` cards beside the face (horizontal); `faceZone.left/right` lets check_face allow the sides. Screens are
+  captured clean (element screenshot + margin) so no card is cut at the frame edge. Long renders: use
+  `node scripts/render-chunks.mjs <id> out/<id>.mp4` (resumable after a container restart).
 - 2026-11-18: Screenshots are never static. Use `momentShot` with a timeline synced to the spoken words: `keys`
   (camera keyframes t/zoom/fx/fy, eased; a tall image with `imgAspect` < `aspect` scrolls), `highlights` (spotlight
   dims the rest + violet glow + label), `cursor` (moves, clicks, ripple), `scan` (QR scan line -> "✓ verified"),

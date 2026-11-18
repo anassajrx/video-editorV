@@ -5,6 +5,9 @@ import { ChapterChip, CommentCard, GapBars, PinnedReply } from "./Cards";
 import { BWStrike, ChapterBlur } from "./FootageFx";
 import { CtaEndCard, MomentBlocks, MomentCode, MomentCounter, MomentFlow, MomentShot, MomentSlider, PlumEndCard } from "./Moments";
 import { CreditRows, FileStack, ProgressCard } from "./Cards2";
+import { LaunchSequence } from "./Launch";
+import { SideChip } from "./SideChip";
+import type { IconName } from "../Icons";
 import { AbsoluteFill, staticFile } from "remotion";
 import { Video } from "@remotion/media";
 
@@ -25,6 +28,8 @@ const PURPLE_TYPES = new Set<string>([
   "progressCard",
   "creditRows",
   "clip",
+  "splitShot",
+  "sideChip",
   ...FULL_SCREEN_TYPES,
 ]);
 
@@ -83,11 +88,19 @@ export const PurpleOverlayLayer: React.FC<{
       return <CreditRows top={clampTop(o.y, minTop)} durationInFrames={d} rows={o.rows} who={o.who} every={o.every} />;
     case "momentFlow":
       return <MomentFlow durationInFrames={d} words={o.words} />;
+    case "sideChip":
+      return <SideChip durationInFrames={d} text={o.text} sub={o.sub} icon={o.icon as IconName | undefined} side={o.side} y={o.y} />;
+    case "launch":
+      return (
+        <LaunchSequence durationInFrames={d} platform={o.platform} lesson={o.lesson} logo={o.logo} brand={o.brand} url={o.url}
+          cta={o.cta} headline={o.headline} beats={o.beats} />
+      );
+    case "splitShot":
     case "momentShot":
       return (
         <MomentShot durationInFrames={d} src={o.src} aspect={o.aspect} imgAspect={o.imgAspect} kicker={o.kicker}
           kickerAt={o.kickerAt} tag={o.tag} zoomTo={o.zoomTo} focusFrom={o.focusFrom} focusTo={o.focusTo} keys={o.keys}
-          highlights={o.highlights} cursor={o.cursor} scan={o.scan} chips={o.chips} instant={o.instant} />
+          highlights={o.highlights} cursor={o.cursor} scan={o.scan} chips={o.chips} instant={o.instant} side={o.type === "splitShot"} />
       );
     case "ctaEndCard":
       return <CtaEndCard durationInFrames={d} kicker={o.kicker} word={o.word} sub={o.sub} />;

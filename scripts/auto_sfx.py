@@ -64,10 +64,32 @@ for o in spec.get("overlays", []):
         add(s0 - 0.1, "whoosh-air", 0.3)
         for i in range(len(o.get("words", []))):
             add(s0 + 0.3 + i * 0.6, "pop-light", 0.22)
-    elif t == "momentShot":
+    elif t == "sideChip":
+        add(s0, "whoosh-air", 0.16); add(s0 + 0.25, "pop-soft", 0.22)
+    elif t == "launch":
+        # mirrors the default beats in Launch.tsx (beats in edit.json override them)
+        bt = {"browser": 1.3, "zoom": 2.0, "click": 3.35, "lesson": 3.55, "play": 4.5, "form": 5.05, "arrow": 5.75,
+              "send": 6.75, "chat": 7.0, "msg1": 7.7, "msg2": 8.75, "reply": 9.3, "finale": 9.8, **o.get("beats", {})}
+        b = lambda k: s0 + bt[k]  # noqa: E731
+        add(s0, "whoosh-tech", 0.3); add(s0 + 0.15, "pop-light", 0.2); add(s0 + 0.6, "pop-light", 0.22)
+        add(b("browser"), "whoosh-sweep", 0.3); add(b("zoom"), "zoom-in", 0.2)
+        add(b("click"), "mouse-click", 0.5); add(b("lesson") + 0.13, "swoosh-fast", 0.2); add(b("play"), "mouse-click", 0.5)
+        add(b("form"), "whoosh-air", 0.26); add(b("form") + 0.25, "pop-soft", 0.24)
+        for k in range(4):
+            add(b("form") + 0.42 + k * 0.13, "key-single", 0.22)
+        for k in range(5):
+            add(b("form") + 0.97 + k * 0.15, "key-single", 0.2)
+        add(b("arrow"), "pop-light", 0.22); add(b("send"), "mouse-click", 0.5); add(b("send") + 0.15, "chime-confirm", 0.28)
+        add(b("chat") + 0.2, "whoosh-air", 0.2); add(b("chat") + 0.45, "swoosh-fast", 0.18)
+        add(b("msg1"), "pop-bubble", 0.3); add(b("msg2"), "pop-bubble", 0.3); add(b("reply"), "pop-soft", 0.26)
+        add(b("finale") - 0.2, "whoosh-tech", 0.26); add(b("finale"), "hit-intro", 0.45)
+        add(b("finale") + 0.8, "click-ui", 0.2); add(b("finale") + 1.0, "chime-positive", 0.24)
+    elif t in ("momentShot", "splitShot"):
         # the sound comes from what moves on the screenshot (Moments.tsx MomentShot)
         if o.get("instant"):
             add(s0, "hit-intro", 0.32)
+        elif t == "splitShot":
+            pass  # the split whoosh (below) covers the entrance
         else:
             add(s0 - 0.1, "whoosh-sweep", 0.28)
         keys = o.get("keys", [])
@@ -104,6 +126,10 @@ for o in spec.get("overlays", []):
         add(s0, "whoosh-sweep", 0.3)
     elif t == "terminal":
         add(s0, "type-laptop", 0.25)
+
+# split screen: the footage glides into its side panel and back
+for r in spec.get("split", []):
+    add(r["startMs"] / 1000, "whoosh-air", 0.2); add(r["endMs"] / 1000 - 0.5, "whoosh-air", 0.14)
 
 # a very soft swish on the bigger face push-ins (the camera "leans in")
 for p_ in spec.get("punchIns", []):

@@ -114,7 +114,7 @@ export type PurpleOverlay =
   | (Timed & { type: "ctaEndCard"; kicker: string; word: string; sub?: string })
   /** Full-screen real screenshot in a frame, slow zoom/pan. `src` relative to public/, `aspect` = width / height. */
   | (Timed & {
-      type: "momentShot";
+      type: "momentShot" | "splitShot";
       src: string;
       aspect: number;
       kicker?: string;
@@ -133,6 +133,11 @@ export type PurpleOverlay =
       chips?: { t: number; x: number; y: number; text: string; dur?: number }[];
       instant?: boolean;
     })
+  /** Horizontal talking parts: frosted card beside the face (left/right edge), icon + word (+ small line). */
+  | (Timed & { type: "sideChip"; text: string; sub?: string; icon?: string; side?: "left" | "right"; y?: number })
+  /** One continuous "SaaS launch" finale (platform demo, form, WhatsApp, logo). See Launch.tsx for the beats. */
+  | (Timed & { type: "launch"; platform: string; lesson: string; logo: string; brand?: string; url?: string; cta?: string;
+      headline?: [string, string]; beats?: Record<string, number> })
   /** Full-frame muted footage clip (e.g. a pre-reversed "rewind" piece of the edit). Hidden in QA renders. */
   | (Timed & { type: "clip"; src: string });
 
@@ -145,6 +150,7 @@ export const FULL_SCREEN_TYPES = [
   "endCard",
   "ctaEndCard",
   "momentShot",
+  "launch",
 ] as const;
 
 export type EditSpec = {
@@ -158,6 +164,10 @@ export type EditSpec = {
     trimBeforeMs?: number;
   };
   punchIns?: { atMs: number; scale: number }[];
+  /** CSS transform-origin of the push-ins (default purple: "50% 100%"); "50% 0%" keeps a high head inside the frame */
+  pushOrigin?: string;
+  /** split-screen ranges: the footage becomes a panel on the left, a splitShot overlay fills the right */
+  split?: { startMs: number; endMs: number }[];
   monoRanges?: { startMs: number; endMs: number }[]; // black & white "doubt" moments
   captions: StyledWord[];
   captionY?: number; // 0..1 TOP of the caption block; clamped below faceZone.bottom

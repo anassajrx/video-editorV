@@ -2,6 +2,7 @@ import React from "react";
 import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import { fonts, plumBackground, purple } from "../../brand/theme";
 import { EASE, lerp, useEnterExit, useProgress, useVY } from "./motion";
+import { SPLIT } from "../Footage";
 
 const clamp = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
 const useS = () => { const { width, height } = useVideoConfig(); return Math.min(width, height) / 1080; };
@@ -441,19 +442,25 @@ export const CtaEndCard: React.FC<{ durationInFrames: number; kicker: string; wo
   );
 };
 
+const ShotWrap: React.FC<{ side: boolean; durationInFrames: number; tag: string; instant: boolean; opacity: number;
+  children: React.ReactNode }> = ({ side, durationInFrames, tag, instant, opacity, children }) =>
+  side ? <AbsoluteFill style={{ opacity }}>{children}</AbsoluteFill> : (
+    <Stage durationInFrames={durationInFrames} tag={tag} instant={instant}>{children}</Stage>
+  );
+
 export type ShotKey = { t: number; zoom: number; fx: number; fy: number };
 export type ShotHighlight = { t0: number; t1: number; x: number; y: number; w: number; h: number; label?: string; below?: boolean };
 export type ShotCursor = { t0: number; t1: number; from: [number, number]; to: [number, number]; clickAt?: number };
 export type ShotScan = { t0: number; t1: number; x: number; y: number; w: number; h: number; label?: string };
 export type ShotChip = { t: number; x: number; y: number; text: string; dur?: number };
 
-const easeIO = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
-const outBack = (x: number) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
+export const easeIO = (x: number) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+export const outBack = (x: number) => { const c1 = 1.70158, c3 = c1 + 1; return 1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2); };
 const win = (t: number, a: number, b: number, fade = 0.25) =>
   Math.max(0, Math.min(1, (t - a) / fade, (b - t) / fade));
 
 /** Camera at time t (seconds): eased interpolation between keyframes. */
-const camAt = (keys: ShotKey[], t: number): ShotKey => {
+export const camAt = (keys: ShotKey[], t: number): ShotKey => {
   if (t <= keys[0].t) return keys[0];
   for (let i = 1; i < keys.length; i++) {
     const a = keys[i - 1], b = keys[i];
@@ -490,7 +497,9 @@ export const MomentShot: React.FC<{
   chips?: ShotChip[];
   /** open directly on the screen (no fade/tilt), e.g. the very first frame of the video */
   instant?: boolean;
-}> = ({ durationInFrames, src, aspect, imgAspect, kicker, kickerAt = 0.4, tag = "PLATFORM", zoomTo = 1.1, instant = false,
+  /** split screen: no plum stage, the frame sits on the RIGHT, next to the footage panel (Footage SPLIT) */
+  side?: boolean;
+}> = ({ durationInFrames, src, aspect, imgAspect, kicker, kickerAt = 0.4, tag = "PLATFORM", zoomTo = 1.1, instant = false, side = false,
   focusFrom = [0.5, 0.5], focusTo, keys, highlights = [], cursor = [], scan = [], chips = [] }) => {
   const s = useS();
   const frame = useCurrentFrame();
@@ -500,9 +509,13 @@ export const MomentShot: React.FC<{
   const horizontal = width > height;
   const maxW = width * (horizontal ? 0.84 : 0.88);
   const maxH = height * (horizontal ? 0.74 : 0.6);
-  const boxW = Math.min(maxW, maxH * aspect);
+  const panelRight = SPLIT.left + SPLIT.scale; // right edge of the footage panel
+  const sideW = (1 - panelRight - 0.06) * width;
+  const boxW = side ? Math.min(sideW, height * SPLIT.scale * 1.05 * aspect) : Math.min(maxW, maxH * aspect);
   const boxH = boxW / aspect;
-  const cy = height * (horizontal ? 0.565 : 0.55);
+  const cy = side ? height * (SPLIT.top + SPLIT.scale / 2) : height * (horizontal ? 0.565 : 0.55);
+  const cx = side ? width * (panelRight + 0.03) + sideW / 2 : width / 2;
+  const sideFade = useEnterExit(durationInFrames, 0.45, 0.45, 0);
   // content = the image at the frame's width (taller than the frame when imgAspect < aspect)
   const cw = boxW;
   const ch = boxW / (imgAspect ?? aspect);
@@ -525,12 +538,12 @@ export const MomentShot: React.FC<{
   const kick = kicker ? interpolate(t, [kickerAt, kickerAt + 0.45], [0, 1], { ...clamp, easing: outBack }) : 0;
 
   return (
-    <Stage durationInFrames={durationInFrames} tag={tag} instant={instant}>
+    <ShotWrap side={side} durationInFrames={durationInFrames} tag={tag} instant={instant} opacity={sideFade.opacity}>
       <div style={{ position: "absolute", inset: 0, perspective: 1800 * s }}>
         <div
           style={{
             position: "absolute",
-            left: (width - boxW) / 2,
+            left: cx - boxW / 2,
             top: cy - boxH / 2,
             width: boxW,
             height: boxH,
@@ -663,6 +676,6 @@ export const MomentShot: React.FC<{
           ) : null}
         </div>
       </div>
-    </Stage>
+    </ShotWrap>
   );
 };
