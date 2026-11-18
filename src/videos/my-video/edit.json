@@ -1,0 +1,3344 @@
+{
+  "style": "purple",
+  "orientation": "horizontal",
+  "durationMs": 103567,
+  "footage": {
+    "src": "videos/my-video/raw/edit.mp4",
+    "kind": "video"
+  },
+  "punchIns": [
+    {
+      "atMs": 2967,
+      "scale": 1.05
+    },
+    {
+      "atMs": 7100,
+      "scale": 1.0
+    },
+    {
+      "atMs": 12067,
+      "scale": 1.05
+    },
+    {
+      "atMs": 16200,
+      "scale": 1.0
+    },
+    {
+      "atMs": 21667,
+      "scale": 1.05
+    },
+    {
+      "atMs": 30133,
+      "scale": 1.0
+    },
+    {
+      "atMs": 36367,
+      "scale": 1.05
+    },
+    {
+      "atMs": 41900,
+      "scale": 1.0
+    },
+    {
+      "atMs": 47100,
+      "scale": 1.05
+    },
+    {
+      "atMs": 51333,
+      "scale": 1.0
+    },
+    {
+      "atMs": 55800,
+      "scale": 1.05
+    },
+    {
+      "atMs": 60200,
+      "scale": 1.0
+    },
+    {
+      "atMs": 65267,
+      "scale": 1.05
+    },
+    {
+      "atMs": 69833,
+      "scale": 1.0
+    },
+    {
+      "atMs": 74333,
+      "scale": 1.05
+    },
+    {
+      "atMs": 81400,
+      "scale": 1.0
+    },
+    {
+      "atMs": 90567,
+      "scale": 1.05
+    }
+  ],
+  "monoRanges": [],
+  "captions": [
+    {
+      "text": "هاد",
+      "startMs": 0,
+      "endMs": 313,
+      "role": "soft"
+    },
+    {
+      "text": "الشاشة",
+      "startMs": 313,
+      "endMs": 573,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هي",
+      "startMs": 663,
+      "endMs": 1003,
+      "role": "soft"
+    },
+    {
+      "text": "أول",
+      "startMs": 1003,
+      "endMs": 1343,
+      "role": "default"
+    },
+    {
+      "text": "flag",
+      "startMs": 1343,
+      "endMs": 1783,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "لقاه",
+      "startMs": 1783,
+      "endMs": 2103,
+      "role": "hero"
+    },
+    {
+      "text": "واحد",
+      "startMs": 2103,
+      "endMs": 2283,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 2283,
+      "endMs": 2423,
+      "role": "soft"
+    },
+    {
+      "text": "الطلبة",
+      "startMs": 2423,
+      "endMs": 2763,
+      "role": "hero"
+    },
+    {
+      "text": "ديالنا",
+      "startMs": 2763,
+      "endMs": 2923,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "قبل",
+      "startMs": 2980,
+      "endMs": 3420,
+      "role": "soft"
+    },
+    {
+      "text": "تلت",
+      "startMs": 3420,
+      "endMs": 3620,
+      "role": "default"
+    },
+    {
+      "text": "شهور",
+      "startMs": 3620,
+      "endMs": 3780,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ماكانش",
+      "startMs": 3810,
+      "endMs": 4270,
+      "role": "default"
+    },
+    {
+      "text": "كيعرف",
+      "startMs": 4270,
+      "endMs": 4590,
+      "role": "default"
+    },
+    {
+      "text": "حتى",
+      "startMs": 4590,
+      "endMs": 4790,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "شنو",
+      "startMs": 4790,
+      "endMs": 5170,
+      "role": "soft"
+    },
+    {
+      "text": "هو",
+      "startMs": 5170,
+      "endMs": 5400,
+      "role": "soft"
+    },
+    {
+      "text": "Linux",
+      "startMs": 5400,
+      "endMs": 5480,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وغادي",
+      "startMs": 5400,
+      "endMs": 5820,
+      "role": "soft"
+    },
+    {
+      "text": "نوريك",
+      "startMs": 5820,
+      "endMs": 6120,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيفاش",
+      "startMs": 6135,
+      "endMs": 6515,
+      "role": "default"
+    },
+    {
+      "text": "حتى",
+      "startMs": 6515,
+      "endMs": 6715,
+      "role": "soft"
+    },
+    {
+      "text": "نتا",
+      "startMs": 6715,
+      "endMs": 6795,
+      "role": "soft"
+    },
+    {
+      "text": "تقدر",
+      "startMs": 6715,
+      "endMs": 7075,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بزاف",
+      "startMs": 7100,
+      "endMs": 7520,
+      "role": "hero"
+    },
+    {
+      "text": "ديال",
+      "startMs": 7520,
+      "endMs": 7600,
+      "role": "soft"
+    },
+    {
+      "text": "الشباب",
+      "startMs": 7520,
+      "endMs": 7800,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيبغيو",
+      "startMs": 7895,
+      "endMs": 8275,
+      "role": "default"
+    },
+    {
+      "text": "يدخلو",
+      "startMs": 8275,
+      "endMs": 8555,
+      "role": "default"
+    },
+    {
+      "text": "لـ",
+      "startMs": 8555,
+      "endMs": 9267,
+      "role": "soft"
+    },
+    {
+      "text": "cybersecurity",
+      "startMs": 9267,
+      "endMs": 9347,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيحلو",
+      "startMs": 9267,
+      "endMs": 9720,
+      "role": "default"
+    },
+    {
+      "text": "YouTube",
+      "startMs": 9720,
+      "endMs": 10025,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيلقاو",
+      "startMs": 10025,
+      "endMs": 10705,
+      "role": "default"
+    },
+    {
+      "text": "ألف",
+      "startMs": 10705,
+      "endMs": 10905,
+      "role": "hero"
+    },
+    {
+      "text": "فيديو",
+      "startMs": 10905,
+      "endMs": 11105,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيبقاو",
+      "startMs": 11215,
+      "endMs": 11695,
+      "role": "default"
+    },
+    {
+      "text": "تايهين",
+      "startMs": 11695,
+      "endMs": 12035,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بزاف",
+      "startMs": 12067,
+      "endMs": 12593,
+      "role": "default"
+    },
+    {
+      "text": "ديال",
+      "startMs": 12593,
+      "endMs": 12673,
+      "role": "soft"
+    },
+    {
+      "text": "الأسئلة",
+      "startMs": 12593,
+      "endMs": 12893,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "شنو",
+      "startMs": 13403,
+      "endMs": 13583,
+      "role": "soft"
+    },
+    {
+      "text": "نتعلم",
+      "startMs": 13583,
+      "endMs": 14143,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وبأي",
+      "startMs": 14143,
+      "endMs": 14423,
+      "role": "soft"
+    },
+    {
+      "text": "ترتيب",
+      "startMs": 14423,
+      "endMs": 14823,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وإلا",
+      "startMs": 14900,
+      "endMs": 15193,
+      "role": "soft"
+    },
+    {
+      "text": "وحلت",
+      "startMs": 15193,
+      "endMs": 15413,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "شكون",
+      "startMs": 15413,
+      "endMs": 15633,
+      "role": "default"
+    },
+    {
+      "text": "غادي",
+      "startMs": 15633,
+      "endMs": 15813,
+      "role": "soft"
+    },
+    {
+      "text": "يجاوبني",
+      "startMs": 15813,
+      "endMs": 16053,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والـ",
+      "startMs": 16200,
+      "endMs": 16417,
+      "role": "soft"
+    },
+    {
+      "text": "cybersecurity",
+      "startMs": 16417,
+      "endMs": 17143,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ما",
+      "startMs": 17143,
+      "endMs": 17343,
+      "role": "soft"
+    },
+    {
+      "text": "كتقبلش",
+      "startMs": 17343,
+      "endMs": 17783,
+      "role": "default"
+    },
+    {
+      "text": "هاد",
+      "startMs": 17783,
+      "endMs": 17863,
+      "role": "soft"
+    },
+    {
+      "text": "العشوائية",
+      "startMs": 17863,
+      "endMs": 18283,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "حيت",
+      "startMs": 18313,
+      "endMs": 18613,
+      "role": "soft"
+    },
+    {
+      "text": "كل",
+      "startMs": 18613,
+      "endMs": 18933,
+      "role": "soft"
+    },
+    {
+      "text": "شركة",
+      "startMs": 18933,
+      "endMs": 19253,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كل",
+      "startMs": 19388,
+      "endMs": 19828,
+      "role": "soft"
+    },
+    {
+      "text": "بنكة",
+      "startMs": 19828,
+      "endMs": 20088,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كل",
+      "startMs": 20178,
+      "endMs": 20478,
+      "role": "soft"
+    },
+    {
+      "text": "إدارة",
+      "startMs": 20478,
+      "endMs": 20838,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "محتاجة",
+      "startMs": 20838,
+      "endMs": 21238,
+      "role": "default"
+    },
+    {
+      "text": "اللي",
+      "startMs": 21238,
+      "endMs": 21338,
+      "role": "soft"
+    },
+    {
+      "text": "يحميها",
+      "startMs": 21338,
+      "endMs": 21638,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والمغرب",
+      "startMs": 21667,
+      "endMs": 22320,
+      "role": "hero"
+    },
+    {
+      "text": "باغي",
+      "startMs": 22320,
+      "endMs": 22540,
+      "role": "soft"
+    },
+    {
+      "text": "يكوّن",
+      "startMs": 22540,
+      "endMs": 22880,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عشرات",
+      "startMs": 22880,
+      "endMs": 23420,
+      "role": "default"
+    },
+    {
+      "text": "الآلاف",
+      "startMs": 23420,
+      "endMs": 23860,
+      "role": "hero"
+    },
+    {
+      "text": "ديال",
+      "startMs": 23860,
+      "endMs": 23980,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الكفاءات",
+      "startMs": 23980,
+      "endMs": 24420,
+      "role": "default"
+    },
+    {
+      "text": "الرقمية",
+      "startMs": 24420,
+      "endMs": 24760,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فهاد",
+      "startMs": 24760,
+      "endMs": 24960,
+      "role": "soft"
+    },
+    {
+      "text": "les domaines",
+      "startMs": 24960,
+      "endMs": 25433,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هادشي",
+      "startMs": 25433,
+      "endMs": 25880,
+      "role": "soft"
+    },
+    {
+      "text": "علاش",
+      "startMs": 25880,
+      "endMs": 26060,
+      "role": "soft"
+    },
+    {
+      "text": "درنا",
+      "startMs": 26060,
+      "endMs": 26200,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "التكوين",
+      "startMs": 26270,
+      "endMs": 26770,
+      "role": "default"
+    },
+    {
+      "text": "ديال",
+      "startMs": 26770,
+      "endMs": 26950,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 26950,
+      "endMs": 27348,
+      "role": "soft"
+    },
+    {
+      "text": "cybersecurity",
+      "startMs": 27348,
+      "endMs": 27745,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 27745,
+      "endMs": 28005,
+      "role": "soft"
+    },
+    {
+      "text": "Progma Academy",
+      "startMs": 28005,
+      "endMs": 28985,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "المدة",
+      "startMs": 28985,
+      "endMs": 29245,
+      "role": "default"
+    },
+    {
+      "text": "ديالو",
+      "startMs": 29245,
+      "endMs": 29685,
+      "role": "soft"
+    },
+    {
+      "text": "3 شهور",
+      "startMs": 29885,
+      "endMs": 30045,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "التكوين",
+      "startMs": 30133,
+      "endMs": 30713,
+      "role": "default"
+    },
+    {
+      "text": "بالدارجة",
+      "startMs": 30713,
+      "endMs": 31093,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 31233,
+      "endMs": 31593,
+      "role": "soft"
+    },
+    {
+      "text": "الصفر",
+      "startMs": 31593,
+      "endMs": 31813,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "حتى",
+      "startMs": 31938,
+      "endMs": 32278,
+      "role": "soft"
+    },
+    {
+      "text": "للتطبيق",
+      "startMs": 32278,
+      "endMs": 32618,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "واللي",
+      "startMs": 32640,
+      "endMs": 32960,
+      "role": "soft"
+    },
+    {
+      "text": "كيأطرو",
+      "startMs": 32960,
+      "endMs": 33360,
+      "role": "default"
+    },
+    {
+      "text": "التكوين",
+      "startMs": 33360,
+      "endMs": 33840,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هوما",
+      "startMs": 33840,
+      "endMs": 34040,
+      "role": "soft"
+    },
+    {
+      "text": "مهندسين",
+      "startMs": 34040,
+      "endMs": 34640,
+      "role": "hero"
+    },
+    {
+      "text": "خدامين",
+      "startMs": 34640,
+      "endMs": 35000,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فأكبر",
+      "startMs": 35250,
+      "endMs": 35550,
+      "role": "default"
+    },
+    {
+      "text": "الشركات",
+      "startMs": 35550,
+      "endMs": 35870,
+      "role": "hero"
+    },
+    {
+      "text": "فالمغرب",
+      "startMs": 35970,
+      "endMs": 36210,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وتخرجو",
+      "startMs": 36380,
+      "endMs": 37120,
+      "role": "default"
+    },
+    {
+      "text": "من",
+      "startMs": 37120,
+      "endMs": 37200,
+      "role": "soft"
+    },
+    {
+      "text": "أكبر",
+      "startMs": 37290,
+      "endMs": 37590,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مدارس",
+      "startMs": 37590,
+      "endMs": 37930,
+      "role": "default"
+    },
+    {
+      "text": "الهندسة",
+      "startMs": 37930,
+      "endMs": 38270,
+      "role": "hero"
+    },
+    {
+      "text": "فالبلاد",
+      "startMs": 38430,
+      "endMs": 38590,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "يعني",
+      "startMs": 38638,
+      "endMs": 39018,
+      "role": "soft"
+    },
+    {
+      "text": "غادي",
+      "startMs": 39018,
+      "endMs": 39238,
+      "role": "soft"
+    },
+    {
+      "text": "تتعلم",
+      "startMs": 39238,
+      "endMs": 39678,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 39678,
+      "endMs": 39838,
+      "role": "soft"
+    },
+    {
+      "text": "عند",
+      "startMs": 39838,
+      "endMs": 39958,
+      "role": "soft"
+    },
+    {
+      "text": "واحد",
+      "startMs": 39958,
+      "endMs": 40118,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيدير",
+      "startMs": 40118,
+      "endMs": 40398,
+      "role": "default"
+    },
+    {
+      "text": "هادشي",
+      "startMs": 40398,
+      "endMs": 40598,
+      "role": "soft"
+    },
+    {
+      "text": "فالخدمة",
+      "startMs": 40598,
+      "endMs": 40918,
+      "role": "hero"
+    },
+    {
+      "text": "ديالو",
+      "startMs": 40918,
+      "endMs": 41138,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كل",
+      "startMs": 41268,
+      "endMs": 41688,
+      "role": "soft"
+    },
+    {
+      "text": "نهار",
+      "startMs": 41688,
+      "endMs": 41868,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "التكوين",
+      "startMs": 41900,
+      "endMs": 42580,
+      "role": "default"
+    },
+    {
+      "text": "فيه",
+      "startMs": 42580,
+      "endMs": 42740,
+      "role": "soft"
+    },
+    {
+      "text": "بزاف",
+      "startMs": 42740,
+      "endMs": 43040,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 43040,
+      "endMs": 43120,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 43120,
+      "endMs": 43363,
+      "role": "soft"
+    },
+    {
+      "text": "modules",
+      "startMs": 43363,
+      "endMs": 43605,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مرتبين",
+      "startMs": 43605,
+      "endMs": 44125,
+      "role": "default"
+    },
+    {
+      "text": "خطوة",
+      "startMs": 44125,
+      "endMs": 44385,
+      "role": "hero"
+    },
+    {
+      "text": "بخطوة",
+      "startMs": 44385,
+      "endMs": 44725,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "information system",
+      "startMs": 44733,
+      "endMs": 45820,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 45820,
+      "endMs": 45996,
+      "role": "soft"
+    },
+    {
+      "text": "web security",
+      "startMs": 45996,
+      "endMs": 46700,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 46700,
+      "endMs": 46833,
+      "role": "soft"
+    },
+    {
+      "text": "réseau",
+      "startMs": 46833,
+      "endMs": 47100,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "GRC",
+      "startMs": 47100,
+      "endMs": 47554,
+      "role": "hero"
+    },
+    {
+      "text": "وحتى",
+      "startMs": 47554,
+      "endMs": 48160,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الـ",
+      "startMs": 48160,
+      "endMs": 48323,
+      "role": "soft"
+    },
+    {
+      "text": "OT security",
+      "startMs": 48323,
+      "endMs": 48920,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وهادشي",
+      "startMs": 48933,
+      "endMs": 49427,
+      "role": "soft"
+    },
+    {
+      "text": "كيكون",
+      "startMs": 49427,
+      "endMs": 49867,
+      "role": "soft"
+    },
+    {
+      "text": "متابعة",
+      "startMs": 49867,
+      "endMs": 50167,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وتأطير",
+      "startMs": 50257,
+      "endMs": 50977,
+      "role": "default"
+    },
+    {
+      "text": "شامل",
+      "startMs": 50977,
+      "endMs": 51317,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وإلا",
+      "startMs": 51347,
+      "endMs": 51667,
+      "role": "soft"
+    },
+    {
+      "text": "وحلتي",
+      "startMs": 51667,
+      "endMs": 51947,
+      "role": "hero"
+    },
+    {
+      "text": "فشي",
+      "startMs": 51947,
+      "endMs": 52127,
+      "role": "soft"
+    },
+    {
+      "text": "درس",
+      "startMs": 52127,
+      "endMs": 52287,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فالجوج",
+      "startMs": 52287,
+      "endMs": 52547,
+      "role": "default"
+    },
+    {
+      "text": "ديال",
+      "startMs": 52547,
+      "endMs": 52707,
+      "role": "soft"
+    },
+    {
+      "text": "الليل",
+      "startMs": 52707,
+      "endMs": 52827,
+      "role": "hero"
+    },
+    {
+      "text": "مثلا",
+      "startMs": 52827,
+      "endMs": 53087,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عندك",
+      "startMs": 53147,
+      "endMs": 53547,
+      "role": "soft"
+    },
+    {
+      "text": "أستاذي",
+      "startMs": 53547,
+      "endMs": 54127,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "المساعد",
+      "startMs": 54127,
+      "endMs": 54627,
+      "role": "default"
+    },
+    {
+      "text": "الذكي",
+      "startMs": 54627,
+      "endMs": 54907,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 54907,
+      "endMs": 55067,
+      "role": "soft"
+    },
+    {
+      "text": "Progma Academy",
+      "startMs": 55067,
+      "endMs": 55810,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "سولو",
+      "startMs": 55810,
+      "endMs": 56170,
+      "role": "default"
+    },
+    {
+      "text": "غير",
+      "startMs": 56170,
+      "endMs": 56370,
+      "role": "soft"
+    },
+    {
+      "text": "بالدارجة",
+      "startMs": 56370,
+      "endMs": 56830,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وغادي",
+      "startMs": 56830,
+      "endMs": 57050,
+      "role": "soft"
+    },
+    {
+      "text": "يشرح",
+      "startMs": 57050,
+      "endMs": 57250,
+      "role": "default"
+    },
+    {
+      "text": "ليك",
+      "startMs": 57250,
+      "endMs": 57430,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "étape par étape",
+      "startMs": 57430,
+      "endMs": 58130,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ويشرح",
+      "startMs": 58130,
+      "endMs": 58390,
+      "role": "default"
+    },
+    {
+      "text": "ليك",
+      "startMs": 58390,
+      "endMs": 58550,
+      "role": "soft"
+    },
+    {
+      "text": "بالأمثلة",
+      "startMs": 58550,
+      "endMs": 58950,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وما",
+      "startMs": 59067,
+      "endMs": 59387,
+      "role": "soft"
+    },
+    {
+      "text": "غاديش",
+      "startMs": 59387,
+      "endMs": 59647,
+      "role": "default"
+    },
+    {
+      "text": "تبقى",
+      "startMs": 59647,
+      "endMs": 59867,
+      "role": "soft"
+    },
+    {
+      "text": "بوحدك",
+      "startMs": 59867,
+      "endMs": 60187,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "داخل",
+      "startMs": 60200,
+      "endMs": 60707,
+      "role": "default"
+    },
+    {
+      "text": "المنصة",
+      "startMs": 60707,
+      "endMs": 61087,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عندك",
+      "startMs": 61117,
+      "endMs": 61557,
+      "role": "soft"
+    },
+    {
+      "text": "مجتمع",
+      "startMs": 61557,
+      "endMs": 62037,
+      "role": "hero"
+    },
+    {
+      "text": "ديال",
+      "startMs": 62037,
+      "endMs": 62117,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "الطلبة",
+      "startMs": 62142,
+      "endMs": 62502,
+      "role": "default"
+    },
+    {
+      "text": "والمؤطرين",
+      "startMs": 62502,
+      "endMs": 63042,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كتسول",
+      "startMs": 63073,
+      "endMs": 63633,
+      "role": "default"
+    },
+    {
+      "text": "كيجاوبوك",
+      "startMs": 63633,
+      "endMs": 64053,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كتموتيفيو",
+      "startMs": 64053,
+      "endMs": 64693,
+      "role": "hero"
+    },
+    {
+      "text": "بعضياتكم",
+      "startMs": 64693,
+      "endMs": 65133,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وكل",
+      "startMs": 65267,
+      "endMs": 65773,
+      "role": "soft"
+    },
+    {
+      "text": "سيمانة",
+      "startMs": 65773,
+      "endMs": 66313,
+      "role": "default"
+    },
+    {
+      "text": "live",
+      "startMs": 66313,
+      "endMs": 66533,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مع",
+      "startMs": 66533,
+      "endMs": 66693,
+      "role": "soft"
+    },
+    {
+      "text": "الكوتش",
+      "startMs": 66693,
+      "endMs": 66913,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وكيكونو",
+      "startMs": 67033,
+      "endMs": 67587,
+      "role": "soft"
+    },
+    {
+      "text": "des lives",
+      "startMs": 67587,
+      "endMs": 67907,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مع",
+      "startMs": 67907,
+      "endMs": 68067,
+      "role": "soft"
+    },
+    {
+      "text": "الكوتش",
+      "startMs": 68067,
+      "endMs": 68387,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وإلا",
+      "startMs": 68387,
+      "endMs": 68587,
+      "role": "soft"
+    },
+    {
+      "text": "فاتوك",
+      "startMs": 68587,
+      "endMs": 68867,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "كيبقى",
+      "startMs": 68867,
+      "endMs": 69127,
+      "role": "default"
+    },
+    {
+      "text": "ليك",
+      "startMs": 69127,
+      "endMs": 69227,
+      "role": "soft"
+    },
+    {
+      "text": "l'enregistrement",
+      "startMs": 69227,
+      "endMs": 69833,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وكل",
+      "startMs": 69833,
+      "endMs": 70340,
+      "role": "soft"
+    },
+    {
+      "text": "درس",
+      "startMs": 70340,
+      "endMs": 70500,
+      "role": "default"
+    },
+    {
+      "text": "كتكملو",
+      "startMs": 70500,
+      "endMs": 70880,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فالتكوين",
+      "startMs": 70880,
+      "endMs": 71400,
+      "role": "default"
+    },
+    {
+      "text": "كيعطيك",
+      "startMs": 71400,
+      "endMs": 71780,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "points",
+      "startMs": 71780,
+      "endMs": 72190,
+      "role": "hero"
+    },
+    {
+      "text": "و",
+      "startMs": 72190,
+      "endMs": 72450,
+      "role": "soft"
+    },
+    {
+      "text": "des badges",
+      "startMs": 72450,
+      "endMs": 72740,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "باش",
+      "startMs": 72740,
+      "endMs": 73020,
+      "role": "soft"
+    },
+    {
+      "text": "تشوف",
+      "startMs": 73020,
+      "endMs": 73260,
+      "role": "default"
+    },
+    {
+      "text": "الترتيب",
+      "startMs": 73260,
+      "endMs": 73600,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديالك",
+      "startMs": 73600,
+      "endMs": 73860,
+      "role": "soft"
+    },
+    {
+      "text": "مع",
+      "startMs": 73860,
+      "endMs": 73940,
+      "role": "soft"
+    },
+    {
+      "text": "الطلبة",
+      "startMs": 73860,
+      "endMs": 74320,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وفالأخير",
+      "startMs": 74340,
+      "endMs": 75080,
+      "role": "soft"
+    },
+    {
+      "text": "كتاخد",
+      "startMs": 75080,
+      "endMs": 75320,
+      "role": "default"
+    },
+    {
+      "text": "certificat",
+      "startMs": 75320,
+      "endMs": 75960,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "من",
+      "startMs": 75960,
+      "endMs": 76080,
+      "role": "soft"
+    },
+    {
+      "text": "عند",
+      "startMs": 76080,
+      "endMs": 76160,
+      "role": "soft"
+    },
+    {
+      "text": "Progma Academy",
+      "startMs": 76160,
+      "endMs": 76940,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بسميتك",
+      "startMs": 76940,
+      "endMs": 77360,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "certificat",
+      "startMs": 77360,
+      "endMs": 78013,
+      "role": "default"
+    },
+    {
+      "text": "فيها",
+      "startMs": 78013,
+      "endMs": 78253,
+      "role": "soft"
+    },
+    {
+      "text": "QR code",
+      "startMs": 78253,
+      "endMs": 78793,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "أي",
+      "startMs": 78793,
+      "endMs": 79073,
+      "role": "soft"
+    },
+    {
+      "text": "شركة",
+      "startMs": 79073,
+      "endMs": 79373,
+      "role": "default"
+    },
+    {
+      "text": "تقدر",
+      "startMs": 79373,
+      "endMs": 79613,
+      "role": "soft"
+    },
+    {
+      "text": "تسكانيها",
+      "startMs": 79613,
+      "endMs": 80053,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وتتأكد",
+      "startMs": 80183,
+      "endMs": 80783,
+      "role": "default"
+    },
+    {
+      "text": "من",
+      "startMs": 80783,
+      "endMs": 80883,
+      "role": "soft"
+    },
+    {
+      "text": "الصحة",
+      "startMs": 80883,
+      "endMs": 81143,
+      "role": "hero"
+    },
+    {
+      "text": "ديالها",
+      "startMs": 81143,
+      "endMs": 81383,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "إذن",
+      "startMs": 81400,
+      "endMs": 81800,
+      "role": "soft"
+    },
+    {
+      "text": "التكوين",
+      "startMs": 81800,
+      "endMs": 82160,
+      "role": "default"
+    },
+    {
+      "text": "كامل",
+      "startMs": 82160,
+      "endMs": 82520,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "مع",
+      "startMs": 82520,
+      "endMs": 82620,
+      "role": "soft"
+    },
+    {
+      "text": "مؤطرين",
+      "startMs": 82750,
+      "endMs": 83090,
+      "role": "default"
+    },
+    {
+      "text": "des ingénieurs",
+      "startMs": 83090,
+      "endMs": 83833,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والـ",
+      "startMs": 83833,
+      "endMs": 84126,
+      "role": "soft"
+    },
+    {
+      "text": "AI agent",
+      "startMs": 84126,
+      "endMs": 84723,
+      "role": "hero"
+    },
+    {
+      "text": "أستاذي",
+      "startMs": 84723,
+      "endMs": 85172,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والـ",
+      "startMs": 85172,
+      "endMs": 85413,
+      "role": "soft"
+    },
+    {
+      "text": "communauté",
+      "startMs": 85413,
+      "endMs": 86017,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والـ",
+      "startMs": 86017,
+      "endMs": 86306,
+      "role": "soft"
+    },
+    {
+      "text": "lives",
+      "startMs": 86306,
+      "endMs": 86667,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "والـ",
+      "startMs": 86667,
+      "endMs": 86931,
+      "role": "soft"
+    },
+    {
+      "text": "certificat",
+      "startMs": 86931,
+      "endMs": 87592,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وهادشي",
+      "startMs": 87592,
+      "endMs": 88152,
+      "role": "soft"
+    },
+    {
+      "text": "كامل",
+      "startMs": 88152,
+      "endMs": 88552,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ب",
+      "startMs": 88552,
+      "endMs": 88672,
+      "role": "soft"
+    },
+    {
+      "text": "490",
+      "startMs": 88672,
+      "endMs": 89412,
+      "role": "ember"
+    },
+    {
+      "text": "درهم",
+      "startMs": 89412,
+      "endMs": 89712,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "لمدة",
+      "startMs": 89712,
+      "endMs": 90152,
+      "role": "soft"
+    },
+    {
+      "text": "3 شهور",
+      "startMs": 90352,
+      "endMs": 90472,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "يعني",
+      "startMs": 90567,
+      "endMs": 91173,
+      "role": "soft"
+    },
+    {
+      "text": "قل",
+      "startMs": 91173,
+      "endMs": 91433,
+      "role": "default"
+    },
+    {
+      "text": "من",
+      "startMs": 91433,
+      "endMs": 91513,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "6 دراهم",
+      "startMs": 91583,
+      "endMs": 92123,
+      "role": "ember"
+    },
+    {
+      "text": "فالنهار",
+      "startMs": 92243,
+      "endMs": 92423,
+      "role": "default",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "أرخص",
+      "startMs": 92498,
+      "endMs": 92898,
+      "role": "default"
+    },
+    {
+      "text": "من",
+      "startMs": 92898,
+      "endMs": 93018,
+      "role": "soft"
+    },
+    {
+      "text": "قهوة",
+      "startMs": 93018,
+      "endMs": 93238,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ما",
+      "startMs": 93238,
+      "endMs": 93318,
+      "role": "soft"
+    },
+    {
+      "text": "محتاجش",
+      "startMs": 93313,
+      "endMs": 93853,
+      "role": "default"
+    },
+    {
+      "text": "تثيق",
+      "startMs": 93853,
+      "endMs": 94133,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "هاد",
+      "startMs": 94133,
+      "endMs": 94213,
+      "role": "soft"
+    },
+    {
+      "text": "الهضرة",
+      "startMs": 94133,
+      "endMs": 94433,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "حيت",
+      "startMs": 94458,
+      "endMs": 94658,
+      "role": "soft"
+    },
+    {
+      "text": "كنعطيوك",
+      "startMs": 94658,
+      "endMs": 95078,
+      "role": "default"
+    },
+    {
+      "text": "démo",
+      "startMs": 95078,
+      "endMs": 95398,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديال",
+      "startMs": 95398,
+      "endMs": 95558,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 95558,
+      "endMs": 95781,
+      "role": "soft"
+    },
+    {
+      "text": "plateforme",
+      "startMs": 95781,
+      "endMs": 96003,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فيها",
+      "startMs": 96003,
+      "endMs": 96243,
+      "role": "soft"
+    },
+    {
+      "text": "الدرس",
+      "startMs": 96243,
+      "endMs": 96523,
+      "role": "default"
+    },
+    {
+      "text": "الأول",
+      "startMs": 96523,
+      "endMs": 96703,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "شوفو",
+      "startMs": 97433,
+      "endMs": 97873,
+      "role": "soft"
+    },
+    {
+      "text": "بعينيك",
+      "startMs": 97873,
+      "endMs": 98153,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "عمر",
+      "startMs": 98167,
+      "endMs": 98593,
+      "role": "default"
+    },
+    {
+      "text": "الـ",
+      "startMs": 98593,
+      "endMs": 98703,
+      "role": "soft"
+    },
+    {
+      "text": "form",
+      "startMs": 98703,
+      "endMs": 98813,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "لي",
+      "startMs": 98813,
+      "endMs": 98893,
+      "role": "soft"
+    },
+    {
+      "text": "تحت",
+      "startMs": 98853,
+      "endMs": 99073,
+      "role": "default"
+    },
+    {
+      "text": "الفيديو",
+      "startMs": 99073,
+      "endMs": 99693,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "واحد",
+      "startMs": 99693,
+      "endMs": 99873,
+      "role": "soft"
+    },
+    {
+      "text": "من",
+      "startMs": 99873,
+      "endMs": 100013,
+      "role": "soft"
+    },
+    {
+      "text": "الـ",
+      "startMs": 100013,
+      "endMs": 100183,
+      "role": "soft"
+    },
+    {
+      "text": "conseillers",
+      "startMs": 100183,
+      "endMs": 100353,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "ديالنا",
+      "startMs": 100353,
+      "endMs": 100593,
+      "role": "soft"
+    },
+    {
+      "text": "غادي",
+      "startMs": 100593,
+      "endMs": 100773,
+      "role": "soft"
+    },
+    {
+      "text": "يتواصل",
+      "startMs": 100773,
+      "endMs": 101013,
+      "role": "hero"
+    },
+    {
+      "text": "معاك",
+      "startMs": 101013,
+      "endMs": 101113,
+      "role": "soft",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "فـ",
+      "startMs": 101143,
+      "endMs": 101283,
+      "role": "soft"
+    },
+    {
+      "text": "WhatsApp",
+      "startMs": 101283,
+      "endMs": 101843,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "وغادي",
+      "startMs": 101843,
+      "endMs": 102063,
+      "role": "soft"
+    },
+    {
+      "text": "يجاوبك",
+      "startMs": 102063,
+      "endMs": 102463,
+      "role": "default"
+    },
+    {
+      "text": "على",
+      "startMs": 102463,
+      "endMs": 102623,
+      "role": "soft"
+    },
+    {
+      "text": "كلشي",
+      "startMs": 102623,
+      "endMs": 102803,
+      "role": "hero",
+      "pageBreakAfter": true
+    },
+    {
+      "text": "بدا",
+      "startMs": 102873,
+      "endMs": 103333,
+      "role": "default"
+    },
+    {
+      "text": "اليوم",
+      "startMs": 103333,
+      "endMs": 103493,
+      "role": "hero",
+      "pageBreakAfter": true
+    }
+  ],
+  "overlays": [
+    {
+      "type": "momentShot",
+      "startMs": 0,
+      "endMs": 5350,
+      "src": "videos/my-video/shots/s06-communaute-flag.jpg",
+      "aspect": 1.7777777777777777,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1.25,
+          "fx": 0.55,
+          "fy": 0.4
+        },
+        {
+          "t": 1.1,
+          "zoom": 2.4,
+          "fx": 0.585,
+          "fy": 0.645
+        },
+        {
+          "t": 2.3,
+          "zoom": 2.4,
+          "fx": 0.585,
+          "fy": 0.645
+        },
+        {
+          "t": 3.0,
+          "zoom": 1.7,
+          "fx": 0.5,
+          "fy": 0.3
+        },
+        {
+          "t": 4.2,
+          "zoom": 1.7,
+          "fx": 0.5,
+          "fy": 0.3
+        },
+        {
+          "t": 5.35,
+          "zoom": 1.3,
+          "fx": 0.55,
+          "fy": 0.45
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 1.15,
+          "t1": 2.5,
+          "x": 0.5,
+          "y": 0.627,
+          "w": 0.17,
+          "h": 0.04,
+          "label": "FIRST FLAG",
+          "below": true
+        },
+        {
+          "t0": 2.6,
+          "t1": 4.0,
+          "x": 0.385,
+          "y": 0.17,
+          "w": 0.24,
+          "h": 0.065,
+          "label": "a student · 3 months ago",
+          "below": true
+        }
+      ],
+      "chips": [
+        {
+          "t": 4.2,
+          "x": 0.6,
+          "y": 0.62,
+          "text": "0 Linux  →  first flag",
+          "dur": 1.2
+        }
+      ],
+      "instant": true
+    },
+    {
+      "type": "momentCounter",
+      "startMs": 9100,
+      "endMs": 12000,
+      "steps": [
+        10,
+        100,
+        1000
+      ],
+      "value": "1000",
+      "unit": "videos",
+      "kicker": "YOUTUBE"
+    },
+    {
+      "type": "comment",
+      "startMs": 13300,
+      "endMs": 16000,
+      "text": "شنو نتعلم؟ وبأي ترتيب؟ شكون يجاوبني؟",
+      "likes": 312,
+      "likesFrom": 40
+    },
+    {
+      "type": "bwStrike",
+      "startMs": 16200,
+      "endMs": 18250,
+      "word": "random learning",
+      "strikeAtMs": 17600
+    },
+    {
+      "type": "creditRows",
+      "startMs": 18300,
+      "endMs": 21600,
+      "rows": [
+        "companies",
+        "banks",
+        "administrations"
+      ],
+      "who": "need protection",
+      "every": 0.9
+    },
+    {
+      "type": "momentCounter",
+      "startMs": 21900,
+      "endMs": 25350,
+      "steps": [
+        1000,
+        10000,
+        100000
+      ],
+      "value": "100 000+",
+      "unit": "digital & cyber talents · 2030",
+      "kicker": "MAROC 2030 · SOURCE: CHALLENGE.MA"
+    },
+    {
+      "type": "momentShot",
+      "startMs": 25400,
+      "endMs": 30000,
+      "src": "videos/my-video/shots/s03-carte-cyber.jpg",
+      "aspect": 0.9347826086956522,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 1.7,
+          "zoom": 1.2,
+          "fx": 0.5,
+          "fy": 0.42
+        },
+        {
+          "t": 2.9,
+          "zoom": 1.2,
+          "fx": 0.5,
+          "fy": 0.42
+        },
+        {
+          "t": 3.8,
+          "zoom": 1.3,
+          "fx": 0.5,
+          "fy": 0.78
+        },
+        {
+          "t": 4.6,
+          "zoom": 1.3,
+          "fx": 0.5,
+          "fy": 0.78
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 1.8,
+          "t1": 3.0,
+          "x": 0.1,
+          "y": 0.37,
+          "w": 0.8,
+          "h": 0.12
+        }
+      ],
+      "cursor": [
+        {
+          "t0": 3.5,
+          "t1": 4.2,
+          "from": [
+            0.7,
+            0.6
+          ],
+          "to": [
+            0.5,
+            0.95
+          ]
+        }
+      ],
+      "chips": [
+        {
+          "t": 3.9,
+          "x": 0.5,
+          "y": 0.8,
+          "text": "3 months",
+          "dur": 1.0
+        }
+      ]
+    },
+    {
+      "type": "momentFlow",
+      "startMs": 29750,
+      "endMs": 32900,
+      "words": [
+        "Darija",
+        "from zero",
+        "hands-on."
+      ]
+    },
+    {
+      "type": "creditRows",
+      "startMs": 33600,
+      "endMs": 38400,
+      "rows": [
+        "engineers in top companies",
+        "top engineering schools"
+      ],
+      "who": "your coaches",
+      "every": 1.4
+    },
+    {
+      "type": "momentShot",
+      "startMs": 43600,
+      "endMs": 49600,
+      "src": "videos/my-video/shots/s04-programme.jpg",
+      "aspect": 1.3,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1.15,
+          "fx": 0.33,
+          "fy": 0.12
+        },
+        {
+          "t": 1.0,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.16
+        },
+        {
+          "t": 2.1,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.16
+        },
+        {
+          "t": 2.6,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.38
+        },
+        {
+          "t": 3.3,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.38
+        },
+        {
+          "t": 3.8,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.8
+        },
+        {
+          "t": 4.4,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.8
+        },
+        {
+          "t": 4.9,
+          "zoom": 1.3,
+          "fx": 0.33,
+          "fy": 0.9
+        },
+        {
+          "t": 6.0,
+          "zoom": 1.15,
+          "fx": 0.33,
+          "fy": 0.6
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 1.1,
+          "t1": 2.3,
+          "x": 0.02,
+          "y": 0.1,
+          "w": 0.58,
+          "h": 0.12
+        },
+        {
+          "t0": 2.55,
+          "t1": 3.4,
+          "x": 0.02,
+          "y": 0.345,
+          "w": 0.58,
+          "h": 0.085
+        },
+        {
+          "t0": 3.75,
+          "t1": 4.6,
+          "x": 0.02,
+          "y": 0.785,
+          "w": 0.58,
+          "h": 0.085
+        },
+        {
+          "t0": 4.85,
+          "t1": 6.0,
+          "x": 0.02,
+          "y": 0.885,
+          "w": 0.58,
+          "h": 0.085
+        }
+      ],
+      "chips": [
+        {
+          "t": 0.3,
+          "x": 0.45,
+          "y": 0.05,
+          "text": "8 modules",
+          "dur": 1.4
+        }
+      ],
+      "imgAspect": 0.8158
+    },
+    {
+      "type": "momentShot",
+      "startMs": 53100,
+      "endMs": 58900,
+      "src": "videos/my-video/shots/s05-ostadi.jpg",
+      "aspect": 1.0,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.18
+        },
+        {
+          "t": 2.6,
+          "zoom": 1.25,
+          "fx": 0.68,
+          "fy": 0.27
+        },
+        {
+          "t": 3.6,
+          "zoom": 1.25,
+          "fx": 0.68,
+          "fy": 0.27
+        },
+        {
+          "t": 4.5,
+          "zoom": 1.1,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 5.8,
+          "zoom": 1.1,
+          "fx": 0.5,
+          "fy": 0.72
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 2.7,
+          "t1": 3.9,
+          "x": 0.5,
+          "y": 0.252,
+          "w": 0.41,
+          "h": 0.05,
+          "label": "in Darija",
+          "below": true
+        },
+        {
+          "t0": 4.4,
+          "t1": 5.8,
+          "x": 0.18,
+          "y": 0.32,
+          "w": 0.7,
+          "h": 0.3,
+          "label": "step by step"
+        }
+      ],
+      "chips": [
+        {
+          "t": 0.6,
+          "x": 0.5,
+          "y": 0.14,
+          "text": "AI tutor · 24/7",
+          "dur": 1.6
+        }
+      ],
+      "imgAspect": 0.5
+    },
+    {
+      "type": "momentShot",
+      "startMs": 60200,
+      "endMs": 65200,
+      "src": "videos/my-video/shots/s06c-feed.jpg",
+      "aspect": 1.25,
+      "imgAspect": 0.3113,
+      "tag": "COMMUNITY",
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.125
+        },
+        {
+          "t": 1.3,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.125
+        },
+        {
+          "t": 2.4,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.37
+        },
+        {
+          "t": 2.9,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.37
+        },
+        {
+          "t": 3.6,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.61
+        },
+        {
+          "t": 3.9,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.61
+        },
+        {
+          "t": 5.0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.8
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 0.5,
+          "t1": 1.5,
+          "x": 0.03,
+          "y": 0.022,
+          "w": 0.94,
+          "h": 0.035,
+          "label": "students ask",
+          "below": true
+        }
+      ],
+      "chips": [
+        {
+          "t": 1.0,
+          "x": 0.24,
+          "y": 0.226,
+          "text": "4 replies",
+          "dur": 1.1
+        },
+        {
+          "t": 2.5,
+          "x": 0.22,
+          "y": 0.465,
+          "text": "+88",
+          "dur": 1.0
+        },
+        {
+          "t": 3.5,
+          "x": 0.2,
+          "y": 0.72,
+          "text": "+120",
+          "dur": 1.1
+        },
+        {
+          "t": 4.4,
+          "x": 0.2,
+          "y": 0.97,
+          "text": "+45",
+          "dur": 0.8
+        }
+      ]
+    },
+    {
+      "type": "momentShot",
+      "startMs": 65300,
+      "endMs": 69700,
+      "src": "videos/my-video/shots/s07-lives.jpg",
+      "aspect": 1.7777777777777777,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.4
+        },
+        {
+          "t": 0.9,
+          "zoom": 1.65,
+          "fx": 0.48,
+          "fy": 0.17
+        },
+        {
+          "t": 2.5,
+          "zoom": 1.65,
+          "fx": 0.48,
+          "fy": 0.17
+        },
+        {
+          "t": 3.2,
+          "zoom": 1.45,
+          "fx": 0.48,
+          "fy": 0.67
+        },
+        {
+          "t": 4.4,
+          "zoom": 1.45,
+          "fx": 0.48,
+          "fy": 0.67
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 0.95,
+          "t1": 2.7,
+          "x": 0.2,
+          "y": 0.1,
+          "w": 0.555,
+          "h": 0.105,
+          "label": "every week · LIVE",
+          "below": true
+        },
+        {
+          "t0": 3.25,
+          "t1": 4.4,
+          "x": 0.2,
+          "y": 0.53,
+          "w": 0.555,
+          "h": 0.3,
+          "label": "replays"
+        }
+      ],
+      "cursor": [
+        {
+          "t0": 1.2,
+          "t1": 2.0,
+          "from": [
+            0.55,
+            0.4
+          ],
+          "to": [
+            0.69,
+            0.152
+          ],
+          "clickAt": 2.05
+        }
+      ]
+    },
+    {
+      "type": "momentShot",
+      "startMs": 70900,
+      "endMs": 72750,
+      "src": "videos/my-video/shots/s09b-badges.jpg",
+      "aspect": 1.7777777777777777,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1.15,
+          "fx": 0.5,
+          "fy": 0.35
+        },
+        {
+          "t": 1.85,
+          "zoom": 1.45,
+          "fx": 0.45,
+          "fy": 0.2
+        }
+      ],
+      "chips": [
+        {
+          "t": 0.35,
+          "x": 0.29,
+          "y": 0.12,
+          "text": "+50 XP",
+          "dur": 1.1
+        },
+        {
+          "t": 0.7,
+          "x": 0.48,
+          "y": 0.12,
+          "text": "+100 XP",
+          "dur": 1.1
+        },
+        {
+          "t": 1.05,
+          "x": 0.68,
+          "y": 0.12,
+          "text": "badge unlocked",
+          "dur": 0.9
+        }
+      ]
+    },
+    {
+      "type": "momentShot",
+      "startMs": 72500,
+      "endMs": 74300,
+      "src": "videos/my-video/shots/s09-classement.jpg",
+      "aspect": 1.7777777777777777,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1.2,
+          "fx": 0.53,
+          "fy": 0.3
+        },
+        {
+          "t": 1.8,
+          "zoom": 1.6,
+          "fx": 0.53,
+          "fy": 0.25
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 0.35,
+          "t1": 1.8,
+          "x": 0.43,
+          "y": 0.12,
+          "w": 0.27,
+          "h": 0.27,
+          "label": "ranking",
+          "below": true
+        }
+      ]
+    },
+    {
+      "type": "momentShot",
+      "startMs": 74400,
+      "endMs": 81200,
+      "src": "videos/my-video/shots/s10-certificat.jpg",
+      "aspect": 1.4143646408839778,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 1.0,
+          "zoom": 1.05,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 2.4,
+          "zoom": 1.8,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 3.3,
+          "zoom": 1.8,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 4.0,
+          "zoom": 3.2,
+          "fx": 0.9,
+          "fy": 0.13
+        },
+        {
+          "t": 6.0,
+          "zoom": 3.0,
+          "fx": 0.9,
+          "fy": 0.13
+        },
+        {
+          "t": 6.8,
+          "zoom": 2.0,
+          "fx": 0.75,
+          "fy": 0.3
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 2.5,
+          "t1": 3.6,
+          "x": 0.32,
+          "y": 0.43,
+          "w": 0.37,
+          "h": 0.13,
+          "label": "your name",
+          "below": true
+        }
+      ],
+      "scan": [
+        {
+          "t0": 4.4,
+          "t1": 5.8,
+          "x": 0.865,
+          "y": 0.075,
+          "w": 0.07,
+          "h": 0.095,
+          "label": "verified"
+        }
+      ]
+    },
+    {
+      "type": "creditRows",
+      "startMs": 82200,
+      "endMs": 87500,
+      "rows": [
+        "8 modules",
+        "engineer coach",
+        "Ostadi AI · 24/24",
+        "community",
+        "weekly lives + replay",
+        "certificate · QR code"
+      ],
+      "who": "all included",
+      "every": 0.8
+    },
+    {
+      "type": "momentCounter",
+      "startMs": 87600,
+      "endMs": 90500,
+      "steps": [
+        100,
+        250,
+        490
+      ],
+      "value": "490",
+      "unit": "DH · 3 months",
+      "kicker": "ALL INCLUDED"
+    },
+    {
+      "type": "gapBars",
+      "startMs": 90600,
+      "endMs": 93200,
+      "a": {
+        "label": "coffee",
+        "value": 15,
+        "display": "15 DH"
+      },
+      "b": {
+        "label": "Progma / day",
+        "value": 5.4,
+        "display": "< 6 DH"
+      }
+    },
+    {
+      "type": "momentShot",
+      "startMs": 93240,
+      "endMs": 98500,
+      "src": "videos/my-video/shots/s02-plateforme.jpg",
+      "aspect": 1.7777777777777777,
+      "keys": [
+        {
+          "t": 0,
+          "zoom": 1,
+          "fx": 0.5,
+          "fy": 0.5
+        },
+        {
+          "t": 1.6,
+          "zoom": 1.9,
+          "fx": 0.31,
+          "fy": 0.38
+        },
+        {
+          "t": 3.0,
+          "zoom": 1.9,
+          "fx": 0.31,
+          "fy": 0.38
+        },
+        {
+          "t": 3.6,
+          "zoom": 2.5,
+          "fx": 0.31,
+          "fy": 0.55
+        },
+        {
+          "t": 5.26,
+          "zoom": 2.5,
+          "fx": 0.31,
+          "fy": 0.55
+        }
+      ],
+      "highlights": [
+        {
+          "t0": 2.9,
+          "t1": 3.9,
+          "x": 0.18,
+          "y": 0.125,
+          "w": 0.085,
+          "h": 0.03,
+          "label": "lesson 1 · free",
+          "below": true
+        }
+      ],
+      "cursor": [
+        {
+          "t0": 3.6,
+          "t1": 4.3,
+          "from": [
+            0.45,
+            0.45
+          ],
+          "to": [
+            0.32,
+            0.593
+          ],
+          "clickAt": 4.4
+        }
+      ]
+    },
+    {
+      "type": "momentFlow",
+      "startMs": 98150,
+      "endMs": 101900,
+      "words": [
+        "the form below",
+        "WhatsApp",
+        "answers."
+      ]
+    },
+    {
+      "type": "ctaEndCard",
+      "startMs": 101550,
+      "endMs": 104300,
+      "kicker": "start today",
+      "word": "progma.ai",
+      "sub": "fill the form below"
+    }
+  ],
+  "sfx": [
+    {
+      "src": "sfx/lib/hit-intro.wav",
+      "atMs": 0,
+      "volume": 0.32
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 1150,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 2300,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 2600,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 2917,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 4200,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 9000,
+      "volume": 0.35
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 9300,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 9550,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 9800,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-win.wav",
+      "atMs": 10050,
+      "volume": 0.4
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 12017,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/pop-soft.wav",
+      "atMs": 13300,
+      "volume": 0.35
+    },
+    {
+      "src": "sfx/lib/bell-notify.wav",
+      "atMs": 13800,
+      "volume": 0.16
+    },
+    {
+      "src": "sfx/lib/impact-deep.wav",
+      "atMs": 16200,
+      "volume": 0.45
+    },
+    {
+      "src": "sfx/lib/error-tone.wav",
+      "atMs": 17600,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 18600,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 19500,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 20400,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 21617,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 21800,
+      "volume": 0.35
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 22100,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 22350,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 22600,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-win.wav",
+      "atMs": 22850,
+      "volume": 0.4
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 25300,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 27200,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 28300,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 29300,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 29600,
+      "volume": 0.5
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 30050,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 30650,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 31250,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 33900,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 35300,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 36317,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 43500,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 43900,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 44700,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 45700,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 46150,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 46900,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 47050,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 47350,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 48450,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 53000,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 53700,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 55750,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 56700,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 57500,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 60100,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 60700,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 61200,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 61500,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 62700,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 63100,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 63700,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 64100,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 64600,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 65200,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 66250,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 67350,
+      "volume": 0.5
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 67800,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 68550,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 70800,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/xp-coin.wav",
+      "atMs": 71250,
+      "volume": 0.24
+    },
+    {
+      "src": "sfx/lib/xp-coin.wav",
+      "atMs": 71600,
+      "volume": 0.24
+    },
+    {
+      "src": "sfx/lib/unlock.wav",
+      "atMs": 71950,
+      "volume": 0.24
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 72400,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 72850,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 74283,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/zoom-in.wav",
+      "atMs": 75400,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 76900,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/zoom-in.wav",
+      "atMs": 77700,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/scan-sweep.wav",
+      "atMs": 78800,
+      "volume": 0.24
+    },
+    {
+      "src": "sfx/lib/verify-ok.wav",
+      "atMs": 80200,
+      "volume": 0.3
+    },
+    {
+      "src": "sfx/lib/zoom-move.wav",
+      "atMs": 80400,
+      "volume": 0.13
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 82500,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 83300,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 84100,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 84900,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 85700,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/click-ui.wav",
+      "atMs": 86500,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 87500,
+      "volume": 0.35
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 87800,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 88050,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-tick.wav",
+      "atMs": 88300,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/coin-win.wav",
+      "atMs": 88550,
+      "volume": 0.4
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 90517,
+      "volume": 0.09
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 91200,
+      "volume": 0.2
+    },
+    {
+      "src": "sfx/lib/chime-confirm.wav",
+      "atMs": 92000,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/whoosh-sweep.wav",
+      "atMs": 93140,
+      "volume": 0.28
+    },
+    {
+      "src": "sfx/lib/blip-tech.wav",
+      "atMs": 96140,
+      "volume": 0.18
+    },
+    {
+      "src": "sfx/lib/mouse-click.wav",
+      "atMs": 97640,
+      "volume": 0.5
+    },
+    {
+      "src": "sfx/lib/whoosh-air.wav",
+      "atMs": 98050,
+      "volume": 0.3
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 98450,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 99050,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/pop-light.wav",
+      "atMs": 99650,
+      "volume": 0.22
+    },
+    {
+      "src": "sfx/lib/whoosh-tech.wav",
+      "atMs": 101550,
+      "volume": 0.3
+    },
+    {
+      "src": "sfx/lib/chime-correct.wav",
+      "atMs": 102150,
+      "volume": 0.3
+    }
+  ],
+  "music": {
+    "src": "music/lofi-bed.m4a",
+    "volume": 0.2,
+    "fadeInMs": 800,
+    "fadeOutMs": 1500
+  },
+  "faceZone": {
+    "top": 0.0,
+    "bottom": 0.61
+  }
+}

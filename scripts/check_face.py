@@ -35,7 +35,7 @@ subprocess.run(
 subprocess.run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-i", video, "-vf", "fps=10", f"{tmp}/%05d.png"], check=True)
 
 # Full-screen animation moments have no face on screen (skill rule 1): they and the captions on top of them are allowed.
-FULL = {"momentBlocks", "momentCounter", "momentSlider", "momentCode", "momentFlow", "endCard", "ctaEndCard"}
+FULL = {"momentBlocks", "momentCounter", "momentSlider", "momentCode", "momentFlow", "endCard", "ctaEndCard", "momentShot"}
 free = [(o["startMs"] / 1000, o["endMs"] / 1000) for o in spec.get("overlays", []) if o.get("type") in FULL]
 
 bad = []

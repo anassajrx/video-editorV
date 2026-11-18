@@ -112,6 +112,27 @@ export type PurpleOverlay =
   | (Timed & { type: "creditRows"; rows: string[]; who: string; every?: number; y?: number })
   | (Timed & { type: "momentFlow"; words: string[] })
   | (Timed & { type: "ctaEndCard"; kicker: string; word: string; sub?: string })
+  /** Full-screen real screenshot in a frame, slow zoom/pan. `src` relative to public/, `aspect` = width / height. */
+  | (Timed & {
+      type: "momentShot";
+      src: string;
+      aspect: number;
+      kicker?: string;
+      zoomTo?: number;
+      focusFrom?: [number, number];
+      focusTo?: [number, number];
+      /** image width/height when it differs from the frame (a tall image scrolls) */
+      imgAspect?: number;
+      kickerAt?: number;
+      tag?: string;
+      /** camera keyframes: t = seconds from the overlay start, fx/fy = image point in the middle of the frame */
+      keys?: { t: number; zoom: number; fx: number; fy: number }[];
+      highlights?: { t0: number; t1: number; x: number; y: number; w: number; h: number; label?: string; below?: boolean }[];
+      cursor?: { t0: number; t1: number; from: [number, number]; to: [number, number]; clickAt?: number }[];
+      scan?: { t0: number; t1: number; x: number; y: number; w: number; h: number; label?: string }[];
+      chips?: { t: number; x: number; y: number; text: string; dur?: number }[];
+      instant?: boolean;
+    })
   /** Full-frame muted footage clip (e.g. a pre-reversed "rewind" piece of the edit). Hidden in QA renders. */
   | (Timed & { type: "clip"; src: string });
 
@@ -123,6 +144,7 @@ export const FULL_SCREEN_TYPES = [
   "momentFlow",
   "endCard",
   "ctaEndCard",
+  "momentShot",
 ] as const;
 
 export type EditSpec = {

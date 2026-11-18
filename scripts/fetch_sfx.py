@@ -49,6 +49,16 @@ CATALOG = {
     # paper / chapters
     "page-turn":       (1104, 1.0, "Page turn single - chapter chip / chapter blur"),
     "paper-slide":     (1530, 1.0, "Paper slide - file stack / document"),
+    # living screenshots (momentShot camera, cursor, spotlight, scan, chips)
+    "mouse-click":     (1113, 0.4, "Mouse click close - the on-screen cursor clicks a button"),
+    "zoom-in":         (2618, 0.9, "User interface zoom in - camera pushes into a screenshot"),
+    "zoom-move":       (2626, 1.0, "Futuristic zoom move - camera glides to the next part"),
+    "blip-tech":       (2521, 0.6, "High tech bleep - spotlight box lands on a detail"),
+    "scan-sweep":      (2631, 1.6, "Digital sweep effect - scan line over a QR code"),
+    "verify-ok":       (2520, 1.0, "High tech bleep confirmation - scan verified"),
+    "xp-coin":         (2069, 0.8, "Winning a coin, video game - +XP chip"),
+    "unlock":          (253, 1.2, "Unlock game notification - badge unlocked / ranking"),
+    "hit-intro":       (2900, 1.6, "Movie logo intro impact - very first frame (hook)"),
 }
 
 OUT = os.path.join("public", "sfx", "lib")

@@ -6,12 +6,14 @@ import type { EditSpec } from "./brand/types";
 import brandDemo from "./videos/brand-demo/edit.json";
 import purpleDemo from "./videos/purple-demo/edit.json";
 import comeback from "./videos/comeback/edit.json";
+import myVideo from "./videos/my-video/edit.json";
 
 // Register every video here: one line per video folder in src/videos/<slug>/edit.json
 const videos: { id: string; spec: EditSpec }[] = [
   { id: "brand-demo", spec: brandDemo as EditSpec },
   { id: "purple-demo", spec: purpleDemo as EditSpec },
   { id: "comeback", spec: comeback as EditSpec },
+  { id: "my-video", spec: myVideo as EditSpec },
 ];
 
 export const RemotionRoot: React.FC = () => {

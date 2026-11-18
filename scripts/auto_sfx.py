@@ -64,6 +64,29 @@ for o in spec.get("overlays", []):
         add(s0 - 0.1, "whoosh-air", 0.3)
         for i in range(len(o.get("words", []))):
             add(s0 + 0.3 + i * 0.6, "pop-light", 0.22)
+    elif t == "momentShot":
+        # the sound comes from what moves on the screenshot (Moments.tsx MomentShot)
+        if o.get("instant"):
+            add(s0, "hit-intro", 0.32)
+        else:
+            add(s0 - 0.1, "whoosh-sweep", 0.28)
+        keys = o.get("keys", [])
+        for a, b in zip(keys, keys[1:]):
+            dz, dist = b["zoom"] - a["zoom"], abs(b["fx"] - a["fx"]) + abs(b["fy"] - a["fy"])
+            if dz > 0.25:
+                add(s0 + a["t"], "zoom-in", 0.2)
+            elif dz < -0.25 or dist > 0.12:
+                add(s0 + a["t"], "zoom-move", 0.13)
+        for h in o.get("highlights", []):
+            add(s0 + h["t0"], "blip-tech", 0.18)
+        for c in o.get("cursor", []):
+            add(s0 + c.get("clickAt", c["t1"]), "mouse-click", 0.5)
+        for sc in o.get("scan", []):
+            add(s0 + sc["t0"], "scan-sweep", 0.24); add(s0 + sc["t1"], "verify-ok", 0.3)
+        for c in o.get("chips", []):
+            txt = c["text"].lower()
+            name = "unlock" if "unlock" in txt else "xp-coin" if "xp" in txt else "pop-light"
+            add(s0 + c["t"], name, 0.24 if name != "pop-light" else 0.2)
     elif t in ("endCard", "ctaEndCard"):
         add(s0, "whoosh-tech", 0.3); add(s0 + 0.6, "chime-correct", 0.3)
     elif t == "fileStack":
@@ -81,6 +104,11 @@ for o in spec.get("overlays", []):
         add(s0, "whoosh-sweep", 0.3)
     elif t == "terminal":
         add(s0, "type-laptop", 0.25)
+
+# a very soft swish on the bigger face push-ins (the camera "leans in")
+for p_ in spec.get("punchIns", []):
+    if p_.get("scale", 1) > 1.0:
+        add(p_["atMs"] / 1000 - 0.05, "whoosh-air", 0.09)
 
 # never two auto sounds closer than 120 ms (keep the earlier one), stay inside the video
 out.sort(key=lambda x: x["atMs"])

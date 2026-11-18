@@ -331,6 +331,19 @@ caption lines, anything skipped. Tell the user the paths. Commit the edit (never
 | 18 | Paths with spaces ("raw footage", "video editor") broke shell commands | always quote paths |
 
 ## 11. Learned rules (add new ones here, with the date)
+- 2026-11-18: Screenshots are never static. Use `momentShot` with a timeline synced to the spoken words: `keys`
+  (camera keyframes t/zoom/fx/fy, eased; a tall image with `imgAspect` < `aspect` scrolls), `highlights` (spotlight
+  dims the rest + violet glow + label), `cursor` (moves, clicks, ripple), `scan` (QR scan line -> "✓ verified"),
+  `chips` (+XP pop-ups), `instant` for a screen on the very first frame. Positions = fractions of the IMAGE: make a
+  10% grid overlay of each screenshot first to read coordinates. Keep text readable: a portrait screenshot goes in a
+  wider frame that scrolls (aspect ~1.0-1.3) instead of a narrow box; never zoom so far a logo/title gets cut.
+- 2026-11-18: Progma's live demo (academy.progma.ai/demo) can be captured with Playwright (viewport 1600x900,
+  deviceScaleFactor 2, `fullPage`); close the "réservé aux élèves" pop-up with "Continuer la visite". The long
+  Communauté feed, cropped to the post column, makes a great scrolling moment.
+- 2026-11-18: Epidemic Sound search works but downloads are FORBIDDEN on this account (no licence): never use the
+  low-quality previews instead. Sound library = Mixkit via `fetch_sfx.py` (35 sounds incl. mouse-click, zoom-in,
+  zoom-move, blip-tech, scan-sweep, verify-ok, xp-coin, unlock, hit-intro); `auto_sfx.py` places them from the
+  momentShot timeline and adds very soft swishes (0.09) on face push-ins.
 - 2026-11-17: Never a caption word mixing Latin and Arabic letters (`editيتو`, `نpostي`): the browser scrambles it.
   Write the Darija spelling (`مونطيتو`, `نبوسطي`) or split into separate words. `align_captions.py` refuses them.
 - 2026-11-17: Every step must work for BOTH vertical (9:16) and horizontal (16:9, YouTube) videos. Set `orientation`

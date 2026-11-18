@@ -3,7 +3,7 @@ import { FULL_SCREEN_TYPES, type Overlay, type PurpleOverlay } from "../../brand
 import { clampTop } from "../../brand/layout";
 import { ChapterChip, CommentCard, GapBars, PinnedReply } from "./Cards";
 import { BWStrike, ChapterBlur } from "./FootageFx";
-import { CtaEndCard, MomentBlocks, MomentCode, MomentCounter, MomentFlow, MomentSlider, PlumEndCard } from "./Moments";
+import { CtaEndCard, MomentBlocks, MomentCode, MomentCounter, MomentFlow, MomentShot, MomentSlider, PlumEndCard } from "./Moments";
 import { CreditRows, FileStack, ProgressCard } from "./Cards2";
 import { AbsoluteFill, staticFile } from "remotion";
 import { Video } from "@remotion/media";
@@ -11,7 +11,7 @@ import { Video } from "@remotion/media";
 export { PurpleCaptions } from "./PurpleCaptions";
 export { FrostedCard } from "./FrostedCard";
 export { CommentCard, ChapterChip, GapBars, PinnedReply, ChapterBlur, BWStrike };
-export { MomentBlocks, MomentCounter, MomentSlider, MomentCode, MomentFlow, PlumEndCard, CtaEndCard };
+export { MomentBlocks, MomentCounter, MomentSlider, MomentCode, MomentFlow, MomentShot, PlumEndCard, CtaEndCard };
 export { FileStack, ProgressCard, CreditRows };
 
 const PURPLE_TYPES = new Set<string>([
@@ -83,6 +83,12 @@ export const PurpleOverlayLayer: React.FC<{
       return <CreditRows top={clampTop(o.y, minTop)} durationInFrames={d} rows={o.rows} who={o.who} every={o.every} />;
     case "momentFlow":
       return <MomentFlow durationInFrames={d} words={o.words} />;
+    case "momentShot":
+      return (
+        <MomentShot durationInFrames={d} src={o.src} aspect={o.aspect} imgAspect={o.imgAspect} kicker={o.kicker}
+          kickerAt={o.kickerAt} tag={o.tag} zoomTo={o.zoomTo} focusFrom={o.focusFrom} focusTo={o.focusTo} keys={o.keys}
+          highlights={o.highlights} cursor={o.cursor} scan={o.scan} chips={o.chips} instant={o.instant} />
+      );
     case "ctaEndCard":
       return <CtaEndCard durationInFrames={d} kicker={o.kicker} word={o.word} sub={o.sub} />;
     case "clip":
