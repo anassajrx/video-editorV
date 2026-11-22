@@ -14,7 +14,9 @@ Steps (all automatic, ~5-10 min for a 5-min clip on a T4):
   2. silence cut (20 ms RMS, adaptive threshold, min 0.3 s, pad 0.1 s)        -> cut.mp4.cuts.json
   3. Darija transcription per segment + per phrase, word timestamps           -> phrases.json
      model: anaszil/whisper-large-v3-turbo-darija (LoRA on openai/whisper-large-v3-turbo)
-  4. EN + FR pass on the same phrases (foreign words in Latin letters)        -> second.json
+  4. MoulSot v0.3 text pass on the same phrases (Darija + French/English words in Latin letters)
+     -> phrases[i]["moulsot"] + second.json. Whisper above keeps the WORD TIMINGS; MoulSot gives the TEXT.
+     (--text-model none, or MoulSot failing, falls back to the old Whisper EN + FR pass)
   5. automatic retake / false-start / junk detection, cut points moved into the quietest 10 ms
      (EDITABLE: Claude reviews it)                                             -> removals.json
   6. kept segments, frame-snapped, 8 ms fades, soft grade, two-pass loudness -14 LUFS / limiter
@@ -43,6 +45,8 @@ p.add_argument("--root", default="/content/drive/MyDrive/video-editor")
 p.add_argument("--work", default="/content/work")
 p.add_argument("--darija-model", default="anaszil/whisper-large-v3-turbo-darija", help="'none' = plain base model")
 p.add_argument("--base-model", default="openai/whisper-large-v3-turbo")
+p.add_argument("--text-model", default="atlasia/moulsot.v0.3", help="text model (qwen-asr); 'none' = old Whisper EN/FR pass")
+p.add_argument("--context", default="", help="optional topic words for MoulSot (tech names, brand...)")
 p.add_argument("--no-retakes", action="store_true", help="detect retakes but do not cut them")
 p.add_argument("--no-grade", action="store_true")
 p.add_argument("--mic", default="", help="separate mic recording in 'raw footage' to use INSTEAD of the phone audio "
@@ -310,23 +314,71 @@ for i, c in enumerate(cuts):
 json.dump({"segments": segments, "phrases": phrases}, open(os.path.join(W, "phrases.json"), "w"), ensure_ascii=False, indent=1)
 log(f"Darija done: {len(phrases)} phrases, {sum(s['junk'] for s in segments)} junk segments")
 
-# ---------- 4. EN / FR pass (same phrase boundaries) ----------
+# ---------- 4. text pass: MoulSot (own process: qwen-asr needs another transformers version) ----------
 del dar
 gc.collect()
 if dev == "cuda":
     torch.cuda.empty_cache()
-base = load_base().to(dev).eval()
+
+MOUL = r"""
+import json, sys, numpy as np, torch
+from qwen_asr import Qwen3ASRModel
+W, mid, ctx = sys.argv[1], sys.argv[2], sys.argv[3]
+SR = 16000
+A = np.load(f"{W}/audio16k.npy")
+P = json.load(open(f"{W}/spans.json"))
+dt = torch.bfloat16 if torch.cuda.get_device_capability()[0] >= 8 else torch.float16
+m = Qwen3ASRModel.from_pretrained(mid, dtype=dt, device_map="cuda", max_inference_batch_size=8, max_new_tokens=300)
+out = []
+for k in range(0, len(P), 64):
+    items = [(A[int(s * SR):int(e * SR)], SR) for s, e in P[k:k + 64]]
+    out += [(r.text or "").strip() for r in m.transcribe(audio=items, context=ctx, language="Arabic")]
+    print(f"MoulSot: {len(out)}/{len(P)}", flush=True)
+json.dump(out, open(f"{W}/moulsot.json", "w"), ensure_ascii=False)
+"""
+
+
+def moulsot_pass():
+    if args.text_model == "none" or dev != "cuda" or not phrases:
+        return None
+    try:
+        np.save(os.path.join(W, "audio16k.npy"), A)
+        json.dump([[p["s"], p["e"]] for p in phrases], open(os.path.join(W, "spans.json"), "w"))
+        open(os.path.join(W, "moulsot_run.py"), "w").write(MOUL)
+        pip("qwen-asr")
+        r = subprocess.run([sys.executable, os.path.join(W, "moulsot_run.py"), W, args.text_model, args.context], text=True)
+        out = json.load(open(os.path.join(W, "moulsot.json"), encoding="utf8")) if r.returncode == 0 else None
+        if not out or len(out) != len(phrases):
+            raise RuntimeError(f"exit {r.returncode}, {len(out or [])}/{len(phrases)} lines")
+        return out
+    except Exception as e:  # noqa: BLE001
+        log(f"!! MoulSot failed ({str(e)[:200]}) -> falling back to the Whisper EN/FR pass")
+        return None
+
+
+ms = moulsot_pass()
 second = []
-for n, ph in enumerate(phrases):
-    en, enw = transcribe(base, ph["s"], ph["e"], "en")
-    fr, frw = transcribe(base, ph["s"], ph["e"], "fr")
-    second.append({"seg": n, "s": ph["s"], "e": ph["e"], "en": en, "fr": fr, "en_words": enw, "fr_words": frw})
+if ms is not None:
+    for n, ph in enumerate(phrases):
+        ph["moulsot"] = ms[n]
+        second.append({"seg": n, "s": ph["s"], "e": ph["e"], "moulsot": ms[n], "en": "", "fr": ""})
+    TEXT_MODEL = args.text_model
+    log("MoulSot text pass done")
+else:
+    base = load_base().to(dev).eval()
+    for n, ph in enumerate(phrases):
+        en, enw = transcribe(base, ph["s"], ph["e"], "en")
+        fr, frw = transcribe(base, ph["s"], ph["e"], "fr")
+        second.append({"seg": n, "s": ph["s"], "e": ph["e"], "en": en, "fr": fr, "en_words": enw, "fr_words": frw})
+    TEXT_MODEL = f"Whisper EN/FR ({args.base_model})"
+    log("EN/FR pass done")
+    del base
+    gc.collect()
+    if dev == "cuda":
+        torch.cuda.empty_cache()
+json.dump({"segments": segments, "phrases": phrases}, open(os.path.join(W, "phrases.json"), "w"), ensure_ascii=False, indent=1)
 json.dump(second, open(os.path.join(W, "second.json"), "w"), ensure_ascii=False, indent=1)
-log("EN/FR pass done")
-del base
-gc.collect()
-if dev == "cuda":
-    torch.cuda.empty_cache()
+TX = lambda ph: ph.get("moulsot") or ph["text"]  # noqa: E731  best text for retake matching
 
 # ---------- 5. retakes / false starts (automatic, editable) ----------
 AR_N = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ة": "ه", "ى": "ي"})
@@ -348,21 +400,21 @@ def valley(t):  # quietest 20 ms within +-0.15 s
 
 removals = []
 for i, ph in enumerate(phrases):
-    txt = norm(ph["text"])
+    txt = norm(TX(ph))
     if not txt:
         continue
     for j in range(i + 1, min(i + 4, len(phrases))):
         nx = phrases[j]
         if nx["s"] - ph["e"] > 20:
             break
-        r = sim(ph["text"], nx["text"])
-        a_w, b_w = txt.split(), norm(nx["text"]).split()
+        r = sim(TX(ph), TX(nx))
+        a_w, b_w = txt.split(), norm(TX(nx)).split()
         prefix = len(a_w) >= 2 and a_w == b_w[:len(a_w)]
         restart = len(a_w) >= 2 and len(a_w) < len(b_w) and difflib.SequenceMatcher(None, a_w, b_w[:len(a_w)]).ratio() >= 0.7
         if r >= 0.62 or prefix or restart:
             kind = "retake" if r >= 0.62 else "false start"
             removals.append({"s": round(valley(ph["s"]), 3), "e": round(valley(nx["s"]), 3), "auto": True,
-                             "reason": f"{kind} (similarity {r:.2f}): first take '{ph['text'][:60]}' -> kept '{nx['text'][:60]}'"})
+                             "reason": f"{kind} (similarity {r:.2f}): first take '{TX(ph)[:60]}' -> kept '{TX(nx)[:60]}'"})
             break
 # merge overlapping
 removals.sort(key=lambda r: r["s"])
@@ -449,7 +501,10 @@ lines = []
 for n, ph in enumerate(phrases):
     sc = second[n]
     flag = "REMOVED " if removed(ph["s"], ph["e"]) else ""
-    lines.append(f"[{n:3d}] {mmss(ph['s'])}-{mmss(ph['e'])} {flag}\n   AR: {ph['text']}\n   EN: {sc['en']}\n   FR: {sc['fr']}")
+    if "moulsot" in ph:  # MS = MoulSot text (use it), AR = Whisper Darija (its words carry the timings)
+        lines.append(f"[{n:3d}] {mmss(ph['s'])}-{mmss(ph['e'])} {flag}\n   MS: {ph['moulsot']}\n   AR: {ph['text']}")
+    else:
+        lines.append(f"[{n:3d}] {mmss(ph['s'])}-{mmss(ph['e'])} {flag}\n   AR: {ph['text']}\n   EN: {sc['en']}\n   FR: {sc['fr']}")
 open(os.path.join(W, "transcript.txt"), "w", encoding="utf8").write("\n".join(lines) + "\n")
 AUDIO_LINE = (f"mic {MIC['file']} (offset {MIC['offsetS']:+.3f}s, drift {MIC['driftPpm']:+.0f} ppm, "
               f"worst sync error {MIC['worstErrorMs']} ms)") if MIC else "phone"
@@ -460,7 +515,7 @@ rep = [f"# {args.slug} — Colab prep report", "",
        f"- Junk segments removed: {sum(s['junk'] for s in segments)}",
        f"- Retakes / false starts: {len(removals)} ({'NOT applied' if args.no_retakes else 'applied'}) — REVIEW in removals.json",
        f"- Final: {mmss(FINAL_DUR)} · {I:.1f} LUFS · peak {PK:.1f} dBTP · grade: {'none' if args.no_grade else 'soft'}",
-       f"- Darija model: {args.darija_model} · EN/FR: {args.base_model} · device: {dev}",
+       f"- Timings: {args.darija_model} · text: {TEXT_MODEL} · device: {dev}",
        f"- Prep time: {(time.time() - T0) / 60:.1f} min", "", "## Removals (ORIGINAL clip time)", ""]
 rep += [f"- {mmss(r['s'])} – {mmss(r['e'])}: {r['reason']}" for r in removals] or ["- none"]
 open(os.path.join(W, "report.md"), "w", encoding="utf8").write("\n".join(rep) + "\n")
@@ -468,7 +523,7 @@ open(os.path.join(W, "report.md"), "w", encoding="utf8").write("\n".join(rep) + 
 json.dump({"slug": args.slug, "source": os.path.basename(src), "width": wh[0], "height": wh[1], "orientation": ORIENT,
            "fps": FPS, "sourceDurationS": round(DUR, 3), "finalDurationS": round(FINAL_DUR, 3), "lufs": I, "truePeakDb": PK,
            "graded": not args.no_grade, "micAudio": MIC, "backgroundSwapped": False, "retakesApplied": not args.no_retakes,
-           "darijaModel": args.darija_model, "enfrModel": args.base_model},
+           "darijaModel": args.darija_model, "textModel": TEXT_MODEL},
           open(os.path.join(W, "meta.json"), "w"), indent=1)
 files = ["meta.json", "edit.mp4", "preview-720p.mp4", "cut.mp4.cuts.json", "phrases.json", "second.json", "removals.json", "segments.json",
          "transcript.txt", "report.md"] + (["in.mp4"] if args.keep_in else [])

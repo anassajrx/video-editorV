@@ -102,6 +102,17 @@ to `My Drive/video-editor/results/<slug>/`. In the cloud session:
 3. Skip §2–§5 and the transcription in §7.1: go straight to captions (§7.2–7.3, pin Latin-only pages with `@start-end`
    from `second.json`), graphics, QA, render (§8–§9). Deliver the MP4 + a 720p preview (≤ 30 MB, for the phone).
 
+### 1.4.1 Transcription = MoulSot text + Whisper timings (since 2026-11-22)
+Tested on a 5-min Darija/French tech video: `atlasia/moulsot.v0.3` (Qwen3-ASR 1.7B) beat every Whisper option. French/English
+words come out in Latin letters (`développement web`, `les salaires`, `react native`), natural Darija spelling, no loops.
+The Whisper EN/FR pass TRANSLATED ("9000 dollars", "Middle East") and looped, so it is gone. `colab_prep.py` now writes
+`phrases[i].moulsot` (+ `second.json[i].moulsot`); `transcript.txt` shows `MS:` (MoulSot = the TEXT to use) and `AR:`
+(Whisper Darija = its `words` carry the TIMINGS). Captions: write pages from MS, time them with AR's words (`align_captions.py`).
+MoulSot's known errors to fix by hand: tech names (`staticcat`, `view-gs` = Vue.js, `Coura` = Quora), some French still in
+Arabic letters (`سيليكسونييت`, `ليكزومبل`), NUMBERS (it wrote "90%" for "تسعكا" = 9k: check numbers against AR).
+If the user gives a script / reference caption / topic words, it wins over both models: correct the words to it.
+Old files without `moulsot` still have EN/FR: read them as before.
+
 ## 1.5 Workflow v2: Claude picks the retakes (notebook `local/colab/video_prep_v2.ipynb`, the default)
 Colab never cuts retakes any more: choosing the best take needs understanding. `meta.json` says which options the user
 ticked (`omniFlash`, `backgroundSwapRequested`) and the `stage`.
