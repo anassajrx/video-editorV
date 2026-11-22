@@ -59,6 +59,27 @@ def log(msg):
     print(f"[{time.time() - T0:6.0f}s] {msg}", flush=True)
 
 
+def prog(step, done=None, total=None, unit=""):
+    """Machine-readable progress line, read by platform/kaggle/prep_runner.py (real counts, never estimated)."""
+    print("@@P " + json.dumps({"step": step, "done": done, "total": total, "unit": unit}), flush=True)
+
+
+def sh_progress(cmd, step, total_s):
+    """Run ffmpeg with -progress and report real seconds processed / total seconds."""
+    cmd = [cmd[0], "-progress", "pipe:1", "-nostats", *cmd[1:]]
+    pr = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+    last = 0.0
+    for line in pr.stdout:
+        if line.startswith("out_time_us=") and line.strip()[12:].isdigit():
+            t = int(line.strip()[12:]) / 1e6
+            if t - last >= 1 or t >= total_s:
+                last = t
+                prog(step, round(min(t, total_s), 1), round(total_s, 1), "s")
+    err = pr.stderr.read()
+    if pr.wait() != 0:
+        raise RuntimeError(f"{cmd[0]} failed:\n{err[-3000:]}")
+
+
 def sh(cmd, text=True):
     r = subprocess.run(cmd, capture_output=True, text=text)
     if r.returncode != 0:
@@ -121,11 +142,13 @@ def convert(gpu, tonemap):
     vf = (TONEMAP if tonemap else "") + f"fps=30,{SCALE},format=yuv420p"
     enc = ["-c:v", "h264_nvenc", "-preset", "p5", "-rc", "vbr", "-cq", "18", "-b:v", "0"] if gpu else \
           ["-c:v", "libx264", "-preset", "veryfast", "-crf", "16"]
-    sh(["ffmpeg", "-v", "error", "-y", *(["-hwaccel", "cuda"] if gpu else []), "-i", local_src, "-map", "0:v:0", "-map", "0:a:0",
+    sh_progress(["ffmpeg", "-v", "error", "-y", *(["-hwaccel", "cuda"] if gpu else []), "-i", local_src, "-map", "0:v:0", "-map", "0:a:0",
         "-vf", vf, *enc, "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
-        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", IN])
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000", IN], "convert", SRC_DUR)
 
 
+SRC_DUR = float(json.loads(sh(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "json", local_src]).stdout)["format"]["duration"])
+prog("convert", 0, round(SRC_DUR, 1), "s")
 _t = time.time()
 for gpu, tm in ((True, HDR), (False, HDR), (False, False)):
     try:
@@ -179,6 +202,7 @@ def db(s, e):
     return 20 * np.log10(np.sqrt((x ** 2).mean()) + 1e-9) if len(x) else -99.0
 
 
+prog("silence", 0, 1, "")
 # ---------- 2. silence cut (RMS: works on quiet phone audio AND on loud audio with room noise) ----------
 hop = 0.02
 rms = np.array([db(k * hop, (k + 1) * hop) for k in range(int(DUR / hop))])
@@ -209,6 +233,7 @@ for s, e in keep:
     o += e - s
 json.dump({"input": "in.mp4", "removedSeconds": round(DUR - o, 2), "noiseFloorDb": round(floor, 1), "thresholdDb": round(thr, 1),
            "cuts": cuts}, open(os.path.join(W, "cut.mp4.cuts.json"), "w"), indent=1)
+prog("silence", 1, 1, "")
 log(f"silence cut: floor {floor:.1f} dB, threshold {thr:.1f} dB, {len(cuts)} segments, {DUR:.1f}s -> {o:.1f}s")
 
 # ---------- 3. Darija transcription (per segment + per phrase) ----------
@@ -278,7 +303,9 @@ def transcribe(model, s, e, lang, words=True):
 
 HALLU = ("اشتركوا", "شكرا", "ترجمة", "نانسي", "subscribe", "thank you", "merci")
 segments, phrases = [], []
+prog("timings", 0, len(cuts), "segments")
 for i, c in enumerate(cuts):
+    prog("timings", i, len(cuts), "segments")
     s, e = c["sourceStart"], c["sourceEnd"]
     text, _ = transcribe(dar, s, e, "ar", words=False)
     junk = not text or (e - s < 0.6 and any(h in text.lower() for h in HALLU))
@@ -312,6 +339,7 @@ for i, c in enumerate(cuts):
     if i % 10 == 0:
         log(f"Darija: segment {i + 1}/{len(cuts)}")
 json.dump({"segments": segments, "phrases": phrases}, open(os.path.join(W, "phrases.json"), "w"), ensure_ascii=False, indent=1)
+prog("timings", len(cuts), len(cuts), "segments")
 log(f"Darija done: {len(phrases)} phrases, {sum(s['junk'] for s in segments)} junk segments")
 
 # ---------- 4. text pass: MoulSot (own process: qwen-asr needs another transformers version) ----------
@@ -330,10 +358,10 @@ P = json.load(open(f"{W}/spans.json"))
 dt = torch.bfloat16 if torch.cuda.get_device_capability()[0] >= 8 else torch.float16
 m = Qwen3ASRModel.from_pretrained(mid, dtype=dt, device_map="cuda", max_inference_batch_size=8, max_new_tokens=300)
 out = []
-for k in range(0, len(P), 64):
-    items = [(A[int(s * SR):int(e * SR)], SR) for s, e in P[k:k + 64]]
+for k in range(0, len(P), 16):
+    items = [(A[int(s * SR):int(e * SR)], SR) for s, e in P[k:k + 16]]
     out += [(r.text or "").strip() for r in m.transcribe(audio=items, context=ctx, language="Arabic")]
-    print(f"MoulSot: {len(out)}/{len(P)}", flush=True)
+    print("@@P " + json.dumps({"step": "text", "done": len(out), "total": len(P), "unit": "phrases"}), flush=True)
 json.dump(out, open(f"{W}/moulsot.json", "w"), ensure_ascii=False)
 """
 
@@ -345,6 +373,7 @@ def moulsot_pass():
         np.save(os.path.join(W, "audio16k.npy"), A)
         json.dump([[p["s"], p["e"]] for p in phrases], open(os.path.join(W, "spans.json"), "w"))
         open(os.path.join(W, "moulsot_run.py"), "w").write(MOUL)
+        prog("text", 0, len(phrases), "phrases")
         pip("qwen-asr")
         r = subprocess.run([sys.executable, os.path.join(W, "moulsot_run.py"), W, args.text_model, args.context], text=True)
         out = json.load(open(os.path.join(W, "moulsot.json"), encoding="utf8")) if r.returncode == 0 else None
@@ -367,6 +396,7 @@ if ms is not None:
 else:
     base = load_base().to(dev).eval()
     for n, ph in enumerate(phrases):
+        prog("text", n, len(phrases), "phrases")
         en, enw = transcribe(base, ph["s"], ph["e"], "en")
         fr, frw = transcribe(base, ph["s"], ph["e"], "fr")
         second.append({"seg": n, "s": ph["s"], "e": ph["e"], "en": en, "fr": fr, "en_words": enw, "fr_words": frw})
@@ -380,6 +410,7 @@ json.dump({"segments": segments, "phrases": phrases}, open(os.path.join(W, "phra
 json.dump(second, open(os.path.join(W, "second.json"), "w"), ensure_ascii=False, indent=1)
 TX = lambda ph: ph.get("moulsot") or ph["text"]  # noqa: E731  best text for retake matching
 
+prog("text", len(phrases), len(phrases), "phrases")
 # ---------- 5. retakes / false starts (automatic, editable) ----------
 AR_N = str.maketrans({"أ": "ا", "إ": "ا", "آ": "ا", "ة": "ه", "ى": "ي"})
 
@@ -459,6 +490,7 @@ os.makedirs(parts)
 lst = []
 segs = [(snap(a), snap(b)) for a, b in kept if snap(b) - snap(a) >= 1 / FPS]
 for n, (a, b) in enumerate(segs):
+    prog("render", n, len(segs), "segments")
     part = os.path.join(parts, f"p{n:04d}.mov")
     sh(["ffmpeg", "-hide_banner", "-v", "error", "-y", "-ss", f"{a:.4f}", "-i", IN, "-t", f"{b - a:.4f}", "-map", "0:v:0", "-map", "0:a:0",
         "-vf", vf, "-frames:v", str(round((b - a) * FPS)), "-c:v", "libx264", "-preset", "veryfast", "-crf", "16",
@@ -468,6 +500,7 @@ open(os.path.join(parts, "list.txt"), "w").write("\n".join(lst))
 RAWCUT = os.path.join(W, "edit-raw.mp4")
 sh(["ffmpeg", "-v", "error", "-y", "-f", "concat", "-safe", "0", "-i", os.path.join(parts, "list.txt"), "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", RAWCUT])
 FINAL_DUR = sum(b - a for a, b in segs)
+prog("render", len(segs), len(segs), "segments")
 log(f"cut rendered: {len(segs)} segments, {FINAL_DUR:.1f}s")
 
 # loudness: two-pass loudnorm + oversampled limiter, nudged until -14 +-0.3 LUFS (max 3 tries)
@@ -476,7 +509,8 @@ J = json.loads(meas[meas.rindex("{"):meas.rindex("}") + 1])
 M = f"measured_I={J['input_i']}:measured_TP={J['input_tp']}:measured_LRA={J['input_lra']}:measured_thresh={J['input_thresh']}:offset={J['target_offset']}"
 EDIT = os.path.join(W, "edit.mp4")
 target, lim, I = -13.5, 0.7, None
-for _ in range(3):
+for _pass in range(3):
+    prog("loudness", _pass, 3, "passes")
     sh(["ffmpeg", "-v", "error", "-y", "-i", RAWCUT, "-af",
         f"loudnorm=I={target}:TP=-1.5:LRA=9:{M},aresample=192000,alimiter=limit={lim}:attack=1:release=50:level=false,aresample=48000",
         "-c:v", "copy", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", EDIT])
@@ -491,8 +525,9 @@ log(f"loudness: {I:.1f} LUFS, true peak {PK:.1f} dBTP")
 
 PREV = os.path.join(W, "preview-720p.mp4")
 SHORT720 = "scale='if(gt(iw,ih),-2,720)':'if(gt(iw,ih),720,-2)'"  # 720p for vertical AND horizontal
-sh(["ffmpeg", "-v", "error", "-y", "-i", EDIT, "-vf", SHORT720, "-c:v", "libx264", "-preset", "veryfast", "-b:v", "1100k",
-    "-maxrate", "1300k", "-bufsize", "2600k", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", PREV])
+prog("loudness", 3, 3, "passes")
+sh_progress(["ffmpeg", "-v", "error", "-y", "-i", EDIT, "-vf", SHORT720, "-c:v", "libx264", "-preset", "veryfast", "-b:v", "1100k",
+             "-maxrate", "1300k", "-bufsize", "2600k", "-c:a", "aac", "-b:a", "96k", "-movflags", "+faststart", PREV], "preview", FINAL_DUR)
 
 # ---------- 7. readable transcript + report, copy to Drive ----------
 mmss = lambda t: f"{int(t // 60)}:{t % 60:05.2f}"  # noqa: E731

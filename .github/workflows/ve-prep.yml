@@ -1,0 +1,74 @@
+name: ve-prep
+# Stage 1: create the job in Drive, run the GPU prep on Kaggle, wait for it.
+# Started by the website (workflow_dispatch). For tests, pushing platform/test-job.json on a claude/** branch runs it too.
+on:
+  workflow_dispatch:
+    inputs:
+      video_file_id: {description: "Drive file id of the raw video", required: true}
+      slug: {description: "job name (optional)", required: false, default: ""}
+      job_folder_id: {description: "existing job folder (optional; the website creates it)", required: false, default: ""}
+      options: {description: "JSON options, e.g. {\"context\": \"cybersécurité\"}", required: false, default: "{}"}
+  push:
+    branches: ["claude/**"]
+    paths: ["platform/test-job.json"]
+
+concurrency: {group: ve-kaggle, cancel-in-progress: false}  # one Kaggle prep at a time (same kernel)
+
+jobs:
+  prep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      VE_REF: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - run: pip install -q requests kaggle
+      - name: Job
+        id: job
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            VID=$(python3 -c "import json;print(json.load(open('platform/test-job.json'))['video_file_id'])")
+            SLUG=$(python3 -c "import json;print(json.load(open('platform/test-job.json')).get('slug',''))")
+            OPTS=$(python3 -c "import json;print(json.dumps(json.load(open('platform/test-job.json')).get('options',{})))")
+            FOLDER=""
+          else
+            VID="${{ inputs.video_file_id }}"; SLUG="${{ inputs.slug }}"; OPTS='${{ inputs.options }}'; FOLDER="${{ inputs.job_folder_id }}"
+          fi
+          if [ -z "$FOLDER" ]; then
+            JOB=$(python3 platform/actions/job.py create "$VID" "$SLUG")
+          else
+            JOB=$(python3 -c "import json,sys;print(json.dumps({'slug':sys.argv[1],'job_folder_id':sys.argv[2],'video_file_id':sys.argv[3]}))" "$SLUG" "$FOLDER" "$VID")
+          fi
+          JOB=$(python3 -c "import json,sys;j=json.loads(sys.argv[1]);j['options']=json.loads(sys.argv[2] or '{}');print(json.dumps(j))" "$JOB" "$OPTS")
+          echo "job=$JOB" >> "$GITHUB_OUTPUT"
+          echo "folder=$(python3 -c "import json,sys;print(json.loads(sys.argv[1])['job_folder_id'])" "$JOB")" >> "$GITHUB_OUTPUT"
+      - name: Push the Kaggle kernel
+        run: |
+          python3 platform/kaggle/make_kernel.py /tmp/kernel '${{ steps.job.outputs.job }}'
+          kaggle kernels push -p /tmp/kernel
+      - name: Wait for Kaggle
+        run: |
+          sleep 60
+          while true; do
+            S=$(kaggle kernels status "$KAGGLE_USERNAME/ve-prep" 2>&1 | tail -1)
+            echo "$(date +%T) $S"
+            case "$S" in
+              *[Cc]omplete*) exit 0 ;;
+              *[Ee]rror*|*[Cc]ancel*) echo "KAGGLE_FAILED=1" >> "$GITHUB_ENV"; exit 1 ;;
+            esac
+            sleep 30
+          done
+      - name: Report a Kaggle crash
+        if: failure()
+        run: |
+          kaggle kernels output "$KAGGLE_USERNAME/ve-prep" -p /tmp/kout >/dev/null 2>&1 || true
+          MSG=$(tail -c 3000 /tmp/kout/*.log 2>/dev/null | tr -d '\000' || echo "Kaggle run failed (no log)")
+          python3 platform/actions/job.py fail "${{ steps.job.outputs.folder }}" "Kaggle prep failed: $MSG" || true
