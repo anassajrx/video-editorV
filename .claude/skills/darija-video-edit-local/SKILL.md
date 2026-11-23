@@ -140,6 +140,14 @@ ticked (`omniFlash`, `backgroundSwapRequested`) and the `stage`.
 - Omni clips are split at existing cuts (≤15 s); `colab_finish.py join` conforms them to exact frames and puts the
   original voice back; it refuses to save if the frame count changes (captions would drift).
 
+## 1.6 Platform mode (since 2026-11-23): website → Kaggle → GitHub Actions, no chat
+`platform/` automates §1.4–1.5: website (Vercel, `platform/web`) → `ve-prep.yml` (Kaggle T4: `colab_prep.py`) →
+`ve-claude.yml` (Claude on a GitHub runner with the user's Pro token, prompts in `platform/actions/prompts/`). With Omni
+Flash / Change background: `cut` stage (Claude picks takes, `colab_cut.py`) → user's Omni clips (stage `omni`) → Kaggle
+`post_runner.py` (Omni join + `bg_swap.py` = the Colab B1–B5 cells + grade) → storyboard → user's Accept/notes → final
+(Claude) + render (`render-chunks.mjs`). State lives in Drive `My Drive/video-editor/jobs/<slug>/` (`status.json` = the
+progress bar, real counts only). Setup: `platform/SETUP.md`. In that mode follow the prompt's PLATFORM OVERRIDES.
+
 ## 2. Intake (per video)
 
 1. Find the clip in `"raw footage/"` (newest file unless the user names one). Pick a short kebab-case **slug** from the
