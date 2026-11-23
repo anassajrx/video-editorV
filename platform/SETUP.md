@@ -53,3 +53,31 @@ Then tell Claude "secrets done" + the Drive link of a short test video.
 - `CLAUDE_CODE_OAUTH_TOKEN`: on a computer with Node: `npm install -g @anthropic-ai/claude-code`, then
   `claude setup-token` → log in → copy the token → GitHub secret `CLAUDE_CODE_OAUTH_TOKEN`.
 - Vercel account (free, "Continue with GitHub") and a GitHub fine-grained token for the website.
+
+## Part 4: the website (Vercel) ≈ 10 min
+
+### 4a. GitHub token for the website (lets the Run / Accept / Retry buttons start the jobs)
+1. https://github.com/settings/personal-access-tokens/new
+2. Token name `ve-website` · Expiration **1 year** (or custom) · Resource owner: you.
+3. Repository access → **Only select repositories** → `video-editorV`.
+4. Permissions → Repository permissions → **Actions: Read and write** (Metadata: Read-only is added automatically).
+5. **Generate token** → copy it (starts with `github_pat_`). Keep it for 4b.
+
+### 4b. Vercel
+1. https://vercel.com/signup → **Hobby** → **Continue with GitHub**.
+2. **Add New… → Project** → Import `video-editorV` (if it's not listed: "Adjust GitHub App Permissions" → allow it).
+3. **Root Directory** → **Edit** → choose `platform/web` → Continue. Framework: Next.js (automatic).
+4. **Environment Variables** — add these 8 (Name → Value):
+
+| Name | Value |
+|---|---|
+| `APP_PASSWORD` | the password YOU will type to open the site (choose a strong one) |
+| `APP_SECRET` | any long random text, ~40 characters (e.g. mash the keyboard); it signs your login cookie |
+| `GOOGLE_CLIENT_ID` | same as in GitHub |
+| `GOOGLE_CLIENT_SECRET` | same as in GitHub |
+| `GOOGLE_REFRESH_TOKEN` | same as in GitHub |
+| `GITHUB_TOKEN` | the `github_pat_…` token from 4a |
+| `GITHUB_REPO` | `anassajrx/video-editorV` |
+| `GITHUB_REF` | `main` |
+
+5. **Deploy**. After ~1 min you get a link like `https://video-editor-v-xxxx.vercel.app`: open it, type your password.
