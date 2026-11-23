@@ -60,11 +60,11 @@ jobs:
         run: |
           sleep 60
           while true; do
-            S=$(kaggle kernels status "$KAGGLE_USERNAME/ve-prep" 2>&1 | tail -1)
+            S=$(kaggle kernels status "$KAGGLE_USERNAME/ve-prep" 2>&1 | tail -1 | tr '[:upper:]' '[:lower:]')
             echo "$(date +%T) $S"
             case "$S" in
-              *[Cc]omplete*) exit 0 ;;
-              *[Ee]rror*|*[Cc]ancel*) echo "KAGGLE_FAILED=1" >> "$GITHUB_ENV"; exit 1 ;;
+              *complete*) exit 0 ;;
+              *error*|*cancel*) echo "KAGGLE_FAILED=1" >> "$GITHUB_ENV"; exit 1 ;;
             esac
             sleep 30
           done

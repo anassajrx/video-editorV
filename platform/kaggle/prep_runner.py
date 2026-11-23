@@ -61,6 +61,8 @@ def main(job):
             base = json.loads(d.read_text(sid))
         except Exception:  # noqa: BLE001
             base = None
+    if base and isinstance(base.get("job"), dict):  # options saved by the website (context, script...) live in Drive
+        job["options"] = {**base["job"].get("options", {}), **(job.get("options") or {})}
     st = Status(d, folder, "prep", STEPS, base=base, worker="kaggle")
     try:
         run(job, d, st, here)
