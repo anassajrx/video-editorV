@@ -1,0 +1,21 @@
+name: ve-claude-check
+# Checks that CLAUDE_CODE_OAUTH_TOKEN (your Pro subscription) works on a GitHub runner. Prints only Claude's answer.
+on:
+  workflow_dispatch:
+  push:
+    branches: ["claude/**"]
+    paths: ["platform/run-claude-check.txt"]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/setup-node@v4
+        with: {node-version: "22"}
+      - run: npm install -g @anthropic-ai/claude-code
+      - name: Ask Claude
+        run: |
+          claude -p "Reply with exactly: GITHUB-CLAUDE-OK" --output-format json > /tmp/out.json
+          python3 -c "import json;j=json.load(open('/tmp/out.json'));print('result:',j.get('result'));print('is_error:',j.get('is_error'));print('duration_ms:',j.get('duration_ms'))"
