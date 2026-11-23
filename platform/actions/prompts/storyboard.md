@@ -16,6 +16,9 @@ Follow the skill `.claude/skills/darija-video-edit-local/SKILL.md` (read it firs
   For loops with a known count you may add real numbers: `progress.py captions 12 40 pages`.
 - Never print transcript/caption text in Bash commands' output beyond what you need (the logs are public).
 - Do not commit, push, or edit files under `platform/`, `.github/`, `.claude/`.
+- Runner: Ubuntu, 4 CPU, no GPU. For HTML screenshots use Playwright with
+  `chromium.launch({ executablePath: '/usr/bin/google-chrome' })` (or plain `google-chrome --headless --screenshot`)
+  if the bundled Playwright browser fails. Remotion stills work as usual (`npx remotion still`).
 
 Steps:
 1. `progress.py retakes` — Read transcript.txt + removals.json like §1.5 step 2 / §4.2: keep the last COMPLETE take of
