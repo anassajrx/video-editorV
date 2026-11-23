@@ -18,6 +18,8 @@ jobs:
   prep:
     runs-on: ubuntu-latest
     timeout-minutes: 300
+    outputs:
+      folder: ${{ steps.job.outputs.folder }}
     env:
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
@@ -43,7 +45,7 @@ jobs:
             VID="${{ inputs.video_file_id }}"; SLUG="${{ inputs.slug }}"; OPTS='${{ inputs.options }}'; FOLDER="${{ inputs.job_folder_id }}"
           fi
           if [ -z "$FOLDER" ]; then
-            JOB=$(python3 platform/actions/job.py create "$VID" "$SLUG")
+            JOB=$(python3 platform/actions/job.py create "$VID" "$SLUG" "$OPTS")
           else
             JOB=$(python3 -c "import json,sys;print(json.dumps({'slug':sys.argv[1],'job_folder_id':sys.argv[2],'video_file_id':sys.argv[3]}))" "$SLUG" "$FOLDER" "$VID")
           fi
@@ -72,3 +74,9 @@ jobs:
           kaggle kernels output "$KAGGLE_USERNAME/ve-prep" -p /tmp/kout >/dev/null 2>&1 || true
           MSG=$(tail -c 3000 /tmp/kout/*.log 2>/dev/null | tr -d '\000' || echo "Kaggle run failed (no log)")
           python3 platform/actions/job.py fail "${{ steps.job.outputs.folder }}" "Kaggle prep failed: $MSG" || true
+
+  storyboard:
+    needs: prep
+    uses: ./.github/workflows/ve-claude.yml
+    with: {stage: storyboard, job_folder_id: "${{ needs.prep.outputs.folder }}"}
+    secrets: inherit

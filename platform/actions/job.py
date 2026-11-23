@@ -1,6 +1,6 @@
 """Small job helpers for the GitHub Actions orchestrator.
 
-  python3 platform/actions/job.py create <video_file_id> [slug]   -> prints job JSON (creates My Drive/video-editor/jobs/<slug>/)
+  python3 platform/actions/job.py create <video_file_id> [slug] [options json] -> prints job JSON (creates My Drive/video-editor/jobs/<slug>/)
   python3 platform/actions/job.py set <job_folder_id> '<json patch>' -> merges the patch into status.json
   python3 platform/actions/job.py fail <job_folder_id> '<message>'  -> marks the job as failed (kernel died, etc.)
 """
@@ -34,7 +34,8 @@ def main():
         slug = sys.argv[3] if len(sys.argv) > 3 and sys.argv[3] else \
             re.sub(r"[^a-z0-9]+", "-", os.path.splitext(name)[0].lower()).strip("-")[:40] + time.strftime("-%m%d-%H%M")
         folder = d.folder(slug, root_folder(d))
-        st = {"slug": slug, "video": {"id": vid, "name": name}, "stage": "queued", "state": "waiting",
+        opts = json.loads(sys.argv[4]) if len(sys.argv) > 4 and sys.argv[4] else {}
+        st = {"slug": slug, "video": {"id": vid, "name": name}, "job": {"slug": slug, "video_file_id": vid, "options": opts}, "stage": "queued", "state": "waiting",
               "message": "Waiting for a Kaggle GPU", "percent": 0, "created": now_iso(), "heartbeat": now_iso(), "history": []}
         d.write_text("status.json", folder, json.dumps(st, ensure_ascii=False, indent=1))
         print(json.dumps({"slug": slug, "job_folder_id": folder, "video_file_id": vid}))

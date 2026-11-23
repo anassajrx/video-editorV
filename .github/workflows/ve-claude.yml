@@ -1,0 +1,39 @@
+name: ve-claude
+# Claude stages: "storyboard" (after the Kaggle prep) and "final" (after the user's Accept / notes).
+on:
+  workflow_dispatch:
+    inputs:
+      stage: {description: "storyboard or final", required: true, default: "storyboard"}
+      job_folder_id: {description: "Drive folder of the job", required: true}
+  workflow_call:
+    inputs:
+      stage: {type: string, required: true}
+      job_folder_id: {type: string, required: true}
+
+concurrency: {group: "ve-claude-${{ inputs.job_folder_id }}", cancel-in-progress: false}
+
+jobs:
+  claude:
+    runs-on: ubuntu-latest
+    timeout-minutes: 200
+    env:
+      GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
+      GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
+      GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: {node-version: "22", cache: npm}
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.11"}
+      - name: Tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
+          npm ci --no-audit --no-fund
+          npx remotion browser ensure
+          pip install -q -r requirements.txt requests
+          npm install -g @anthropic-ai/claude-code
+          npx -y playwright@1.56.1 install --with-deps chromium >/dev/null
+      - name: Claude stage
+        run: python3 platform/actions/claude_stage.py "${{ inputs.stage }}" "${{ inputs.job_folder_id }}"
