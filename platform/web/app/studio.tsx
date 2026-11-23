@@ -9,10 +9,20 @@ type Status = {
   heartbeat?: string; steps?: Step[]; current?: string | null; video?: { name?: string; id?: string };
   storyboard?: { folder_id?: string; png?: string; md?: string }; final?: { folder_id?: string; video?: string; preview?: string };
   prep?: { orientation?: string; duration_s?: number }; history?: { stage: string; state: string }[];
+  cut?: { folder_id?: string; decisions?: string; to_omni?: string; from_omni?: string; clips?: number };
+  post?: { folder_id?: string; compare?: string | null };
+  job?: { options?: { omni?: boolean; background?: boolean } };
 };
 
-const STAGES: [string, string][] = [["prep", "Prep GPU"], ["storyboard", "Storyboard"], ["review", "Ta validation"], ["final", "Montage final"], ["done", "Terminé"]];
-const ORDER = ["queued", "prep", "storyboard", "review", "final", "done"];
+function stagesFor(o?: { omni?: boolean; background?: boolean }): [string, string][] {
+  const s: [string, string][] = [["prep", "Prep GPU"]];
+  if (o?.omni || o?.background) s.push(["cut", "Choix des prises"]);
+  if (o?.omni) s.push(["omni", "Omni Flash (toi)"]);
+  if (o?.omni || o?.background) s.push(["post", o?.background ? "Fond (GPU)" : "Omni (GPU)"]);
+  s.push(["storyboard", "Storyboard"], ["review", "Ta validation"], ["final", "Montage final"], ["done", "Terminé"]);
+  return s;
+}
+const ALL: [string, string][] = stagesFor({ omni: true, background: true });
 
 const fmtBytes = (n: number) => (n > 1e9 ? `${(n / 1e9).toFixed(2)} GB` : n > 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.round(n / 1e3)} KB`);
 const fmtSecs = (s: number) => (s >= 3600 ? `${Math.floor(s / 3600)} h ${Math.round((s % 3600) / 60)} min` : s >= 60 ? `${Math.floor(s / 60)} min ${Math.round(s % 60)} s` : `${Math.round(s)} s`);
@@ -40,6 +50,10 @@ export default function Studio() {
   const [name, setName] = useState("");
   const [context, setContext] = useState("");
   const [script, setScript] = useState("");
+  const [bg, setBg] = useState(false);
+  const [bgLink, setBgLink] = useState("");
+  const [hasMe, setHasMe] = useState(true);
+  const [omni, setOmni] = useState(false);
   const [runErr, setRunErr] = useState("");
   const [busy, setBusy] = useState(false);
   const [jobs, setJobs] = useState<JobRow[]>([]);
@@ -80,7 +94,7 @@ export default function Studio() {
     try {
       const r = await j<{ id: string }>("/api/run", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ video: link.trim() || pick, name, context, script }),
+        body: JSON.stringify({ video: link.trim() || pick, name, context, script, background: bg, background_image: bgLink, background_has_me: hasMe, omni }),
       });
       setSel(r.id); setLink(""); setScript(""); await loadJobs();
     } catch (e) { setRunErr(String((e as Error).message)); }
@@ -115,8 +129,14 @@ export default function Studio() {
           <label className="label">Script ou caption de référence (optionnel, prioritaire)</label>
           <textarea className="input" rows={4} value={script} onChange={(e) => setScript(e.target.value)} />
           <div style={{ marginTop: 10 }}>
-            <label className="toggle"><input type="checkbox" disabled /> Changer le fond<span className="soon">bientôt</span></label>
-            <label className="toggle"><input type="checkbox" disabled /> Omni Flash (tenue)<span className="soon">bientôt</span></label>
+            <label className="toggle"><input type="checkbox" checked={bg} onChange={(e) => setBg(e.target.checked)} /> Changer le fond<span className="soon">MatAnyone 2</span></label>
+            {bg && (
+              <div style={{ paddingBottom: 8 }}>
+                <input className="input" placeholder="Lien Drive de l'image du nouveau fond" value={bgLink} onChange={(e) => setBgLink(e.target.value)} />
+                <label className="toggle" style={{ borderTop: 0 }}><input type="checkbox" checked={hasMe} onChange={(e) => setHasMe(e.target.checked)} /> Je suis dans cette image (je serai effacé)</label>
+              </div>
+            )}
+            <label className="toggle"><input type="checkbox" checked={omni} onChange={(e) => setOmni(e.target.checked)} /> Omni Flash (tenue)<span className="soon">clips ≤ 15 s</span></label>
           </div>
           <button className="btn wide" disabled={busy || (!pick && !link.trim())} onClick={run}>{busy ? "Lancement…" : "Run"}</button>
           {runErr && <div className="err">{runErr}</div>}
@@ -144,9 +164,10 @@ export default function Studio() {
 function label(stage?: string, state?: string) {
   if (state === "error") return "Erreur";
   if (stage === "review" || state === "waiting" && stage === "storyboard") return "En attente de ta validation";
+  if (stage === "omni") return "À toi : clips Omni Flash";
   if (stage === "done") return "Terminé";
   if (stage === "queued") return "En file d'attente";
-  const n = STAGES.find((s) => s[0] === stage)?.[1];
+  const n = ALL.find((s) => s[0] === stage)?.[1];
   return n ? `${n}${state === "waiting" ? " · en attente" : ""}` : stage || "…";
 }
 
@@ -170,6 +191,8 @@ function Detail({ id, st, err }: { id: string; st: Status | null; err: string })
   const stage = st.stage || "queued";
   const failed = st.state === "error";
   const stalled = st.state === "running" && ago(st.heartbeat) > 120;
+  const STAGES = stagesFor(st.job?.options);
+  const ORDER = ["queued", ...STAGES.map((x) => x[0])];
   const cur = ORDER.indexOf(stage);
   const reviewing = stage === "review";
   const running = st.state === "running";
@@ -223,6 +246,30 @@ function Detail({ id, st, err }: { id: string; st: Status | null; err: string })
               {s.state === "running" && <div className="sub"><div className={`bar ${!s.total ? "indet" : ""}`}><i style={{ width: `${s.total ? Math.min(100, (100 * (s.done || 0)) / s.total) : 0}%` }} /></div></div>}
             </div>
           ))}
+        </div>
+      )}
+
+      {stage === "omni" && st.cut?.to_omni && (
+        <div className="section">
+          <h3>À toi : Omni Flash</h3>
+          <div className="md">{`1. Ouvre « clips à modifier » : ${st.cut.clips ?? ""} clips de 15 s max (clip_01.mp4, clip_02.mp4…).
+2. Modifie chaque clip dans Omni Flash (ta tenue…).
+3. Mets chaque résultat dans « résultats Omni » avec le MÊME nom (clip_01.mp4…).
+   Un clip que tu ne modifies pas garde l'original.
+4. Clique sur Continuer : le GPU recolle les clips avec ta vraie voix${st.job?.options?.background ? ", change le fond" : ""} puis Claude fait le storyboard.`}</div>
+          <div className="links">
+            <a href={`https://drive.google.com/drive/folders/${st.cut.to_omni}`} target="_blank" rel="noreferrer">Clips à modifier</a>
+            {st.cut.from_omni && <a href={`https://drive.google.com/drive/folders/${st.cut.from_omni}`} target="_blank" rel="noreferrer">Résultats Omni (dépose ici)</a>}
+            {st.cut.decisions && <a href={`https://drive.google.com/file/d/${st.cut.decisions}/view`} target="_blank" rel="noreferrer">Prises retenues</a>}
+          </div>
+          <button className="btn wide" disabled={busy} onClick={() => act({ action: "continue" }, "C'est parti : GPU Kaggle")}>Continuer</button>
+          {msg && <div className="msg">{msg}</div>}
+        </div>
+      )}
+
+      {st.post?.compare && (
+        <div className="links" style={{ marginTop: 14 }}>
+          <a href={`https://drive.google.com/file/d/${st.post.compare}/view`} target="_blank" rel="noreferrer">Avant / après du fond</a>
         </div>
       )}
 

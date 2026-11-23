@@ -33,6 +33,11 @@ export async function POST(req: Request, { params }: Ctx) {
       await dispatch("ve-claude.yml", { stage: "final", job_folder_id: id });
       return NextResponse.json({ ok: true });
     }
+    if (b.action === "continue") {  // after the user's Omni Flash clips
+      await patchStatus(id, { stage: "post", state: "waiting", error: null, message: "Starting a Kaggle GPU for Omni / background", percent: 0 });
+      await dispatch("ve-claude.yml", { stage: "post", job_folder_id: id });
+      return NextResponse.json({ ok: true });
+    }
     if (b.action === "retry") {
       const stage = String(st.stage || "prep");
       await patchStatus(id, { state: "waiting", error: null, message: "Retrying…" });
@@ -40,7 +45,8 @@ export async function POST(req: Request, { params }: Ctx) {
         const job = st.job || {};
         await dispatch("ve-prep.yml", { video_file_id: String(job.video_file_id || st.video?.id || ""), slug: String(st.slug || ""), job_folder_id: id, options: "{}" });
       } else {
-        await dispatch("ve-claude.yml", { stage: stage === "final" ? "final" : "storyboard", job_folder_id: id });
+        const next = stage === "final" ? "final" : stage === "post" || stage === "omni" ? "post" : "storyboard";
+        await dispatch("ve-claude.yml", { stage: next, job_folder_id: id });
       }
       return NextResponse.json({ ok: true });
     }

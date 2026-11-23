@@ -17,10 +17,19 @@ export async function POST(req: Request) {
       .toLowerCase().normalize("NFKD").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40) || "video";
     const d = new Date();
     const slug = `${base}-${String(d.getUTCMonth() + 1).padStart(2, "0")}${String(d.getUTCDate()).padStart(2, "0")}-${String(d.getUTCHours()).padStart(2, "0")}${String(d.getUTCMinutes()).padStart(2, "0")}`;
+    const background = !!b.background;
+    const bgId = background ? fileIdFromLink(String(b.background_image || "")) : null;
+    if (background && !bgId) return NextResponse.json({ error: "Change background: paste the Drive link of your background image" }, { status: 400 });
+    if (bgId) {
+      const bm = await meta(bgId);
+      if (!bm.mimeType.startsWith("image/")) return NextResponse.json({ error: `The background link is not an image (${bm.mimeType})` }, { status: 400 });
+    }
     const options = {
       context: String(b.context || "").slice(0, 500),
       script: String(b.script || "").slice(0, 20000),
-      background: !!b.background,
+      background,
+      background_file_id: bgId,
+      background_has_me: b.background_has_me !== false,
       omni: !!b.omni,
     };
     const jf = await folder(slug, await jobsRoot());

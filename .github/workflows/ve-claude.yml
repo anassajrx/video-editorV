@@ -3,7 +3,7 @@ name: ve-claude
 on:
   workflow_dispatch:
     inputs:
-      stage: {description: "storyboard or final", required: true, default: "storyboard"}
+      stage: {description: "storyboard, post (after Omni clips) or final", required: true, default: "storyboard"}
       job_folder_id: {description: "Drive folder of the job", required: true}
   push:  # tests on claude/** branches: platform/test-claude.json = {"stage": "...", "job_folder_id": "..."}
     branches: ["claude/**"]
@@ -18,12 +18,16 @@ concurrency: {group: "ve-claude-${{ inputs.job_folder_id || github.sha }}", canc
 jobs:
   claude:
     runs-on: ubuntu-latest
-    timeout-minutes: 200
+    timeout-minutes: 360
     env:
       GOOGLE_CLIENT_ID: ${{ secrets.GOOGLE_CLIENT_ID }}
       GOOGLE_CLIENT_SECRET: ${{ secrets.GOOGLE_CLIENT_SECRET }}
       GOOGLE_REFRESH_TOKEN: ${{ secrets.GOOGLE_REFRESH_TOKEN }}
       CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      KAGGLE_USERNAME: ${{ secrets.KAGGLE_USERNAME }}
+      KAGGLE_KEY: ${{ secrets.KAGGLE_KEY }}
+      KAGGLE_API_TOKEN: ${{ secrets.KAGGLE_API_TOKEN }}
+      VE_REF: ${{ github.ref_name }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,7 +39,7 @@ jobs:
           sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg fonts-noto-core >/dev/null
           npm ci --no-audit --no-fund
           npx remotion browser ensure
-          pip install -q -r requirements.txt requests
+          pip install -q -r requirements.txt requests six kaggle
           npm install -g @anthropic-ai/claude-code
           npx -y playwright@1.56.1 install chromium >/dev/null || echo "playwright browser not installed: use /usr/bin/google-chrome"
       - name: Claude stage

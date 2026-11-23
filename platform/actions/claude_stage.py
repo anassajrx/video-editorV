@@ -1,7 +1,12 @@
 """Claude stages on a GitHub runner, with real progress in the job's status.json.
 
   python3 platform/actions/claude_stage.py storyboard <job_folder_id>
+  python3 platform/actions/claude_stage.py post <job_folder_id>     (after the user's Omni Flash clips: Kaggle, then storyboard)
   python3 platform/actions/claude_stage.py final <job_folder_id>
+
+With Omni Flash and/or Change background ticked, "storyboard" first runs the "cut" stage (Claude picks the takes,
+colab_cut.py renders the ungraded cut + the <=15 s Omni clips) and then either waits for the user's Omni clips
+(stage "omni") or goes straight to the Kaggle "post" kernel (Omni join + background swap + grade) and the storyboard.
 
 storyboard: fetch the Kaggle prep results -> Claude (retakes + cut, captions, graphics plan, storyboard.png) ->
             save the work to Drive jobs/<slug>/storyboard/ -> status "waiting_review".
@@ -32,6 +37,8 @@ PROGRESS_FILE = "/tmp/ve-progress.json"
 OUT = os.path.join(REPO, "platform-out")
 
 STAGES = {
+    "cut": [("fetch", "Download the prep results", 10), ("retakes", "Claude: choose the takes", 45),
+            ("cut", "Render the cut (+ Omni clips)", 30), ("upload", "Save to Drive", 15)],
     "storyboard": [("fetch", "Download the prep results", 8), ("retakes", "Claude: choose the takes", 14),
                    ("cut", "Cut, loudness, grade", 14), ("captions", "Claude: captions", 18),
                    ("graphics", "Claude: graphics plan + face check", 18), ("storyboard", "Claude: storyboard", 16),
@@ -118,8 +125,10 @@ def run_claude(prompt, st, first_step, budget_min):
             for c in ev.get("message", {}).get("content", []):
                 if c.get("type") == "tool_use":
                     inp = c.get("input", {})
-                    what = inp.get("description") or inp.get("command") or inp.get("file_path") or inp.get("pattern") or ""
-                    msg = f"Claude: {c['name']} {str(what)[:140]}".strip()
+                    what = inp.get("description") or os.path.basename(str(inp.get("file_path") or "")) or ""
+                    if not what and inp.get("command"):
+                        what = str(inp["command"]).strip().split("\n")[0].split("<<")[0][:60]
+                    msg = f"Claude: {c['name']} {what}".strip()
                     print(msg, flush=True)  # tool names/commands only, never transcript text
                     st.update(st.st["current"] or first_step, message=msg)
         elif ev.get("type") == "result":
@@ -144,14 +153,24 @@ def stage_storyboard(d, st, job, slug, folder):
     prep = d.find("prep", folder)
     if not prep:
         raise RuntimeError("No prep results in Drive (jobs/<slug>/prep). Run the prep first.")
-    fetch_folder(d, prep, raw, st, "fetch", skip=("preview-720p.mp4",))
+    post = d.find("post", folder, folder=True)
+    if post:  # Omni / background done on Kaggle: edit.mp4 is final length, swapped, graded
+        fetch_folder(d, prep, raw, st, "fetch", skip=("preview-720p.mp4", "edit.mp4", "segments.json", "meta.json"))
+        fetch_folder(d, post, raw, st, "fetch", skip=("compare-background.mp4", "background_clean.png", "preview-720p.mp4"))
+        cut = d.find("cut", folder, folder=True)
+        if cut:
+            fetch_folder(d, cut, raw, st, "fetch", skip=("edit_cut.mp4",))  # removals.json chosen in the cut stage
+    else:
+        fetch_folder(d, prep, raw, st, "fetch", skip=("preview-720p.mp4",))
     st.finish_step("fetch")
     os.makedirs(OUT, exist_ok=True)
     ctx = job.get("options", {}).get("context", "")
     script = job.get("options", {}).get("script", "")
     prompt = open(os.path.join(HERE, "prompts", "storyboard.md"), encoding="utf8").read() \
         .replace("{SLUG}", slug).replace("{CONTEXT}", ctx or "(none)").replace("{SCRIPT}", script or "(none)")
-    run_claude(prompt, st, "retakes", budget_min=90)
+    if post:
+        prompt = POST_NOTE.replace("{SLUG}", slug) + prompt
+    run_claude(prompt, st, "captions" if post else "retakes", budget_min=90)
     need = [os.path.join(OUT, "storyboard.png"), os.path.join(OUT, "storyboard.md")]
     missing = [p for p in need if not os.path.exists(p)]
     if missing:
@@ -171,6 +190,96 @@ def stage_storyboard(d, st, job, slug, folder):
     st.done(state="waiting", message="Storyboard ready: Accept or write your notes")
     st.st["stage"] = "review"
     st.flush(force=True)
+
+
+POST_NOTE = """IMPORTANT, this job already has its FINAL CUT: the takes were chosen earlier and Omni Flash and/or the background
+swap were applied on a GPU. `public/videos/{SLUG}/raw/edit.mp4` is final length, graded, -14 LUFS, and
+`segments.json` + `removals.json` describe that cut. SKIP steps 1 and 2 below (do not re-cut, do not re-grade, do not
+touch edit.mp4): start at step 3 (captions, timed with phrases.json + segments.json). meta.json `backgroundSwapped` /
+`omniFlash` say what was done.
+
+"""
+
+
+def stage_cut(d, st, job, slug, folder):
+    """Claude picks the takes; colab_cut.py renders the ungraded cut (+ Omni clips); results -> Drive cut/."""
+    raw = os.path.join(REPO, "public", "videos", slug, "raw")
+    prep = d.find("prep", folder)
+    if not prep:
+        raise RuntimeError("No prep results in Drive (jobs/<slug>/prep).")
+    fetch_folder(d, prep, raw, st, "fetch", skip=("preview-720p.mp4", "edit.mp4", "segments.json"))
+    st.finish_step("fetch")
+    os.makedirs(OUT, exist_ok=True)
+    opts = job.get("options", {})
+    prompt = open(os.path.join(HERE, "prompts", "cut.md"), encoding="utf8").read() \
+        .replace("{SLUG}", slug).replace("{CONTEXT}", opts.get("context") or "(none)").replace("{SCRIPT}", opts.get("script") or "(none)")
+    run_claude(prompt, st, "retakes", budget_min=45)
+    seg = os.path.join(raw, "segments.json")
+    if not os.path.exists(seg):
+        raise RuntimeError("Claude finished without segments.json")
+    # colab_cut.py works on <root>/results/<slug>/ (in.mp4 + final_cut.json)
+    root = "/tmp/ve-cut"
+    res = os.path.join(root, "results", slug)
+    os.makedirs(res, exist_ok=True)
+    shutil.copy(os.path.join(raw, "in.mp4"), os.path.join(res, "in.mp4"))
+    shutil.copy(seg, os.path.join(res, "final_cut.json"))
+    n = len(json.load(open(seg)))
+    st.update("cut", 0, None, "", message=f"Rendering {n} kept segments")
+    cmd = [sys.executable, os.path.join(REPO, "local", "colab", "colab_cut.py"), "--slug", slug, "--root", root,
+           "--work", "/tmp/ve-cut-work"]
+    if opts.get("omni"):
+        cmd += ["--omni", "--omni-max", "15"]
+    subprocess.run(cmd, check=True)
+    st.finish_step("cut")
+    cutf = d.folder("cut", folder)
+    files = [os.path.join(res, "edit_cut.mp4"), os.path.join(res, "segments.json"), os.path.join(raw, "removals.json")]
+    files += [p for p in (os.path.join(OUT, "cut-decisions.md"),) if os.path.exists(p)]
+    clips = sorted(glob.glob(os.path.join(res, "omni", "to_omni", "*.mp4")))
+    total = sum(os.path.getsize(p) for p in files + clips)
+    sent = 0
+    st.update("upload", 0, total, "bytes")
+    for p in files:
+        d.upload(p, cutf, on_progress=lambda a, b, s0=sent: st.update("upload", s0 + a, total, "bytes"))
+        sent += os.path.getsize(p)
+    info = {"folder_id": cutf, "decisions": d.find("cut-decisions.md", cutf)}
+    if opts.get("omni"):
+        om = d.folder("omni", cutf)
+        d.upload(os.path.join(res, "omni", "omni_plan.json"), om)
+        to = d.folder("to_omni", om)
+        for p in clips:
+            d.upload(p, to, on_progress=lambda a, b, s0=sent: st.update("upload", s0 + a, total, "bytes"))
+            sent += os.path.getsize(p)
+        info.update(omni_folder=om, to_omni=to, from_omni=d.folder("from_omni", om), clips=len(clips))
+    st.finish_step("upload")
+    st.st["cut"] = info
+    if opts.get("omni"):
+        st.done(state="waiting", message=f"{len(clips)} clips ready for Omni Flash: edit them, put the results in "
+                                         "from_omni (same names), then click Continue")
+        st.st["stage"] = "omni"
+        st.flush(force=True)
+        return "omni"
+    st.done(message="Cut done")
+    return "post"
+
+
+def run_kaggle_post(d, slug, folder):
+    """Start the Kaggle post kernel (Omni join + background swap + grade) and wait. It writes status.json itself."""
+    job = {"slug": slug, "job_folder_id": folder}
+    sh([sys.executable, "platform/kaggle/make_kernel.py", "/tmp/kernel-post", json.dumps(job), "post"])
+    sh(["kaggle", "kernels", "push", "-p", "/tmp/kernel-post"])
+    user = os.environ["KAGGLE_USERNAME"]
+    time.sleep(60)
+    t0 = time.time()
+    while time.time() - t0 < 5 * 3600:
+        out = subprocess.run(["kaggle", "kernels", "status", f"{user}/ve-post"], capture_output=True, text=True).stdout.lower()
+        print(time.strftime("%H:%M:%S"), out.strip()[-80:], flush=True)
+        if "complete" in out or "error" in out or "cancel" in out:
+            st = json.loads(d.read_text(d.find("status.json", folder)))
+            if "complete" in out and st.get("state") != "error":
+                return
+            raise RuntimeError("Kaggle (background / Omni) failed: " + str(st.get("error") or out)[-1500:])
+        time.sleep(30)
+    raise RuntimeError("Kaggle post took more than 5 h")
 
 
 def stage_final(d, st, job, slug, folder):
@@ -242,12 +351,34 @@ def main():
     slug = base.get("slug") or job.get("slug")
     if not slug:
         raise SystemExit("status.json has no slug")
-    st = Status(d, folder, stage, STAGES[stage], base=base, worker="github")
-    try:
-        (stage_storyboard if stage == "storyboard" else stage_final)(d, st, job, slug, folder)
-    except BaseException as e:  # noqa: BLE001
-        st.fail(str(e))
-        raise
+    opts = job.get("options", {})
+    needs_post = bool(opts.get("omni") or opts.get("background"))
+
+    def run_stage(name, fn):
+        b = json.loads(d.read_text(d.find("status.json", folder)))
+        st = Status(d, folder, name, STAGES[name], base=b, worker="github")
+        try:
+            return fn(d, st, job, slug, folder)
+        except BaseException as e:  # noqa: BLE001
+            st.fail(str(e))
+            raise
+
+    if stage == "final":
+        return run_stage("final", stage_final)
+    if stage == "storyboard" and needs_post and not d.find("post", folder, folder=True):
+        if run_stage("cut", stage_cut) == "omni":
+            return  # waits for the user's Omni Flash clips; the website's Continue starts stage "post"
+        stage = "post"
+    if stage == "post":
+        try:
+            run_kaggle_post(d, slug, folder)
+        except BaseException as e:  # noqa: BLE001
+            b = json.loads(d.read_text(d.find("status.json", folder)))
+            if b.get("state") != "error":
+                b.update(state="error", error=str(e)[-3000:], stage="post")
+                d.write_text("status.json", folder, json.dumps(b, ensure_ascii=False, indent=1))
+            raise
+    run_stage("storyboard", stage_storyboard)
 
 
 if __name__ == "__main__":
